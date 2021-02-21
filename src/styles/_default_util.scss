@@ -1,0 +1,17 @@
+$colors: (
+        "white": #e7e7e7,
+        "grey": #c4c4c4,
+        "red": #EF476F,
+        "yellow": #FFD166,
+        "green": #06D6A0,
+        "blue": #118AB2,
+        "dark-blue": #073B4C
+);
+
+@mixin color($key) {
+  color: map-get($colors, $key);
+}
+
+@mixin bg-color($key) {
+  background-color: map-get($colors, $key);
+}

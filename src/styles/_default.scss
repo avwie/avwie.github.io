@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
+@import "default_util";
+
+&.layout {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 100vh;
+
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+aside {
+  @include bg-color('dark-blue');
+  @include color('white');
+
+  width: 350px;
+  padding: 2em;
+
+  text-align: center;
+
+  sub {
+    @include color("grey");
+    font-size: 0.9em;
+  }
+
+  hr {
+    border-width: 1px 0 0 0;
+    border-color: map-get($colors, 'grey');
+    margin: 1em 0 1em 0;
+  }
+}
+
+main {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+
+  a {
+    text-decoration: none;
+    @include color('blue');
+  }
+
+  & > .content {
+    margin-top: 1em;
+    width: 900px;
+
+    h1 {
+      text-align: center;
+    }
+
+    .posts {
+      .item {
+        display: flex;
+        flex-direction: row;
+
+        .image {
+          box-sizing: content-box;
+          padding: 1em;
+          width: 180px;
+          height: 180px;
+        }
+
+        & > .content {
+          display: flex;
+          flex-direction: column;
+          padding: 1em;
+
+          h2 {
+            margin: 0;
+          }
+
+          span {
+            @include color('grey');
+          }
+
+          .synopsis {
+            margin-top: 1em;
+            flex-grow: 1;
+          }
+        }
+      }
+    }
+  }
+}
