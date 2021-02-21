@@ -2,16 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a0752690-f0b4-4676-9673-15e2bcb57e25" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/layouts/default.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/_default.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/_default_util.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/index.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gatsby-node.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/markdown/20210221_graphql.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/templates/post.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gatsby-config.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby-config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/404.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/404.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layouts/default.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/default.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/_default.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/_default.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +49,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1613842826796</updated>
-      <workItem from="1613842830860" duration="6894000" />
+      <workItem from="1613842830860" duration="10341000" />
+      <workItem from="1613922182655" duration="10000" />
     </task>
     <servers />
   </component>
@@ -66,5 +67,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
