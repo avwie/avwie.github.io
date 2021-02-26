@@ -1,21 +1,18 @@
 import * as React from "react"
 import DefaultLayout from "../layouts/default";
 import {graphql, Link, useStaticQuery} from "gatsby";
-import Img from "gatsby-image"
 
 const PostItem = ({title, hero, date, excerpt, slug}) => {
-    const image = hero.childImageSharp.fixed
+    const image = hero.childImageSharp.fixed.src
 
     return (
-        <div className="item">
-            <div className="image">
-                <Img fixed={image} />
-            </div>
-            <div className="content">
-                <h2>{ title }</h2>
-                <span>Published: {date}</span>
-                <div className="synopsis">{ excerpt }</div>
-                <Link to={slug}>>> Read more</Link>
+        <div className="card col-lg-4">
+            <img  className="card-img-top" src={image} />
+            <div className="card-body">
+                <h5 className="card-title">{ title }</h5>
+                <h6 className="card-subtitle mb-2">{ date }</h6>
+                <p className="card-text">{ excerpt }</p>
+                <Link className="card-link btn btn-primary btn-small" to={slug}>Read more</Link>
             </div>
         </div>
     )
@@ -34,13 +31,13 @@ const Main = () => {
                   date(formatString: "DD-MMM yyyy")
                   hero {
                     childImageSharp {
-                      fixed(width: 180, height: 180) {
-                        ...GatsbyImageSharpFixed
+                      fixed(width: 430, height: 150) {
+                        src
                       }
                     }
                   }
                 }
-                excerpt(format: MARKDOWN, pruneLength: 300)
+                excerpt(format: MARKDOWN, pruneLength: 230)
               }
             }
           }
@@ -56,8 +53,20 @@ const Main = () => {
     })
 
     return <>
-        <h1>Recent Posts</h1>
-        <div className="posts">{ posts }</div>
+        <h1 className="text-decoration-underline fs-1 py-2">Hi, welcome to my programming blog.</h1>
+        <div className="fs-4 bg-light rounded p-2">
+            <div className="col-xl-8">
+                    I am an engineer that turned software developer.
+                    I enjoy technical challenges and experimenting with techniques and architectures.
+                    Some are used successfully in production and some are complete failures. However, all experiments are a
+                    way of learning. By posting articles about my experiments I hope that others learn from me, but also that
+                    I can learn from others.
+            </div>
+        </div>
+        <h2 className="my-4">Latest posts</h2>
+        <div className="container d-flex px-0">
+        { posts }
+        </div>
     </>
 }
 
