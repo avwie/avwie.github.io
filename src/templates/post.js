@@ -13,7 +13,7 @@ export default ({ data }) => {
             <div className="post">
                 <div className="frontmatter">
                     <h1>{ title }</h1>
-                    <span>{ date }</span>
+                    <span>Published at: { date }</span>
                     <Img fixed={image} />
                 </div>
                 <div className="content" dangerouslySetInnerHTML={{__html: content }} />

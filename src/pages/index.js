@@ -40,7 +40,7 @@ const Main = () => {
                     }
                   }
                 }
-                excerpt(format: MARKDOWN, pruneLength: 420)
+                excerpt(format: MARKDOWN, pruneLength: 300)
               }
             }
           }

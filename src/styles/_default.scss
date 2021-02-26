@@ -1,13 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
-@import "default_util";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+//scheme: https://coolors.co/dd6e42-e8dab2-4f6d7a-c0d6df-eaeaea
+
+& {
+  --color-bg: #EAEAEA;
+  --color-aside: #DD6E42;
+  --color-fg: #000;
+  --color-fg-darker: #222e34;
+  --color-highlight: #E8DAB2;
+}
 
 &.layout {
   display: flex;
   flex-direction: row;
   width: 100vw;
   height: 100vh;
+  color: var(--color-fg);
+  background-color: var(--color-bg);
 
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Noto Sans', sans-serif;
   font-size: 16px;
 
   * {
@@ -16,22 +27,24 @@
 }
 
 aside {
-  @include bg-color('dark-blue');
-  @include color('white');
-
   width: 350px;
   padding: 2em;
+  background-color: var(--color-aside);
 
   text-align: center;
 
+  h1 {
+    color: var(--color-highlight);
+  }
+
   sub {
-    @include color("grey");
+    color: var(--color-fg);
     font-size: 0.9em;
   }
 
   hr {
     border-width: 1px 0 0 0;
-    border-color: map-get($colors, 'grey');
+    border-color: var(--color-fg-darker);
     margin: 1em 0 1em 0;
   }
 }
@@ -44,7 +57,7 @@ main {
 
   a {
     text-decoration: none;
-    @include color('blue');
+    color: var(--color-highlight);
   }
 
   & > .index {
@@ -77,7 +90,7 @@ main {
           }
 
           span {
-            @include color('grey');
+            color: var(--color-fg-darker);
           }
 
           .synopsis {
