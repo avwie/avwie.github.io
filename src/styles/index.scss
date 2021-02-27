@@ -1,9 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;700&display=swap');
+@import "../../node_modules/prismjs/themes/prism.css";
 
 body {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
-pre {
-  font-size: 0.8em !important;
+.markdown {
+  h1, h2 {
+    text-decoration: underline;
+  }
+
+  strong {
+    text-decoration: underline;
+  }
+
+  pre, code {
+    font-size: 0.9em !important;
+  }
 }
