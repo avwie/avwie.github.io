@@ -58,10 +58,6 @@
     <span class="token keyword">override</span> <span class="token keyword">fun</span> <span class="token function">damage</span><span class="token punctuation">(</span>amount<span class="token operator">:</span> Int<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         health <span class="token operator">-=</span> amount
     <span class="token punctuation">}</span>
-
-    <span class="token keyword">override</span> <span class="token keyword">fun</span> <span class="token function">replenish</span><span class="token punctuation">(</span>amount<span class="token operator">:</span> Int<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        health <span class="token operator">+=</span> amount
-    <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 
 <span class="token keyword">class</span> <span class="token function">SpriteImpl</span><span class="token punctuation">(</span><span class="token keyword">override</span> <span class="token keyword">val</span> spriteData<span class="token operator">:</span> ByteArray<span class="token punctuation">)</span><span class="token operator">:</span> Sprite
