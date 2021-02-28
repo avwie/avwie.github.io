@@ -1,8 +1,8 @@
 ---
-slug: "/compositional-patterns-in-kotlin"
-date: "2021-02-28"
-title: "Compositional Patterns in Kotlin"
-hero: "../images/20210227_compositional_patterns/hero.jpg"
+slug: "/compositional-patterns-in-kotlin-part-1-delegation"
+date: "2021-02-27"
+title: "Compositional Patterns in Kotlin Part 1 - Delegation"
+hero: "../images/20210227_compositional_patterns_part_1/hero.jpg"
 ---
 Roughly speaking there are two ways to obtain polymorphic behavior in OOP languages, 'classical' inheritance and composition. There are clear benefits in either approach depending on the domain one is trying to model. So this post is not a rant about the drawbacks of inheritance, but more an evaluation of the benefits of composition in some domains. A lot has been written about both approaches, and their intended uses, but when speaking for myself I see clear benefit of inheritance when the domain is clearly described by a hierarchical tree, or the hierarchies are not very deep and diverse and there are not a lot of cross-cutting concerns. Animals are a typical example of a hierarchy that models pretty well into the inheritance paradigm. A typical drawback of deep inheritance hierarchies can be that they can be a little reluctant to change.
 
@@ -14,7 +14,7 @@ This post aims to show a few different methods of obtaining composition in **Kot
 
 ## The delegation pattern
 
-Kotlin has language support for the [delegation pattern](https://kotlinlang.org/docs/delegation.html). I think it is best shown via some code examples. Let's stay in the theme of the game example above.
+Kotlin has language support for the [delegation pattern](https://kotlinlang.org/docs/delegation.html). In short, it means that interfaces that a class wants to implement are actually implemented by an instance of another class that is part of the main class and the methods are _delegated_ to this other class. For the outsider it looks as if the class implements the interface like it should, however under the hood all calls are delegated to another. I think it is best shown via some code examples. Let's stay in the theme of the game example above.
 
 ## Defining the components
 First we need to describe the components we want to have, lets model these as `interfaces`:
@@ -80,10 +80,6 @@ class HealthImpl(initialHealth: Int): Health {
     override fun damage(amount: Int) {
         health -= amount
     }
-
-    override fun replenish(amount: Int) {
-        health += amount
-    }
 }
 
 class SpriteImpl(override val spriteData: ByteArray): Sprite
@@ -123,6 +119,8 @@ class DangerousImpl(override val damage: Int) : Dangerous {
     }
 }
 ```
+
+What is clearly seen here is that the reference implementations contain all the code related to their respective domain. This makes it extremely easy to test them since they are simple. Setting up unit tests for them is a breeze and that also means that you can be very certain that any class that uses any of the well-tested reference implementations will behave as it should.
 
 ## Composing classes
 
@@ -280,7 +278,92 @@ berserkPlayer.berserkAttack(unfortunateOrc)
 println(unfortunateOrc.health) // prints 90
 ```
 
-## Conclusion
-This concludes my post on the composition pattern in Kotlin. I think this pattern has a lot of strengths compared to inheritance in certain situations. But, each has their own strenghts in their own situations.
+By leveraging the granularity of the interfaces we have defined we have the ability to add very specific behavior based on combinations of these interfaces. This is exactly something you would expect from a system with a high degree of composability.
 
-This was my first ever programming blogpost I have ever written, and thanks for reading it. If you have any questions or remarks, please reach out to me via Twitter or email. I'd love to get feedback.  
+## Constructing instances with the builder pattern
+
+We used a companion object to create new instances. This works pretty well, but when the entities will have a lot of components these companion functions will become pretty large. Therefore, an alternative is to go to a builder pattern and have a separate class manage for us the building of the instance. Kotlin assists here as well in creating a nice API by providing us with the language feature: [Function literals with a receiver](https://kotlinlang.org/docs/lambdas.html#function-literals-with-receiver). Using this feature we can pass a `lambda` function which specifies what the `this` should be in scope of that function. 
+
+Let me elaborate by first defining some helper class and interface;
+```kotlin
+interface Builder<T> {
+    fun build(): T
+}
+
+interface BuilderProvider<T, B : Builder<T>> {
+    fun builder(): B
+}
+
+fun <T, B : Builder<T>> build(provider: BuilderProvider<T, B>, block: B.() -> Unit): T {
+    val builder = provider.builder()
+    block(builder)
+    return builder.build()
+}
+```
+
+Well, this certainly looks convoluted. Bear with me when I show you the implementation for `Player` and I hope it becomes a little more clear:
+```kotlin
+class Player(
+    val name: String,
+    healthImpl: Health,
+    spriteImpl: Sprite,
+    dynamicsImpl: Dynamics,
+    dangerousImpl: Dangerous
+) : Drawable, Health by healthImpl, Sprite by spriteImpl, Dynamics by dynamicsImpl, Dangerous by dangerousImpl {
+
+    companion object : BuilderProvider<Player, PlayerBuilder> {
+        override fun builder(): PlayerBuilder = PlayerBuilder()
+    }
+}
+
+class PlayerBuilder : EntityBuilder<Player> {
+    val sprite = SpriteImpl(ByteArray(0))
+
+    var name = ""
+    var health = 100
+    var damage = 10
+    var x = 0.0
+    var y = 0.0
+    var mass = 80.0
+
+    override fun build(): Player =
+        Player(name, HealthImpl(health), sprite, DynamicsImpl(mass, x to y), DangerousImpl(damage))
+}
+```
+
+We now have a companion object on `Player` that implements `EntityBuilderProvider` and giving us a `PlayerBuilder` (which implements `Builder<Player>`) back. With the help of the `build()` helper function above it is now possible to create a type-safe instantiation of the class in an easier API.
+
+```kotlin
+val player = build(Player) { // [this] is of type PlayerBuilder
+    name = "Beeblebrox"
+    health = 120
+
+    x = 3.0
+    y = 4.0
+}
+```
+
+So what is exactly happening? The Kotlin type-inference does a lot of work for us to make the API nice to work with. But let's go through it step by step:
+```kotlin
+val player = build(Player) { //.... }
+
+// this can be rewritten as
+val player = build(Player, { // .... })
+
+// so that means that:
+Player = EntityBuilderProvider
+block = { // ... })
+
+// and in `build` the following happens
+val builder = provider.builder() // which is an instance of PlayerBuilder
+block(builder) // the block is run, with PlayerBuilder as the receiver, meaning that, inside the block-scope, `this` refers to the instance of PlayerBuilder
+return builder.build() // the PlayerBuilder.build() method returns a Player and the builder is complete
+```
+
+This looks quite convoluted in order to create a simple instance of a class. However, when entities become more and more complicated or accumulate more components which might even be optional, then the builder patterns takes care of the construction of the entity whilst the entity itself is more concerned with the entity itself.
+
+## Conclusion
+
+This concludes Part 1 on Compositional Patterns in Kotlin. The next part will focus on *runtime* composition, whereas delegation is at compile-time, while still keeping type-safety _and_ without reflection. One of the ways to obtain that is to go to a *component-based architecture*. This is a first step to a different way of handling your domain model. As I said before, this is not always the best way, just like inheritance trees aren't, but it is _a_ way. Experiment and try and see where it fits your needs.
+
+This was my _first ever_ blog post I have written, and I thoroughly enjoyed it. However, by learning and making mistakes you improve. I am very interested in your critique, or questions. So contact me via [e-mail](mailto:info@avwie.nl), Twitter [@avwie](https://twitter.com/avwie), or at [my repository of the coding examples](https://github.com/avwie/kotlin-blog).
