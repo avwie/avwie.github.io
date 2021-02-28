@@ -7,12 +7,12 @@ const PostItem = ({title, hero, date, excerpt, slug}) => {
 
     return (
         <div className="card col-12 col-lg-6 col-xl-4">
-            <img  className="card-img-top" src={image} />
+            <img alt="hero" className="card-img-top" src={image} />
             <div className="card-body">
-                <h5 className="card-title">{ title }</h5>
-                <h6 className="card-subtitle mb-2">{ date }</h6>
+                <h1 className="fs-5 card-title">{ title }</h1>
+                <h2 className="fs-6 card-subtitle mb-2">{ date }</h2>
                 <p className="card-text">{ excerpt }</p>
-                <Link className="card-link btn btn-primary btn-small" to={slug}>Read more</Link>
+                <Link title={title} className="card-link btn btn-primary btn-small" to={slug}>Read more</Link>
             </div>
         </div>
     )
