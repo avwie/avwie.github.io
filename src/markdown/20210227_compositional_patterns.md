@@ -16,7 +16,7 @@ This post aims to show a few different methods of obtaining composition in **Kot
 
 Kotlin has language support for the [delegation pattern](https://kotlinlang.org/docs/delegation.html). I think it is best shown via some code examples. Let's stay in the theme of the game example above.
 
-### Defining the components
+## Defining the components
 First we need to describe the components we want to have, lets model these as `interfaces`:
 ```kotlin
 interface Health {
@@ -24,7 +24,6 @@ interface Health {
     val isDead: Boolean
 
     fun damage(amount: Int)
-    fun replenish(amount: Int)
 }
 
 interface Sprite {
@@ -65,14 +64,10 @@ interface Health {
     fun damage(amount: Int) {
         health -= amount
     }
-    
-    fun replenish(amount: Int) {
-        health += amount
-    }
 }
 ```
 
-### Creating the default implementations
+## Creating the default implementations
 
 We can now define default implementations for the interfaces, to be used later for the composition:
 ```kotlin
@@ -129,7 +124,7 @@ class DangerousImpl(override val damage: Int) : Dangerous {
 }
 ```
 
-### Composing classes
+## Composing classes
 
 Using the reference implementations we can now construct our classes using the delegation pattern. What we immediately notice is that the constructor becomes quite big. However, we can mitigate this by just defining methods on the `companion object` which makes the construction of a class easier, by using the reference implementations.
 
@@ -185,7 +180,7 @@ class VenomousPlant(spriteImpl: Sprite, positionImpl: PositionImpl, dangerousImp
 
 Okay, that was quite some code, but the implications are clear. We are constructing classes by combining reference implementations for the interfaces we want to implement by leveraging the Kotlin-specific `[interface] by [implementation]` keyword. Whats even more interesting is that we implement `Drawable` by specifying implementations for the `Sprite` and `Position` interfaces, even though `Orc` and `Player` both implement the `Position` interface again via the `Dynamics` interface.  
 
-### Constructing instances
+## Constructing instances
 
 It is now quite a breeze to instantiate classes:
 ```kotlin
@@ -214,6 +209,78 @@ entities.filterIsInstance<Drawable>().foreach { drawable ->
 }
 ```
 
-As can be seen the actual code becomes quite clear, _and_, the invariants are enforced by the compiler. It is impossible to have a `Player` attack a `Tree`. We can easily iterate over the cross-cutting concerns and process them in the case of `Dynamics` and `Drawable`.
+As can be seen the actual code becomes quite clear, _and_, the invariants are enforced by the compiler. It is impossible to have a `Player` attack a `Tree`. We can easily iterate over the cross-cutting concerns and process, which is shown in the cases of `Dynamics` and `Drawable`.
 
+## Extending the model
 
+One of the clear benefits of the compositional model is that it is pretty easy to extend it. Imagine there are some entities in the world that are edible and by eating you gain health. In the traditional inheritance tree one would add interface `Edible` at all the places this is required and implement those. However, we can easily extend it by creating a new `Interface`, building a reference implementation _and_ adding the reference implementation to the concrete classes which require those.
+
+```kotlin
+interface Edible {
+    val nutritionalValue: Int
+}
+
+// and we modify Health
+interface Health {
+    // ...
+    fun eat(edible: Edible) // this one is added
+}
+
+class EdibleImpl(override val nutritionalValue: Int): Edible
+
+class HealthImpl(initialHealth: Int): Health {
+    // ... 
+    // the eat function is implemented
+    override fun eat(edible: Edible) {
+        health += edible.nutritionalValue
+    }
+}
+
+class Potato(spriteImpl: Sprite, positionImpl: Position, edibleImpl: EdibleImpl):
+    Drawable, Sprite by spriteImpl, Position by positionImpl, Edible by edibleImpl {
+
+    companion object {
+        val sprite = SpriteImpl(ByteArray(0))
+        
+        fun new(nutritionalValue: Int, position: Pair<Double, Double>): Potato {
+            return Potato(sprite, PositionImpl(position), EdibleImpl(nutritionalValue))
+        }
+    }
+}
+
+// and using it is easy
+val food = Potato.new(10, 5.0 to 3.0)
+player.eat(food);
+```
+## Fun with extensions
+One of the cool features of Kotlin is the ability to add [extensions](https://kotlinlang.org/docs/extensions.html). This is a way to extend the behavior of certain types with extra functions or values without modifying the original code. 
+
+Imagine we want to have a Berserk function. When  `health <= 10` any player can go berserk and do double damage. This requires a class to implement both `Health` and `Dangerous`. To do this with extensions one can follow this approach.
+
+```kotlin
+// Can be in any file. Typically I place it in a subpackage called 'extensions' to keep it clean.
+val <T> T.isBerserk : Boolean where T : Health, T : Dangerous get() {
+    return this.health <= 10 && !this.isDead
+}
+
+fun <T> T.berserkAttack(enemy: Health) where T : Health, T : Dangerous {
+    if (this.isBerserk) {
+        enemy.damage(this.damage * 2)
+    } else {
+        enemy.damage(this.damage)
+    }
+}
+
+// and in your game code:
+val berserkPlayer = Player.new(name = "Almost dead", health = 7, position = 0.0 to 0.0, damage = 30)
+val unfortunateOrc = Orc.new(position = 5.0 to 0.0,  damage = 30)
+
+println(unfortunateOrc.health) // prints 150
+berserkPlayer.berserkAttack(unfortunateOrc)
+println(unfortunateOrc.health) // prints 90
+```
+
+## Conclusion
+This concludes my post on the composition pattern in Kotlin. I think this pattern has a lot of strengths compared to inheritance in certain situations. But, each has their own strenghts in their own situations.
+
+This was my first ever programming blogpost I have ever written, and thanks for reading it. If you have any questions or remarks, please reach out to me via Twitter or email. I'd love to get feedback.  

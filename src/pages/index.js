@@ -6,7 +6,7 @@ const PostItem = ({title, hero, date, excerpt, slug}) => {
     const image = hero.childImageSharp.fixed.src
 
     return (
-        <div className="card col-lg-4">
+        <div className="card col-12 col-lg-6 col-xl-4">
             <img  className="card-img-top" src={image} />
             <div className="card-body">
                 <h5 className="card-title">{ title }</h5>
@@ -64,7 +64,7 @@ const Main = () => {
             </div>
         </div>
         <h2 className="my-4">Latest posts</h2>
-        <div className="container d-flex px-0">
+        <div className="lg-container d-lg-flex px-0">
         { posts }
         </div>
     </>
