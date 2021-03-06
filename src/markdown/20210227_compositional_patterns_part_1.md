@@ -14,7 +14,11 @@ This post aims to show a few different methods of obtaining composition in **Kot
 
 ## The delegation pattern
 
-Kotlin has language support for the [delegation pattern](https://kotlinlang.org/docs/delegation.html). In short, it means that interfaces that a class wants to implement are actually implemented by an instance of another class that is part of the main class and the methods are _delegated_ to this other class. For the outsider it looks as if the class implements the interface like it should, however under the hood all calls are delegated to another. I think it is best shown via some code examples. Let's stay in the theme of the game example above.
+Kotlin has language support for the [delegation pattern](https://kotlinlang.org/docs/delegation.html). In short, it means that interfaces that a class wants to implement are actually implemented by an instance of another class that is part of the main class and the methods are _delegated_ to this other class. For the outsider it looks as if the class implements the interface like it should, however under the hood all calls are delegated to another. 
+
+An important aspect to note here is is that the composition all takes place during the definition of the classes. In other words, it is static, or compile-time, composition and as such it is not possible to compose entities during runtime. However, this will come in the next post.
+
+I think it is best shown via some code examples. Let's stay in the theme of the game example above.
 
 ## Defining the components
 First we need to describe the components we want to have, lets model these as `interfaces`:
@@ -364,6 +368,6 @@ This looks quite convoluted in order to create a simple instance of a class. How
 
 ## Conclusion
 
-This concludes Part 1 on Compositional Patterns in Kotlin. The next part will focus on *runtime* composition, whereas delegation is at compile-time, while still keeping type-safety _and_ without reflection. One of the ways to obtain that is to go to a *component-based architecture*. This is a first step to a different way of handling your domain model. As I said before, this is not always the best way, just like inheritance trees aren't, but it is _a_ way. Experiment and try and see where it fits your needs.
+This concludes Part 1 on Compositional Patterns in Kotlin. This is a compositional pattern that allows for compile-time, typesafe, composition of classes. The next part will focus on *runtime* composition, while still keeping type-safety _and_ without reflection. One of the ways to obtain that is to go to a *component-based architecture*. This is a first step to a different way of handling your domain model. As I said before, this is not always the best way, just like inheritance trees aren't, but it is _a_ way. Experiment and try and see where it fits your needs.
 
 This was my _first ever_ blog post I have written, and I thoroughly enjoyed it. However, by learning and making mistakes you improve. I am very interested in your critique, or questions. So contact me via [e-mail](mailto:info@avwie.nl), Twitter [@avwie](https://twitter.com/avwie), or at [my repository of the coding examples](https://github.com/avwie/kotlin-blog).

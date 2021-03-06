@@ -6,14 +6,16 @@ const PostItem = ({title, hero, date, excerpt, timeToRead, slug}) => {
     const image = hero.childImageSharp.fixed.src
 
     return (
-        <div className="card col-12 col-lg-6 col-xl-4">
-            <img alt="hero" className="card-img-top" src={image} />
-            <div className="card-body">
-                <h1 className="fs-5 card-title">{ title }</h1>
-                <h2 className="fs-6 card-subtitle mb-2">{ date }</h2>
-                <h2 className="fs-6 card-subtitle mb-2 text-secondary">Reading time: {timeToRead} minutes</h2>
-                <p className="card-text">{ excerpt }</p>
-                <Link title={title} className="card-link btn btn-primary btn-small" to={slug}>Read more</Link>
+        <div className="col-4">
+            <div className="card">
+                <img alt="hero" className="card-img-top" src={image} />
+                <div className="card-body">
+                    <h1 className="fs-5 card-title">{ title }</h1>
+                    <h2 className="fs-6 card-subtitle mb-2">{ date }</h2>
+                    <h2 className="fs-6 card-subtitle mb-2 text-secondary">Reading time: {timeToRead} minutes</h2>
+                    <p className="card-text">{ excerpt }</p>
+                    <Link title={title} className="card-link btn btn-primary btn-small" to={slug}>Read more</Link>
+                </div>
             </div>
         </div>
     )
@@ -23,7 +25,7 @@ const PostItem = ({title, hero, date, excerpt, timeToRead, slug}) => {
 const Main = () => {
     const query = useStaticQuery(graphql`
         {
-          allMarkdownRemark(sort: {order: DESC, fields: [frontmatter___date]}, limit: 1000) {
+          allMarkdownRemark(sort: {order: DESC, fields: [frontmatter___date]}, limit: 3) {
             edges {
               node {
                 frontmatter {
@@ -52,7 +54,7 @@ const Main = () => {
             excerpt: edge.node.excerpt,
             timeToRead: edge.node.timeToRead
         }
-        return <PostItem {...data} />
+        return <PostItem key={data.slug} {...data} />
     })
 
     return <>
@@ -68,8 +70,10 @@ const Main = () => {
             </div>
         </div>
         <h2 className="my-4">Latest posts</h2>
-        <div className="lg-container d-lg-flex px-0">
-        { posts }
+        <div className="lg-container">
+            <div className="row gx-3">
+                { posts }
+            </div>
         </div>
     </>
 }
