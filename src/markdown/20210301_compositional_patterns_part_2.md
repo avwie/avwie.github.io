@@ -1,6 +1,6 @@
 ---
 slug: "/compositional-patterns-in-kotlin-part-2-component-model"
-date: "2021-03-01"
+date: "2021-03-06"
 title: "Compositional Patterns in Kotlin Part 2 - Component Model"
 hero: "../images/20210301_compositional_patterns_part_2/hero.jpg"
 ---
@@ -182,3 +182,112 @@ entities.forEach { entity ->
     Entity 3 doesn't have the required components
 */ 
 ```
+
+## Components without reflection
+
+It isn't always possible to use reflection on the target platform, especially when working with Kotlin Multiplatform. Luckily Kotlin has a good typesystem and type-inference system which makes transforming the code above to a non-reflection variant pretty easy. It is clear we need some sort of typesafe key to store and retrieve our components. Let us define those as follows, including the rewritten `ComponentHolder`:
+
+```kotlin
+interface Key<C>
+
+interface HasKey<C> {
+    val key: Key<C>
+}
+
+interface ComponentHolder {
+    fun setComponent(component: HasKey<*>)
+    fun <C> getComponent(key: Key<C>): C?
+}
+
+class MapComponentHolder : ComponentHolder {
+    private val components = mutableMapOf<Key<*>, Any>()
+
+    override fun setComponent(component: HasKey<*>) {
+        components[component.key] = component
+    }
+
+    @Suppress("UNCHECKED_CAST")
+    override fun <C> getComponent(key: Key<C>): C? {
+        return components[key] as? C
+    }
+}
+```
+
+As can be seen, they are nearly identical, except for the `Key<C>` and `HasKey<C>` construct. We only need to define the keys for the components like this:
+
+```kotlin
+/* We keep Keys and Components in separate objects to avoid nameclashes */
+object Keys {
+    object Health : Key<Components.Health>
+    object Sprite : Key<Components.Sprite>
+    object Dynamics : Key<Components.Dynamics>
+}
+
+object Components {
+
+    class Health(initialAmount: Int) : HasKey<Health> {
+        override val key: Key<Health> = Keys.Health
+        /* rest is omitted, because it is identical */
+    }
+
+    class Sprite(val spriteData: ByteArray) : HasKey<Sprite> {
+        override val key: Key<Sprite> = Keys.Sprite
+    }
+
+    class Dynamics(
+        val mass: Double,
+        /* rest is omitted, because it is identical */
+    ) : HasKey<Dynamics> {
+        override val key: Key<Dynamics> = Keys.Dynamics
+        /* rest is omitted, because it is identical */
+    }
+}
+```
+
+And also here, it is nearly identical. As you can expect, the resulting code to actually use it is also nearly identical:
+```kotlin
+val player = Entity(Random.nextLong())
+player.setComponent(Components.Health(100))
+player.setComponent(Components.Dynamics(100.0, 5.0, 2.0))
+
+assertEquals(100, player.getComponent(Keys.Health)?.currentHealth)
+assertEquals(5.0 to 2.0, player.getComponent(Keys.Dynamics)?.position)
+```
+
+One of the big benefits of this approach is that you aren't tied to `objects` as keys. Why not use a class and have multiple components for the same component-type, but a different key? For example, a `Sprite` could be in the foreground, or in the background, but they can both be added to an `Entity`. One could solve that by having 2 types of sprites, or some sort of `SpriteSet` component. Those are all valid approaches, but below is another one:
+
+```kotlin
+enum class SpriteTypeEnum {
+    Background,
+    Foreground
+}
+
+object Keys {
+    // ...
+    // be sure to make Sprite a data class for automatic hashCode and equals implementations, needed for the map
+    data class Sprite(val type: SpriteTypeEnum) : Key<Components.Sprite> 
+    // ...
+}
+
+object Components {
+    // ...
+    class Sprite(val spriteData: ByteArray, val type: SpriteTypeEnum) : HasKey<Sprite> {
+        override val key: Key<Sprite> = Keys.Sprite(type)
+    }
+    // ...
+}
+
+// test code
+val world = Entity(Random.nextLong())
+world.setComponent(Components.Sprite("Foreground".encodeToByteArray(), SpriteTypeEnum.Foreground))
+world.setComponent(Components.Sprite("Background".encodeToByteArray(), SpriteTypeEnum.Background))
+
+assertEquals("Foreground", world.getComponent(Keys.Sprite(SpriteTypeEnum.Foreground))?.spriteData?.decodeToString())
+assertEquals("Background", world.getComponent(Keys.Sprite(SpriteTypeEnum.Background))?.spriteData?.decodeToString())
+```
+
+## Conclusion
+
+This concludes Part 2 on Compositional Patterns in Kotlin where we looked into a method with reflection, and a method without. Personally I'd favor the non-reflection version, since I'd like to keep my code as portable as possible without fixing myself to an underlying runtime, especially when a portable version is just as easy.
+
+This was my second blog post I have written, and I thoroughly enjoyed it. However, by learning and making mistakes you improve. I am very interested in your critique, or questions. So contact me via [e-mail](mailto:info@avwie.nl), Twitter [@avwie](https://twitter.com/avwie), or at [my repository of the coding examples](https://github.com/avwie/kotlin-blog).
