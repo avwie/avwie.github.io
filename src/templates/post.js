@@ -7,7 +7,7 @@ const Post = ({ data }) => {
     const content = data.markdown.html
 
     return (
-        <DefaultLayout>
+        <DefaultLayout title={title}>
             <h1 className="text-decoration-underline fs-1 py-2">{ title }</h1>
             <h4>{ date }</h4>
             <div className="markdown mb-4 fs-6 col-lg-9" dangerouslySetInnerHTML={{__html: content }} />

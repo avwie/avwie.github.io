@@ -1,9 +1,14 @@
 import * as React from "react"
+import {Helmet} from "react-helmet";
 
-const DefaultLayout = ({ children }) => {
+const DefaultLayout = ({ title, children }) => {
+    const actualTitle = "avwie's programming blog" + (title ? " - " + title : "")
 
     return (
         <>
+            <Helmet>
+                <title>{ actualTitle }</title>
+            </Helmet>
             <nav className="navbar navbar-dark bg-dark">
                 <div className="container-lg d-flex">
                     <span className="navbar-brand mt-2 mb-2 h1"><a className="text-decoration-none text-white" href="/">@avwie's programming blog</a></span>
