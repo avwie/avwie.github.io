@@ -7,6 +7,14 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: [
+          "G-YZ9NCTW594"
+        ]
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
@@ -20,6 +28,7 @@ module.exports = {
         path: `${__dirname}/src/markdown`,
       },
     },
+    `gatsby-plugin-image`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-sitemap`,
     `gatsby-transformer-sharp`,

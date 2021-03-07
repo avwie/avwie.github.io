@@ -2,7 +2,7 @@ import * as React from "react"
 import {graphql} from "gatsby";
 import DefaultLayout from "../layouts/default";
 
-export default ({ data }) => {
+const Post = ({ data }) => {
     const { title, date } = data.markdown.frontmatter
     const content = data.markdown.html
 
@@ -14,6 +14,8 @@ export default ({ data }) => {
         </DefaultLayout>
     )
 }
+
+export default Post;
 
 export const query = graphql`
 query($slug: String!) {

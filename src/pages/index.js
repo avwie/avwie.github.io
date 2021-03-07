@@ -1,14 +1,15 @@
 import * as React from "react"
 import DefaultLayout from "../layouts/default";
 import {graphql, Link, useStaticQuery} from "gatsby";
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const PostItem = ({title, hero, date, excerpt, timeToRead, slug}) => {
-    const image = hero.childImageSharp.fixed.src
+    const image = getImage(hero)
 
     return (
         <div className="col-4">
             <div className="card">
-                <img alt="hero" className="card-img-top" src={image} />
+                <GatsbyImage image={image} alt="hero" />
                 <div className="card-body">
                     <h1 className="fs-5 card-title">{ title }</h1>
                     <h2 className="fs-6 card-subtitle mb-2">{ date }</h2>
@@ -25,7 +26,10 @@ const PostItem = ({title, hero, date, excerpt, timeToRead, slug}) => {
 const Main = () => {
     const query = useStaticQuery(graphql`
         {
-          allMarkdownRemark(sort: {order: DESC, fields: [frontmatter___date]}, limit: 3) {
+          allMarkdownRemark(
+            sort: {order: DESC, fields: [frontmatter___date]}
+            limit: 1000
+          ) {
             edges {
               node {
                 frontmatter {
@@ -34,9 +38,7 @@ const Main = () => {
                   date(formatString: "DD-MMM yyyy")
                   hero {
                     childImageSharp {
-                      fixed(width: 430, height: 150) {
-                        src
-                      }
+                      gatsbyImageData(height: 150, width: 430, placeholder: BLURRED)
                     }
                   }
                 }
