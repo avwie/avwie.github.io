@@ -12,8 +12,6 @@ const DefaultLayout = ({ title, children }) => {
     }
     `)
 
-    console.log(commit)
-
     return (
         <>
             <Helmet>
