@@ -7,7 +7,7 @@ const PostItem = ({title, hero, date, excerpt, timeToRead, slug}) => {
     const image = getImage(hero)
 
     return (
-        <div className="col-4">
+        <div className="col-lg-4 col-md-6 col-sm-12 mb-sm-4">
             <div className="card">
                 <GatsbyImage image={image} alt="hero" />
                 <div className="card-body">

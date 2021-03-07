@@ -95,9 +95,6 @@ class MapComponentHolder : ComponentHolder {
         return components[type] as? C
     }
 }
-
-class Entity(val id: Long, private val components: ComponentHolder = MapComponentHolder()) :
-    ComponentHolder by components
 ```
 
 We create a `MapComponentHolder` which implements the `ComponentHolder` interface by storing the `KClass` of any component we save using `setComponent`, using the `::class` notation, in a map. In the retrieval phase you see that we can easily retrieve this component _and_ cast it to the right type `C`. Please note that we had to add the annotation `@Suppress("UNCHECKED_CAST")` to the function because the Kotlin compiler is unsure if the result from fetching the `KClass<C>` from the map is actually castable to `C`, since the only thing the compiler knows about it is that it will return a value of type `Component`, and not `C`. However, we can be pretty sure that it is `C` and therefore can cast it using the `as?` keyword. This means it will return `null` when it is not castable and `C` when succesful.
