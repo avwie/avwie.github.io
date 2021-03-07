@@ -28,6 +28,7 @@ module.exports = {
         path: `${__dirname}/src/markdown`,
       },
     },
+    `gatsby-source-local-git`,
     `gatsby-plugin-image`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-sitemap`,

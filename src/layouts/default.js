@@ -1,7 +1,18 @@
 import * as React from "react"
 import {Helmet} from "react-helmet";
+import {graphql, useStaticQuery} from "gatsby";
 
 const DefaultLayout = ({ title, children }) => {
+    const commit = useStaticQuery(graphql`
+    query {
+        gitCommit(latest: {eq: true}) {
+            date
+            hash
+        }
+    }
+    `)
+
+    console.log(commit)
 
     return (
         <>
@@ -28,6 +39,11 @@ const DefaultLayout = ({ title, children }) => {
             </nav>
             <div className="container-lg mt-4">
                 {children}
+            </div>
+            <div className="border-top border-light py-2">
+                <div className="container-lg text-muted fw-light text-center" style={{fontSize: "0.8em"}}>
+                    <small>Build { commit.gitCommit.hash.substr(0, 7) } - { commit.gitCommit.date }</small>
+                </div>
             </div>
         </>
     )
