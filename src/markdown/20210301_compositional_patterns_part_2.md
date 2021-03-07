@@ -246,7 +246,7 @@ One of the big benefits of this approach is that you aren't tied to `objects` as
 
 ```kotlin
 // make sure to make this a data-class for automatic generation of equals / hashCode for the map later
-data class VariableComponentKey<C, T>(val variable: T): ComponentKey<C>
+data class ParameterizedComponentKey<C, T>(val parameter: T): ComponentKey<C>
 
 enum class SpriteTypeEnum {
     Foreground,
