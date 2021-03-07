@@ -42,7 +42,7 @@ const Main = () => {
                     }
                   }
                 }
-                excerpt(format: MARKDOWN, pruneLength: 230)
+                excerpt(format: PLAIN, pruneLength: 230)
                 timeToRead
               }
             }
