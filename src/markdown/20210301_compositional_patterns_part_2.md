@@ -4,7 +4,7 @@ date: "2021-03-06"
 title: "Compositional Patterns in Kotlin Part 2 - Component Model"
 hero: "../images/20210301_compositional_patterns_part_2/hero.jpg"
 ---
-This is the second part of the post on compositional patterns in Kotlin and will focus on a dynamic, or runtime, composition. There are a few ways to obtain dynamic composition, all with their own advantages and drawbacks.
+This is the second part of the post on compositional patterns in Kotlin and will focus on a dynamic, or runtime, composition. In [Part 1](/compositional-patterns-in-kotlin-part-1-delegation) we focussed on static, or compile-time, composition. There are a few ways to obtain dynamic composition, all with their own advantages and drawbacks.
 
 ## Component Model
 
@@ -68,7 +68,7 @@ class Dynamics(
 }
 ```
 
-The components are almost identical to the ones in Part 1, with the exception that they all extend the `Component` interface.
+The components are almost identical to the ones in [Part 1](/compositional-patterns-in-kotlin-part-1-delegation), with the exception that they all extend the `Component` interface.
 
 It is now possible to define an interface for the way we want to set and retrieve components at runtime.
 
@@ -210,7 +210,7 @@ class MapComponentHolder : ComponentHolder {
 }
 ```
 
-As can be seen, they are nearly identical, except for the `Key<C>` and `HasKey<C>` construct. We only need to define the keys for the components like this:
+As can be seen, they are nearly identical, except for the `ComponentKey<C>` and the fact that `Component` now has a type parameter `C`. construct. We only need to define the keys for the components like this:
 
 ```kotlin
 class Health(initialAmount: Int) : Component<Health> {
@@ -257,7 +257,7 @@ class Sprite(val spriteData: ByteArray, val type: SpriteTypeEnum) : Component<Sp
     override val key = Key[type]
 
     object Key {
-        operator fun get(type: SpriteTypeEnum): ComponentKey<Sprite> = VariableComponentKey(type)
+        operator fun get(type: SpriteTypeEnum): ComponentKey<Sprite> = ParameterizedComponentKey(type)
     }
 }
 

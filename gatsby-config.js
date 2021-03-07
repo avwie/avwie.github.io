@@ -29,6 +29,7 @@ module.exports = {
       },
     },
     `gatsby-source-local-git`,
+    `gatsby-plugin-catch-links`,
     `gatsby-plugin-image`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-sitemap`,
