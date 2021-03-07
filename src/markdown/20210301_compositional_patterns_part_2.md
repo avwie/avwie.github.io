@@ -185,26 +185,26 @@ entities.forEach { entity ->
 It isn't always possible to use reflection on the target platform, especially when working with Kotlin Multiplatform. Luckily Kotlin has a good typesystem and type-inference system which makes transforming the code above to a non-reflection variant pretty easy. It is clear we need some sort of typesafe key to store and retrieve our components. Let us define those as follows, including the rewritten `ComponentHolder`:
 
 ```kotlin
-interface Key<C>
+interface ComponentKey<C>
 
-interface HasKey<C> {
-    val key: Key<C>
+interface Component<C> {
+    val key: ComponentKey<C>
 }
 
 interface ComponentHolder {
-    fun setComponent(component: HasKey<*>)
-    fun <C> getComponent(key: Key<C>): C?
+    fun setComponent(component: Component<*>)
+    fun <C> getComponent(key: ComponentKey<C>): C?
 }
 
 class MapComponentHolder : ComponentHolder {
-    private val components = mutableMapOf<Key<*>, Any>()
+    private val components = mutableMapOf<ComponentKey<*>, Any>()
 
-    override fun setComponent(component: HasKey<*>) {
+    override fun setComponent(component: Component<*>) {
         components[component.key] = component
     }
 
     @Suppress("UNCHECKED_CAST")
-    override fun <C> getComponent(key: Key<C>): C? {
+    override fun <C> getComponent(key: ComponentKey<C>): C? {
         return components[key] as? C
     }
 }
@@ -213,75 +213,64 @@ class MapComponentHolder : ComponentHolder {
 As can be seen, they are nearly identical, except for the `Key<C>` and `HasKey<C>` construct. We only need to define the keys for the components like this:
 
 ```kotlin
-/* We keep Keys and Components in separate objects to avoid nameclashes */
-object Keys {
-    object Health : Key<Components.Health>
-    object Sprite : Key<Components.Sprite>
-    object Dynamics : Key<Components.Dynamics>
+class Health(initialAmount: Int) : Component<Health> {
+    override val key = Key
+    
+    // ... identical
+
+    object Key : ComponentKey<Health>
 }
 
-object Components {
+class Dynamics(
+    // ... identical
+) : Component<Dynamics> {
+    override val key = Key
 
-    class Health(initialAmount: Int) : HasKey<Health> {
-        override val key: Key<Health> = Keys.Health
-        /* rest is omitted, because it is identical */
-    }
-
-    class Sprite(val spriteData: ByteArray) : HasKey<Sprite> {
-        override val key: Key<Sprite> = Keys.Sprite
-    }
-
-    class Dynamics(
-        val mass: Double,
-        /* rest is omitted, because it is identical */
-    ) : HasKey<Dynamics> {
-        override val key: Key<Dynamics> = Keys.Dynamics
-        /* rest is omitted, because it is identical */
-    }
+    // ... identical
+    
+    object Key : ComponentKey<Dynamics>
 }
 ```
 
 And also here, it is nearly identical. As you can expect, the resulting code to actually use it is also nearly identical:
 ```kotlin
 val player = Entity(Random.nextLong())
-player.setComponent(Components.Health(100))
-player.setComponent(Components.Dynamics(100.0, 5.0, 2.0))
+player.setComponent(Health(100))
+player.setComponent(Dynamics(100.0, 5.0, 2.0))
 
-assertEquals(100, player.getComponent(Keys.Health)?.currentHealth)
-assertEquals(5.0 to 2.0, player.getComponent(Keys.Dynamics)?.position)
+assertEquals(100, player.getComponent(Health.Key)?.currentHealth)
+assertEquals(5.0 to 2.0, player.getComponent(Dynamics.Key)?.position)
 ```
 
 One of the big benefits of this approach is that you aren't tied to `objects` as keys. Why not use a class and have multiple components for the same component-type, but a different key? For example, a `Sprite` could be in the foreground, or in the background, but they can both be added to an `Entity`. One could solve that by having 2 types of sprites, or some sort of `SpriteSet` component. Those are all valid approaches, but below is another one:
 
 ```kotlin
+// make sure to make this a data-class for automatic generation of equals / hashCode for the map later
+data class VariableComponentKey<C, T>(val variable: T): ComponentKey<C>
+
 enum class SpriteTypeEnum {
-    Background,
-    Foreground
+    Foreground,
+    Background;
 }
 
-object Keys {
-    // ...
-    // be sure to make Sprite a data class for automatic hashCode and equals implementations, needed for the map
-    data class Sprite(val type: SpriteTypeEnum) : Key<Components.Sprite> 
-    // ...
-}
+class Sprite(val spriteData: ByteArray, val type: SpriteTypeEnum) : Component<Sprite> {
+    override val key = Key[type]
 
-object Components {
-    // ...
-    class Sprite(val spriteData: ByteArray, val type: SpriteTypeEnum) : HasKey<Sprite> {
-        override val key: Key<Sprite> = Keys.Sprite(type)
+    object Key {
+        operator fun get(type: SpriteTypeEnum): ComponentKey<Sprite> = VariableComponentKey(type)
     }
-    // ...
 }
 
 // test code
 val world = Entity(Random.nextLong())
-world.setComponent(Components.Sprite("Foreground".encodeToByteArray(), SpriteTypeEnum.Foreground))
-world.setComponent(Components.Sprite("Background".encodeToByteArray(), SpriteTypeEnum.Background))
+world.setComponent(Sprite("Foreground".encodeToByteArray(), SpriteTypeEnum.Foreground))
+world.setComponent(Sprite("Background".encodeToByteArray(), SpriteTypeEnum.Background))
 
-assertEquals("Foreground", world.getComponent(Keys.Sprite(SpriteTypeEnum.Foreground))?.spriteData?.decodeToString())
-assertEquals("Background", world.getComponent(Keys.Sprite(SpriteTypeEnum.Background))?.spriteData?.decodeToString())
+assertEquals("Foreground", world.getComponent(Sprite.Key[SpriteTypeEnum.Foreground])?.spriteData?.decodeToString())
+assertEquals("Background", world.getComponent(Sprite.Key[SpriteTypeEnum.Background])?.spriteData?.decodeToString())
 ```
+
+We generate a new kind of `ComponentKey` here which takes a parameter to distinguish it. Using an operator function on the `Key` object we are able to generate `ComponentKey<Sprite>`'s on demand, based on the `SpriteTypeEnum`. So now we have a parameterized, typesafe method of dynamically adding components to an existing object.
 
 ## Conclusion
 

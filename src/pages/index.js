@@ -7,7 +7,7 @@ const PostItem = ({title, hero, date, excerpt, timeToRead, slug}) => {
     const image = getImage(hero)
 
     return (
-        <div className="col-lg-4 col-md-6 col-sm-12 mb-sm-4">
+        <div className="mb-3 px-0 px-sm-2 col-lg-4 col-md-6 col-12">
             <div className="card">
                 <GatsbyImage image={image} alt="hero" />
                 <div className="card-body">
@@ -62,7 +62,7 @@ const Main = () => {
     return <>
         <h1 className="text-decoration-underline fs-1 py-2">Hi, welcome to my programming blog.</h1>
         <div className="fs-4 bg-light rounded p-2">
-            <div className="col-xl-8">
+            <div className="col-xl-8 col-12">
                     I am an engineer that turned software developer.
                     I enjoy technical challenges and experimenting with techniques and architectures.
                     Some are used successfully in production and some are complete failures. However, all experiments are a
