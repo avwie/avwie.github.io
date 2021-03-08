@@ -11,7 +11,7 @@ const PostItem = ({title, hero, date, excerpt, timeToRead, slug}) => {
             <div className="card">
                 <GatsbyImage image={image} alt="hero" />
                 <div className="card-body">
-                    <h1 className="fs-5 card-title">{ title }</h1>
+                    <Link className="fs-5 card-title mb-2 d-block" title={title} to={slug}>{ title }</Link>
                     <h2 className="fs-6 card-subtitle mb-2">{ date }</h2>
                     <h2 className="fs-6 card-subtitle mb-2 text-secondary">Reading time: {timeToRead} minutes</h2>
                     <p className="card-text">{ excerpt }</p>
