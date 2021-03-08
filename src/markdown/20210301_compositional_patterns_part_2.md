@@ -1,6 +1,6 @@
 ---
 slug: "/compositional-patterns-in-kotlin-part-2-component-model"
-date: "2021-03-06"
+date: "2021-03-07"
 title: "Compositional Patterns in Kotlin Part 2 - Component Model"
 hero: "../images/20210301_compositional_patterns_part_2/hero.jpg"
 ---
@@ -187,19 +187,19 @@ It isn't always possible to use reflection on the target platform, especially wh
 ```kotlin
 interface ComponentKey<C>
 
-interface Component<C> {
-    val key: ComponentKey<C>
+interface Component {
+    val key: ComponentKey<*>
 }
 
 interface ComponentHolder {
-    fun setComponent(component: Component<*>)
+    fun setComponent(component: Component)
     fun <C> getComponent(key: ComponentKey<C>): C?
 }
 
 class MapComponentHolder : ComponentHolder {
     private val components = mutableMapOf<ComponentKey<*>, Any>()
 
-    override fun setComponent(component: Component<*>) {
+    override fun setComponent(component: Component) {
         components[component.key] = component
     }
 
@@ -210,10 +210,10 @@ class MapComponentHolder : ComponentHolder {
 }
 ```
 
-As can be seen, they are nearly identical, except for the `ComponentKey<C>` and the fact that `Component` now has a type parameter `C`. construct. We only need to define the keys for the components like this:
+As can be seen, they are nearly identical, except for the `ComponentKey<C>` and the fact that `Component` now has a `val key : ComponentKey<*>`. We only need to define the keys for the components like this:
 
 ```kotlin
-class Health(initialAmount: Int) : Component<Health> {
+class Health(initialAmount: Int) : Component {
     override val key = Key
     
     // ... identical
@@ -223,7 +223,7 @@ class Health(initialAmount: Int) : Component<Health> {
 
 class Dynamics(
     // ... identical
-) : Component<Dynamics> {
+) : Component {
     override val key = Key
 
     // ... identical
@@ -246,14 +246,14 @@ One of the big benefits of this approach is that you aren't tied to `objects` as
 
 ```kotlin
 // make sure to make this a data-class for automatic generation of equals / hashCode for the map later
-data class ParameterizedComponentKey<C, T>(val parameter: T): ComponentKey<C>
+data class ParameterizedComponentKey<P, C>(val parameter: P): ComponentKey<C>
 
 enum class SpriteTypeEnum {
     Foreground,
     Background;
 }
 
-class Sprite(val spriteData: ByteArray, val type: SpriteTypeEnum) : Component<Sprite> {
+class Sprite(val spriteData: ByteArray, val type: SpriteTypeEnum) : Component {
     override val key = Key[type]
 
     object Key {
@@ -271,6 +271,32 @@ assertEquals("Background", world.getComponent(Sprite.Key[SpriteTypeEnum.Backgrou
 ```
 
 We generate a new kind of `ComponentKey` here which takes a parameter to distinguish it. Using an operator function on the `Key` object we are able to generate `ComponentKey<Sprite>`'s on demand, based on the `SpriteTypeEnum`. So now we have a parameterized, typesafe method of dynamically adding components to an existing object.
+
+## Improving the API by using extension methods
+Since we've defined our Component API using the interface `ComponentHolder`, it is very trivial to improve the API of _any_ instance of `ComponentHolder` by creating some convenient extension functions. They will work regardless of the implementation (`MapComponentHolder` in this case):
+
+```kotlin
+operator fun <C> ComponentHolder.get(key: ComponentKey<C>): C? = this.getComponent(key)
+
+fun <C> ComponentHolder.getOrElse(key: ComponentKey<C>, block: () -> C) = this.getComponent(key) ?: block()
+
+operator fun ComponentHolder.plusAssign(component: Component) = this.setComponent(component)
+```
+
+What this does is making the setting and getting of components a tiny bit less verbose:
+
+```kotlin
+val player = Entity(Random.nextLong())
+player += Health(100)
+player += Sprite(ByteArray(0), SpriteTypeEnum.Foreground)
+
+val position = player.getOrElse(Dynamics.Key) { Dynamics(100.0, 0.0, 0.0) }
+
+assertEquals(100, player[Health.Key]?.currentHealth)
+assertEquals(0.0, position.position.first)
+```
+
+Hopefully this tiny example shows that if you set up your code using interfaces you can improve upon your API with extensions, without modifying any of the underlying interfaces or implementations.
 
 ## Conclusion
 
