@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;700&display=swap');
-@import "../../node_modules/prismjs/themes/prism.css";
+//@import "../../node_modules/prismjs/themes/prism-okaidia.css";
+@import "./prismjs/darcula.scss";
 
 body {
   font-family: 'Source Sans Pro', sans-serif;
@@ -19,6 +20,16 @@ body {
   }
 
   code {
-    font-size: 0.8em !important;
+    font-size: 0.9em !important;
+  }
+
+  pre[class*="language-"] {
+    border-radius: 0.5em;
+  }
+
+  p code {
+    background-color: revert;
+    color: revert;
+    text-shadow: revert;
   }
 }
