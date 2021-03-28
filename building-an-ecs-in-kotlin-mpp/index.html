@@ -142,10 +142,6 @@
         <span class="token function">require</span><span class="token punctuation">(</span>casted <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token string">"Component <span class="token interpolation variable">$component</span> is not of type expected by <span class="token interpolation variable">$key</span>"</span><span class="token punctuation">}</span>
         <span class="token keyword">return</span> casted
     <span class="token punctuation">}</span>
-
-    <span class="token keyword">companion</span> <span class="token keyword">object</span> <span class="token punctuation">{</span>
-        <span class="token keyword">fun</span> <span class="token function">default</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Backend<span class="token operator">&lt;</span>Int<span class="token operator">></span> <span class="token operator">=</span> <span class="token function">HashMapBackend</span><span class="token punctuation">(</span><span class="token function">IntGenerator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> strict <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">)</span>
-    <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre></div>
 <p>I added a <code class="language-text">strict</code> mode to check if entities exist or components are available. However, I found out this affects the performance, of this implementation, quite a lot. This makes sense of course, because of all the extra lookups that need to be performed. Nevertheless, it is a good starting point.</p>
 <h2 id="bouncing-balls-in-kotlinjs">Bouncing balls in Kotlin/JS</h2>
@@ -211,7 +207,7 @@
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre></div>
 <p>This is pretty simple. It requires an entity with <code class="language-text">Dynamics</code> and applies a vertical gravitational force.</p>
-<p>More interesting is the <code class="language-text">SpawnAndDestorySystem</code>:</p>
+<p>More interesting is the <code class="language-text">SpawnAndDestroySystem</code>:</p>
 <div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token keyword">class</span> <span class="token function">SpawnAndDestroySystem</span><span class="token punctuation">(</span>
     <span class="token keyword">val</span> bounds<span class="token operator">:</span> Rectangle<span class="token operator">&lt;</span>Double<span class="token operator">></span><span class="token punctuation">,</span>
     <span class="token keyword">val</span> spawnTotal<span class="token operator">:</span> Int<span class="token punctuation">,</span>
@@ -291,7 +287,7 @@
 
 <span class="token keyword">class</span> <span class="token function">BouncingBalls</span><span class="token punctuation">(</span>ctx<span class="token operator">:</span> CanvasRenderingContext2D<span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
-    <span class="token keyword">val</span> backend <span class="token operator">=</span> <span class="token function">HashMapBackend</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">val</span> backend <span class="token operator">=</span> <span class="token function">HashMapBackend</span><span class="token punctuation">(</span>UUIDGenerator<span class="token punctuation">)</span>
     <span class="token keyword">val</span> dynamicsSystem <span class="token operator">=</span> <span class="token function">DynamicsSystem</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
     <span class="token keyword">val</span> gravitySystem <span class="token operator">=</span> <span class="token function">GravitySystem</span><span class="token punctuation">(</span><span class="token number">300.0</span><span class="token punctuation">)</span>
     <span class="token keyword">val</span> floorSystem <span class="token operator">=</span> <span class="token function">FloorSystem</span><span class="token punctuation">(</span>ctx<span class="token punctuation">.</span>canvas<span class="token punctuation">.</span>height<span class="token punctuation">.</span><span class="token function">toDouble</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
