@@ -9,6 +9,7 @@ const PostItem = ({title, hero, date, excerpt, timeToRead, slug}) => {
     return (
         <div className="mb-3 px-0 px-sm-2 col-lg-4 col-md-6 col-12">
             <div className="card">
+                <GatsbyImage image={image} alt="hero" />
                 <div className="card-body">
                     <Link className="fs-5 card-title mb-2 d-block" title={title} to={slug}>{ title }</Link>
                     <h2 className="fs-6 card-subtitle mb-2">{ date }</h2>
@@ -37,7 +38,7 @@ const Main = () => {
                   date(formatString: "DD-MMM yyyy")
                   hero {
                     childImageSharp {
-                      gatsbyImageData(height: 150, width: 430)
+                      gatsbyImageData(height: 150, width: 430, placeholder: BLURRED)
                     }
                   }
                 }
