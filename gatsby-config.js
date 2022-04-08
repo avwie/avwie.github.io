@@ -55,6 +55,7 @@ module.exports = {
               maxWidth: 900,
             },
           },
+          'gatsby-remark-static-images'
         ],
       },
     },

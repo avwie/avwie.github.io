@@ -61,7 +61,7 @@ const Main = () => {
 
     return <>
         <h1 className="text-decoration-underline fs-1 py-2">Hi, welcome to my programming blog.</h1>
-        <div className="fs-4 bg-light rounded p-2">
+        <div className="fs-6 bg-light rounded p-2">
             <div className="col-xl-8 col-12">
                     I am an engineer that turned software developer.
                     I enjoy technical challenges and experimenting with techniques and architectures.
