@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack://rj-coding-blog/./src/pages/404.js"],"names":[],"mappings":"0IAQA,UANqB,WACnB,OACE","file":"component---src-pages-404-js-6e8ec24cc845245c39e4.js","sourcesContent":["import * as React from \"react\"\n\nconst NotFoundPage = () => {\n  return (\n    <main>Not found</main>\n  )\n}\n\nexport default NotFoundPage\n"],"sourceRoot":""}
