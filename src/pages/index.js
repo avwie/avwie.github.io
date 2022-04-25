@@ -67,7 +67,7 @@ const Main = () => {
                     I enjoy technical challenges and experimenting with techniques and architectures.
                     Some are used successfully in production and some are complete failures. However, all experiments are a
                     way of learning. By posting articles about my experiments I hope that others learn from me, but also that
-                    I can learn from others. Also, it serves a more mindful approach where, by writing it down, I am forces
+                    I can learn from others. Also, it serves a more mindful approach where, by writing it down, I am forced
                     to structure my thoughts.
             </div>
         </div>
