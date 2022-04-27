@@ -238,7 +238,12 @@ class Render<T> {
             val updatedChild = updated.childNodes.getOrNull(i)
             updateChild(current.container, mountedChild, updatedChild)
         }
-        return current.copy(childNodes = mountedChildren)
+        return current.copy(
+            node = current.node.copy(
+                childNodes = mountedChildren.map { it.node }
+            ),
+            childNodes = mountedChildren
+        )
     }
 }
 ```
