@@ -5,7 +5,7 @@ title: "Creating an MVI architecture in Compose Multiplatform"
 hero: "../images/20220530_mvi_compose/hero.png"
 ---
 
-Recently I've gotten very interested in Jetpack Compose. I mistakenly thought it was _just_ a way to have a way of declaratively building a UI and having it automatically updated in some clever way. Much like [my own virtual DOM implementation](/virtual-dom-in-kotlin) but more sophisticated. However, I couldn't have been more wrong. It is an extremely advanced reactive and declarative tree-management runtime which takes full advantage of coroutines and other advanced Kotlin features. It is an extremely ambitious project by the Google and Kotlin teams. The Snapshot system is very intriguing way to solve state and I can highly recommend reading [this series on how Compose handles state](https://dev.to/zachklipp/series/12895), an amazing high quality set of blog posts.
+Recently I've gotten very interested in Jetpack Compose. I mistakenly thought it was _just_ a way of declaratively building a UI and having it automatically updated in some clever way. Much like [my own virtual DOM implementation](/virtual-dom-in-kotlin) but more sophisticated. However, I couldn't have been more wrong. It is an extremely advanced reactive and declarative tree-management runtime which takes full advantage of coroutines and other advanced Kotlin features. It is an extremely ambitious project by the Google and Kotlin teams. The Snapshot system is very intriguing way to solve state and I can highly recommend reading [this series on how Compose handles state](https://dev.to/zachklipp/series/12895), an amazing high quality set of blog posts.
 
 There are a multitude of ways of handling your state in a UI built with Compose and [the documentation is pretty clear about it](https://developer.android.com/jetpack/compose/state). However, lately I am also very interested in a Model-View-Intent (or Model-View-Update for Elm people, please correct me if I am wrong) architecture. And this blog post serves as a way of describing how I built something simple like this in Kotlin Multiplatform with Jetpack Compose. People who know Redux-like systems will notice some obvious similarities.
 
@@ -155,7 +155,7 @@ private val effectHandler = EffectHandler<String, Action, Effect> { _, effect, d
 }
 ```
 
-Finally we test everything with the [`runTest`](https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-test/kotlinx.coroutines.test/run-test.html) function. This takes care of the heavy lifting and does some fancy pancy things with delays. It is important to read the documentation about it.
+Finally we test everything with the [`runTest`](https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-test/kotlinx.coroutines.test/run-test.html) function. This takes care of the heavy lifting and does some fancy pantsy things with delays. It is important to read the documentation about it.
 ```kotlin
 @Test
 fun testActionsAndEffect() = runTest {
