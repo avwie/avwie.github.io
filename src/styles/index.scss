@@ -1,40 +1,60 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap');
-//@import "../../node_modules/prismjs/themes/prism-okaidia.css";
-
-@import "./prismjs/darcula.scss";
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap');
 
 body {
  font-family: 'Noto Serif', serif;
  font-size: 11pt;
+
+  @import "./prismjs/solarized";
+
+  .markdown {
+    h1, h2 {
+      text-decoration: underline;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1em;
+    }
+
+    strong {
+      text-decoration: underline;
+    }
+
+    code {
+      font-size: 0.9em !important;
+    }
+
+    code[class*=language-],
+    pre[class*=language-] {
+      font-size: 0.95em;
+      font-family: 'Fira Code', monospace;
+      border-radius: 0.5em;
+    }
+  }
 }
 
-.markdown {
-  h1, h2 {
-    text-decoration: underline;
+body.dark {
+  @import "./prismjs/darcula";
+
+  color: #ccc;
+
+  a {
+    color: #6c96d6;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    margin-top: 1em;
+  background-color: #1b1e23!important;
+
+  .card, .bg-light {
+    background-color: #333842!important;
   }
 
-  strong {
-    text-decoration: underline;
+  .btn-primary {
+    background-color: #1b1e23;
+    border-color: #1b1e23;
   }
 
-  code {
-    font-size: 0.9em !important;
-  }
-
-  pre[class*="language-"] {
-    border-radius: 0.5em;
-  }
-
-  p, ul, ol {
-    &  code {
-      background-color: revert;
-      color: revert;
-      text-shadow: revert;
-    }
+  .border-light {
+    border-color: #333842 !important;
   }
 }

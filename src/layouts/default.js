@@ -1,6 +1,7 @@
 import * as React from "react"
 import {Helmet} from "react-helmet";
 import {graphql, useStaticQuery} from "gatsby";
+import { ThemeToggler } from 'gatsby-plugin-dark-mode'
 
 const DefaultLayout = ({ title, children }) => {
     const commit = useStaticQuery(graphql`
@@ -32,6 +33,13 @@ const DefaultLayout = ({ title, children }) => {
                            rel="noreferrer">
                             <img alt="Twitter" width="24" height="24" src="/layout/twitter-48.png"/>
                         </a>
+                        <ThemeToggler>
+                        {({ theme, toggleTheme }) => (
+                            <span className="px-2" onClick={e => toggleTheme(theme === "light" ? 'dark' : 'light')}>
+                             <img alt={ theme === "dark" ? "light mode" : "dark-mode"} width="24" height="24" src={ theme === "dark" ? "/layout/light-mode-48.png" : "/layout/dark-mode-48.png"}/>
+                            </span>
+                        )}
+                        </ThemeToggler>
                     </div>
                 </div>
             </nav>
