@@ -25,6 +25,19 @@ body {
       font-size: 0.9em !important;
     }
 
+    blockquote {
+      background-color: #eee;
+      border-radius: 0.5em;
+      padding: 1em;
+      font-style: italic;
+      font-size: 0.9em;
+      color: #555;
+
+      p {
+        margin: 0;
+      }
+    }
+
     code[class*=language-],
     pre[class*=language-] {
       font-size: 0.95em;
@@ -56,5 +69,10 @@ body.dark {
 
   .border-light {
     border-color: #333842 !important;
+  }
+
+  blockquote {
+    background-color: #333440;
+    color: #aaa;
   }
 }
