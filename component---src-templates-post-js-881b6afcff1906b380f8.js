@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkrj_coding_blog=self.webpackChunkrj_coding_blog||[]).push([[851],{9857:function(e,t,n){n.r(t);var a=n(7294),l=n(4969);t.default=function(e){var t=e.data,n=t.markdown.frontmatter,r=n.title,c=n.date,o=t.markdown.html;return a.createElement(l.Z,{title:r},a.createElement("h1",{className:"text-decoration-underline fs-1 py-2"},r),a.createElement("h4",null,c),a.createElement("div",{className:"markdown mb-4 fs-6 col-lg-9",dangerouslySetInnerHTML:{__html:o}}))}}}]);
-//# sourceMappingURL=component---src-templates-post-js-881b6afcff1906b380f8.js.map

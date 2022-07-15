@@ -1,0 +1,834 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="description" content="This is my programming blog where I write articles about experiments that I&#x27;ve done. Some are successful, some are not, but we learn from all."/><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous"/><title>avwie&#x27;s programming blog</title><style data-href="/styles.5d6215c609f801500957.css" data-identity="gatsby-global-css">@import url(https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,700&display=swap);@import url(https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap);body{font-family:Open Sans,sans-serif;font-size:11pt}body code[class*=language-],body pre[class*=language-]{word-wrap:normal;color:#657b83;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none;line-height:1.5;-o-tab-size:4;tab-size:4;text-align:left;white-space:pre;word-break:normal;word-spacing:normal}body code[class*=language-] ::selection,body code[class*=language-]::selection,body pre[class*=language-] ::selection,body pre[class*=language-]::selection{background:#073642}body pre[class*=language-]{border-radius:.3em;margin:.5em 0;overflow:auto;padding:1em}body :not(pre)>code[class*=language-],body pre[class*=language-]{background-color:#fdf6e3}body :not(pre)>code[class*=language-]{border-radius:.3em;padding:.1em}body .token.cdata,body .token.comment,body .token.doctype,body .token.prolog{color:#93a1a1}body .token.punctuation{color:#586e75}body .token.namespace{opacity:.7}body .token.boolean,body .token.constant,body .token.deleted,body .token.number,body .token.property,body .token.symbol,body .token.tag{color:#268bd2}body .token.attr-name,body .token.builtin,body .token.char,body .token.inserted,body .token.selector,body .token.string,body .token.url{color:#2aa198}body .token.entity{background:#eee8d5;color:#657b83}body .token.atrule,body .token.attr-value,body .token.keyword{color:#859900}body .token.class-name,body .token.function{color:#b58900}body .token.important,body .token.regex,body .token.variable{color:#cb4b16}body .token.bold,body .token.important{font-weight:700}body .token.italic{font-style:italic}body .token.entity{cursor:help}body .markdown h1,body .markdown h2{text-decoration:underline}body .markdown h1,body .markdown h2,body .markdown h3,body .markdown h4,body .markdown h5,body .markdown h6{margin-top:1em}body .markdown strong{text-decoration:underline}body .markdown code{font-size:.9em!important}body .markdown blockquote{background-color:#eee;border-radius:.5em;color:#555;font-size:.9em;font-style:italic;padding:1em}body .markdown blockquote p{margin:0}body .markdown code[class*=language-],body .markdown pre[class*=language-]{border-radius:.5em;font-family:Fira Code,monospace;font-size:.95em}body.dark{@import"https://fonts.googleapis.com/css2?family=Fira+Code&display=swap";background-color:#1b1e23!important;color:#ccc}body.dark code[class*=language-],body.dark pre[class*=language-]{color:#a9b7c6;direction:ltr;font-family:Fira Code,monospace;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none;line-height:1.5;-o-tab-size:4;tab-size:4;text-align:left;white-space:pre;word-break:normal;word-spacing:normal}body.dark code[class*=language-] ::selection,body.dark code[class*=language-]::selection,body.dark pre[class*=language-] ::selection,body.dark pre[class*=language-]::selection{background:rgba(33,66,131,.85);color:inherit}body.dark pre[class*=language-]{margin:.5em 0;overflow:auto;padding:1em}body.dark :not(pre)>code[class*=language-],body.dark pre[class*=language-]{background:#2b2b2b}body.dark :not(pre)>code[class*=language-]{border-radius:.3em;padding:.1em}body.dark .token.cdata,body.dark .token.comment,body.dark .token.prolog{color:gray}body.dark .token.atrule,body.dark .token.boolean,body.dark .token.delimiter,body.dark .token.important,body.dark .token.keyword,body.dark .token.selector{color:#cc7832}body.dark .token.attr-name,body.dark .token.operator,body.dark .token.punctuation{color:#a9b7c6}body.dark .token.builtin,body.dark .token.doctype,body.dark .token.tag,body.dark .token.tag .punctuation{color:#e8bf6a}body.dark .token.entity,body.dark .token.number,body.dark .token.symbol{color:#6897bb}body.dark .token.constant,body.dark .token.property,body.dark .token.variable{color:#9876aa}body.dark .token.char,body.dark .token.string{color:#6a8759}body.dark .token.attr-value,body.dark .token.attr-value .punctuation{color:#a5c261}body.dark .token.attr-value .punctuation:first-child{color:#a9b7c6}body.dark .token.url{color:#287bde;text-decoration:underline}body.dark .token.function{color:#ffc66d}body.dark .token.regex{background:#364135}body.dark .token.bold{font-weight:700}body.dark .token.italic{font-style:italic}body.dark .token.inserted{background:#294436}body.dark .token.deleted{background:#484a4a}body.dark code.language-css .token.property,body.dark code.language-css .token.property+.token.punctuation{color:#a9b7c6}body.dark code.language-css .token.id,body.dark code.language-css .token.selector>.token.attribute,body.dark code.language-css .token.selector>.token.class,body.dark code.language-css .token.selector>.token.pseudo-class,body.dark code.language-css .token.selector>.token.pseudo-element{color:#ffc66d}body.dark a{color:#6c96d6}body.dark .bg-light,body.dark .card{background-color:#333842!important}body.dark .btn-primary{background-color:#1b1e23;border-color:#1b1e23}body.dark .border-light{border-color:#333842!important}body.dark blockquote{background-color:#333440;color:#aaa}</style><meta name="generator" content="Gatsby 3.14.6"/><link rel="preconnect" href="https://www.googletagmanager.com"/><link rel="dns-prefetch" href="https://www.googletagmanager.com"/><style>.gatsby-image-wrapper{position:relative;overflow:hidden}.gatsby-image-wrapper picture.object-fit-polyfill{position:static!important}.gatsby-image-wrapper img{bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover}.gatsby-image-wrapper [data-main-image]{opacity:0;transform:translateZ(0);transition:opacity .25s linear;will-change:opacity}.gatsby-image-wrapper-constrained{display:inline-block;vertical-align:top}</style><noscript><style>.gatsby-image-wrapper noscript [data-main-image]{opacity:1!important}.gatsby-image-wrapper [data-placeholder-image]{opacity:0!important}</style></noscript><script type="module">const e="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;e&&document.body.addEventListener("load",(function(e){if(void 0===e.target.dataset.mainImage)return;if(void 0===e.target.dataset.gatsbyImageSsr)return;const t=e.target;let a=null,n=t;for(;null===a&&n;)void 0!==n.parentNode.dataset.gatsbyImageWrapper&&(a=n.parentNode),n=n.parentNode;const o=a.querySelector("[data-placeholder-image]"),r=new Image;r.src=t.currentSrc,r.decode().catch((()=>{})).then((()=>{t.style.opacity=1,o&&(o.style.opacity=0,o.style.transition="opacity 500ms linear")}))}),!0);</script><link rel="sitemap" type="application/xml" href="/sitemap.xml"/><script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var hash = window.decodeURI(location.hash.replace('#', ''))
+      if (hash !== '') {
+        var element = document.getElementById(hash)
+        if (element) {
+          var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+          var clientTop = document.documentElement.clientTop || document.body.clientTop || 0
+          var offset = element.getBoundingClientRect().top + scrollTop - clientTop
+          // Wait for the browser to finish rendering before scrolling.
+          setTimeout((function() {
+            window.scrollTo(0, offset - 0)
+          }), 0)
+        }
+      }
+    })
+  </script><link rel="alternate" type="application/rss+xml" title="avwie&#x27;s programming blog" href="/rss.xml"/><link as="script" rel="preload" href="/webpack-runtime-6cabe82dbe926f03ac24.js"/><link as="script" rel="preload" href="/framework-a24df75546761fdaa7be.js"/><link as="script" rel="preload" href="/app-9887230afd096a67a0dc.js"/><link as="script" rel="preload" href="/291a736a4998dc6bb1e7dae6dfd245355445eafd-20bea7f0f0f45d234f8d.js"/><link as="script" rel="preload" href="/component---src-templates-post-js-879d5dcd14113f37530a.js"/><link as="fetch" rel="preload" href="/page-data/creating-multiplatform-crdts/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/3406609010.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><script>
+void function() {
+  window.__onThemeChange = function() {}
+
+  var preferredTheme
+  try {
+    preferredTheme = localStorage.getItem('theme')
+  } catch (err) { }
+
+  function setTheme(newTheme) {
+    if (preferredTheme && document.body.classList.contains(preferredTheme)) {
+      document.body.classList.replace(preferredTheme, newTheme)
+    } else {
+      document.body.classList.add(newTheme)
+    }
+
+    window.__theme = newTheme
+    preferredTheme = newTheme
+    window.__onThemeChange(newTheme)
+  }
+
+  window.__setPreferredTheme = function(newTheme) {
+    setTheme(newTheme)
+    try {
+      localStorage.setItem('theme', newTheme)
+    } catch (err) {}
+  }
+
+  var darkQuery = window.matchMedia('(prefers-color-scheme: dark)')
+  darkQuery.addListener(function(e) {
+    window.__setPreferredTheme(e.matches ? 'dark' : 'light')
+  })
+
+  setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'))
+}()
+    </script><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><nav class="navbar navbar-dark bg-dark"><div class="container-lg d-flex"><span class="navbar-brand mt-2 mb-2 h1"><a class="text-decoration-none text-white" href="/">@avwie&#x27;s programming blog</a></span><div class="text-light mx-3"><a class="px-2" title="Github" href="https://github.com/avwie" target="_blank" rel="noreferrer"><img alt="Github" width="24" height="24" src="/layout/github-48.png"/></a><a class="px-2" title="Mail" href="mailto:info@avwie.nl" target="_blank" rel="noreferrer"><img alt="Mail" width="24" height="24" src="/layout/mail-48.png"/></a><a class="px-2" title="Twitter" href="https://twitter.com/avwie" target="_blank" rel="noreferrer"><img alt="Twitter" width="24" height="24" src="/layout/twitter-48.png"/></a><span class="px-2"><img alt="dark-mode" width="24" height="24" src="/layout/dark-mode-48.png"/></span></div></div></nav><div class="container-lg mt-4"><h1 class="text-decoration-underline fs-1 py-2">Creating multiplatform Conflict Free Replicated Data Types in Kotlin Multiplatform</h1><h4>15 Jul, 2022</h4><div class="markdown mb-4 col-lg-9"><p>Sometime ago I was tinkering with some application that required state to be synchronized across different 'nodes'.
+In a previous job we already used something similar and I knew it was based on the idea of Conflict-Free Replicated
+Data Types, however now I felt it was time to dive a little bit more into it and see if I can make something that would
+work in a Kotlin Multiplatform environment.</p>
+<h2 id="why-should-i-care-about-conflict-free-replicated-data-types">Why should I care about Conflict Free Replicated Data Types?</h2>
+<p>Imagine you have an application that has some state that the user is allowed to modify, like almost all applications.
+If this application has multiple users working concurrently, we need to have <em>some</em> way to synchronize the state between
+the users. This isn't a new problem, so there are already a solutions to it. One that comes to mind is the good old
+transactional updates in a database. Make sure there is a central database and that every user can write to it in a way
+that guarantees that consistency of the data-model is maintained. If one transaction is in progress while another one is
+initiated by another user that changes something which is also in scope of the running transaction, then the second transaction
+is rejected. Probably this will result in some sort of error to the user.</p>
+<p>You can see already that we need some type of centralized database here and some form of centralized control.</p>
+<p>So what happens if we have an application with a lot of users, like a game, with a lot of state updates? Do we need to lock
+somewhere everytime? Wouldn't it be better if every user can be in control of its own state and we have a way to resolve
+conflicts between those states?</p>
+<h2 id="what-are-conflict-free-replicated-data-types">What are Conflict-Free Replicated Data Types</h2>
+<p>Well, to quote Wikipedia:</p>
+<blockquote>
+<p>A conflict-free replicated data type (CRDT) is a data structure which can be replicated across multiple computers in
+a network, where the replicas can be updated independently and concurrently without coordination between the replicas,
+and where it is always mathematically possible to resolve inconsistencies that might come up.</p>
+</blockquote>
+<p>Okay, let's unpack that a bit shall we?</p>
+<blockquote>
+<p>A conflict-free replicated data type (CRDT) is a data structure which can be replicated across multiple computers in
+a network....</p>
+</blockquote>
+<p>This makes sense and is pretty straight forward. We want to have some data structure to be replicated.</p>
+<blockquote>
+<p>...where the replicas can be updated independently and concurrently...</p>
+</blockquote>
+<p>So, every replica should be able to update to the latest version of the state by itself, and not by some external system.
+Secondly, it should be possible for all replicas to do this at the same time, or at least without any temporal/causal relationship
+between the replicas.</p>
+<blockquote>
+<p>...without coordination between the replicas,...</p>
+</blockquote>
+<p>This is a big one. There shouldn't be any supervisory system managing this. So no replica-servers, or command-and-control servers, etc.</p>
+<blockquote>
+<p>...and where it is always mathematically possible to resolve inconsistencies that might come up.</p>
+</blockquote>
+<p>This one is a bit formal I'd say. But what this means, in my opinion, is that we should have a clear set of functions that
+describe how differences between multiple replicas are resolved.</p>
+<p>There are two main branches in the CRDT-world on how to solve the conflicts:</p>
+<ul>
+<li>Operation based CRDTs</li>
+<li>State based CRDTs</li>
+</ul>
+<h3 id="operation-based-crdts">Operation based CRDTs</h3>
+<p>Operation based CRDTs, or commutative replicated data types (CmRDTs), update their state by specifying a very strict set
+of operations which updated that state. However the big <em>requirement</em> for these operations is that they are <em>commutative</em>,
+which means that the order of applying those operations should not matter in the end result. </p>
+<p>So, to give a <em>very very very simple</em> example:</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">incr</span><span class="token punctuation">(</span>input<span class="token operator">:</span> Int<span class="token punctuation">,</span> amount<span class="token operator">:</span> Int<span class="token punctuation">)</span><span class="token operator">:</span> Int <span class="token operator">=</span> input <span class="token operator">+</span> amount
+
+<span class="token keyword">val</span> initialState <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token keyword">val</span> finalStateA <span class="token operator">=</span> <span class="token function">incr</span><span class="token punctuation">(</span><span class="token function">incr</span><span class="token punctuation">(</span><span class="token function">incr</span><span class="token punctuation">(</span>initialState<span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">3</span><span class="token punctuation">)</span>
+<span class="token keyword">val</span> finalStateB <span class="token operator">=</span> <span class="token function">incr</span><span class="token punctuation">(</span><span class="token function">incr</span><span class="token punctuation">(</span><span class="token function">incr</span><span class="token punctuation">(</span>initialState<span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span></code></pre></div>
+<p>As you can see it doesn't matter what order we use of the <code class="language-text">incr(...)</code> functions, because the answer will always be: -8.</p>
+<p>So in order to implement CmRDTs we need to the following:</p>
+<ul>
+<li>define all the applicable operations that can happen on the state</li>
+<li>make sure they are all commutative</li>
+<li>implement some sort of messaging protocol for the different CRDT's to communicate over, making sure no messages are dropped</li>
+</ul>
+<p>The last point is pretty critical. If we miss one operation it means that the states are out of sync. So it is critical
+that the communication protocol is robust.</p>
+<p>Another drawback might be that it is very difficult to model the state using commutative operations. In some cases,
+like the example above, it might be trivial, but in some others it might require a PhD in computer science.</p>
+<h3 id="state-based-crdts">State based CRDTs</h3>
+<p>State based CRDTs, or convergent replicated data types (CvRDTs), synchronize their state by having a dedicated function
+that handles the converging, or merging, of two states to a single one. This merging function will contain all the logic
+of the conflicts that might arise. When such a function exists it is only required that the different state holders all
+communicate their state to each other and merge the incoming state. Eventually this will lead to a consistent for all
+parties involved. Also here, the operation is commutative. It doesn't matter in which order you merge the states.</p>
+<p>A very simple example might be:</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token keyword">val</span> totalNumberOfClicksA <span class="token operator">=</span> <span class="token number">10</span>
+<span class="token keyword">val</span> totalNumberOfClicksB <span class="token operator">=</span> <span class="token number">35</span>
+
+<span class="token keyword">fun</span> <span class="token function">merge</span><span class="token punctuation">(</span>a<span class="token operator">:</span> Int<span class="token punctuation">,</span> b<span class="token operator">:</span> Int<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span>
+
+<span class="token keyword">val</span> mergedTotalNumberOfClicks <span class="token operator">=</span> <span class="token function">merge</span><span class="token punctuation">(</span>totalNumberOfClicksA<span class="token punctuation">,</span> totalNumberOfClicksB<span class="token punctuation">)</span> <span class="token comment">// -> 35</span></code></pre></div>
+<p>This merge operation merges based on the highest value. But there are a different ways in handling the merges.</p>
+<p>The downside here of course is that the full states need to be communicated to everyone.The upside of this method is
+that it might be a bit easier to implement.</p>
+<h2 id="building-convergent-data-types-from-the-ground-up">Building convergent data types from the ground up</h2>
+<p>What we are going to do is create a few convergent data types from the ground up and see how we can compose them
+to create more sophisticated types.</p>
+<p>It all starts with defining an interface that all the CvRDT's need to adhere to:</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token keyword">interface</span> Mergeable<span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token keyword">where</span> T <span class="token operator">:</span> Mergeable<span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token keyword">fun</span> <span class="token function">merge</span><span class="token punctuation">(</span>incoming<span class="token operator">:</span> T<span class="token punctuation">)</span><span class="token operator">:</span> T
+<span class="token punctuation">}</span></code></pre></div>
+<p>This interface only ensures us that a <code class="language-text">Mergeable</code> value can merge with another one and returns a value of the same type
+that is also <code class="language-text">Mergeable</code>.</p>
+<h3 id="a-simple-last-write-wins-type">A simple Last-Write-Wins type</h3>
+<p>In the above example we used a maximum value as the dominant value, but it is a bit of a weird example. You can imagine
+that it makes more sense to have the <em>latest</em> value to be dominant. User A writes a certain value, but User B writes
+another value at a later time.</p>
+<p>Since we are working in Kotlin Multiplatform common code we need some date-time library that supports common code.
+Luckily we can use <a href="https://github.com/Kotlin/kotlinx-datetime">kotlinx-datetime</a>. And we can write our implementation
+like follows:</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token keyword">class</span> MergeableValue<span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token punctuation">(</span>
+    <span class="token keyword">val</span> value<span class="token operator">:</span> T<span class="token punctuation">,</span>
+    <span class="token keyword">private</span> <span class="token keyword">val</span> timestamp<span class="token operator">:</span> Instant
+<span class="token punctuation">)</span> <span class="token operator">:</span> Mergeable<span class="token operator">&lt;</span>MergeableValue<span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token operator">></span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">override</span> <span class="token keyword">fun</span> <span class="token function">merge</span><span class="token punctuation">(</span>other<span class="token operator">:</span> MergeableValue<span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token punctuation">)</span><span class="token operator">:</span> MergeableValue<span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token operator">=</span> <span class="token keyword">when</span> <span class="token punctuation">{</span>
+        timestamp <span class="token operator">&lt;</span> other<span class="token punctuation">.</span>timestamp <span class="token operator">-></span> other
+        timestamp <span class="token operator">>=</span> other<span class="token punctuation">.</span>timestamp <span class="token operator">-></span> <span class="token keyword">this</span>
+        <span class="token keyword">else</span> <span class="token operator">-></span> <span class="token keyword">this</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// and some helper function</span>
+<span class="token keyword">fun</span> <span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token function">mergeableValueOf</span><span class="token punctuation">(</span>value<span class="token operator">:</span> T<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token function">MergeableValue</span><span class="token punctuation">(</span>value<span class="token punctuation">,</span> Clock<span class="token punctuation">.</span>System<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre></div>
+<p>As you can see we have a very simple solution here for merging. However, there is a very very sneaky bug in here, because
+it isn't commutative. And we can demonstrate it via a test:</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token annotation builtin">@Test</span>
+<span class="token keyword">fun</span> <span class="token function">equalTimestamps</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">val</span> timestamp <span class="token operator">=</span> Clock<span class="token punctuation">.</span>System<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">val</span> a <span class="token operator">=</span> <span class="token function">MergeableValue</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> timestamp<span class="token punctuation">)</span>
+    <span class="token keyword">val</span> b <span class="token operator">=</span> <span class="token function">MergeableValue</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> timestamp<span class="token punctuation">)</span>
+
+    <span class="token keyword">val</span> c1 <span class="token operator">=</span> a<span class="token punctuation">.</span><span class="token function">merge</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span>
+    <span class="token keyword">val</span> c2 <span class="token operator">=</span> b<span class="token punctuation">.</span><span class="token function">merge</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+    <span class="token function">assertEquals</span><span class="token punctuation">(</span>c1<span class="token punctuation">,</span> c2<span class="token punctuation">)</span> <span class="token comment">// &lt;- this one fails!</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>Somehow, <code class="language-text">c1 != c2</code> even though the merge should be commutative. But looking closely to our implementation we see that
+<code class="language-text">timestamp >= other.timestamp -> this</code> returns <code class="language-text">this</code> when the timestamps are equal. But when doing the different merges
+the <code class="language-text">this</code> is also different. So we need actually a different way to break the ties. For now I use a <code class="language-text">discriminant</code> value, which is a randomized <code class="language-text">Int</code> in order to break the ties. The odds of having the same 32 bit random value is quite small, and as such good enough for this example. </p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token keyword">class</span> MergeableValue<span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token punctuation">(</span>
+    <span class="token keyword">val</span> value<span class="token operator">:</span> T<span class="token punctuation">,</span>
+    <span class="token keyword">val</span> timestamp<span class="token operator">:</span> Instant<span class="token punctuation">,</span>
+    <span class="token keyword">val</span> discriminant<span class="token operator">:</span> Int <span class="token operator">=</span> Random<span class="token punctuation">.</span><span class="token function">nextInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// ...</span>
+    <span class="token keyword">override</span> <span class="token keyword">fun</span> <span class="token function">merge</span><span class="token punctuation">(</span>other<span class="token operator">:</span> MergeableValue<span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token punctuation">)</span><span class="token operator">:</span> MergeableValue<span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token operator">=</span> <span class="token keyword">when</span> <span class="token punctuation">{</span>
+        timestamp <span class="token operator">&lt;</span> other<span class="token punctuation">.</span>timestamp <span class="token operator">-></span> other
+        timestamp <span class="token operator">></span> other<span class="token punctuation">.</span>timestamp <span class="token operator">-></span> <span class="token keyword">this</span>
+
+        <span class="token comment">// breaking ties based on discriminant</span>
+        discriminant <span class="token operator">&lt;</span>  other<span class="token punctuation">.</span>discriminant <span class="token operator">-></span> other
+        <span class="token keyword">else</span> <span class="token operator">-></span> <span class="token keyword">this</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>And now it passes. Now we have a new tie when the discrimants are equal <em>and</em> the timestamps are equal. But at that moment
+I just assume the values are equal as well. And... this is a hobby project, so I'll leave the exercise to the reader ;-).</p>
+<p>Speaking of equality, what should happen if we do <code class="language-text">mergeableValueOf(1) == mergeableValueOf(1)</code>? If the timestamps are different,
+are they still equal? I decided that they should, so I wrote a test:</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token annotation builtin">@Test</span>
+<span class="token keyword">fun</span> <span class="token function">equalsTest</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">val</span> a <span class="token operator">=</span> <span class="token function">mergeableValueOf</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token keyword">val</span> b <span class="token operator">=</span> <span class="token function">mergeableValueOf</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token function">assertEquals</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span>
+
+    <span class="token keyword">val</span> c <span class="token operator">=</span> <span class="token function">mergeableValueOf</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
+    <span class="token function">assertNotEquals</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> c<span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>This one fails as well, and that is because we still needed to implement <code class="language-text">equals</code> and <code class="language-text">hashCode</code>:</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token keyword">class</span> MergeableValue<span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token punctuation">(</span><span class="token operator">..</span><span class="token punctuation">.</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token operator">..</span><span class="token punctuation">.</span>
+    <span class="token keyword">override</span> <span class="token keyword">fun</span> <span class="token function">equals</span><span class="token punctuation">(</span>other<span class="token operator">:</span> Any<span class="token operator">?</span><span class="token punctuation">)</span><span class="token operator">:</span> Boolean <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span> <span class="token operator">===</span> other<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">true</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>other <span class="token operator">==</span> <span class="token keyword">null</span> <span class="token operator">||</span> <span class="token keyword">this</span><span class="token operator">::</span><span class="token keyword">class</span> <span class="token operator">!=</span> other<span class="token operator">::</span><span class="token keyword">class</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">false</span>
+
+        other <span class="token keyword">as</span> MergeableValue<span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">></span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>value <span class="token operator">!=</span> other<span class="token punctuation">.</span>value<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">false</span>
+        <span class="token keyword">return</span> <span class="token boolean">true</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">override</span> <span class="token keyword">fun</span> <span class="token function">hashCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Int <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> value<span class="token punctuation">.</span><span class="token function">hashCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>And now it passes!</p>
+<p>As a final test we add some randomized fuzzing test, where we shuffle a list of mergeables, and merge them all together.
+It shouldn't matter in what order they are merged:</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token annotation builtin">@Test</span>
+<span class="token keyword">fun</span> <span class="token function">fuzz</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">val</span> values <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">0</span> until <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">map</span> <span class="token punctuation">{</span> <span class="token function">mergeableValueOf</span><span class="token punctuation">(</span>it<span class="token punctuation">)</span> <span class="token punctuation">}</span>
+    <span class="token keyword">val</span> mergedA <span class="token operator">=</span> values<span class="token punctuation">.</span><span class="token function">shuffled</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">reduce</span> <span class="token punctuation">{</span> a<span class="token punctuation">,</span> b <span class="token operator">-></span> a<span class="token punctuation">.</span><span class="token function">merge</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span> <span class="token punctuation">}</span>
+    <span class="token keyword">val</span> mergedB <span class="token operator">=</span> values<span class="token punctuation">.</span><span class="token function">shuffled</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">reduce</span> <span class="token punctuation">{</span> a<span class="token punctuation">,</span> b <span class="token operator">-></span> a<span class="token punctuation">.</span><span class="token function">merge</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span> <span class="token punctuation">}</span>
+    <span class="token function">assertEquals</span><span class="token punctuation">(</span>mergedA<span class="token punctuation">,</span> mergedB<span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>And this one also passes!</p>
+<p>So we have basic values nailed down, time to move to the next data type, a map.</p>
+<h3 id="a-mergeable-map">A mergeable Map</h3>
+<p>One of the most used data types is a map and it makes sense to implement a mergeable version of that as well. To keep things simple I want to keep them immutable. This means that when we want to mutate we need to create a new one with the mutations. However, this would be very memory-inefficient if we would copy everything over everytime, so luckily there is a concept called <a href="https://en.wikipedia.org/wiki/Persistent_data_structure">persistent data structures</a> that solves this problem. So we can have immutability while having some more optimal memory usage. And, there is already a <a href="https://github.com/Kotlin/kotlinx.collections.immutable">Kotlin persistent / immutable data collection library</a>.</p>
+<p>So based on this we can define our map signature like follows:</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token keyword">class</span> MergeableMap<span class="token operator">&lt;</span>K<span class="token punctuation">,</span> V<span class="token operator">></span><span class="token punctuation">(</span>
+    <span class="token comment">// t.b.d.</span>
+<span class="token punctuation">)</span> <span class="token operator">:</span> Map<span class="token operator">&lt;</span>K<span class="token punctuation">,</span> V<span class="token operator">></span><span class="token punctuation">,</span> Mergeable<span class="token operator">&lt;</span>MergeableMap<span class="token operator">&lt;</span>K<span class="token punctuation">,</span> V<span class="token operator">></span><span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token comment">// add a new entry</span>
+    <span class="token keyword">fun</span> <span class="token function">put</span><span class="token punctuation">(</span>key<span class="token operator">:</span> K<span class="token punctuation">,</span> value<span class="token operator">:</span> V<span class="token punctuation">)</span><span class="token operator">:</span> MergeableMap<span class="token operator">&lt;</span>K<span class="token punctuation">,</span> V<span class="token operator">></span>
+
+    <span class="token comment">// remove an entry</span>
+    <span class="token keyword">fun</span> <span class="token function">remove</span><span class="token punctuation">(</span>key<span class="token operator">:</span> K<span class="token punctuation">)</span><span class="token operator">:</span> MergeableMap<span class="token operator">&lt;</span>K<span class="token punctuation">,</span> V<span class="token operator">></span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">fun</span> <span class="token operator">&lt;</span>K<span class="token punctuation">,</span> V<span class="token operator">></span> <span class="token function">mergeableMapOf</span><span class="token punctuation">(</span><span class="token keyword">vararg</span> pairs<span class="token operator">:</span> Pair<span class="token operator">&lt;</span>K<span class="token punctuation">,</span> V<span class="token operator">></span><span class="token punctuation">)</span><span class="token operator">:</span> MergeableMap<span class="token operator">&lt;</span>K<span class="token punctuation">,</span> V<span class="token operator">></span></code></pre></div>
+<p>Compared to a simple value a map is a bit more complex, because there are a few merge situations we have to take into account. We go through them one by one.</p>
+<h4 id="conflicting-keys">Conflicting keys</h4>
+<p>Imagine the following situation:</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token keyword">val</span> mapA <span class="token operator">=</span> <span class="token function">mergeableMapOf</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"a"</span></span> <span class="token keyword">to</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string-literal singleline"><span class="token string">"b"</span></span> <span class="token keyword">to</span> <span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token keyword">val</span> mapB <span class="token operator">=</span> <span class="token function">mergeableMapOf</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"a"</span></span> <span class="token keyword">to</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token string-literal singleline"><span class="token string">"c"</span></span> <span class="token keyword">to</span> <span class="token number">4</span><span class="token punctuation">)</span>
+<span class="token keyword">val</span> merged <span class="token operator">=</span> mapA<span class="token punctuation">.</span><span class="token function">merge</span><span class="token punctuation">(</span>mapB<span class="token punctuation">)</span>  <span class="token comment">// should 'a' be 1 or should 'a' be 3?</span></code></pre></div>
+<p>Looking at this example our natural instict would be to say <code class="language-text">a == 3</code> in <code class="language-text">merged</code>. So basically that is the same Last-Write-Wins scenario we had in the <code class="language-text">MergeableValue</code> case, so we might be able to reuse that.</p>
+<h4 id="removals">Removals</h4>
+<p>A removal should be like this;</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token keyword">val</span> mapA <span class="token operator">=</span> <span class="token function">mergeableMapOf</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"a"</span></span> <span class="token keyword">to</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string-literal singleline"><span class="token string">"b"</span></span> <span class="token keyword">to</span> <span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token keyword">val</span> mapB <span class="token operator">=</span> <span class="token function">mergeableMapOf</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"a"</span></span> <span class="token keyword">to</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token string-literal singleline"><span class="token string">"c"</span></span> <span class="token keyword">to</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"a"</span></span><span class="token punctuation">)</span>
+<span class="token keyword">val</span> merged <span class="token operator">=</span> mapA<span class="token punctuation">.</span><span class="token function">merge</span><span class="token punctuation">(</span>mapB<span class="token punctuation">)</span> <span class="token comment">// should 'a' exist or not?</span></code></pre></div>
+<p>In this situation it makes sense that <code class="language-text">a</code> is removed in the merge. However, <code class="language-text">mapB</code> doesn't contain <code class="language-text">a</code> anymore and as such how do we know that it should be removed in the merge? We can do that by registering removals in a so-called <em>tombstone</em> set. This means we have a set of keys describing which items have been removed from the mapping. And when merging we can see if there are keys in the tombstone set in <code class="language-text">mapB</code> that are still in the actual map of <code class="language-text">mapA</code> and can be removed. </p>
+<p>No, imagine the following situation:</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token keyword">val</span> mapA <span class="token operator">=</span> <span class="token function">mergeableMapOf</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"a"</span></span> <span class="token keyword">to</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string-literal singleline"><span class="token string">"b"</span></span> <span class="token keyword">to</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"a"</span></span><span class="token punctuation">)</span>
+<span class="token keyword">val</span> mapB <span class="token operator">=</span> <span class="token function">mergeableMapOf</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"a"</span></span> <span class="token keyword">to</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token string-literal singleline"><span class="token string">"c"</span></span> <span class="token keyword">to</span> <span class="token number">4</span><span class="token punctuation">)</span> <span class="token comment">// this one is later in time</span>
+<span class="token keyword">val</span> merged <span class="token operator">=</span> mapA<span class="token punctuation">.</span><span class="token function">merge</span><span class="token punctuation">(</span>mapB<span class="token punctuation">)</span> <span class="token comment">// should 'a' exist or not?</span></code></pre></div>
+<p>This depends on the implementation. For me, it makes sense to have a map behave like a map should and as such we add elements that have previously been removed. However, there are implementations out there that make removals permanent. To implement the behavior I need we also need to keep track of the timestamp of a removal. If a value exists that has a timestamp that is later than an existing tombstone, the value is retained.</p>
+<h4 id="implementation">Implementation</h4>
+<p>With the above information we can start the basic implementation using persistent data types as backing data structures.</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token keyword">data</span> <span class="token keyword">class</span> MergeableMap<span class="token operator">&lt;</span>K<span class="token punctuation">,</span> V<span class="token operator">></span><span class="token punctuation">(</span>
+    <span class="token keyword">val</span> map<span class="token operator">:</span> PersistentMap<span class="token operator">&lt;</span>K<span class="token punctuation">,</span> MergeableValue<span class="token operator">&lt;</span>V<span class="token operator">></span><span class="token operator">></span><span class="token punctuation">,</span>
+    <span class="token keyword">val</span> tombstones<span class="token operator">:</span> PersistentMap<span class="token operator">&lt;</span>K<span class="token punctuation">,</span> Instant<span class="token operator">></span>
+<span class="token punctuation">)</span><span class="token operator">:</span> Map<span class="token operator">&lt;</span>K<span class="token punctuation">,</span> V<span class="token operator">></span><span class="token punctuation">,</span> Mergeable<span class="token operator">&lt;</span>MergeableMap<span class="token operator">&lt;</span>K<span class="token punctuation">,</span> V<span class="token operator">></span><span class="token operator">></span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">fun</span> <span class="token function">put</span><span class="token punctuation">(</span>key<span class="token operator">:</span> K<span class="token punctuation">,</span> value<span class="token operator">:</span> V<span class="token punctuation">)</span><span class="token operator">:</span> MergeableMap<span class="token operator">&lt;</span>K<span class="token punctuation">,</span> V<span class="token operator">></span> <span class="token operator">=</span> <span class="token function">copy</span><span class="token punctuation">(</span>
+        map <span class="token operator">=</span> map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> <span class="token function">mergeableValueOf</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        tombstones <span class="token operator">=</span> tombstones<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span>
+    <span class="token punctuation">)</span>
+
+    <span class="token keyword">fun</span> <span class="token function">remove</span><span class="token punctuation">(</span>key<span class="token operator">:</span> K<span class="token punctuation">)</span><span class="token operator">:</span> MergeableMap<span class="token operator">&lt;</span>K<span class="token punctuation">,</span> V<span class="token operator">></span> <span class="token operator">=</span> <span class="token function">copy</span><span class="token punctuation">(</span>
+        map <span class="token operator">=</span> map<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">,</span>
+        tombstones <span class="token operator">=</span> tombstones<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> Clock<span class="token punctuation">.</span>System<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">)</span>
+
+    <span class="token comment">// ... Map implementation</span>
+
+    <span class="token comment">// ... Mergeable implementation</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>The <code class="language-text">put</code> and <code class="language-text">remove</code> operations are a pretty straightforward implementation of the basic <em>immutable</em> operations on a map.</p>
+<p>The <code class="language-text">Mergeable</code> implementation is a bit more complicated and this is where the <code class="language-text">tombstones</code> and <code class="language-text">MergeableValue</code> of <code class="language-text">map</code> come into play:</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token keyword">data</span> <span class="token keyword">class</span> MergeableMap<span class="token operator">&lt;</span>K<span class="token punctuation">,</span> V<span class="token operator">></span><span class="token punctuation">(</span>
+    <span class="token keyword">val</span> map<span class="token operator">:</span> PersistentMap<span class="token operator">&lt;</span>K<span class="token punctuation">,</span> MergeableValue<span class="token operator">&lt;</span>V<span class="token operator">></span><span class="token operator">></span><span class="token punctuation">,</span>
+    <span class="token keyword">val</span> tombstones<span class="token operator">:</span> PersistentMap<span class="token operator">&lt;</span>K<span class="token punctuation">,</span> Instant<span class="token operator">></span>
+<span class="token punctuation">)</span><span class="token operator">:</span> Map<span class="token operator">&lt;</span>K<span class="token punctuation">,</span> V<span class="token operator">></span><span class="token punctuation">,</span> Mergeable<span class="token operator">&lt;</span>MergeableMap<span class="token operator">&lt;</span>K<span class="token punctuation">,</span> V<span class="token operator">></span><span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token comment">// ...</span>
+
+    <span class="token keyword">override</span> <span class="token keyword">fun</span> <span class="token function">merge</span><span class="token punctuation">(</span>other<span class="token operator">:</span> MergeableMap<span class="token operator">&lt;</span>K<span class="token punctuation">,</span> V<span class="token operator">></span><span class="token punctuation">)</span><span class="token operator">:</span> MergeableMap<span class="token operator">&lt;</span>K<span class="token punctuation">,</span> V<span class="token operator">></span> <span class="token punctuation">{</span>
+        <span class="token comment">// first we need all the tombstones and all the keys merged </span>
+        <span class="token keyword">val</span> allTombstones <span class="token operator">=</span> <span class="token function">mergeTombstones</span><span class="token punctuation">(</span>other<span class="token punctuation">.</span>tombstones<span class="token punctuation">)</span> 
+        <span class="token keyword">val</span> allKeys <span class="token operator">=</span> <span class="token punctuation">(</span>map<span class="token punctuation">.</span>keys <span class="token operator">+</span> other<span class="token punctuation">.</span>map<span class="token punctuation">.</span>keys<span class="token punctuation">)</span>
+
+        <span class="token keyword">val</span> elements <span class="token operator">=</span> mutableMapOf<span class="token operator">&lt;</span>K<span class="token punctuation">,</span> MergeableValue<span class="token operator">&lt;</span>V<span class="token operator">></span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+        <span class="token comment">// here we build up the elements map 1-by-1</span>
+        allKeys<span class="token punctuation">.</span><span class="token function">forEach</span> <span class="token punctuation">{</span> key <span class="token operator">-></span>
+            <span class="token keyword">val</span> <span class="token punctuation">(</span>left<span class="token punctuation">,</span> right<span class="token punctuation">)</span> <span class="token operator">=</span> map<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token keyword">to</span> other<span class="token punctuation">.</span>map<span class="token punctuation">[</span>key<span class="token punctuation">]</span>
+
+            <span class="token comment">// we determine which value should be placed in the map</span>
+            <span class="token keyword">val</span> winner <span class="token operator">=</span> <span class="token keyword">when</span> <span class="token punctuation">{</span>
+                left <span class="token operator">!=</span> <span class="token keyword">null</span> <span class="token operator">&amp;&amp;</span> right <span class="token operator">==</span> <span class="token keyword">null</span> <span class="token operator">-></span> left
+                left <span class="token operator">==</span> <span class="token keyword">null</span> <span class="token operator">&amp;&amp;</span> right <span class="token operator">!=</span> <span class="token keyword">null</span> <span class="token operator">-></span> right
+                <span class="token keyword">else</span> <span class="token operator">-></span> left<span class="token operator">!!</span><span class="token punctuation">.</span><span class="token function">merge</span><span class="token punctuation">(</span>right<span class="token operator">!!</span><span class="token punctuation">)</span> <span class="token comment">// here we leverage the merge of the MergeableValue</span>
+            <span class="token punctuation">}</span>
+
+            <span class="token keyword">when</span> <span class="token punctuation">{</span>
+                <span class="token comment">// when there is no matching tombstone we add the element</span>
+                <span class="token operator">!</span>allTombstones<span class="token punctuation">.</span><span class="token function">contains</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token punctuation">{</span>
+                    elements<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> winner
+                <span class="token punctuation">}</span>
+
+                <span class="token comment">// however if there _is_ a matching tombstone we add it only if the element has a later or equal timestamp</span>
+                winner<span class="token punctuation">.</span>timestamp <span class="token operator">>=</span> allTombstones<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token operator">!!</span> <span class="token operator">-></span> <span class="token punctuation">{</span>
+                    allTombstones<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span> <span class="token comment">// in that case we need to remove the tombstone</span>
+                    elements<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> winner
+                <span class="token punctuation">}</span>
+
+                <span class="token comment">// else we don't add the element</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> <span class="token function">MergeableMap</span><span class="token punctuation">(</span>
+            map <span class="token operator">=</span> elements<span class="token punctuation">.</span><span class="token function">toPersistentMap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            tombstones <span class="token operator">=</span> allTombstones<span class="token punctuation">.</span><span class="token function">toPersistentMap</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// this helper function make sure the tombstones are merged according to the last timestamps</span>
+    <span class="token keyword">private</span> <span class="token keyword">fun</span> <span class="token function">mergeTombstones</span><span class="token punctuation">(</span>other<span class="token operator">:</span> PersistentMap<span class="token operator">&lt;</span>K<span class="token punctuation">,</span> Instant<span class="token operator">></span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token punctuation">(</span>tombstones<span class="token punctuation">.</span>keys <span class="token operator">+</span> other<span class="token punctuation">.</span>keys<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">map</span> <span class="token punctuation">{</span> key <span class="token operator">-></span>
+        key <span class="token keyword">to</span> <span class="token function">maxOf</span><span class="token punctuation">(</span>tombstones<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">?:</span> Instant<span class="token punctuation">.</span>DISTANT_PAST<span class="token punctuation">,</span> other<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">?:</span> Instant<span class="token punctuation">.</span>DISTANT_PAST<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">.</span><span class="token function">toMap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toMutableMap</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// and some helper functions</span>
+<span class="token keyword">fun</span> <span class="token operator">&lt;</span>K<span class="token punctuation">,</span> V<span class="token operator">></span> <span class="token function">mergeableMapOf</span><span class="token punctuation">(</span>map<span class="token operator">:</span> Map<span class="token operator">&lt;</span>K<span class="token punctuation">,</span> V<span class="token operator">></span><span class="token punctuation">)</span><span class="token operator">:</span> MergeableMap<span class="token operator">&lt;</span>K<span class="token punctuation">,</span> V<span class="token operator">></span> <span class="token operator">=</span> <span class="token function">MergeableMap</span><span class="token punctuation">(</span>
+    map<span class="token punctuation">.</span><span class="token function">mapValues</span> <span class="token punctuation">{</span> <span class="token punctuation">(</span>_<span class="token punctuation">,</span> v<span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token function">mergeableValueOf</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">.</span><span class="token function">toPersistentMap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token function">persistentMapOf</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">fun</span> <span class="token operator">&lt;</span>K<span class="token punctuation">,</span> V<span class="token operator">></span> <span class="token function">mergeableMapOf</span><span class="token punctuation">(</span>pairs<span class="token operator">:</span> Iterable<span class="token operator">&lt;</span>Pair<span class="token operator">&lt;</span>K<span class="token punctuation">,</span> V<span class="token operator">></span><span class="token operator">></span><span class="token punctuation">)</span><span class="token operator">:</span> MergeableMap<span class="token operator">&lt;</span>K<span class="token punctuation">,</span> V<span class="token operator">></span> <span class="token operator">=</span> <span class="token function">mergeableMapOf</span><span class="token punctuation">(</span>pairs<span class="token punctuation">.</span><span class="token function">toMap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">fun</span> <span class="token operator">&lt;</span>K<span class="token punctuation">,</span> V<span class="token operator">></span> <span class="token function">mergeableMapOf</span><span class="token punctuation">(</span><span class="token keyword">vararg</span> pairs<span class="token operator">:</span> Pair<span class="token operator">&lt;</span>K<span class="token punctuation">,</span> V<span class="token operator">></span><span class="token punctuation">)</span><span class="token operator">:</span> MergeableMap<span class="token operator">&lt;</span>K<span class="token punctuation">,</span> V<span class="token operator">></span> <span class="token operator">=</span> <span class="token function">mergeableMapOf</span><span class="token punctuation">(</span>pairs<span class="token punctuation">.</span><span class="token function">asIterable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">fun</span> <span class="token operator">&lt;</span>K<span class="token punctuation">,</span> V<span class="token operator">></span> <span class="token function">mergeableMapOf</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> MergeableMap<span class="token operator">&lt;</span>K<span class="token punctuation">,</span> V<span class="token operator">></span> <span class="token operator">=</span> <span class="token function">mergeableMapOf</span><span class="token punctuation">(</span><span class="token function">mapOf</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre></div>
+<p>I've also written some tests, but the most interesting one is a fuzzing test:</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token annotation builtin">@Test</span>
+<span class="token keyword">fun</span> <span class="token function">fuzzing</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">val</span> keysAndValues <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">0</span> until <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toList</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">val</span> added <span class="token operator">=</span> mutableSetOf<span class="token operator">&lt;</span>Int<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">val</span> removed <span class="token operator">=</span> mutableSetOf<span class="token operator">&lt;</span>Int<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">fun</span> <span class="token function">generate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span> keysAndValues<span class="token punctuation">.</span><span class="token function">fold</span><span class="token punctuation">(</span>mergeableMapOf<span class="token operator">&lt;</span>Int<span class="token punctuation">,</span> String<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> acc<span class="token punctuation">,</span> i <span class="token operator">-></span>
+        <span class="token keyword">when</span>  <span class="token punctuation">{</span>
+            Random<span class="token punctuation">.</span><span class="token function">nextFloat</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token punctuation">.</span><span class="token number">7</span> <span class="token operator">-></span> <span class="token punctuation">{</span>
+                added<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+                acc<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> i<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">else</span> <span class="token operator">-></span> acc
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">fun</span> <span class="token function">remove</span><span class="token punctuation">(</span>map<span class="token operator">:</span> MergeableMap<span class="token operator">&lt;</span>Int<span class="token punctuation">,</span> String<span class="token operator">></span><span class="token punctuation">)</span> <span class="token operator">=</span> keysAndValues<span class="token punctuation">.</span><span class="token function">fold</span><span class="token punctuation">(</span>map<span class="token punctuation">)</span> <span class="token punctuation">{</span> acc<span class="token punctuation">,</span> i <span class="token operator">-></span>
+        <span class="token keyword">when</span> <span class="token punctuation">{</span>
+            Random<span class="token punctuation">.</span><span class="token function">nextFloat</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token punctuation">.</span><span class="token number">1</span> <span class="token operator">-></span> <span class="token punctuation">{</span>
+                removed<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+                acc<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">else</span> <span class="token operator">-></span> acc
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">val</span> merged <span class="token operator">=</span> <span class="token function">merge</span><span class="token punctuation">(</span><span class="token function">listOf</span><span class="token punctuation">(</span><span class="token function">generate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">generate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">generate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">map</span> <span class="token punctuation">{</span> <span class="token function">remove</span><span class="token punctuation">(</span>it<span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword">val</span> totals <span class="token operator">=</span> added <span class="token operator">-</span> removed
+    <span class="token function">assertEquals</span><span class="token punctuation">(</span>totals<span class="token punctuation">.</span>size<span class="token punctuation">,</span> merged<span class="token punctuation">.</span>keys<span class="token punctuation">.</span>size<span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>As can be seen we are generating a lot of maps by filling them with an Int to String mapping. They are added with a chance of 70% in each mapping.
+In the next step items are removed again with a chance of 10%. We can calculate what we expect the total merged mapping to be.</p>
+<h2 id="serialization">Serialization</h2>
+<p>It is important for the CRDT's to be send over the network to other clients, and as such they needed to be serialized. Luckily we can use the excellent <a href="https://github.com/Kotlin/kotlinx.serialization">kotlinx-serialization</a> library for this! </p>
+<p>For the <code class="language-text">MergeableValue</code> data type it is as easy as adding the <code class="language-text">@Serializable</code> annotation:</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token label symbol">@kotlinx</span><span class="token punctuation">.</span>serialization<span class="token punctuation">.</span>Serializable <span class="token comment">// &lt;- magic</span>
+<span class="token keyword">class</span> MergeableValue<span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token punctuation">(</span>
+    <span class="token keyword">val</span> value<span class="token operator">:</span> T<span class="token punctuation">,</span>
+    <span class="token keyword">val</span> timestamp<span class="token operator">:</span> Instant<span class="token punctuation">,</span>
+    <span class="token keyword">val</span> discriminant<span class="token operator">:</span> Int <span class="token operator">=</span> Random<span class="token punctuation">.</span><span class="token function">nextInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span> <span class="token operator">:</span> Mergeable<span class="token operator">&lt;</span>MergeableValue<span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token comment">// ...</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// example</span>
+<span class="token keyword">val</span> value <span class="token operator">=</span> <span class="token function">mergeableValueOf</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"Foo"</span></span><span class="token punctuation">)</span>
+<span class="token keyword">val</span> serialized <span class="token operator">=</span> Json<span class="token punctuation">.</span><span class="token function">encodeToString</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span>
+
+<span class="token comment">// returns: {"value":"Foo","discriminant":1423322, "timestamp":"2022-06-21T15:14:35.266821Z"}</span></code></pre></div>
+<p>This works because the <code class="language-text">kotlinx-datetime</code> library contains datatypes which are serializable!</p>
+<p>The <code class="language-text">MergeableMap</code> data type is a bit more difficult though. This is because <code class="language-text">kotlinx.collections.immutable</code> doesn't implement serialization at the moment. Luckily we can create our own <code class="language-text">Serializer</code>. Since we can create <code class="language-text">PersistentMap</code> from a normal <code class="language-text">Map</code> we can just reuse the <code class="language-text">MapSerializer</code>:</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token comment">// the keySerializer and valueSerializer will be passed to this serializer via the serializer-compiler plugin</span>
+<span class="token keyword">class</span> MergeableMapSerializer<span class="token operator">&lt;</span>K<span class="token punctuation">,</span> V<span class="token operator">></span><span class="token punctuation">(</span>keySerializer<span class="token operator">:</span> KSerializer<span class="token operator">&lt;</span>K<span class="token operator">></span><span class="token punctuation">,</span> valueSerializer<span class="token operator">:</span> KSerializer<span class="token operator">&lt;</span>V<span class="token operator">></span><span class="token punctuation">)</span> <span class="token operator">:</span> KSerializer<span class="token operator">&lt;</span>MergeableMap<span class="token operator">&lt;</span>K<span class="token punctuation">,</span> V<span class="token operator">></span><span class="token operator">></span> <span class="token punctuation">{</span>
+
+    <span class="token comment">// now we define the serializers for the map and the tombstone attribtutes</span>
+    <span class="token keyword">private</span> <span class="token keyword">val</span> mapSerializer <span class="token operator">=</span> <span class="token function">MapSerializer</span><span class="token punctuation">(</span>keySerializer<span class="token punctuation">,</span> MergeableValue<span class="token punctuation">.</span><span class="token function">serializer</span><span class="token punctuation">(</span>valueSerializer<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">private</span> <span class="token keyword">val</span> tombstonesSerializer <span class="token operator">=</span> <span class="token function">MapSerializer</span><span class="token punctuation">(</span>keySerializer<span class="token punctuation">,</span> Instant<span class="token punctuation">.</span><span class="token function">serializer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">override</span> <span class="token keyword">val</span> descriptor<span class="token operator">:</span> SerialDescriptor <span class="token operator">=</span> <span class="token function">buildClassSerialDescriptor</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"mergeableMap"</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">element</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"map"</span></span><span class="token punctuation">,</span> descriptor <span class="token operator">=</span> mapSerializer<span class="token punctuation">.</span>descriptor<span class="token punctuation">)</span>
+        <span class="token function">element</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"tombstones"</span></span><span class="token punctuation">,</span> descriptor <span class="token operator">=</span> tombstonesSerializer<span class="token punctuation">.</span>descriptor<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// we can use the serializers above to do the proper serialization</span>
+    <span class="token keyword">override</span> <span class="token keyword">fun</span> <span class="token function">serialize</span><span class="token punctuation">(</span>encoder<span class="token operator">:</span> Encoder<span class="token punctuation">,</span> value<span class="token operator">:</span> MergeableMap<span class="token operator">&lt;</span>K<span class="token punctuation">,</span> V<span class="token operator">></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        encoder<span class="token punctuation">.</span><span class="token function">encodeStructure</span><span class="token punctuation">(</span>descriptor<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token function">encodeSerializableElement</span><span class="token punctuation">(</span>descriptor<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> mapSerializer<span class="token punctuation">,</span> value<span class="token punctuation">.</span>map<span class="token punctuation">)</span>
+            <span class="token function">encodeSerializableElement</span><span class="token punctuation">(</span>descriptor<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> tombstonesSerializer<span class="token punctuation">,</span> value<span class="token punctuation">.</span>tombstones<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// when we deserialize we create simple Maps and create PersistentMaps from them</span>
+    <span class="token keyword">override</span> <span class="token keyword">fun</span> <span class="token function">deserialize</span><span class="token punctuation">(</span>decoder<span class="token operator">:</span> Decoder<span class="token punctuation">)</span><span class="token operator">:</span> MergeableMap<span class="token operator">&lt;</span>K<span class="token punctuation">,</span> V<span class="token operator">></span> <span class="token operator">=</span> decoder<span class="token punctuation">.</span><span class="token function">decodeStructure</span><span class="token punctuation">(</span>descriptor<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">var</span> map<span class="token operator">:</span> Map<span class="token operator">&lt;</span>K<span class="token punctuation">,</span> MergeableValue<span class="token operator">&lt;</span>V<span class="token operator">></span><span class="token operator">></span> <span class="token operator">=</span> <span class="token function">mapOf</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">var</span> tombstones<span class="token operator">:</span> Map<span class="token operator">&lt;</span>K<span class="token punctuation">,</span> Instant<span class="token operator">></span> <span class="token operator">=</span> <span class="token function">mapOf</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+        <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">when</span> <span class="token punctuation">(</span><span class="token keyword">val</span> index <span class="token operator">=</span> <span class="token function">decodeElementIndex</span><span class="token punctuation">(</span>descriptor<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token number">0</span> <span class="token operator">-></span> map <span class="token operator">=</span> <span class="token function">decodeSerializableElement</span><span class="token punctuation">(</span>descriptor<span class="token punctuation">,</span> index<span class="token punctuation">,</span> mapSerializer<span class="token punctuation">)</span>
+                <span class="token number">1</span> <span class="token operator">-></span> tombstones <span class="token operator">=</span> <span class="token function">decodeSerializableElement</span><span class="token punctuation">(</span>descriptor<span class="token punctuation">,</span> index<span class="token punctuation">,</span> tombstonesSerializer<span class="token punctuation">)</span>
+                CompositeDecoder<span class="token punctuation">.</span>DECODE_DONE <span class="token operator">-></span> <span class="token keyword">break</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token function">MergeableMap</span><span class="token punctuation">(</span>map<span class="token punctuation">.</span><span class="token function">toPersistentMap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> tombstones<span class="token punctuation">.</span><span class="token function">toPersistentMap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>And we can use it like this:</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token label symbol">@kotlinx</span><span class="token punctuation">.</span>serialization<span class="token punctuation">.</span><span class="token function">Serializable</span><span class="token punctuation">(</span>with <span class="token operator">=</span> MergeableMapSerializer<span class="token operator">::</span><span class="token keyword">class</span><span class="token punctuation">)</span>
+<span class="token keyword">data</span> <span class="token keyword">class</span> MergeableMap<span class="token operator">&lt;</span>K<span class="token punctuation">,</span> V<span class="token operator">></span><span class="token punctuation">(</span>
+    <span class="token keyword">val</span> map<span class="token operator">:</span> PersistentMap<span class="token operator">&lt;</span>K<span class="token punctuation">,</span> MergeableValue<span class="token operator">&lt;</span>V<span class="token operator">></span><span class="token operator">></span><span class="token punctuation">,</span>
+    <span class="token keyword">val</span> tombstones<span class="token operator">:</span> PersistentMap<span class="token operator">&lt;</span>K<span class="token punctuation">,</span> Instant<span class="token operator">></span>
+<span class="token punctuation">)</span><span class="token operator">:</span> Map<span class="token operator">&lt;</span>K<span class="token punctuation">,</span> V<span class="token operator">></span><span class="token punctuation">,</span> Mergeable<span class="token operator">&lt;</span>MergeableMap<span class="token operator">&lt;</span>K<span class="token punctuation">,</span> V<span class="token operator">></span><span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token comment">// ....</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>And when we serialize <code class="language-text">mergeableMapOf("a" to 1, "b" to 2, "c" to 3).remove("c")</code> we get:</p>
+<div class="gatsby-highlight" data-language="json"><pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+    <span class="token property">"map"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">"a"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">"value"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+            <span class="token property">"discriminant"</span><span class="token operator">:</span> <span class="token number">342423</span><span class="token punctuation">,</span>
+            <span class="token property">"timestamp"</span><span class="token operator">:</span> <span class="token string">"2022-06-21T15:16:28.733454Z"</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token property">"b"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">"value"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+            <span class="token property">"discriminant"</span><span class="token operator">:</span> <span class="token number">-94482</span><span class="token punctuation">,</span>
+            <span class="token property">"timestamp"</span><span class="token operator">:</span> <span class="token string">"2022-06-21T15:16:28.733463Z"</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">"tombstones"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">"c"</span><span class="token operator">:</span> <span class="token string">"2022-06-21T15:16:28.744279Z"</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<h2 id="sharing-mergeables-with-coroutines">Sharing mergeables with Coroutines</h2>
+<p>Having a mergeable works great, and merging works great, and serialization works great. But is important to tie them all together. Ideally we want to have a <code class="language-text">Mergeable&lt;T></code> to be able to <code class="language-text">merge</code> and publish its updates somewhere else so other can subscribe again to it and merge with those.</p>
+<p>Coroutines offers a facility called <a href="https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/-state-flow/"><code class="language-text">StateFlow&lt;T></code></a> which is:</p>
+<blockquote>
+<p>A SharedFlow that represents a read-only state with a single updatable data value that emits updates to the value to its collectors.</p>
+</blockquote>
+<p>This sounds like something we can use, so we are going to extend that interface. The docs warn against inheriting from <code class="language-text">StateFlow</code> since it is not yet stable, but since this is an experiment I thought we could continue:</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token keyword">interface</span> MergeableStateFlow<span class="token operator">&lt;</span>T <span class="token operator">:</span> Mergeable<span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token operator">></span> <span class="token operator">:</span> Mergeable<span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token punctuation">,</span> StateFlow<span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token keyword">fun</span> <span class="token function">update</span><span class="token punctuation">(</span>block<span class="token operator">:</span> <span class="token punctuation">(</span>state<span class="token operator">:</span> T<span class="token punctuation">)</span> <span class="token operator">-></span> T<span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>What we have now is an interface which is can also <code class="language-text">merge</code> incoming <code class="language-text">T</code>'s, but is also a <em>read-only</em> <code class="language-text">StateFlow&lt;T></code>. Besides that we have an extra <code class="language-text">update</code> method (borrowed from the <code class="language-text">MutableStateFlow</code> interface). The reasoning is as follows:</p>
+<ul>
+<li><code class="language-text">merge</code> is used for incoming <code class="language-text">Mergeable&lt;T></code>'s. The merged value is the new value of the <code class="language-text">StateFlow</code>. When this value differs from the original one, <code class="language-text">StateFlow</code> will emit the new one to its collectors.  </li>
+<li><code class="language-text">update</code> is used to replace the value of the current <code class="language-text">StateFlow</code> without merging. This new value is also emitted.</li>
+</ul>
+<p>Another large benefit of <code class="language-text">StateFlow</code> is that it plays very nice with Compose.</p>
+<h3 id="implementation-1">Implementation</h3>
+<p>Luckily the implementation is dead-simple, mainly because of the delegation pattern:</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token keyword">private</span> <span class="token keyword">class</span> MergeableStateFlowImpl<span class="token operator">&lt;</span>T <span class="token operator">:</span> Mergeable<span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token operator">></span><span class="token punctuation">(</span>
+    <span class="token keyword">private</span> <span class="token keyword">val</span> _states<span class="token operator">:</span> MutableStateFlow<span class="token operator">&lt;</span>T<span class="token operator">></span>
+<span class="token punctuation">)</span> <span class="token operator">:</span> MergeableStateFlow<span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token punctuation">,</span> StateFlow<span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token keyword">by</span> _states <span class="token punctuation">{</span>
+
+    <span class="token keyword">override</span> <span class="token keyword">fun</span> <span class="token function">merge</span><span class="token punctuation">(</span>other<span class="token operator">:</span> T<span class="token punctuation">)</span><span class="token operator">:</span> T <span class="token punctuation">{</span>
+        _states<span class="token punctuation">.</span><span class="token function">update</span> <span class="token punctuation">{</span> current <span class="token operator">-></span> current<span class="token punctuation">.</span><span class="token function">merge</span><span class="token punctuation">(</span>other<span class="token punctuation">)</span> <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> value
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">override</span> <span class="token keyword">fun</span> <span class="token function">update</span><span class="token punctuation">(</span>block<span class="token operator">:</span> <span class="token punctuation">(</span>state<span class="token operator">:</span> T<span class="token punctuation">)</span> <span class="token operator">-></span> T<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        _states<span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span>block<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>We delegate <code class="language-text">StateFlow&lt;T></code> to <code class="language-text">_states</code> so none of those methods need to be implemented. The implementation of the remaining methods is trivial.
+Now we can also write some convencience functions:</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token operator">&lt;</span>T <span class="token operator">:</span> Mergeable<span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token operator">></span> T<span class="token punctuation">.</span><span class="token function">asStateFlow</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> MergeableStateFlow<span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token operator">=</span> <span class="token function">MergeableStateFlowImpl</span><span class="token punctuation">(</span><span class="token function">MutableStateFlow</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">fun</span> <span class="token operator">&lt;</span>T <span class="token operator">:</span> Mergeable<span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token operator">></span> MergeableStateFlow<span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token punctuation">.</span><span class="token function">mergeWith</span><span class="token punctuation">(</span>other<span class="token operator">:</span> MergeableStateFlow<span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token punctuation">,</span> scope<span class="token operator">:</span> CoroutineScope<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    other<span class="token punctuation">.</span><span class="token function">onEach</span> <span class="token punctuation">{</span> update <span class="token operator">-></span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">merge</span><span class="token punctuation">(</span>update<span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">.</span><span class="token function">launchIn</span><span class="token punctuation">(</span>scope<span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre></div>
+<h3 id="testing">Testing</h3>
+<p>Testing coroutines was always a bit difficult, but luckily we now have <code class="language-text">runTest</code> in the test package of Coroutines, which allows us to control the coroutine scheduler and provide a very testable <code class="language-text">CoroutineScope</code>.</p>
+<p>I have written more tests, but the most important one is one where we send values from and to different mergeables, simulating they are on different clients:</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token annotation builtin">@Test</span>
+<span class="token keyword">fun</span> <span class="token function">multiple</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span> runTest <span class="token punctuation">{</span> <span class="token comment">// this is a special TestScope which we use to inject in our other functions and control the structured concurrency</span>
+    <span class="token keyword">val</span> flowA <span class="token operator">=</span> <span class="token function">MergeableValue</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> Instant<span class="token punctuation">.</span><span class="token function">fromEpochMilliseconds</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">asStateFlow</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// create one at t=0</span>
+    <span class="token keyword">val</span> flowB <span class="token operator">=</span> <span class="token function">MergeableValue</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> Instant<span class="token punctuation">.</span><span class="token function">fromEpochMilliseconds</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">asStateFlow</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// create another one at t=1</span>
+    <span class="token function">runCurrent</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// this is a test function to run all the jobs currently in the job queue of the scheduler</span>
+
+    flowA<span class="token punctuation">.</span><span class="token function">mergeWith</span><span class="token punctuation">(</span>flowB<span class="token punctuation">,</span> scope <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">)</span> <span class="token comment">// use the convenience function from above to subscribe and merge to its updates</span>
+    flowB<span class="token punctuation">.</span><span class="token function">mergeWith</span><span class="token punctuation">(</span>flowA<span class="token punctuation">,</span> scope <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">)</span> <span class="token comment">// and vice-versa</span>
+    <span class="token function">runCurrent</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 
+
+    <span class="token function">assertEquals</span><span class="token punctuation">(</span>flowA<span class="token punctuation">.</span>value<span class="token punctuation">,</span> flowB<span class="token punctuation">.</span>value<span class="token punctuation">)</span> <span class="token comment">// they should now be equal even though they started different</span>
+    <span class="token function">assertEquals</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> flowA<span class="token punctuation">.</span>value<span class="token punctuation">.</span>value<span class="token punctuation">)</span>
+
+    flowA<span class="token punctuation">.</span><span class="token function">update</span> <span class="token punctuation">{</span> <span class="token function">MergeableValue</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> Instant<span class="token punctuation">.</span><span class="token function">fromEpochMilliseconds</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">}</span> <span class="token comment">// if we update one, the other should sync</span>
+    <span class="token function">runCurrent</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token function">assertEquals</span><span class="token punctuation">(</span>flowA<span class="token punctuation">.</span>value<span class="token punctuation">,</span> flowB<span class="token punctuation">.</span>value<span class="token punctuation">)</span>
+    <span class="token function">assertEquals</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> flowA<span class="token punctuation">.</span>value<span class="token punctuation">.</span>value<span class="token punctuation">)</span>
+    <span class="token function">currentCoroutineContext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">cancelChildren</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// since the flows are HOT, they need to be cancelled</span>
+<span class="token punctuation">}</span></code></pre></div>
+<h3 id="synchronizing-with-an-external-source">Synchronizing with an external source</h3>
+<p>Although the <code class="language-text">mergeWith</code> function works great, it is more important to synchronize and distribute with an external source. As such it is important to distribute the values over some of <code class="language-text">Bus</code> and be able to send and receive from it and merge. To generalize it, I have some convenience interfaces in my common code in multiple projects to abstract away a <code class="language-text">MessageBus</code>. I am aware I could use <code class="language-text">Channel</code>, but in my opinion they are heavily Coroutine focussed, and have some defined and expected behavior, and my <code class="language-text">MessageBus</code> is used to abstract away platform dependent messaging implementations. For instance, by leveraging Server-Sent-Events on the Web, which we want to wrap with these interfaces.</p>
+<p>The interfaces are defined like this:</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token keyword">interface</span> MessageBus<span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token operator">:</span> ReceiveBus<span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token punctuation">,</span> SendBus<span class="token operator">&lt;</span>T<span class="token operator">></span>
+
+<span class="token keyword">interface</span> SendBus<span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token keyword">suspend</span> <span class="token keyword">fun</span> <span class="token function">send</span><span class="token punctuation">(</span>item<span class="token operator">:</span> T<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">interface</span> ReceiveBus<span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token keyword">val</span> messages<span class="token operator">:</span> SharedFlow<span class="token operator">&lt;</span>T<span class="token operator">></span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>Implementing a <code class="language-text">MessageBus&lt;String></code> for Server-Sent-Events from the Web with this interface is pretty simple:</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token keyword">class</span> <span class="token function">ServerSentEventBus</span><span class="token punctuation">(</span>
+    <span class="token keyword">val</span> publishEndpoint<span class="token operator">:</span> String<span class="token punctuation">,</span>
+    <span class="token keyword">val</span> eventSource<span class="token operator">:</span> EventSource<span class="token punctuation">,</span>
+    scope<span class="token operator">:</span> CoroutineScope<span class="token punctuation">,</span>
+    <span class="token keyword">val</span> clientId<span class="token operator">:</span> UUID
+<span class="token punctuation">)</span> <span class="token operator">:</span> MessageBus<span class="token operator">&lt;</span>String<span class="token operator">></span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">val</span> _messages <span class="token operator">=</span> MutableSharedFlow<span class="token operator">&lt;</span>String<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">override</span> <span class="token keyword">val</span> messages<span class="token operator">:</span> SharedFlow<span class="token operator">&lt;</span>String<span class="token operator">></span> <span class="token operator">=</span> _messages
+
+    <span class="token keyword">init</span> <span class="token punctuation">{</span>
+        eventSource<span class="token punctuation">.</span>onmessage <span class="token operator">=</span> <span class="token punctuation">{</span> event <span class="token operator">-></span>
+            <span class="token punctuation">(</span>event<span class="token punctuation">.</span>data <span class="token keyword">as</span><span class="token operator">?</span> String<span class="token punctuation">)</span><span class="token operator">?</span><span class="token punctuation">.</span><span class="token function">also</span> <span class="token punctuation">{</span> <span class="token keyword">data</span> <span class="token operator">-></span>
+                <span class="token keyword">val</span> senderId <span class="token operator">=</span> UUIDFactory<span class="token punctuation">.</span><span class="token function">fromString</span><span class="token punctuation">(</span><span class="token keyword">data</span><span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">36</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>senderId <span class="token operator">!=</span> clientId<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    scope<span class="token punctuation">.</span><span class="token function">launch</span> <span class="token punctuation">{</span>
+                        _messages<span class="token punctuation">.</span><span class="token function">emit</span><span class="token punctuation">(</span><span class="token keyword">data</span><span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token number">37</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">override</span> <span class="token keyword">suspend</span> <span class="token keyword">fun</span> <span class="token function">send</span><span class="token punctuation">(</span>item<span class="token operator">:</span> String<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">val</span> payload <span class="token operator">=</span> <span class="token string-literal singleline"><span class="token string">"</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$</span><span class="token expression">clientId</span></span><span class="token string">:</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$</span><span class="token expression">item</span></span><span class="token string">"</span></span>
+        window<span class="token punctuation">.</span><span class="token function">fetch</span><span class="token punctuation">(</span>
+            publishEndpoint<span class="token punctuation">,</span>
+            <span class="token function">RequestInit</span><span class="token punctuation">(</span>
+                method <span class="token operator">=</span> <span class="token string-literal singleline"><span class="token string">"POST"</span></span><span class="token punctuation">,</span>
+                body <span class="token operator">=</span> payload
+            <span class="token punctuation">)</span>
+        <span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">await</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">fun</span> <span class="token function">ServerSentEventBus</span><span class="token punctuation">(</span>
+    publishEndpoint<span class="token operator">:</span> String<span class="token punctuation">,</span>
+    subscribeEndpoint<span class="token operator">:</span> String<span class="token punctuation">,</span>
+    scope<span class="token operator">:</span> CoroutineScope<span class="token punctuation">,</span>
+    clientId<span class="token operator">:</span> UUID <span class="token operator">=</span> <span class="token function">uuid</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token function">ServerSentEventBus</span><span class="token punctuation">(</span>
+    publishEndpoint<span class="token punctuation">,</span>
+    <span class="token function">EventSource</span><span class="token punctuation">(</span>subscribeEndpoint<span class="token punctuation">,</span> <span class="token function">EventSourceInit</span><span class="token punctuation">(</span>withCredentials <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    scope<span class="token punctuation">,</span>
+    clientId
+<span class="token punctuation">)</span></code></pre></div>
+<p>What we now need to do is somehow sync the <code class="language-text">MergeableStateFlow&lt;T></code> with this <code class="language-text">MessageBus</code>. This means the following:</p>
+<ul>
+<li>subscribe to changes from the message bus and merge them</li>
+<li>if the merged value is different from the change it means that this change also needs to be published</li>
+<li>on a change of the stateflow itself it should publish the changes</li>
+<li>do an initial publish to notify your own state</li>
+</ul>
+<p>This can be implemented like this:</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token operator">&lt;</span>T<span class="token operator">:</span> Mergeable<span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token operator">></span> MergeableStateFlow<span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token punctuation">.</span><span class="token function">sync</span><span class="token punctuation">(</span>
+    messageBus<span class="token operator">:</span> MessageBus<span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token punctuation">,</span>
+    scope<span class="token operator">:</span> CoroutineScope
+<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">onEach</span> <span class="token punctuation">{</span> update <span class="token operator">-></span>
+        messageBus<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span>update<span class="token punctuation">)</span> <span class="token comment">// on an update of the StateFlow, we publish</span>
+    <span class="token punctuation">}</span><span class="token punctuation">.</span><span class="token function">launchIn</span><span class="token punctuation">(</span>scope<span class="token punctuation">)</span>
+
+    messageBus<span class="token punctuation">.</span>messages<span class="token punctuation">.</span><span class="token function">onEach</span> <span class="token punctuation">{</span> update <span class="token operator">-></span>
+        <span class="token comment">// if we get a new value we merge</span>
+        <span class="token comment">// please note that after this.merge it is already merged internally and we receive the merged value</span>
+        <span class="token keyword">val</span> merged <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">merge</span><span class="token punctuation">(</span>update<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>merged <span class="token operator">!=</span> update<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment">// the merged value is different than the update we received, so the sender should also be updated</span>
+            messageBus<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span>merged<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">.</span><span class="token function">launchIn</span><span class="token punctuation">(</span>scope<span class="token punctuation">)</span>
+
+    <span class="token comment">// initial publish</span>
+    scope<span class="token punctuation">.</span><span class="token function">launch</span> <span class="token punctuation">{</span>
+        messageBus<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>We also need serialization and deserialization, but that is something that is a bit out of scope of this blog post, and can easily be seen in my final code samples. The gist is that I implemented some transformers for <code class="language-text">MessageBus</code> interfaces to transform between types and allow us to pass in <code class="language-text">T</code> but have it automatically serialized.</p>
+<h2 id="creating-a-multi-user-todolist-app-in-compose-for-web">Creating a multi-user TodoList App in Compose for Web</h2>
+<p>We now have all the building blocks to create a very simple web application. It will work as follows:</p>
+<ul>
+<li>We have a mergeable state which is a simple todo-list</li>
+<li>We share the state via Server-Side-Events via a server</li>
+<li>We can change the list title and the items which are merged automatically</li>
+</ul>
+<h3 id="the-state">The state</h3>
+<p>The state is a very simple <code class="language-text">Mergeable</code> object:</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token label symbol">@kotlinx</span><span class="token punctuation">.</span>serialization<span class="token punctuation">.</span>Serializable
+<span class="token keyword">data</span> <span class="token keyword">class</span> <span class="token function">TodoList</span><span class="token punctuation">(</span>
+    <span class="token keyword">private</span> <span class="token keyword">val</span> _name<span class="token operator">:</span> MergeableValue<span class="token operator">&lt;</span>String<span class="token operator">></span><span class="token punctuation">,</span>
+    <span class="token keyword">private</span> <span class="token keyword">val</span> _items<span class="token operator">:</span> MergeableMap<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> Boolean<span class="token operator">></span>
+<span class="token punctuation">)</span> <span class="token operator">:</span> Mergeable<span class="token operator">&lt;</span>TodoList<span class="token operator">></span>  <span class="token punctuation">{</span>
+
+    <span class="token comment">// we have a convenience function `mergeableDistantPastValueOf` which creates a mergeable with a timestamp as early as</span>
+    <span class="token comment">// possible. So we always know this one gets overwritten with a new merge initially</span>
+    <span class="token keyword">constructor</span><span class="token punctuation">(</span>name<span class="token operator">:</span> String<span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">(</span><span class="token function">mergeableDistantPastValueOf</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">mergeableMapOf</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">val</span> name<span class="token operator">:</span> String <span class="token keyword">by</span> _name
+    <span class="token keyword">val</span> items<span class="token operator">:</span> Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> Boolean<span class="token operator">></span> <span class="token operator">=</span> _items
+
+    <span class="token keyword">fun</span> <span class="token function">setName</span><span class="token punctuation">(</span>name<span class="token operator">:</span> String<span class="token punctuation">)</span><span class="token operator">:</span> TodoList <span class="token operator">=</span> <span class="token function">copy</span><span class="token punctuation">(</span>
+        _name <span class="token operator">=</span> <span class="token function">mergeableValueOf</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span>
+    <span class="token punctuation">)</span>
+
+    <span class="token keyword">fun</span> <span class="token function">addItem</span><span class="token punctuation">(</span>item<span class="token operator">:</span> String<span class="token punctuation">)</span><span class="token operator">:</span> TodoList <span class="token operator">=</span> <span class="token function">copy</span><span class="token punctuation">(</span>
+        _items <span class="token operator">=</span> _items<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>item<span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span>
+    <span class="token punctuation">)</span>
+
+    <span class="token keyword">fun</span> <span class="token function">removeItem</span><span class="token punctuation">(</span>item<span class="token operator">:</span> String<span class="token punctuation">)</span><span class="token operator">:</span> TodoList <span class="token operator">=</span> <span class="token function">copy</span><span class="token punctuation">(</span>
+        _items <span class="token operator">=</span> _items<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span>
+    <span class="token punctuation">)</span>
+
+    <span class="token keyword">fun</span> <span class="token function">finishItem</span><span class="token punctuation">(</span>item<span class="token operator">:</span> String<span class="token punctuation">)</span><span class="token operator">:</span> TodoList <span class="token operator">=</span> <span class="token function">copy</span><span class="token punctuation">(</span>
+        _items <span class="token operator">=</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>_items<span class="token punctuation">.</span><span class="token function">containsKey</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">)</span> _items<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>item<span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token keyword">else</span> _items
+    <span class="token punctuation">)</span>
+
+    <span class="token keyword">fun</span> <span class="token function">unfinishItem</span><span class="token punctuation">(</span>item<span class="token operator">:</span> String<span class="token punctuation">)</span><span class="token operator">:</span> TodoList <span class="token operator">=</span> <span class="token function">copy</span><span class="token punctuation">(</span>
+        _items <span class="token operator">=</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>_items<span class="token punctuation">.</span><span class="token function">containsKey</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">)</span> _items<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>item<span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span> <span class="token keyword">else</span> _items
+    <span class="token punctuation">)</span>
+
+    <span class="token keyword">override</span> <span class="token keyword">fun</span> <span class="token function">merge</span><span class="token punctuation">(</span>other<span class="token operator">:</span> TodoList<span class="token punctuation">)</span><span class="token operator">:</span> TodoList <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token function">TodoList</span><span class="token punctuation">(</span>
+            _name <span class="token operator">=</span> _name<span class="token punctuation">.</span><span class="token function">merge</span><span class="token punctuation">(</span>other<span class="token punctuation">.</span>_name<span class="token punctuation">)</span><span class="token punctuation">,</span>
+            _items <span class="token operator">=</span> _items<span class="token punctuation">.</span><span class="token function">merge</span><span class="token punctuation">(</span>other<span class="token punctuation">.</span>_items<span class="token punctuation">)</span>
+        <span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<h3 id="the-view">The view</h3>
+<p>I will only show the main component here, because that is where the logic is:</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token annotation builtin">@Composable</span> <span class="token keyword">fun</span> <span class="token function">App</span><span class="token punctuation">(</span>todoListFlow<span class="token operator">:</span> MergeableStateFlow<span class="token operator">&lt;</span>TodoList<span class="token operator">></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// here we transform the MergeableState something that works even better in Compose</span>
+    <span class="token keyword">val</span> scope <span class="token operator">=</span> <span class="token function">rememberCoroutineScope</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">val</span> <span class="token punctuation">(</span>todoList<span class="token punctuation">,</span> updateTodoList<span class="token punctuation">)</span> <span class="token operator">=</span> remember <span class="token punctuation">{</span> todoListFlow<span class="token punctuation">.</span><span class="token function">collectAsMutableState</span><span class="token punctuation">(</span>scope<span class="token punctuation">)</span> <span class="token punctuation">}</span>
+
+    RowContainer <span class="token punctuation">{</span>
+        <span class="token function">Title</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"Todo List"</span></span><span class="token punctuation">)</span>
+        MainPanel <span class="token punctuation">{</span>
+            RowContainer <span class="token punctuation">{</span>
+                <span class="token function">FancyInput</span><span class="token punctuation">(</span>todoList<span class="token punctuation">.</span>name<span class="token punctuation">,</span>
+                    placeholder <span class="token operator">=</span> <span class="token string-literal singleline"><span class="token string">"Enter your list name and press enter..."</span></span><span class="token punctuation">,</span>
+                    onSubmit <span class="token operator">=</span> <span class="token punctuation">{</span> title <span class="token operator">-></span> updateTodoList <span class="token punctuation">{</span> it<span class="token punctuation">.</span><span class="token function">setName</span><span class="token punctuation">(</span>title<span class="token punctuation">)</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                    attrs <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token function">classes</span><span class="token punctuation">(</span>AppStyleSheet<span class="token punctuation">.</span>radiusTop<span class="token punctuation">,</span> AppStyleSheet<span class="token punctuation">.</span>nameInput<span class="token punctuation">)</span> <span class="token punctuation">}</span>
+                <span class="token punctuation">)</span>
+                <span class="token function">Separator</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token function">Items</span><span class="token punctuation">(</span>
+                    items <span class="token operator">=</span> todoList<span class="token punctuation">.</span>items<span class="token punctuation">,</span>
+                    onItemChecked <span class="token operator">=</span> <span class="token punctuation">{</span> item<span class="token punctuation">,</span> value <span class="token operator">-></span>
+                        updateTodoList <span class="token punctuation">{</span>
+                            <span class="token keyword">if</span> <span class="token punctuation">(</span>value<span class="token punctuation">)</span> it<span class="token punctuation">.</span><span class="token function">finishItem</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span>
+                            <span class="token keyword">else</span> it<span class="token punctuation">.</span><span class="token function">unfinishItem</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span>
+                        <span class="token punctuation">}</span>
+                    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                    onItemDeleted <span class="token operator">=</span> <span class="token punctuation">{</span> item <span class="token operator">-></span> updateTodoList <span class="token punctuation">{</span> it<span class="token punctuation">.</span><span class="token function">removeItem</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span>
+                <span class="token punctuation">)</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>todoList<span class="token punctuation">.</span>items<span class="token punctuation">.</span><span class="token function">isNotEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token function">Separator</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token punctuation">}</span>
+                <span class="token function">FancyInput</span><span class="token punctuation">(</span>
+                    <span class="token string-literal singleline"><span class="token string">""</span></span><span class="token punctuation">,</span>
+                    placeholder <span class="token operator">=</span> <span class="token string-literal singleline"><span class="token string">"Enter new item and press enter..."</span></span><span class="token punctuation">,</span>
+                    onSubmit <span class="token operator">=</span> <span class="token punctuation">{</span> item <span class="token operator">-></span> updateTodoList <span class="token punctuation">{</span> it<span class="token punctuation">.</span><span class="token function">addItem</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                    resetAfterSubmit <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+                    attrs <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token function">classes</span><span class="token punctuation">(</span> AppStyleSheet<span class="token punctuation">.</span>radiusBottom<span class="token punctuation">)</span> <span class="token punctuation">}</span>
+                <span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>One extensions function we have here is <code class="language-text">collectAsMutableState</code>, which is actually the same name of the library function for <code class="language-text">StateFlow&lt;T>.collectAsMutableState</code> but used here for <code class="language-text">MergeableStateFlow&lt;T></code>. It is required for Compose to have values read from <code class="language-text">State&lt;T></code> values in order to calculate when the recomposition should happen. It is implemented like this:</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token keyword">interface</span> MutableMergeableStateFlow<span class="token operator">&lt;</span>T <span class="token operator">:</span> Mergeable<span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token keyword">val</span> value<span class="token operator">:</span> T
+
+    <span class="token keyword">operator</span> <span class="token keyword">fun</span> <span class="token function">component1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> T
+    <span class="token keyword">operator</span> <span class="token keyword">fun</span> <span class="token function">component2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token punctuation">(</span>T<span class="token punctuation">)</span> <span class="token operator">-></span> Unit
+<span class="token punctuation">}</span>
+
+<span class="token keyword">fun</span> <span class="token operator">&lt;</span>T <span class="token operator">:</span> Mergeable<span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token operator">></span> MergeableStateFlow<span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token punctuation">.</span><span class="token function">collectAsMutableState</span><span class="token punctuation">(</span>
+    scope<span class="token operator">:</span> CoroutineScope
+<span class="token punctuation">)</span><span class="token operator">:</span> MutableMergeableStateFlow<span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token operator">=</span> <span class="token keyword">object</span> <span class="token operator">:</span> MutableMergeableStateFlow<span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">val</span> internalState <span class="token operator">=</span> <span class="token function">mutableStateOf</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token label symbol">@collectAsMutableState</span><span class="token punctuation">.</span>value<span class="token punctuation">)</span>
+
+    <span class="token keyword">init</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token label symbol">@collectAsMutableState</span>
+            <span class="token punctuation">.</span><span class="token function">onEach</span> <span class="token punctuation">{</span> value <span class="token operator">-></span> internalState<span class="token punctuation">.</span>value <span class="token operator">=</span> value <span class="token punctuation">}</span>
+            <span class="token punctuation">.</span><span class="token function">launchIn</span><span class="token punctuation">(</span>scope<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">override</span> <span class="token keyword">val</span> value<span class="token operator">:</span> T
+        <span class="token keyword">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span> internalState<span class="token punctuation">.</span>value
+
+    <span class="token keyword">override</span> <span class="token keyword">fun</span> <span class="token function">component1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> T <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> internalState<span class="token punctuation">.</span>value
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">override</span> <span class="token keyword">fun</span> <span class="token function">component2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token punctuation">(</span>T<span class="token punctuation">)</span> <span class="token operator">-></span> Unit <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">{</span> newValue <span class="token operator">-></span> update <span class="token punctuation">{</span> newValue <span class="token punctuation">}</span><span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>And now we can tie it all together in the main application:</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">val</span> scope <span class="token operator">=</span> <span class="token function">CoroutineScope</span><span class="token punctuation">(</span>Dispatchers<span class="token punctuation">.</span>Default<span class="token punctuation">)</span>
+    <span class="token keyword">val</span> sseBus <span class="token operator">=</span> <span class="token function">ServerSentEventBus</span><span class="token punctuation">(</span>
+        publishEndpoint <span class="token operator">=</span> <span class="token string-literal singleline"><span class="token string">"http://localhost:8080/publish"</span></span><span class="token punctuation">,</span>
+        subscribeEndpoint <span class="token operator">=</span> <span class="token string-literal singleline"><span class="token string">"http://localhost:8080/subscribe"</span></span><span class="token punctuation">,</span>
+        scope <span class="token operator">=</span> scope
+    <span class="token punctuation">)</span>
+
+    <span class="token keyword">val</span> bus <span class="token operator">=</span> sseBus
+        <span class="token punctuation">.</span><span class="token function">also</span> <span class="token punctuation">{</span> jsonBus <span class="token operator">-></span>
+            jsonBus<span class="token punctuation">.</span>messages<span class="token punctuation">.</span><span class="token function">onEach</span> <span class="token punctuation">{</span>
+                console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"Received: "</span></span><span class="token punctuation">,</span> it<span class="token punctuation">)</span>
+            <span class="token punctuation">}</span><span class="token punctuation">.</span><span class="token function">launchIn</span><span class="token punctuation">(</span>scope<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+        <span class="token punctuation">.</span>deserialize<span class="token operator">&lt;</span>TodoList<span class="token operator">></span><span class="token punctuation">(</span>scope<span class="token punctuation">)</span>
+
+    <span class="token keyword">val</span> todoListFlow <span class="token operator">=</span> <span class="token function">TodoList</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"New list"</span></span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">asStateFlow</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">sync</span><span class="token punctuation">(</span>bus<span class="token punctuation">,</span> scope<span class="token punctuation">)</span>
+
+    <span class="token function">renderComposable</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"root"</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">Style</span><span class="token punctuation">(</span>AppStyleSheet<span class="token punctuation">)</span>
+        FullPageCentered <span class="token punctuation">{</span>
+            <span class="token function">App</span><span class="token punctuation">(</span>todoListFlow<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<h3 id="the-server">The server</h3>
+<p>I know a centralized server goes a bit against the idea of a CRDT, but this server only... serves the function of routing the update messages from and to every client.
+The server is a very simple Ktor server which only implements the static serving of the client, the subscription <em>and</em> the publication of events:</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">val</span> stream <span class="token operator">=</span> MutableSharedFlow<span class="token operator">&lt;</span>String<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token function">embeddedServer</span><span class="token punctuation">(</span>Netty<span class="token punctuation">,</span> port <span class="token operator">=</span> <span class="token number">8080</span><span class="token punctuation">,</span> host <span class="token operator">=</span> <span class="token string-literal singleline"><span class="token string">"localhost"</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">install</span><span class="token punctuation">(</span>CallLogging<span class="token punctuation">)</span>
+        <span class="token function">install</span><span class="token punctuation">(</span>CORS<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token function">allowHost</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"*"</span></span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+        routing <span class="token punctuation">{</span>
+            <span class="token function">static</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"/"</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                staticRootFolder <span class="token operator">=</span> <span class="token function">File</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"./build/distributions"</span></span><span class="token punctuation">)</span>
+                <span class="token function">file</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">""</span></span><span class="token punctuation">,</span> <span class="token string-literal singleline"><span class="token string">"index.html"</span></span><span class="token punctuation">)</span>
+                <span class="token function">files</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"."</span></span><span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+
+            <span class="token function">post</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"/publish"</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">val</span> received <span class="token operator">=</span> call<span class="token punctuation">.</span>receive<span class="token operator">&lt;</span>String<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                stream<span class="token punctuation">.</span><span class="token function">emit</span><span class="token punctuation">(</span>received<span class="token punctuation">)</span>
+                call<span class="token punctuation">.</span><span class="token function">respondText</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"Published: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$</span><span class="token expression">received</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+
+            <span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"/subscribe"</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                call<span class="token punctuation">.</span>response<span class="token punctuation">.</span><span class="token function">cacheControl</span><span class="token punctuation">(</span>CacheControl<span class="token punctuation">.</span><span class="token function">NoCache</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                call<span class="token punctuation">.</span><span class="token function">respondTextWriter</span><span class="token punctuation">(</span>contentType <span class="token operator">=</span> ContentType<span class="token punctuation">.</span>Text<span class="token punctuation">.</span>EventStream<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    stream<span class="token punctuation">.</span><span class="token function">collect</span> <span class="token punctuation">{</span>
+                        <span class="token comment">// this is the required Event-Stream format</span>
+                        <span class="token function">write</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"id:</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token expression"><span class="token function">uuid</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">\n"</span></span><span class="token punctuation">)</span>
+                        <span class="token function">write</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"event:message\n"</span></span><span class="token punctuation">)</span>
+                        <span class="token function">write</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"data:</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$</span><span class="token expression">it</span></span><span class="token string">\n"</span></span><span class="token punctuation">)</span>
+                        <span class="token function">write</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"\n"</span></span><span class="token punctuation">)</span>
+                        <span class="token function">flush</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span>wait <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre></div>
+<h3 id="final-result">Final result</h3>
+<p>And this gives us the following result:</p>
+<p><img src="/static/sync-d5a4690a59fb0e8e9bd2bc0fc685c5d5.gif" alt="Final UI"></p>
+<p>Not very impressive, but there is a lot happening under the hood and this scales to different clients on different computers as well. And the best thing is is that the UI components have no knowledge at all of the synchronization happening. It is just normal Kotlin code with Compose.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>This one proved to be way more difficult than I imagined. Mainly because I had little experience with coroutines and Compose. And I must say I had to ask a <em>lot</em> of questions at the excellent Kotlin Slack group. I was helped tremendously there by: </p>
+<ul>
+<li>Oleksandr Karpovich</li>
+<li>Philip Wedemann</li>
+<li>Joffrey Bion</li>
+<li>Adam Powell</li>
+<li>Nick Allen</li>
+</ul>
+<p>The final code sample can be found at: <a href="https://github.com/avwie/scribbles/tree/e318e8f9c4d6cd1c999f757dc09d91ed40b8ef73/kotlin/examples/crdt-demo">https://github.com/avwie/scribbles/tree/e318e8f9c4d6cd1c999f757dc09d91ed40b8ef73/kotlin/examples/crdt-demo</a>
+Just run the <code class="language-text">examples:crdt-demo:application:runServer</code> task to compile the frontend and backand and boot up the server at port 8080. </p>
+<p>Let me know on Github if you have any questions!</p></div></div><div class="border-top border-light py-2"><div class="container-lg text-muted fw-light text-center" style="font-size:0.8em"><small>Build <!-- -->cdc8a21<!-- --> - <!-- -->2022-07-15T08:18:41.000Z</small></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-YZ9NCTW594"></script><script>
+      
+      
+      if(true) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){window.dataLayer && window.dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-YZ9NCTW594', {"send_page_view":false});
+      }
+      </script><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/creating-multiplatform-crdts";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-ec707b41bccf15b2b27f.js"],"app":["/app-9887230afd096a67a0dc.js"],"component---src-pages-404-js":["/component---src-pages-404-js-aa0ffeb8181716267d64.js"],"component---src-pages-index-js":["/component---src-pages-index-js-19c651befc200e8a6535.js"],"component---src-templates-post-js":["/component---src-templates-post-js-879d5dcd14113f37530a.js"]};/*]]>*/</script><script src="/polyfill-ec707b41bccf15b2b27f.js" nomodule=""></script><script src="/component---src-templates-post-js-879d5dcd14113f37530a.js" async=""></script><script src="/291a736a4998dc6bb1e7dae6dfd245355445eafd-20bea7f0f0f45d234f8d.js" async=""></script><script src="/app-9887230afd096a67a0dc.js" async=""></script><script src="/framework-a24df75546761fdaa7be.js" async=""></script><script src="/webpack-runtime-6cabe82dbe926f03ac24.js" async=""></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script></body></html>
