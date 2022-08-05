@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,700&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap');
 
 body {
@@ -74,5 +74,139 @@ body.dark {
   blockquote {
     background-color: #333440;
     color: #aaa;
+  }
+}*/
+
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap');
+@import url('https://fontlibrary.org//face/go-mono');
+
+body {
+  font-family: 'Crimson Text', serif;
+  font-size: 14pt;
+  margin: 0;
+  background-color: #f3f3f3;
+
+  @import "./prismjs/coldark";
+
+  a {
+    color: rgb(104, 104, 104);
+  }
+
+  blockquote {
+    background-color: #eee;
+    padding: 1em;
+    color: #555;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  nav {
+    width: 100vw;
+    background-color: #000;
+    padding: 0.5em 0em;
+
+    & * {
+      color: #fff;
+    }
+
+    & > .container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .social {
+      width: 150px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &.dark-mode {
+          cursor: pointer;
+        }
+      }
+
+      img {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+
+  .container {
+    @media (min-width: 900px) {
+      width: 900px;
+      margin: 0 auto;
+    }
+  }
+
+  .posts {
+    .post {
+      background-color: #eee;
+      padding: 0.5em;
+      margin-bottom: 2em;
+
+      h2 {
+        margin: 0;
+      }
+      
+      p {
+        margin: 0.5em 0;
+      }
+
+      .date, .reading-time {
+        color: #333;
+        font-size: 0.8em;
+      }
+
+      a {
+        font-weight: bold;
+      }
+    }
+  }
+
+  footer {
+    font-size: 0.8rem;
+  }
+}
+
+code[class*=language-],
+pre[class*=language-] {
+  font-size: 0.85rem !important;
+  font-family: 'GoMonoRegular' !important;
+  font-weight: normal !important;
+  font-style: normal !important;
+  border-radius: 0.5em;
+}
+
+body.dark {
+  @import "./prismjs/darcula";
+
+  background-color: #1b1e23 !important;
+  color: #ccc;
+
+  blockquote {
+    background-color: #333440;
+    color: #aaa;
+  }
+
+  .date, .reading-time {
+    color: #bbb !important;
+  }
+
+  a {
+    font-weight: bold;
+    color: #ccc !important;
+  }
+
+  .post {
+    background-color: #333440;
   }
 }

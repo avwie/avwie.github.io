@@ -8,9 +8,9 @@ const Post = ({ data }) => {
 
     return (
         <DefaultLayout title={title}>
-            <h1 className="text-decoration-underline fs-1 py-2">{ title }</h1>
+            <h1>{ title }</h1>
             <h4>{ date }</h4>
-            <div className="markdown mb-4 col-lg-9" dangerouslySetInnerHTML={{__html: content }} />
+            <div dangerouslySetInnerHTML={{__html: content }} />
         </DefaultLayout>
     )
 }

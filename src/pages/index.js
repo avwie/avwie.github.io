@@ -3,21 +3,14 @@ import DefaultLayout from "../layouts/default";
 import {graphql, Link, useStaticQuery} from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
-const PostItem = ({title, hero, date, excerpt, timeToRead, slug}) => {
-    const image = getImage(hero)
-
+const PostItem = ({title, date, excerpt, timeToRead, slug}) => {
     return (
-        <div className="mb-3 px-0 px-sm-2 col-lg-4 col-md-6 col-12">
-            <div className="card">
-                <GatsbyImage image={image} alt="hero" />
-                <div className="card-body">
-                    <Link className="fs-5 card-title mb-2 d-block" title={title} to={slug}>{ title }</Link>
-                    <h2 className="fs-6 card-subtitle mb-2">{ date }</h2>
-                    <h2 className="fs-6 card-subtitle mb-2 text-secondary">Reading time: {timeToRead} minutes</h2>
-                    <p className="card-text">{ excerpt }</p>
-                    <Link title={title} className="card-link btn btn-primary btn-small" to={slug}>Read more</Link>
-                </div>
-            </div>
+        <div className="post">
+            <h2>{ title }</h2>
+            <p className="date">{ date }</p>
+            <p className="reading-time">Reading time: {timeToRead} minutes</p>
+            <p className="excerpt">{ excerpt }</p>
+            <Link title={title} className="read-more" to={slug}>Read more</Link>
         </div>
     )
 }
@@ -36,13 +29,8 @@ const Main = () => {
                   title
                   slug
                   date(formatString: "DD-MMM yyyy")
-                  hero {
-                    childImageSharp {
-                      gatsbyImageData(height: 150, width: 430, placeholder: BLURRED)
-                    }
-                  }
                 }
-                excerpt(format: PLAIN, pruneLength: 230)
+                excerpt(format: PLAIN, pruneLength: 240)
                 timeToRead
               }
             }
@@ -60,22 +48,18 @@ const Main = () => {
     })
 
     return <>
-        <h1 className="text-decoration-underline fs-1 py-2">Hi, welcome to my programming blog.</h1>
-        <div className="fs-6 bg-light rounded p-2">
-            <div className="col-xl-8 col-12">
-                    I am an engineer that turned software developer.
-                    I enjoy technical challenges and experimenting with techniques and architectures.
-                    Some are used successfully in production and some are complete failures. However, all experiments are a
-                    way of learning. By posting articles about my experiments I hope that others learn from me, but also that
-                    I can learn from others. Also, it serves a more mindful approach where, by writing it down, I am forced
-                    to structure my thoughts.
-            </div>
+        <h1>Hi, welcome to my programming blog.</h1>
+        <div>
+                I am an engineer that turned software developer.
+                I enjoy technical challenges and experimenting with techniques and architectures.
+                Some are used successfully in production and some are complete failures. However, all experiments are a
+                way of learning. By posting articles about my experiments I hope that others learn from me, but also that
+                I can learn from others. Also, it serves a more mindful approach where, by writing it down, I am forced
+                to structure my thoughts.
         </div>
-        <h2 className="my-4">Latest posts</h2>
-        <div className="lg-container">
-            <div className="row gx-3">
-                { posts }
-            </div>
+        <h1>Latest posts</h1>
+        <div className="posts">
+            { posts }
         </div>
     </>
 }
