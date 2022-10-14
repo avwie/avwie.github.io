@@ -1,82 +1,4 @@
 
-/*@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap');
-
-body {
- font-family: 'Open Sans', sans-serif;
- font-size: 11pt;
-
-  @import "./prismjs/solarized";
-
-  .markdown {
-    h1, h2 {
-      text-decoration: underline;
-    }
-
-    h1, h2, h3, h4, h5, h6 {
-      margin-top: 1em;
-    }
-
-    strong {
-      text-decoration: underline;
-    }
-
-    code {
-      font-size: 0.9em !important;
-    }
-
-    blockquote {
-      background-color: #eee;
-      border-radius: 0.5em;
-      padding: 1em;
-      font-style: italic;
-      font-size: 0.9em;
-      color: #555;
-
-      p {
-        margin: 0;
-      }
-    }
-
-    code[class*=language-],
-    pre[class*=language-] {
-      font-size: 0.95em;
-      font-family: 'Fira Code', monospace;
-      border-radius: 0.5em;
-    }
-  }
-}
-
-body.dark {
-  @import "./prismjs/darcula";
-
-  color: #ccc;
-
-  a {
-    color: #6c96d6;
-  }
-
-  background-color: #1b1e23!important;
-
-  .card, .bg-light {
-    background-color: #333842!important;
-  }
-
-  .btn-primary {
-    background-color: #1b1e23;
-    border-color: #1b1e23;
-  }
-
-  .border-light {
-    border-color: #333842 !important;
-  }
-
-  blockquote {
-    background-color: #333440;
-    color: #aaa;
-  }
-}*/
-
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap');
 @import url('https://fontlibrary.org//face/go-mono');
 
@@ -141,8 +63,10 @@ body {
   }
 
   .container {
+    margin: 0 1em;
     @media (min-width: 900px) {
       width: 900px;
+      padding: 0 1em;
       margin: 0 auto;
     }
   }
