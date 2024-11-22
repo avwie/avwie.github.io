@@ -1,0 +1,334 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="description" content="This is my programming blog where I write articles about experiments that I&#x27;ve done. Some are successful, some are not, but we learn from all."/><title>avwie&#x27;s programming blog</title><style data-href="/styles.393f144d88e1d7961308.css" data-identity="gatsby-global-css">@import url(https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap);body{background-color:#f3f3f3;font-family:Roboto,sans-serif;font-size:12pt;font-weight:300;line-height:1.6em;margin:0}body code[class*=language-],body pre[class*=language-]{word-wrap:normal;background:none;color:#111b27;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none;line-height:1.5;-o-tab-size:4;tab-size:4;text-align:left;white-space:pre;word-break:normal;word-spacing:normal}body code[class*=language-] ::selection,body code[class*=language-]::selection,body pre[class*=language-] ::selection,body pre[class*=language-]::selection{background:#8da1b9}body pre[class*=language-]{margin:.5em 0;overflow:auto;padding:1em}body :not(pre)>code[class*=language-],body pre[class*=language-]{background:#e3eaf2}body :not(pre)>code[class*=language-]{border-radius:.3em;padding:.1em .3em;white-space:normal}body .token.cdata,body .token.comment,body .token.doctype,body .token.prolog{color:#3c526d}body .token.punctuation{color:#111b27}body .token.delimiter.important,body .token.selector .parent,body .token.tag,body .token.tag .token.punctuation{color:#006d6d}body .token.attr-name,body .token.boolean,body .token.boolean.important,body .token.constant,body .token.number,body .token.selector .token.attribute{color:#755f00}body .token.class-name,body .token.key,body .token.parameter,body .token.property,body .token.property-access,body .token.variable{color:#005a8e}body .token.attr-value,body .token.color,body .token.inserted,body .token.selector .token.value,body .token.string,body .token.string .token.url-link{color:#116b00}body .token.builtin,body .token.keyword-array,body .token.package,body .token.regex{color:#af00af}body .token.function,body .token.selector .token.class,body .token.selector .token.id{color:#7c00aa}body .token.atrule .token.rule,body .token.combinator,body .token.keyword,body .token.operator,body .token.pseudo-class,body .token.pseudo-element,body .token.selector,body .token.unit{color:#a04900}body .token.deleted,body .token.important{color:#c22f2e}body .token.keyword-this,body .token.this{color:#005a8e}body .token.bold,body .token.important,body .token.keyword-this,body .token.this{font-weight:700}body .token.delimiter.important{font-weight:inherit}body .token.italic{font-style:italic}body .token.entity{cursor:help}body .language-markdown .token.title,body .language-markdown .token.title .token.punctuation{color:#005a8e;font-weight:700}body .language-markdown .token.blockquote.punctuation{color:#af00af}body .language-markdown .token.code{color:#006d6d}body .language-markdown .token.hr.punctuation{color:#005a8e}body .language-markdown .token.url>.token.content{color:#116b00}body .language-markdown .token.url-link{color:#755f00}body .language-markdown .token.list.punctuation{color:#af00af}body .language-json .token.operator,body .language-markdown .token.table-header{color:#111b27}body .language-scss .token.variable{color:#006d6d}body .token.cr:before,body .token.lf:before,body .token.space:before,body .token.tab:not(:empty):before{color:#3c526d}body div.code-toolbar>.toolbar a,body div.code-toolbar>.toolbar button{background:#005a8e;color:#e3eaf2}body div.code-toolbar>.toolbar a:focus,body div.code-toolbar>.toolbar a:hover,body div.code-toolbar>.toolbar button:focus,body div.code-toolbar>.toolbar button:hover{background:rgba(0,90,142,.855);color:#e3eaf2;text-decoration:none}body div.code-toolbar>.toolbar span,body div.code-toolbar>.toolbar span:focus,body div.code-toolbar>.toolbar span:hover{background:#3c526d;color:#e3eaf2}body .line-highlight{background:rgba(141,161,185,.184);background:linear-gradient(90deg,rgba(141,161,185,.184) 70%,rgba(141,161,185,.145))}body .line-highlight:before,body .line-highlight[data-end]:after{background-color:#3c526d;box-shadow:0 1px #8da1b9;color:#e3eaf2}body pre[id].linkable-line-numbers span.line-numbers-rows>span:hover:before{background-color:rgba(60,82,109,.122)}body .line-numbers .line-numbers-rows{background:rgba(208,218,231,.478);border-right:1px solid rgba(141,161,185,.478)}body .line-numbers-rows>span:before{color:rgba(60,82,109,.855)}body .rainbow-braces .token.punctuation.brace-level-1,body .rainbow-braces .token.punctuation.brace-level-5,body .rainbow-braces .token.punctuation.brace-level-9{color:#755f00}body .rainbow-braces .token.punctuation.brace-level-10,body .rainbow-braces .token.punctuation.brace-level-2,body .rainbow-braces .token.punctuation.brace-level-6{color:#af00af}body .rainbow-braces .token.punctuation.brace-level-11,body .rainbow-braces .token.punctuation.brace-level-3,body .rainbow-braces .token.punctuation.brace-level-7{color:#005a8e}body .rainbow-braces .token.punctuation.brace-level-12,body .rainbow-braces .token.punctuation.brace-level-4,body .rainbow-braces .token.punctuation.brace-level-8{color:#7c00aa}body pre.diff-highlight>code .token.deleted:not(.prefix),body pre>code.diff-highlight .token.deleted:not(.prefix){background-color:rgba(194,47,46,.122)}body pre.diff-highlight>code .token.inserted:not(.prefix),body pre>code.diff-highlight .token.inserted:not(.prefix){background-color:rgba(17,107,0,.122)}body .command-line-prompt{border-right:1px solid rgba(141,161,185,.478)}body .command-line-prompt>span:before{color:rgba(60,82,109,.855)}body a{color:#686868}body blockquote{background-color:#eee;color:#555;padding:1em}body blockquote p{margin:0}body nav{background-color:#000;padding:.5em 0;width:100vw}body nav *{color:#fff}body nav .social,body nav>.container{display:flex;flex-direction:row;justify-content:space-between}body nav .social{width:150px}body nav .social a{align-items:center;display:flex;justify-content:center}body nav .social a.dark-mode{cursor:pointer}body nav .social img{height:24px;width:24px}body .container{margin:0 1em}@media(min-width:900px){body .container{margin:0 auto;padding:0 1em;width:900px}}body .posts .post{background-color:#eee;margin-bottom:2em;padding:.5em}body .posts .post h2{margin:0}body .posts .post p{margin:.5em 0}body .posts .post .date,body .posts .post .reading-time{color:#333;font-size:.8em}body .posts .post a{font-weight:700}body footer{font-size:.8rem}code[class*=language-],pre[class*=language-]{border-radius:.5em;font-family:Source Code Pro,monospace!important;font-size:.85rem!important;font-style:normal!important;font-weight:400!important}body.dark{@import"https://fonts.googleapis.com/css2?family=Fira+Code&display=swap";background-color:#1b1e23!important;color:#ccc}body.dark code[class*=language-],body.dark pre[class*=language-]{color:#a9b7c6;direction:ltr;font-family:Fira Code,monospace;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none;line-height:1.5;-o-tab-size:4;tab-size:4;text-align:left;white-space:pre;word-break:normal;word-spacing:normal}body.dark code[class*=language-] ::selection,body.dark code[class*=language-]::selection,body.dark pre[class*=language-] ::selection,body.dark pre[class*=language-]::selection{background:rgba(33,66,131,.85);color:inherit}body.dark pre[class*=language-]{margin:.5em 0;overflow:auto;padding:1em}body.dark :not(pre)>code[class*=language-],body.dark pre[class*=language-]{background:#2b2b2b}body.dark :not(pre)>code[class*=language-]{border-radius:.3em;padding:.1em}body.dark .token.cdata,body.dark .token.comment,body.dark .token.prolog{color:gray}body.dark .token.atrule,body.dark .token.boolean,body.dark .token.delimiter,body.dark .token.important,body.dark .token.keyword,body.dark .token.selector{color:#cc7832}body.dark .token.attr-name,body.dark .token.operator,body.dark .token.punctuation{color:#a9b7c6}body.dark .token.builtin,body.dark .token.doctype,body.dark .token.tag,body.dark .token.tag .punctuation{color:#e8bf6a}body.dark .token.entity,body.dark .token.number,body.dark .token.symbol{color:#6897bb}body.dark .token.constant,body.dark .token.property,body.dark .token.variable{color:#9876aa}body.dark .token.char,body.dark .token.string{color:#6a8759}body.dark .token.attr-value,body.dark .token.attr-value .punctuation{color:#a5c261}body.dark .token.attr-value .punctuation:first-child{color:#a9b7c6}body.dark .token.url{color:#287bde;text-decoration:underline}body.dark .token.function{color:#ffc66d}body.dark .token.regex{background:#364135}body.dark .token.bold{font-weight:700}body.dark .token.italic{font-style:italic}body.dark .token.inserted{background:#294436}body.dark .token.deleted{background:#484a4a}body.dark code.language-css .token.property,body.dark code.language-css .token.property+.token.punctuation{color:#a9b7c6}body.dark code.language-css .token.id,body.dark code.language-css .token.selector>.token.attribute,body.dark code.language-css .token.selector>.token.class,body.dark code.language-css .token.selector>.token.pseudo-class,body.dark code.language-css .token.selector>.token.pseudo-element{color:#ffc66d}body.dark blockquote{background-color:#333440;color:#aaa}body.dark .date,body.dark .reading-time{color:#bbb!important}body.dark a{color:#ccc!important;font-weight:700}body.dark .post{background-color:#333440}</style><meta name="generator" content="Gatsby 3.14.6"/><link rel="preconnect" href="https://www.googletagmanager.com"/><link rel="dns-prefetch" href="https://www.googletagmanager.com"/><style>.gatsby-image-wrapper{position:relative;overflow:hidden}.gatsby-image-wrapper picture.object-fit-polyfill{position:static!important}.gatsby-image-wrapper img{bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover}.gatsby-image-wrapper [data-main-image]{opacity:0;transform:translateZ(0);transition:opacity .25s linear;will-change:opacity}.gatsby-image-wrapper-constrained{display:inline-block;vertical-align:top}</style><noscript><style>.gatsby-image-wrapper noscript [data-main-image]{opacity:1!important}.gatsby-image-wrapper [data-placeholder-image]{opacity:0!important}</style></noscript><script type="module">const e="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;e&&document.body.addEventListener("load",(function(e){if(void 0===e.target.dataset.mainImage)return;if(void 0===e.target.dataset.gatsbyImageSsr)return;const t=e.target;let a=null,n=t;for(;null===a&&n;)void 0!==n.parentNode.dataset.gatsbyImageWrapper&&(a=n.parentNode),n=n.parentNode;const o=a.querySelector("[data-placeholder-image]"),r=new Image;r.src=t.currentSrc,r.decode().catch((()=>{})).then((()=>{t.style.opacity=1,o&&(o.style.opacity=0,o.style.transition="opacity 500ms linear")}))}),!0);</script><link rel="sitemap" type="application/xml" href="/sitemap.xml"/><script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var hash = window.decodeURI(location.hash.replace('#', ''))
+      if (hash !== '') {
+        var element = document.getElementById(hash)
+        if (element) {
+          var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+          var clientTop = document.documentElement.clientTop || document.body.clientTop || 0
+          var offset = element.getBoundingClientRect().top + scrollTop - clientTop
+          // Wait for the browser to finish rendering before scrolling.
+          setTimeout((function() {
+            window.scrollTo(0, offset - 0)
+          }), 0)
+        }
+      }
+    })
+  </script><link rel="alternate" type="application/rss+xml" title="avwie&#x27;s programming blog" href="/rss.xml"/><link as="script" rel="preload" href="/webpack-runtime-1e303a87cc2fe05a88d0.js"/><link as="script" rel="preload" href="/framework-a24df75546761fdaa7be.js"/><link as="script" rel="preload" href="/app-4e8c86bd5f82e31157fb.js"/><link as="script" rel="preload" href="/291a736a4998dc6bb1e7dae6dfd245355445eafd-e3e290561e79912dfd37.js"/><link as="script" rel="preload" href="/component---src-templates-post-js-8030923d6a02a65604f1.js"/><link as="fetch" rel="preload" href="/page-data/ktor/guards/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/3406609010.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><script>
+void function() {
+  window.__onThemeChange = function() {}
+
+  var preferredTheme
+  try {
+    preferredTheme = localStorage.getItem('theme')
+  } catch (err) { }
+
+  function setTheme(newTheme) {
+    if (preferredTheme && document.body.classList.contains(preferredTheme)) {
+      document.body.classList.replace(preferredTheme, newTheme)
+    } else {
+      document.body.classList.add(newTheme)
+    }
+
+    window.__theme = newTheme
+    preferredTheme = newTheme
+    window.__onThemeChange(newTheme)
+  }
+
+  window.__setPreferredTheme = function(newTheme) {
+    setTheme(newTheme)
+    try {
+      localStorage.setItem('theme', newTheme)
+    } catch (err) {}
+  }
+
+  var darkQuery = window.matchMedia('(prefers-color-scheme: dark)')
+  darkQuery.addListener(function(e) {
+    window.__setPreferredTheme(e.matches ? 'dark' : 'light')
+  })
+
+  setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'))
+}()
+    </script><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><nav><div class="container"><a href="/">@avwie&#x27;s programming blog</a><div class="social"><a title="Github" href="https://github.com/avwie" target="_blank" rel="noreferrer"><img alt="Github" width="24" height="24" src="/layout/github-48.png"/></a><a title="Mail" href="mailto:info@avwie.nl" target="_blank" rel="noreferrer"><img alt="Mail" width="24" height="24" src="/layout/mail-48.png"/></a><a title="Twitter" href="https://twitter.com/avwie" target="_blank" rel="noreferrer"><img alt="Twitter" width="24" height="24" src="/layout/twitter-48.png"/></a><a class="dark-mode"><img alt="dark-mode" width="24" height="24" src="/layout/dark-mode-48.png"/></a></div></div></nav><main class="container"><h1>Building Route Guards for Ktor 3 servers</h1><h4>22 Nov, 2024</h4><div><p>The last few months I have been very busy with developing server applications using Ktor.
+Ktor is a Kotlin-based framework for building asynchronous servers and clients. One of the strengths of Ktor is that
+it is highly <em>un</em>opinionated. This is very powerful in the sense that it doesn't force you to follow a specific convention
+for developing applications and gives you total freedom. To accommodate this freedom, Ktor provides a lot of flexibility by being very modular with plugins.</p>
+<p>One of the things that I have been missing in Ktor is the ability to define route guards. Route guards are a way to protect routes from unauthorized access.
+A lot of web frameworks offer facilities to define route guards, but Ktor doesn't have this out of the box. In this blog post, I will show you how you can build route guards for Ktor 3 servers.</p>
+<h2 id="what-should-a-route-guard-look-like">What should a route guard look like</h2>
+<p>A route guard is a function that is executed before the actual route handler is executed. The route guard can decide whether the route handler should be executed or not.
+Examples of route guards are:</p>
+<ul>
+<li>Authentication: check if the user is authenticated</li>
+<li>Authorization: check if the user has the right permissions</li>
+<li>Rate limiting: check if the user has exceeded the rate limit</li>
+<li>Go crazy: Only allow access to the route handler on a full moon</li>
+</ul>
+<p>The result of a route guard can be:</p>
+<ul>
+<li>Allow the route handler to be executed</li>
+<li>Deny the route handler to be executed</li>
+<li>Redirect to another route</li>
+<li>Throw an exception</li>
+<li>Respond with a HTTP status code, like <code class="language-text">401 Unauthorized</code></li>
+</ul>
+<p>The input of the route guard is the current <code class="language-text">ApplicationCall</code>, so a route guard can access the request, response, and other information about the current request.</p>
+<p>So in essence, one can define a route guard as a simple interface</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token keyword">interface</span> RouteGuard <span class="token punctuation">{</span>
+    <span class="token keyword">suspend</span> <span class="token keyword">fun</span> <span class="token function">check</span><span class="token punctuation">(</span>call<span class="token operator">:</span> ApplicationCall<span class="token punctuation">)</span><span class="token operator">:</span> AuthorizationResult
+<span class="token punctuation">}</span>
+
+<span class="token keyword">sealed</span> <span class="token keyword">interface</span> AuthorizationResult <span class="token punctuation">{</span>
+    <span class="token keyword">object</span> Success <span class="token operator">:</span> AuthorizationResult
+    <span class="token keyword">data</span> <span class="token keyword">class</span> <span class="token function">Unauthorized</span><span class="token punctuation">(</span><span class="token keyword">val</span> message<span class="token operator">:</span> String<span class="token punctuation">,</span> <span class="token keyword">val</span> statusCode<span class="token operator">:</span> HttpStatusCode <span class="token operator">=</span> HttpStatusCode<span class="token punctuation">.</span>Forbidden<span class="token punctuation">)</span> <span class="token operator">:</span> AuthorizationResult
+<span class="token punctuation">}</span></code></pre></div>
+<p>This gives us a very simple interface to implement for route guards. The <code class="language-text">AuthorizationResult</code> clearly communicates the result of the route guard.</p>
+<p>However, we might want to have a more flexible way to handle what happens when the authorization fails. For example, we might want to redirect to another route, or we might want to throw an exception.</p>
+<p>To accommodate this we augment the route guard with an <em>optional</em> <code class="language-text">val onUnauthorized: OnUnauthorized?</code> parameter.</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token keyword">typealias</span> OnUnauthorized <span class="token operator">=</span> <span class="token keyword">suspend</span> <span class="token punctuation">(</span>call<span class="token operator">:</span> ApplicationCall<span class="token punctuation">,</span> result<span class="token operator">:</span> Guard<span class="token punctuation">.</span>AuthorizationResult<span class="token punctuation">.</span>Unauthorized<span class="token punctuation">)</span> <span class="token operator">-></span> Unit
+
+<span class="token keyword">interface</span> RouteGuard <span class="token punctuation">{</span>
+    <span class="token keyword">val</span> onUnauthorized<span class="token operator">:</span> OnUnauthorized<span class="token operator">?</span>
+    <span class="token keyword">suspend</span> <span class="token keyword">fun</span> <span class="token function">check</span><span class="token punctuation">(</span>call<span class="token operator">:</span> ApplicationCall<span class="token punctuation">)</span><span class="token operator">:</span> AuthorizationResult
+<span class="token punctuation">}</span></code></pre></div>
+<h2 id="how-not-to-implement-it">How <em>NOT</em> to implement it</h2>
+<p>I read quite a few blogposts about how to implement route guards, but a few of them make a thinking error. They add a <code class="language-text">RouteScopedPlugin</code> to a <code class="language-text">Routing</code> block like this:</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token keyword">val</span> MyRouteGuardPlugin <span class="token operator">=</span> <span class="token function">createRouteScopedPlugin</span><span class="token punctuation">(</span>name <span class="token operator">=</span> <span class="token string-literal singleline"><span class="token string">"..."</span></span><span class="token punctuation">,</span> createConfiguration <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token operator">..</span><span class="token punctuation">.</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// .... implementation</span>
+    
+    onCall <span class="token punctuation">{</span> call <span class="token operator">-></span>
+        <span class="token comment">// .... implementation</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">fun</span> Route<span class="token punctuation">.</span><span class="token function">guard</span><span class="token punctuation">(</span>roles<span class="token operator">:</span> List<span class="token operator">&lt;</span>String<span class="token operator">></span><span class="token punctuation">,</span> block<span class="token operator">:</span> Route<span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-></span> Unit<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">install</span><span class="token punctuation">(</span>MyRouteGuardPlugin<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// adding the roles to the config</span>
+    <span class="token punctuation">}</span>     
+    <span class="token function">block</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Usage</span>
+routing <span class="token punctuation">{</span>
+    <span class="token function">guard</span><span class="token punctuation">(</span><span class="token function">listOf</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"admin"</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"/admin"</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            call<span class="token punctuation">.</span><span class="token function">respondText</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"Hello admin"</span></span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"/"</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        call<span class="token punctuation">.</span><span class="token function">respondText</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"Hello world"</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>This is incorrect! Because you can basically rewrite the above <code class="language-text">routing</code> block to:</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin">routing <span class="token punctuation">{</span>
+    <span class="token function">install</span><span class="token punctuation">(</span>MyRouteGuardPlugin<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// adding the roles to the config</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"/admin"</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        call<span class="token punctuation">.</span><span class="token function">respondText</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"Hello admin"</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"/"</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        call<span class="token punctuation">.</span><span class="token function">respondText</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"Hello world"</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>Can you see the subtle difference? The <code class="language-text">MyRouteGuardPlugin</code> is applied to all the routes, so the <code class="language-text">/</code> route is also protected now. This is not what we want. We only want to protect the <code class="language-text">/admin</code> route.</p>
+<h2 id="implementing-the-routeguardplugin">Implementing the RouteGuardPlugin</h2>
+<p>To implement route guards correctly, we first need to have a <code class="language-text">RouteGuardPlugin</code> that actually handles the guarding of the routes.
+We use a <code class="language-text">RouteScopedPlugin</code> for this with a configuration block that defines the guard.</p>
+<p>First we define the configuration:</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token keyword">class</span> RouteGuardPluginConfiguration <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> onUnauthorized<span class="token operator">:</span> OnUnauthorized <span class="token operator">=</span> <span class="token punctuation">{</span> call<span class="token punctuation">,</span> result <span class="token operator">-></span>
+        call<span class="token punctuation">.</span><span class="token function">respondText</span><span class="token punctuation">(</span>status <span class="token operator">=</span> result<span class="token punctuation">.</span>statusCode<span class="token punctuation">,</span> text <span class="token operator">=</span> result<span class="token punctuation">.</span>message<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>As you can see we also define an <code class="language-text">onUnauthorized</code> handler on the plugin level. This is the default handler that is called when no <code class="language-text">onUnauthorized</code> handler is defined on the <code class="language-text">RouteGuard</code>.</p>
+<p>Next, we define the <code class="language-text">RouteGuardPlugin</code></p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">RouteGuardPlugin</span><span class="token punctuation">(</span>guard<span class="token operator">:</span> Guard<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token function">createRouteScopedPlugin</span><span class="token punctuation">(</span>
+    name <span class="token operator">=</span> <span class="token string-literal singleline"><span class="token string">"GuardPlugin"</span></span><span class="token punctuation">,</span>
+    createConfiguration <span class="token operator">=</span> <span class="token operator">::</span>RouteGuardPluginConfiguration
+<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    onCall <span class="token punctuation">{</span> call <span class="token operator">-></span>
+        <span class="token keyword">when</span> <span class="token punctuation">(</span><span class="token keyword">val</span> result <span class="token operator">=</span> guard<span class="token punctuation">.</span><span class="token function">isAuthorized</span><span class="token punctuation">(</span>call<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">is</span> Guard<span class="token punctuation">.</span>AuthorizationResult<span class="token punctuation">.</span>Success <span class="token operator">-></span> <span class="token keyword">return</span><span class="token label symbol">@onCall</span>
+            <span class="token keyword">is</span> Guard<span class="token punctuation">.</span>AuthorizationResult<span class="token punctuation">.</span>Unauthorized <span class="token operator">-></span> <span class="token punctuation">{</span>
+                <span class="token punctuation">(</span>guard<span class="token punctuation">.</span>onUnauthorized <span class="token operator">?:</span> pluginConfig<span class="token punctuation">.</span>onUnauthorized<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">invoke</span><span class="token punctuation">(</span>call<span class="token punctuation">,</span> result<span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>When a call comes in, this plugin hooks into that call and iterates over all the guards and checks if the route is authorized.
+If not, it calls the <code class="language-text">onUnauthorized</code> handler of the guard, or the default <code class="language-text">onUnauthorized</code> handler of the plugin and end  </p>
+<h2 id="installing-the-routeguardplugin">Installing the RouteGuardPlugin</h2>
+<p>To install the <code class="language-text">RouteGuardPlugin</code> we need to define a <code class="language-text">guard</code> function that installs the plugin and adds the guard to the configuration.
+However, we must make sure we don't make the same error as above where the scope of the plugin is wrong. </p>
+<p>We want something like this (pseudo code):</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin">routing <span class="token punctuation">{</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">install</span><span class="token punctuation">(</span>RouteGuardPlugin<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token function">guard</span><span class="token punctuation">(</span><span class="token operator">..</span><span class="token punctuation">.</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"/admin"</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    call<span class="token punctuation">.</span><span class="token function">respondText</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"Hello admin"</span></span><span class="token punctuation">)</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"/"</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        call<span class="token punctuation">.</span><span class="token function">respondText</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"Hello world"</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>The exact code above is not possible, but we can achieve this by creating our own <code class="language-text">RouteSelector</code>. Every 'route' in the <code class="language-text">routing</code> block is actually a <code class="language-text">RouteSelector</code> that is added to the <code class="language-text">Routing</code> block.
+Ktor provides a lot of implementations themselves, but we can also create our own. </p>
+<p>A <code class="language-text">RouteSelector</code> is defined as:</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token keyword">public</span> <span class="token keyword">abstract</span> <span class="token keyword">class</span> RouteSelector <span class="token punctuation">{</span>
+
+    <span class="token comment">/**
+     * Evaluates this selector against [context] and a path segment at [segmentIndex].
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">abstract</span> <span class="token keyword">suspend</span> <span class="token keyword">fun</span> <span class="token function">evaluate</span><span class="token punctuation">(</span>context<span class="token operator">:</span> RoutingResolveContext<span class="token punctuation">,</span> segmentIndex<span class="token operator">:</span> Int<span class="token punctuation">)</span><span class="token operator">:</span> RouteSelectorEvaluation
+<span class="token punctuation">}</span></code></pre></div>
+<p>So, what is this <code class="language-text">RouteSelectorEvaluation</code>? Looking in the source code we see that it is a <code class="language-text">sealed class</code> and it has a lot of implementation.
+Basically it defines the success or failure of the evaluation of the <code class="language-text">RouteSelector</code> and some additional information regarding how 'good' the match was.</p>
+<p>Luckily, there is the following predefined <code class="language-text">RouteSelectorEvaluation</code> we can use:</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token comment">/**
+ * Routing evaluation succeeded for a [qualityTransparent] value. Useful for helper DSL methods that may wrap
+ * routes but should not change priority of routing.
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">val</span> Transparent<span class="token operator">:</span> RouteSelectorEvaluation <span class="token operator">=</span>
+    RouteSelectorEvaluation<span class="token punctuation">.</span><span class="token function">Success</span><span class="token punctuation">(</span>RouteSelectorEvaluation<span class="token punctuation">.</span>qualityTransparent<span class="token punctuation">)</span></code></pre></div>
+<p>Looking at the comments, this is exactly what we need? But how do we use it? Well, besides the pretty DSL for routing we can actually just use
+<em>imperative</em> code to define the routes as well.</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token comment">// first define our own RouteSelector</span>
+<span class="token keyword">class</span> RouteGuardRouteSelector <span class="token operator">:</span> <span class="token function">RouteSelector</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">override</span> <span class="token keyword">suspend</span> <span class="token keyword">fun</span> <span class="token function">evaluate</span><span class="token punctuation">(</span>context<span class="token operator">:</span> RoutingResolveContext<span class="token punctuation">,</span> segmentIndex<span class="token operator">:</span> Int<span class="token punctuation">)</span><span class="token operator">:</span> RouteSelectorEvaluation <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> RouteSelectorEvaluation<span class="token punctuation">.</span>Transparent
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// then allow us to use the selector on a `Route` object (`Routing` is also a `Route`)</span>
+<span class="token keyword">fun</span> Route<span class="token punctuation">.</span><span class="token function">guard</span><span class="token punctuation">(</span>guard<span class="token operator">:</span> Guard<span class="token punctuation">,</span> onUnauthorized<span class="token operator">:</span> OnUnauthorized<span class="token operator">?</span><span class="token punctuation">,</span> build<span class="token operator">:</span> Route<span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-></span> Unit<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">val</span> guardRoute <span class="token operator">=</span> <span class="token function">createChild</span><span class="token punctuation">(</span><span class="token function">RouteGuardRouteSelector</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    guardRoute<span class="token punctuation">.</span><span class="token function">install</span><span class="token punctuation">(</span><span class="token function">RouteGuardPlugin</span><span class="token punctuation">(</span>guard<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>onUnauthorized <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>onUnauthorized <span class="token operator">=</span> onUnauthorized
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    guardRoute<span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// and a simple helper function to make it more readable</span>
+<span class="token keyword">fun</span> Route<span class="token punctuation">.</span><span class="token function">guard</span><span class="token punctuation">(</span>guard<span class="token operator">:</span> Guard<span class="token punctuation">,</span> build<span class="token operator">:</span> Route<span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-></span> Unit<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">guard</span><span class="token punctuation">(</span>guard <span class="token operator">=</span> guard<span class="token punctuation">,</span> onUnauthorized <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">,</span> build <span class="token operator">=</span> build<span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre></div>
+<h2 id="putting-it-all-together">Putting it all together</h2>
+<p>Imagine we have a few guards defined like this:</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">roles</span><span class="token punctuation">(</span><span class="token keyword">vararg</span> roles<span class="token operator">:</span> String<span class="token punctuation">)</span><span class="token operator">:</span> Guard <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">object</span> <span class="token operator">:</span> Guard <span class="token punctuation">{</span>
+        <span class="token keyword">override</span> <span class="token keyword">suspend</span> <span class="token keyword">fun</span> <span class="token function">isAuthorized</span><span class="token punctuation">(</span>call<span class="token operator">:</span> ApplicationCall<span class="token punctuation">)</span><span class="token operator">:</span> AuthorizationResult <span class="token punctuation">{</span>
+            <span class="token keyword">val</span> user <span class="token operator">=</span> call<span class="token punctuation">.</span>principal<span class="token operator">&lt;</span>UserPrincipal<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">?:</span> <span class="token keyword">return</span> AuthorizationResult<span class="token punctuation">.</span><span class="token function">Unauthorized</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"Unauthorized"</span></span><span class="token punctuation">,</span> HttpStatusCode<span class="token punctuation">.</span>Unauthorized<span class="token punctuation">)</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>roles<span class="token punctuation">.</span><span class="token function">ll</span> <span class="token punctuation">{</span> user<span class="token punctuation">.</span>roles<span class="token punctuation">.</span><span class="token function">contains</span><span class="token punctuation">(</span>it<span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">return</span> AuthorizationResult<span class="token punctuation">.</span>Success
+            <span class="token punctuation">}</span>
+            <span class="token keyword">return</span> AuthorizationResult<span class="token punctuation">.</span><span class="token function">Unauthorized</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"Unauthorized"</span></span><span class="token punctuation">,</span> HttpStatusCode<span class="token punctuation">.</span>Forbidden<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">val</span> isAuthenticated<span class="token operator">:</span> Guard <span class="token operator">=</span> <span class="token keyword">object</span> <span class="token operator">:</span> Guard <span class="token punctuation">{</span>
+    <span class="token keyword">override</span> <span class="token keyword">suspend</span> <span class="token keyword">fun</span> <span class="token function">isAuthorized</span><span class="token punctuation">(</span>call<span class="token operator">:</span> ApplicationCall<span class="token punctuation">)</span><span class="token operator">:</span> AuthorizationResult <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>call<span class="token punctuation">.</span>principal<span class="token operator">&lt;</span>UserPrincipal<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            AuthorizationResult<span class="token punctuation">.</span>Success
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            AuthorizationResult<span class="token punctuation">.</span><span class="token function">Unauthorized</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"Unauthorized"</span></span><span class="token punctuation">,</span> HttpStatusCode<span class="token punctuation">.</span>Unauthorized<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">val</span> fullMoon <span class="token operator">:</span> Guard <span class="token operator">=</span> <span class="token keyword">object</span> <span class="token operator">:</span> Guard <span class="token punctuation">{</span>
+    <span class="token comment">// I have no clue how to implement this</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>Then we can simply use our <code class="language-text">guard</code> function to protect our routes:</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin">routing <span class="token punctuation">{</span>
+    <span class="token function">guard</span><span class="token punctuation">(</span>isAuthenticated<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"/user"</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            call<span class="token punctuation">.</span><span class="token function">respondText</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"Hello in your user profile"</span></span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+        
+        <span class="token function">guard</span><span class="token punctuation">(</span><span class="token function">roles</span><span class="token punctuation">(</span>'admin'<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"/admin"</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                call<span class="token punctuation">.</span><span class="token function">respondText</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"Hello admin"</span></span><span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"/"</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        call<span class="token punctuation">.</span><span class="token function">respondText</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"Hello world"</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>One can easily extend it with some helper functions as well:</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">allOf</span><span class="token punctuation">(</span><span class="token keyword">vararg</span> guards<span class="token operator">:</span> Guard<span class="token punctuation">)</span><span class="token operator">:</span> Guard <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">object</span> <span class="token operator">:</span> Guard <span class="token punctuation">{</span>
+        <span class="token keyword">override</span> <span class="token keyword">val</span> onUnauthorized<span class="token operator">:</span> OnUnauthorized<span class="token operator">?</span> <span class="token operator">=</span> <span class="token keyword">null</span>
+        <span class="token keyword">override</span> <span class="token keyword">fun</span> <span class="token function">isAuthorized</span><span class="token punctuation">(</span>call<span class="token operator">:</span> ApplicationCall<span class="token punctuation">)</span><span class="token operator">:</span> AuthorizationResult <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>guards<span class="token punctuation">.</span><span class="token function">all</span> <span class="token punctuation">{</span> it<span class="token punctuation">.</span><span class="token function">isAuthorized</span><span class="token punctuation">(</span>call<span class="token punctuation">)</span> <span class="token keyword">is</span> AuthorizationResult<span class="token punctuation">.</span>Success <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">return</span> AuthorizationResult<span class="token punctuation">.</span>Success
+            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                <span class="token keyword">return</span> AuthorizationResult<span class="token punctuation">.</span><span class="token function">Unauthorized</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"Unauthorized"</span></span><span class="token punctuation">,</span> HttpStatusCode<span class="token punctuation">.</span>Forbidden<span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">fun</span> <span class="token function">anyOf</span><span class="token punctuation">(</span><span class="token keyword">vararg</span> guards<span class="token operator">:</span> Guard<span class="token punctuation">)</span><span class="token operator">:</span> Guard <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">object</span> <span class="token operator">:</span> Guard <span class="token punctuation">{</span>
+        <span class="token keyword">override</span> <span class="token keyword">val</span> onUnauthorized<span class="token operator">:</span> OnUnauthorized<span class="token operator">?</span> <span class="token operator">=</span> <span class="token keyword">null</span>
+        <span class="token keyword">override</span> <span class="token keyword">fun</span> <span class="token function">isAuthorized</span><span class="token punctuation">(</span>call<span class="token operator">:</span> ApplicationCall<span class="token punctuation">)</span><span class="token operator">:</span> AuthorizationResult <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>guards<span class="token punctuation">.</span><span class="token function">any</span> <span class="token punctuation">{</span> it<span class="token punctuation">.</span><span class="token function">isAuthorized</span><span class="token punctuation">(</span>call<span class="token punctuation">)</span> <span class="token keyword">is</span> AuthorizationResult<span class="token punctuation">.</span>Success <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">return</span> AuthorizationResult<span class="token punctuation">.</span>Success
+            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                <span class="token keyword">return</span> AuthorizationResult<span class="token punctuation">.</span><span class="token function">Unauthorized</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"Unauthorized"</span></span><span class="token punctuation">,</span> HttpStatusCode<span class="token punctuation">.</span>Forbidden<span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">fun</span> <span class="token function">and</span><span class="token punctuation">(</span>left<span class="token operator">:</span> Guard<span class="token punctuation">,</span> right<span class="token operator">:</span> Guard<span class="token punctuation">)</span><span class="token operator">:</span> Guard <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">allOf</span><span class="token punctuation">(</span>left<span class="token punctuation">,</span> right<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">fun</span> <span class="token function">or</span><span class="token punctuation">(</span>left<span class="token operator">:</span> Guard<span class="token punctuation">,</span> right<span class="token operator">:</span> Guard<span class="token punctuation">)</span><span class="token operator">:</span> Guard <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">anyOf</span><span class="token punctuation">(</span>left<span class="token punctuation">,</span> right<span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>Which results in the following usage:</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin">routing <span class="token punctuation">{</span>
+    <span class="token function">guard</span><span class="token punctuation">(</span><span class="token function">or</span><span class="token punctuation">(</span>isAuthenticated<span class="token punctuation">,</span> isFullMoon<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// we have a a security hole during full moon</span>
+        <span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"/user"</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            call<span class="token punctuation">.</span><span class="token function">respondText</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"Hello in your user profile"</span></span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+        
+        <span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"/admin"</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            call<span class="token punctuation">.</span><span class="token function">respondText</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"Hello admin"</span></span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"/"</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        call<span class="token punctuation">.</span><span class="token function">respondText</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"Hello world"</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<h2 id="conclusion">Conclusion</h2>
+<p>I hope this blog post gives you a good idea of how you can implement route guards in Ktor. If you have any questions,
+or have seen any errors, please let me know by sending me an email. I am always happy to help you out or learn.</p></div></main><footer class="container"><p>Build <!-- -->481dfd5<!-- --> - <!-- -->2024-11-22T15:59:12.000Z</p></footer></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-YZ9NCTW594"></script><script>
+      
+      
+      if(true) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){window.dataLayer && window.dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-YZ9NCTW594', {"send_page_view":false});
+      }
+      </script><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/ktor/guards";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-ec707b41bccf15b2b27f.js"],"app":["/app-4e8c86bd5f82e31157fb.js"],"component---src-pages-404-js":["/component---src-pages-404-js-aa0ffeb8181716267d64.js"],"component---src-pages-index-js":["/component---src-pages-index-js-a877529cf1e94834f497.js"],"component---src-templates-post-js":["/component---src-templates-post-js-8030923d6a02a65604f1.js"]};/*]]>*/</script><script src="/polyfill-ec707b41bccf15b2b27f.js" nomodule=""></script><script src="/component---src-templates-post-js-8030923d6a02a65604f1.js" async=""></script><script src="/291a736a4998dc6bb1e7dae6dfd245355445eafd-e3e290561e79912dfd37.js" async=""></script><script src="/app-4e8c86bd5f82e31157fb.js" async=""></script><script src="/framework-a24df75546761fdaa7be.js" async=""></script><script src="/webpack-runtime-1e303a87cc2fe05a88d0.js" async=""></script></body></html>
