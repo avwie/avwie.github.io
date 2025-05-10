@@ -551,6 +551,26 @@ This is because the @JsStatic can not be used on the abstract class.
 
 Now we can gradually build upon that and add a ComposedWebComponent:
 ```kotlin
+abstract class ComposedWebComponent(
+    factory: Factory<out WebComponent>,
+    mode: ShadowRootMode = ShadowRootMode.closed,
+    observedAttributes: ObservedAttributes = ObservedAttributes(factory.attributes),
+    rootElementTagName: String = "main",
+) : WebComponent(factory, mode, observedAttributes, rootElementTagName) {
+    override fun connectedCallback() {
+        renderComposable(root as org.w3c.dom.HTMLElement) {
+            render()
+        }
+    }
+
+    @Composable abstract fun render()
+}
+```
+
+
+And the Timer component becomes cleaner:
+
+```kotlin
 @OptIn(ExperimentalJsExport::class)
 @JsExport
 @JsName("TimerWebComponent")
