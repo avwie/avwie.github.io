@@ -1,5 +1,5 @@
 ---
-slug: "/ktor/guards"
+slug: "/ktor-guards"
 date: "2024-11-22"
 title: "Building Route Guards for Ktor 3 servers"
 ---

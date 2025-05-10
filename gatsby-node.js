@@ -12,6 +12,9 @@ exports.createPages = async ({actions, graphql, reporter}) => {
               node {
                 frontmatter {
                   slug
+                  pageScripts {
+                    src
+                  }
                 }
               }
             }
@@ -31,7 +34,8 @@ exports.createPages = async ({actions, graphql, reporter}) => {
             component: postTemplate,
             context: {
                 // additional data can be passed via context
-                slug: node.frontmatter.slug
+                slug: node.frontmatter.slug,
+                pageScripts: node.frontmatter.pageScripts,
             },
         })
     })
