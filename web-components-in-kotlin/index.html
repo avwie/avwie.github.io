@@ -1,0 +1,630 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="description" content="This is my programming blog where I write articles about experiments that I&#x27;ve done. Some are successful, some are not, but we learn from all."/><title>avwie&#x27;s programming blog</title><style data-href="/styles.e5d39825b48065011f83.css" data-identity="gatsby-global-css">@import url(https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap);:root{--primary-color:#3a6ea5;--primary-light:#c6d8eb;--primary-dark:#004e98;--secondary-color:#ff6b6b;--text-color:#222;--text-light:#555;--background-color:#f9f9f9;--card-background:#fff;--border-color:#e0e0e0;--shadow-color:rgba(0,0,0,.05);--code-background:#f5f7f9;--transition-speed:0.3s;--container-width:800px;--spacing-xs:0.25rem;--spacing-sm:0.5rem;--spacing-md:1rem;--spacing-lg:2rem;--spacing-xl:3rem;--border-radius:8px}*{box-sizing:border-box}body{background-color:var(--background-color);color:var(--text-color);font-family:Open Sans,sans-serif;font-size:16px;font-weight:300;line-height:1.8;margin:0;transition:background-color var(--transition-speed),color var(--transition-speed)}body code[class*=language-],body pre[class*=language-]{word-wrap:normal;background:none;color:#111b27;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none;line-height:1.5;-o-tab-size:4;tab-size:4;text-align:left;white-space:pre;word-break:normal;word-spacing:normal}body code[class*=language-] ::selection,body code[class*=language-]::selection,body pre[class*=language-] ::selection,body pre[class*=language-]::selection{background:#8da1b9}body pre[class*=language-]{margin:.5em 0;overflow:auto;padding:1em}body :not(pre)>code[class*=language-],body pre[class*=language-]{background:#e3eaf2}body :not(pre)>code[class*=language-]{border-radius:.3em;padding:.1em .3em;white-space:normal}body .token.cdata,body .token.comment,body .token.doctype,body .token.prolog{color:#3c526d}body .token.punctuation{color:#111b27}body .token.delimiter.important,body .token.selector .parent,body .token.tag,body .token.tag .token.punctuation{color:#006d6d}body .token.attr-name,body .token.boolean,body .token.boolean.important,body .token.constant,body .token.number,body .token.selector .token.attribute{color:#755f00}body .token.class-name,body .token.key,body .token.parameter,body .token.property,body .token.property-access,body .token.variable{color:#005a8e}body .token.attr-value,body .token.color,body .token.inserted,body .token.selector .token.value,body .token.string,body .token.string .token.url-link{color:#116b00}body .token.builtin,body .token.keyword-array,body .token.package,body .token.regex{color:#af00af}body .token.function,body .token.selector .token.class,body .token.selector .token.id{color:#7c00aa}body .token.atrule .token.rule,body .token.combinator,body .token.keyword,body .token.operator,body .token.pseudo-class,body .token.pseudo-element,body .token.selector,body .token.unit{color:#a04900}body .token.deleted,body .token.important{color:#c22f2e}body .token.keyword-this,body .token.this{color:#005a8e}body .token.bold,body .token.important,body .token.keyword-this,body .token.this{font-weight:700}body .token.delimiter.important{font-weight:inherit}body .token.italic{font-style:italic}body .token.entity{cursor:help}body .language-markdown .token.title,body .language-markdown .token.title .token.punctuation{color:#005a8e;font-weight:700}body .language-markdown .token.blockquote.punctuation{color:#af00af}body .language-markdown .token.code{color:#006d6d}body .language-markdown .token.hr.punctuation{color:#005a8e}body .language-markdown .token.url>.token.content{color:#116b00}body .language-markdown .token.url-link{color:#755f00}body .language-markdown .token.list.punctuation{color:#af00af}body .language-json .token.operator,body .language-markdown .token.table-header{color:#111b27}body .language-scss .token.variable{color:#006d6d}body .token.cr:before,body .token.lf:before,body .token.space:before,body .token.tab:not(:empty):before{color:#3c526d}body div.code-toolbar>.toolbar a,body div.code-toolbar>.toolbar button{background:#005a8e;color:#e3eaf2}body div.code-toolbar>.toolbar a:focus,body div.code-toolbar>.toolbar a:hover,body div.code-toolbar>.toolbar button:focus,body div.code-toolbar>.toolbar button:hover{background:rgba(0,90,142,.855);color:#e3eaf2;text-decoration:none}body div.code-toolbar>.toolbar span,body div.code-toolbar>.toolbar span:focus,body div.code-toolbar>.toolbar span:hover{background:#3c526d;color:#e3eaf2}body .line-highlight{background:rgba(141,161,185,.184);background:linear-gradient(90deg,rgba(141,161,185,.184) 70%,rgba(141,161,185,.145))}body .line-highlight:before,body .line-highlight[data-end]:after{background-color:#3c526d;box-shadow:0 1px #8da1b9;color:#e3eaf2}body pre[id].linkable-line-numbers span.line-numbers-rows>span:hover:before{background-color:rgba(60,82,109,.122)}body .line-numbers .line-numbers-rows{background:rgba(208,218,231,.478);border-right:1px solid rgba(141,161,185,.478)}body .line-numbers-rows>span:before{color:rgba(60,82,109,.855)}body .rainbow-braces .token.punctuation.brace-level-1,body .rainbow-braces .token.punctuation.brace-level-5,body .rainbow-braces .token.punctuation.brace-level-9{color:#755f00}body .rainbow-braces .token.punctuation.brace-level-10,body .rainbow-braces .token.punctuation.brace-level-2,body .rainbow-braces .token.punctuation.brace-level-6{color:#af00af}body .rainbow-braces .token.punctuation.brace-level-11,body .rainbow-braces .token.punctuation.brace-level-3,body .rainbow-braces .token.punctuation.brace-level-7{color:#005a8e}body .rainbow-braces .token.punctuation.brace-level-12,body .rainbow-braces .token.punctuation.brace-level-4,body .rainbow-braces .token.punctuation.brace-level-8{color:#7c00aa}body pre.diff-highlight>code .token.deleted:not(.prefix),body pre>code.diff-highlight .token.deleted:not(.prefix){background-color:rgba(194,47,46,.122)}body pre.diff-highlight>code .token.inserted:not(.prefix),body pre>code.diff-highlight .token.inserted:not(.prefix){background-color:rgba(17,107,0,.122)}body .command-line-prompt{border-right:1px solid rgba(141,161,185,.478)}body .command-line-prompt>span:before{color:rgba(60,82,109,.855)}body h1,body h2,body h3,body h4,body h5,body h6{color:var(--primary-dark);font-family:Lora,serif;font-weight:500;line-height:1.3;margin-bottom:var(--spacing-md);margin-top:var(--spacing-lg)}body h1{font-size:2.5rem;margin-top:var(--spacing-xl)}body h2{font-size:2rem}body h3{font-size:1.5rem}body p{margin-bottom:var(--spacing-md)}body a{color:var(--primary-color);text-decoration:none;transition:color var(--transition-speed)}body a:hover{color:var(--primary-dark);text-decoration:underline}body blockquote{background-color:var(--primary-light);border-left:4px solid var(--primary-color);border-radius:0 var(--border-radius) var(--border-radius) 0;color:var(--text-color);font-style:italic;margin:var(--spacing-lg) 0;padding:var(--spacing-md) var(--spacing-lg)}body blockquote p{margin:0}body nav{background-color:var(--primary-dark);box-shadow:0 2px 4px var(--shadow-color);padding:var(--spacing-md) 0;position:-webkit-sticky;position:sticky;top:0;width:100%;z-index:1000}body nav *{color:#fff}body nav>.container{align-items:center;display:flex;flex-direction:row;justify-content:space-between}body nav a{font-size:1.2rem;font-weight:600}body nav a:hover{opacity:.9;text-decoration:none}body nav .social{display:flex;flex-direction:row;gap:var(--spacing-md)}body nav .social a{align-items:center;display:flex;justify-content:center;transition:-webkit-transform var(--transition-speed);transition:transform var(--transition-speed);transition:transform var(--transition-speed),-webkit-transform var(--transition-speed)}body nav .social a:hover{-webkit-transform:scale(1.1);transform:scale(1.1)}body nav .social a.dark-mode{cursor:pointer}body nav .social img{height:24px;width:24px}body .container{margin:0 auto;max-width:var(--container-width);padding:0 var(--spacing-md);width:100%}body main.container{min-height:calc(100vh - 200px);padding-bottom:var(--spacing-xl);padding-top:var(--spacing-lg)}body .index>div{margin-bottom:var(--spacing-xl)}body .posts{display:grid;gap:var(--spacing-lg);grid-template-columns:1fr}@media(min-width:768px){body .posts{grid-template-columns:repeat(2,1fr)}}body .posts .post{background-color:var(--card-background);border-radius:var(--border-radius);box-shadow:0 4px 6px var(--shadow-color);display:flex;flex-direction:column;height:100%;padding:var(--spacing-lg);transition:box-shadow var(--transition-speed),-webkit-transform var(--transition-speed);transition:transform var(--transition-speed),box-shadow var(--transition-speed);transition:transform var(--transition-speed),box-shadow var(--transition-speed),-webkit-transform var(--transition-speed)}body .posts .post:hover{box-shadow:0 10px 15px var(--shadow-color);-webkit-transform:translateY(-5px);transform:translateY(-5px)}body .posts .post h2{font-size:1.5rem;margin-bottom:var(--spacing-sm);margin-top:0}body .posts .post p{margin:var(--spacing-xs) 0}body .posts .post .date,body .posts .post .reading-time{color:var(--text-light);font-size:.9rem;margin-bottom:var(--spacing-sm)}body .posts .post .excerpt{flex-grow:1;margin-bottom:var(--spacing-md)}body .posts .post a.read-more{display:inline-block;font-weight:600;padding:var(--spacing-xs) 0;position:relative}body .posts .post a.read-more:after{content:"→";margin-left:var(--spacing-xs);transition:-webkit-transform var(--transition-speed);transition:transform var(--transition-speed);transition:transform var(--transition-speed),-webkit-transform var(--transition-speed)}body .posts .post a.read-more:hover:after{-webkit-transform:translateX(4px);transform:translateX(4px)}body footer{border-top:1px solid var(--border-color);color:var(--text-light);font-size:.9rem;padding:var(--spacing-lg) 0;text-align:center}code[class*=language-],pre[class*=language-]{border-radius:var(--border-radius);font-family:Source Code Pro,monospace!important;font-size:.9rem!important;font-style:normal!important;font-weight:400!important;margin:var(--spacing-lg) 0}pre[class*=language-]{box-shadow:0 2px 4px var(--shadow-color);padding:var(--spacing-md)!important}body.dark{@import"https://fonts.googleapis.com/css2?family=Fira+Code&display=swap";--primary-color:#64b5f6;--primary-light:#2c3e50;--primary-dark:#1e88e5;--secondary-color:#ff7043;--text-color:#fff;--text-light:#ccc;--background-color:#121212;--card-background:#1e1e1e;--border-color:#333;--shadow-color:rgba(0,0,0,.2);--code-background:#2d2d2d}body.dark code[class*=language-],body.dark pre[class*=language-]{color:#a9b7c6;direction:ltr;font-family:Fira Code,monospace;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none;line-height:1.5;-o-tab-size:4;tab-size:4;text-align:left;white-space:pre;word-break:normal;word-spacing:normal}body.dark code[class*=language-] ::selection,body.dark code[class*=language-]::selection,body.dark pre[class*=language-] ::selection,body.dark pre[class*=language-]::selection{background:rgba(33,66,131,.85);color:inherit}body.dark pre[class*=language-]{margin:.5em 0;overflow:auto;padding:1em}body.dark :not(pre)>code[class*=language-],body.dark pre[class*=language-]{background:#2b2b2b}body.dark :not(pre)>code[class*=language-]{border-radius:.3em;padding:.1em}body.dark .token.cdata,body.dark .token.comment,body.dark .token.prolog{color:gray}body.dark .token.atrule,body.dark .token.boolean,body.dark .token.delimiter,body.dark .token.important,body.dark .token.keyword,body.dark .token.selector{color:#cc7832}body.dark .token.attr-name,body.dark .token.operator,body.dark .token.punctuation{color:#a9b7c6}body.dark .token.builtin,body.dark .token.doctype,body.dark .token.tag,body.dark .token.tag .punctuation{color:#e8bf6a}body.dark .token.entity,body.dark .token.number,body.dark .token.symbol{color:#6897bb}body.dark .token.constant,body.dark .token.property,body.dark .token.variable{color:#9876aa}body.dark .token.char,body.dark .token.string{color:#6a8759}body.dark .token.attr-value,body.dark .token.attr-value .punctuation{color:#a5c261}body.dark .token.attr-value .punctuation:first-child{color:#a9b7c6}body.dark .token.url{color:#287bde;text-decoration:underline}body.dark .token.function{color:#ffc66d}body.dark .token.regex{background:#364135}body.dark .token.bold{font-weight:700}body.dark .token.italic{font-style:italic}body.dark .token.inserted{background:#294436}body.dark .token.deleted{background:#484a4a}body.dark code.language-css .token.property,body.dark code.language-css .token.property+.token.punctuation{color:#a9b7c6}body.dark code.language-css .token.id,body.dark code.language-css .token.selector>.token.attribute,body.dark code.language-css .token.selector>.token.class,body.dark code.language-css .token.selector>.token.pseudo-class,body.dark code.language-css .token.selector>.token.pseudo-element{color:#ffc66d}body.dark blockquote{background-color:var(--primary-light);color:var(--text-color)}body.dark a{color:var(--primary-color)}body.dark a:hover{color:var(--primary-light)}body.dark .post{background-color:var(--card-background)}</style><meta name="generator" content="Gatsby 3.14.6"/><link rel="preconnect" href="https://www.googletagmanager.com"/><link rel="dns-prefetch" href="https://www.googletagmanager.com"/><style>.gatsby-image-wrapper{position:relative;overflow:hidden}.gatsby-image-wrapper picture.object-fit-polyfill{position:static!important}.gatsby-image-wrapper img{bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover}.gatsby-image-wrapper [data-main-image]{opacity:0;transform:translateZ(0);transition:opacity .25s linear;will-change:opacity}.gatsby-image-wrapper-constrained{display:inline-block;vertical-align:top}</style><noscript><style>.gatsby-image-wrapper noscript [data-main-image]{opacity:1!important}.gatsby-image-wrapper [data-placeholder-image]{opacity:0!important}</style></noscript><script type="module">const e="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;e&&document.body.addEventListener("load",(function(e){if(void 0===e.target.dataset.mainImage)return;if(void 0===e.target.dataset.gatsbyImageSsr)return;const t=e.target;let a=null,n=t;for(;null===a&&n;)void 0!==n.parentNode.dataset.gatsbyImageWrapper&&(a=n.parentNode),n=n.parentNode;const o=a.querySelector("[data-placeholder-image]"),r=new Image;r.src=t.currentSrc,r.decode().catch((()=>{})).then((()=>{t.style.opacity=1,o&&(o.style.opacity=0,o.style.transition="opacity 500ms linear")}))}),!0);</script><link rel="sitemap" type="application/xml" href="/sitemap.xml"/><script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var hash = window.decodeURI(location.hash.replace('#', ''))
+      if (hash !== '') {
+        var element = document.getElementById(hash)
+        if (element) {
+          var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+          var clientTop = document.documentElement.clientTop || document.body.clientTop || 0
+          var offset = element.getBoundingClientRect().top + scrollTop - clientTop
+          // Wait for the browser to finish rendering before scrolling.
+          setTimeout((function() {
+            window.scrollTo(0, offset - 0)
+          }), 0)
+        }
+      }
+    })
+  </script><link rel="alternate" type="application/rss+xml" title="avwie&#x27;s programming blog" href="/rss.xml"/><link as="script" rel="preload" href="/webpack-runtime-f31b4437165dabf76ed3.js"/><link as="script" rel="preload" href="/framework-a24df75546761fdaa7be.js"/><link as="script" rel="preload" href="/app-4e8c86bd5f82e31157fb.js"/><link as="script" rel="preload" href="/291a736a4998dc6bb1e7dae6dfd245355445eafd-ef6357f687c91485d3ff.js"/><link as="script" rel="preload" href="/component---src-templates-post-js-f4ba9efc66bcb0af9218.js"/><link as="fetch" rel="preload" href="/page-data/web-components-in-kotlin/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/3406609010.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><script>
+void function() {
+  window.__onThemeChange = function() {}
+
+  var preferredTheme
+  try {
+    preferredTheme = localStorage.getItem('theme')
+  } catch (err) { }
+
+  function setTheme(newTheme) {
+    if (preferredTheme && document.body.classList.contains(preferredTheme)) {
+      document.body.classList.replace(preferredTheme, newTheme)
+    } else {
+      document.body.classList.add(newTheme)
+    }
+
+    window.__theme = newTheme
+    preferredTheme = newTheme
+    window.__onThemeChange(newTheme)
+  }
+
+  window.__setPreferredTheme = function(newTheme) {
+    setTheme(newTheme)
+    try {
+      localStorage.setItem('theme', newTheme)
+    } catch (err) {}
+  }
+
+  var darkQuery = window.matchMedia('(prefers-color-scheme: dark)')
+  darkQuery.addListener(function(e) {
+    window.__setPreferredTheme(e.matches ? 'dark' : 'light')
+  })
+
+  setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'))
+}()
+    </script><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><nav><div class="container"><a href="/">@avwie&#x27;s programming blog</a><div class="social"><a title="Github" href="https://github.com/avwie" target="_blank" rel="noreferrer"><img alt="Github" width="24" height="24" src="/layout/github-48.png"/></a><a title="Mail" href="mailto:info@avwie.nl" target="_blank" rel="noreferrer"><img alt="Mail" width="24" height="24" src="/layout/mail-48.png"/></a><a title="Twitter" href="https://twitter.com/avwie" target="_blank" rel="noreferrer"><img alt="Twitter" width="24" height="24" src="/layout/twitter-48.png"/></a><a class="dark-mode"><img alt="dark-mode" width="24" height="24" src="/layout/dark-mode-48.png"/></a></div></div></nav><main class="container"><h1>Creating Web Components in Kotlin and Compose HTML</h1><h4>08 May, 2025</h4><div><p>For a project I'm working on, we are investigating the possibility of using web components in order to
+encapsulate a very complex piece of UI. This UI is written in Compose HTML however so that poses an extra challenge.</p>
+<p>Two years ago I was experimenting with this already but ran into quite some issues related to the way KotlinJS was compiled.
+To use Web Components you need to have a proper ES6 Classes, but this was not fully supported by KotlinJS. Especially not
+in combination with the Compose compiler.</p>
+<p>I saw there was some improvement in this area recently so I decided to give it a try again. And I was pleasantly surprised!</p>
+<h2 id="why">Why?</h2>
+<p>First of all, it is important to understand why I'd want to have Web Components created by Kotlin/JS. The most important one
+is easy-of-use in the target application <em>and</em> encapsulation.</p>
+<p>We can expose a full Compose HTML application to another HTML page by:</p>
+<ul>
+<li>providing the JS file generated by the compiler</li>
+<li>using the custom tag inside the target HTML</li>
+</ul>
+<p>The other benefit is the encapsulation:</p>
+<ul>
+<li>The DOM is contained in the Shadow DOM</li>
+<li>Styling is contained within the component</li>
+</ul>
+<h2 id="prequisites">Prequisites</h2>
+<p>I assume you have a basic understanding of Kotlin and Gradle, so I won't go into that here. In order to get started,
+you need to have the following dependencies and versions:</p>
+<div class="gatsby-highlight" data-language="toml"><pre class="language-toml"><code class="language-toml"><span class="token comment"># libs.versions.toml</span>
+<span class="token punctuation">[</span><span class="token table class-name">versions</span><span class="token punctuation">]</span>
+<span class="token key property">kotlin</span> <span class="token punctuation">=</span> <span class="token string">"2.1.20"</span>
+<span class="token key property">compose</span> <span class="token punctuation">=</span> <span class="token string">"1.7.3"</span>
+<span class="token key property">coroutines</span> <span class="token punctuation">=</span> <span class="token string">"1.10.2"</span>
+<span class="token key property">kotlin-wrappers</span> <span class="token punctuation">=</span> <span class="token string">"2025.5.3"</span>
+
+<span class="token punctuation">[</span><span class="token table class-name">libraries</span><span class="token punctuation">]</span>
+<span class="token key property">compose-html-core</span> <span class="token punctuation">=</span> <span class="token punctuation">{</span> <span class="token key property">module</span> <span class="token punctuation">=</span> <span class="token string">"org.jetbrains.compose.html:html-core"</span><span class="token punctuation">,</span> <span class="token key property">version.ref</span> <span class="token punctuation">=</span> <span class="token string">"compose"</span> <span class="token punctuation">}</span>
+<span class="token key property">compose-runtime</span> <span class="token punctuation">=</span> <span class="token punctuation">{</span> <span class="token key property">module</span> <span class="token punctuation">=</span> <span class="token string">"org.jetbrains.compose.runtime:runtime"</span><span class="token punctuation">,</span> <span class="token key property">version.ref</span> <span class="token punctuation">=</span> <span class="token string">"compose"</span> <span class="token punctuation">}</span>
+<span class="token key property">kotlin-wrappers-bom</span> <span class="token punctuation">=</span> <span class="token punctuation">{</span> <span class="token key property">module</span> <span class="token punctuation">=</span> <span class="token string">"org.jetbrains.kotlin-wrappers:kotlin-wrappers-bom"</span><span class="token punctuation">,</span> <span class="token key property">version.ref</span> <span class="token punctuation">=</span> <span class="token string">"kotlin-wrappers"</span> <span class="token punctuation">}</span>
+<span class="token key property">kotlin-coroutines-core</span> <span class="token punctuation">=</span> <span class="token punctuation">{</span> <span class="token key property">module</span> <span class="token punctuation">=</span> <span class="token string">"org.jetbrains.kotlinx:kotlinx-coroutines-core"</span><span class="token punctuation">,</span> <span class="token key property">version.ref</span> <span class="token punctuation">=</span> <span class="token string">"coroutines"</span> <span class="token punctuation">}</span>
+
+<span class="token punctuation">[</span><span class="token table class-name">plugins</span><span class="token punctuation">]</span>
+<span class="token key property">kotlin-multiplatform</span> <span class="token punctuation">=</span> <span class="token punctuation">{</span> <span class="token key property">id</span> <span class="token punctuation">=</span> <span class="token string">"org.jetbrains.kotlin.multiplatform"</span><span class="token punctuation">,</span> <span class="token key property">version.ref</span> <span class="token punctuation">=</span> <span class="token string">"kotlin"</span> <span class="token punctuation">}</span>
+<span class="token key property">compose-compiler</span> <span class="token punctuation">=</span> <span class="token punctuation">{</span> <span class="token key property">id</span> <span class="token punctuation">=</span> <span class="token string">"org.jetbrains.kotlin.plugin.compose"</span><span class="token punctuation">,</span> <span class="token key property">version.ref</span> <span class="token punctuation">=</span> <span class="token string">"kotlin"</span> <span class="token punctuation">}</span>
+<span class="token key property">compose</span> <span class="token punctuation">=</span> <span class="token punctuation">{</span> <span class="token key property">id</span> <span class="token punctuation">=</span> <span class="token string">"org.jetbrains.compose"</span><span class="token punctuation">,</span> <span class="token key property">version.ref</span> <span class="token punctuation">=</span> <span class="token string">"compose"</span> <span class="token punctuation">}</span></code></pre></div>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token comment">// build.gradle.kts</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>jetbrains<span class="token punctuation">.</span>kotlin<span class="token punctuation">.</span>gradle<span class="token punctuation">.</span>dsl<span class="token punctuation">.</span>JsModuleKind
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>jetbrains<span class="token punctuation">.</span>kotlin<span class="token punctuation">.</span>gradle<span class="token punctuation">.</span>dsl<span class="token punctuation">.</span>KotlinJsCompile
+
+plugins <span class="token punctuation">{</span>
+    <span class="token function">alias</span><span class="token punctuation">(</span>libs<span class="token punctuation">.</span>plugins<span class="token punctuation">.</span>kotlin<span class="token punctuation">.</span>multiplatform<span class="token punctuation">)</span>
+    <span class="token function">alias</span><span class="token punctuation">(</span>libs<span class="token punctuation">.</span>plugins<span class="token punctuation">.</span>compose<span class="token punctuation">.</span>compiler<span class="token punctuation">)</span>
+    <span class="token function">alias</span><span class="token punctuation">(</span>libs<span class="token punctuation">.</span>plugins<span class="token punctuation">.</span>compose<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+kotlin <span class="token punctuation">{</span>
+    <span class="token function">js</span><span class="token punctuation">(</span>IR<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">browser</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        binaries<span class="token punctuation">.</span><span class="token function">executable</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    sourceSets <span class="token punctuation">{</span>
+        <span class="token keyword">val</span> jsMain <span class="token keyword">by</span> getting <span class="token punctuation">{</span>
+            dependencies <span class="token punctuation">{</span>
+                <span class="token function">implementation</span><span class="token punctuation">(</span>project<span class="token punctuation">.</span>dependencies<span class="token punctuation">.</span><span class="token function">platform</span><span class="token punctuation">(</span>libs<span class="token punctuation">.</span>kotlin<span class="token punctuation">.</span>wrappers<span class="token punctuation">.</span>bom<span class="token punctuation">)</span><span class="token punctuation">)</span>
+                <span class="token function">implementation</span><span class="token punctuation">(</span>compose<span class="token punctuation">.</span>html<span class="token punctuation">.</span>core<span class="token punctuation">)</span>
+                <span class="token function">implementation</span><span class="token punctuation">(</span>compose<span class="token punctuation">.</span>runtime<span class="token punctuation">)</span>
+
+                <span class="token function">implementation</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"org.jetbrains.kotlin-wrappers:kotlin-browser"</span></span><span class="token punctuation">)</span>
+                <span class="token function">implementation</span><span class="token punctuation">(</span>libs<span class="token punctuation">.</span>kotlin<span class="token punctuation">.</span>coroutines<span class="token punctuation">.</span>core<span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+tasks<span class="token punctuation">.</span>withType<span class="token operator">&lt;</span>KotlinJsCompile<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">configureEach</span> <span class="token punctuation">{</span>
+    compilerOptions <span class="token punctuation">{</span>
+        moduleKind<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>JsModuleKind<span class="token punctuation">.</span>MODULE_ES<span class="token punctuation">)</span>
+        useEsClasses<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>Please take note of the following:</p>
+<ul>
+<li>we need to actually generate ES6 classes</li>
+<li>we need to use the <code class="language-text">kotlin-wrappers-bom</code> in order to get the excellent kotlin-wrappers browser library (<a href="https://github.com/JetBrains/kotlin-wrappers">https://github.com/JetBrains/kotlin-wrappers</a>)</li>
+</ul>
+<h2 id="creating-a-basic-web-component">Creating a basic Web Component</h2>
+<p>Let's create a simple timer component. It should feature:</p>
+<ul>
+<li>A start button</li>
+<li>A stop button</li>
+<li>A reset button</li>
+<li>A time display</li>
+<li>Properties to set the time</li>
+<li>Events to notify when the timer has started, stopped or reset, and when the time has been reached</li>
+</ul>
+<h3 id="laying-down-the-basic-structure">Laying down the basic structure</h3>
+<p>Let's look at how to built a Web Component as described by MDN (<a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements#implementing_a_custom_element">https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements#implementing_a_custom_element</a>).</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token comment">// example in Javascript</span>
+<span class="token keyword">class</span> <span class="token class-name">MyWebComponent</span> <span class="token keyword">extends</span> <span class="token class-name">HTMLElement</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// Element functionality written in here</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>The equivalent in Kotlin is:</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token comment">// example in Kotlin</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>w3c<span class="token punctuation">.</span>dom<span class="token punctuation">.</span>HTMLElement
+
+<span class="token keyword">class</span> TimerWebComponent <span class="token operator">:</span> <span class="token function">HTMLElement</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    
+<span class="token punctuation">}</span></code></pre></div>
+<p>Here we immediately hit a snag. The HTMLElement from <code class="language-text">org.wrc.dom.HTMLElement</code> is abstract, but it requires us to implement all methods.
+That's why we will use the <code class="language-text">web.html.HTMLElement</code> variant from Kotlin wrappers.</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token keyword">import</span> web<span class="token punctuation">.</span>html<span class="token punctuation">.</span>HTMLElement
+
+<span class="token keyword">class</span> TimerWebComponent <span class="token operator">:</span> <span class="token function">HTMLElement</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">init</span> <span class="token punctuation">{</span>
+        <span class="token function">println</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"TimerWebComponent initialized!"</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>Let's create a simple entry point for the application:</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">val</span> timer <span class="token operator">=</span> <span class="token function">TimerWebComponent</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>and embed our JS in a HTML page in `resources/index.html:</p>
+<div class="gatsby-highlight" data-language="html"><pre class="language-html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">doctype</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>width=device-width, initial-scale=1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>Compose Web Components<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>compose-web-components.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre></div>
+<p>and when running we are bombarded with error messages saying that the TimerWebComponent can not be constructed.
+Looking at the MDN documentation we actually see we need to register our Web Component in order to use it as a tag.</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token comment">// javascript</span>
+customElements<span class="token punctuation">.</span><span class="token function">define</span><span class="token punctuation">(</span><span class="token string">"my-custom-element"</span><span class="token punctuation">,</span> MyCustomElement<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<p>We can achieve this in Kotlin by using:</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token keyword">import</span> web<span class="token punctuation">.</span>components<span class="token punctuation">.</span>customElements
+<span class="token keyword">import</span> web<span class="token punctuation">.</span>html<span class="token punctuation">.</span>HtmlTagName
+
+<span class="token keyword">fun</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    customElements<span class="token punctuation">.</span><span class="token function">define</span><span class="token punctuation">(</span><span class="token function">HtmlTagName</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"timer-web-component"</span></span><span class="token punctuation">)</span><span class="token punctuation">,</span> TimerWebComponent<span class="token operator">::</span><span class="token keyword">class</span><span class="token punctuation">.</span>js<span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>and updating our <code class="language-text">index.html</code></p>
+<div class="gatsby-highlight" data-language="html"><pre class="language-html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">doctype</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>width=device-width, initial-scale=1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>Compose Web Components<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>compose-web-components.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>timer-web-component</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>timer-web-component</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre></div>
+<p>Everything is working! Wait.... the <code class="language-text">init</code> block is not running. That is a bug in KotlinJS which is already being tracked here: <a href="https://youtrack.jetbrains.com/issue/KT-44444">https://youtrack.jetbrains.com/issue/KT-44444</a>
+We need to add the @JsExport annotation to the class for it to work. Besides that, it is nice to add a @JsName annotation as well so we do not get name mangling.</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token annotation builtin">@OptIn</span><span class="token punctuation">(</span>ExperimentalJsExport<span class="token operator">::</span><span class="token keyword">class</span><span class="token punctuation">)</span>
+<span class="token annotation builtin">@JsExport</span>
+<span class="token annotation builtin">@JsName</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"TimerWebComponent"</span></span><span class="token punctuation">)</span>
+<span class="token keyword">class</span> TimerWebComponent <span class="token operator">:</span> <span class="token function">HTMLElement</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">init</span> <span class="token punctuation">{</span>
+        <span class="token function">println</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"TimerWebComponent init"</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span> </code></pre></div>
+<p>Lo and behold, we get a notice in the console!</p>
+<h3 id="adding-callbacks-and-the-shadow-dom">Adding callbacks and the shadow DOM</h3>
+<p>According to the MDN documentation there is a set of callbacks we can implement. We can use the wrappers again.</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token annotation builtin">@OptIn</span><span class="token punctuation">(</span>ExperimentalJsExport<span class="token operator">::</span><span class="token keyword">class</span><span class="token punctuation">)</span>
+<span class="token annotation builtin">@JsExport</span>
+<span class="token annotation builtin">@JsName</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"TimerWebComponent"</span></span><span class="token punctuation">)</span>
+<span class="token keyword">class</span> TimerWebComponent <span class="token operator">:</span> <span class="token function">HTMLElement</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> CustomElement<span class="token punctuation">.</span><span class="token function">WithCallbacks</span> <span class="token punctuation">{</span>
+    <span class="token keyword">override</span> <span class="token keyword">fun</span> <span class="token function">connectedCallback</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">println</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"TimerWebComponent connected!"</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">override</span> <span class="token keyword">fun</span> <span class="token function">disconnectedCallback</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">println</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"TimerWebComponent disconnected!"</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">override</span> <span class="token keyword">fun</span> <span class="token function">adoptedCallback</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">println</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"TimerWebComponent adopted!"</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">override</span> <span class="token keyword">fun</span> <span class="token function">attributeChangedCallback</span><span class="token punctuation">(</span>name<span class="token operator">:</span> String<span class="token punctuation">,</span> oldValue<span class="token operator">:</span> JsAny<span class="token operator">?</span><span class="token punctuation">,</span> newValue<span class="token operator">:</span> JsAny<span class="token operator">?</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">println</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"TimerWebComponent attributeChangedCallback </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$</span><span class="token expression">name</span></span><span class="token string"> </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$</span><span class="token expression">oldValue</span></span><span class="token string"> </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$</span><span class="token expression">newValue</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>They seem to be working!</p>
+<p>Now time to add the shadow DOM and some content:</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token keyword">class</span> TimerWebComponent <span class="token operator">:</span> <span class="token function">HTMLElement</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> CustomElement<span class="token punctuation">.</span><span class="token function">WithCallbacks</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">val</span> shadow<span class="token operator">:</span> ShadowRoot <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">attachShadow</span><span class="token punctuation">(</span><span class="token function">ShadowRootInit</span><span class="token punctuation">(</span>mode <span class="token operator">=</span> ShadowRootMode<span class="token punctuation">.</span>closed<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">override</span> <span class="token keyword">fun</span> <span class="token function">connectedCallback</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"h1"</span></span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">apply</span> <span class="token punctuation">{</span>
+            innerText <span class="token operator">=</span> <span class="token string-literal singleline"><span class="token string">"Hello from WebComponent"</span></span>
+            shadow<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token comment">// ...</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>Great succes, we have a simple web component working.</p>
+<h3 id="basic-compose-integration">Basic Compose integration</h3>
+<p>Now it should be pretty easy to integrate Compose HTML into our Web Component:</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token keyword">override</span> <span class="token keyword">fun</span> <span class="token function">connectedCallback</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">val</span> root <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"main"</span></span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">apply</span> <span class="token punctuation">{</span>
+        shadow<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token function">renderComposable</span><span class="token punctuation">(</span>root <span class="token keyword">as</span> org<span class="token punctuation">.</span>w3c<span class="token punctuation">.</span>dom<span class="token punctuation">.</span>HTMLElement<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">val</span> time <span class="token operator">=</span> remember <span class="token punctuation">{</span> <span class="token function">mutableStateOf</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">}</span>
+
+        <span class="token function">LaunchedEffect</span><span class="token punctuation">(</span>Unit<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                time<span class="token punctuation">.</span>value <span class="token operator">+=</span> <span class="token number">1</span>
+                <span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+        H1 <span class="token punctuation">{</span> <span class="token function">Text</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"Time: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token expression">time<span class="token punctuation">.</span>value</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span> <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<h2 id="getting-reactive">Getting reactive</h2>
+<p>One of the features of Web Components it the fact they have callbacks for when the attributes of the web component change.
+By using the excellent <code class="language-text">StateFlow&lt;T></code> of Coroutines we can easily react to changes inside our composables.</p>
+<p>The <code class="language-text">attributeChangedCallback</code> is as follows:</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token keyword">override</span> <span class="token keyword">fun</span> <span class="token function">attributeChangedCallback</span><span class="token punctuation">(</span>name<span class="token operator">:</span> String<span class="token punctuation">,</span> oldValue<span class="token operator">:</span> JsAny<span class="token operator">?</span><span class="token punctuation">,</span> newValue<span class="token operator">:</span> JsAny<span class="token operator">?</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// implement handling of changes here</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>According to the MDN documentation we need to specify a static value on the WebComponent to indicate which attributes
+need to be observed:</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token comment">// Example from MDN in javascript</span>
+<span class="token keyword">class</span> <span class="token class-name">MyCustomElement</span> <span class="token keyword">extends</span> <span class="token class-name">HTMLElement</span> <span class="token punctuation">{</span>
+    <span class="token keyword">static</span> observedAttributes <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"size"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+    <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">super</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token function">attributeChangedCallback</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> oldValue<span class="token punctuation">,</span> newValue</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>
+            <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Attribute </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> has changed from </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>oldValue<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> to </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>newValue<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">.</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+        <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+customElements<span class="token punctuation">.</span><span class="token function">define</span><span class="token punctuation">(</span><span class="token string">"my-custom-element"</span><span class="token punctuation">,</span> MyCustomElement<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<p>We need to make sure this works in Kotlin as well.</p>
+<p>Let's first think of what we want inside our web commponent. We want to be able to get a StateFlow belonging to the attribute.
+This StateFlow should ideally be typed, but properties are <code class="language-text">JsAny?</code> so we need to cast them. Also, a name should be attached to them.</p>
+<p>I like to make things explicit, so I am just going to create a <code class="language-text">data class</code> for this situation:</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token keyword">data</span> <span class="token keyword">class</span> ObservedAttribute<span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token punctuation">(</span>
+    <span class="token keyword">val</span> name<span class="token operator">:</span> String<span class="token punctuation">,</span>
+    <span class="token keyword">val</span> default<span class="token operator">:</span> T<span class="token punctuation">,</span>
+    <span class="token keyword">val</span> cast<span class="token operator">:</span> <span class="token punctuation">(</span>JsAny<span class="token operator">?</span><span class="token punctuation">)</span> <span class="token operator">-></span> T
+<span class="token punctuation">)</span></code></pre></div>
+<p>No it would be handy if we have some sort of 'registry' where we can register our observed attributes and have it handle the <code class="language-text">attributeChangedCallback</code></p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token keyword">class</span> <span class="token function">ObservedAttributes</span><span class="token punctuation">(</span>
+    attributes<span class="token operator">:</span> List<span class="token operator">&lt;</span>ObservedAttribute<span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">></span><span class="token operator">></span>
+<span class="token punctuation">)</span> <span class="token operator">:</span> CustomElement<span class="token punctuation">.</span><span class="token function">WithAttributeChangedCallback</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="token keyword">vararg</span> attributes<span class="token operator">:</span> ObservedAttribute<span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">></span><span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">(</span>attributes<span class="token punctuation">.</span><span class="token function">toList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">val</span> names <span class="token operator">=</span> attributes<span class="token punctuation">.</span><span class="token function">associateBy</span> <span class="token punctuation">{</span> it<span class="token punctuation">.</span>name <span class="token punctuation">}</span>
+    <span class="token keyword">private</span> <span class="token keyword">val</span> flows <span class="token operator">=</span> attributes<span class="token punctuation">.</span><span class="token function">associate</span> <span class="token punctuation">{</span> it <span class="token keyword">to</span> <span class="token function">MutableStateFlow</span><span class="token punctuation">(</span>it<span class="token punctuation">.</span>default<span class="token punctuation">)</span> <span class="token punctuation">}</span>
+
+    <span class="token keyword">override</span> <span class="token keyword">fun</span> <span class="token function">attributeChangedCallback</span><span class="token punctuation">(</span>name<span class="token operator">:</span> String<span class="token punctuation">,</span> oldValue<span class="token operator">:</span> JsAny<span class="token operator">?</span><span class="token punctuation">,</span> newValue<span class="token operator">:</span> JsAny<span class="token operator">?</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">val</span> name <span class="token operator">=</span> <span class="token function">requireNotNull</span><span class="token punctuation">(</span>names<span class="token punctuation">[</span>name<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token string-literal singleline"><span class="token string">"Unknown attribute: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$</span><span class="token expression">name</span></span><span class="token string">"</span></span> <span class="token punctuation">}</span>
+        <span class="token keyword">val</span> flow <span class="token operator">=</span> <span class="token function">requireNotNull</span><span class="token punctuation">(</span>flows<span class="token punctuation">[</span>name<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token string-literal singleline"><span class="token string">"Unknown attribute: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$</span><span class="token expression">name</span></span><span class="token string">"</span></span> <span class="token punctuation">}</span>
+        flow<span class="token punctuation">.</span><span class="token function">update</span> <span class="token punctuation">{</span> name<span class="token punctuation">.</span><span class="token function">cast</span><span class="token punctuation">(</span>newValue<span class="token punctuation">)</span> <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation builtin">@Suppress</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"UNCHECKED_CAST"</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">fun</span> <span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token function">getOrNull</span><span class="token punctuation">(</span>attr<span class="token operator">:</span> ObservedAttribute<span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token punctuation">)</span><span class="token operator">:</span> StateFlow<span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token operator">?</span> <span class="token operator">=</span> flows<span class="token punctuation">[</span>attr<span class="token punctuation">]</span> <span class="token keyword">as</span><span class="token operator">?</span> StateFlow<span class="token operator">&lt;</span>T<span class="token operator">></span>
+
+    <span class="token keyword">operator</span> <span class="token keyword">fun</span> <span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token keyword">get</span><span class="token punctuation">(</span>attr<span class="token operator">:</span> ObservedAttribute<span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token punctuation">)</span><span class="token operator">:</span> StateFlow<span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token operator">=</span> <span class="token function">requireNotNull</span><span class="token punctuation">(</span><span class="token function">getOrNull</span><span class="token punctuation">(</span>attr<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token string-literal singleline"><span class="token string">"Unknown attribute: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$</span><span class="token expression">attr</span></span><span class="token string">"</span></span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>And now we can integrate it into our web component. We use the @JsStatic annotation to make sure the static property is available.:</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token keyword">class</span> TimerWebComponent <span class="token operator">:</span> <span class="token function">HTMLElement</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> CustomElement<span class="token punctuation">.</span><span class="token function">WithCallbacks</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">companion</span> <span class="token keyword">object</span> <span class="token punctuation">{</span>
+        <span class="token keyword">val</span> attributes <span class="token operator">=</span> <span class="token function">arrayOf</span><span class="token punctuation">(</span>Attributes<span class="token punctuation">.</span>Time<span class="token punctuation">)</span>
+        
+        <span class="token annotation builtin">@OptIn</span><span class="token punctuation">(</span>ExperimentalJsStatic<span class="token operator">::</span><span class="token keyword">class</span><span class="token punctuation">)</span>
+        <span class="token annotation builtin">@JsStatic</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token annotation builtin">@JsName</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"observedAttributes"</span></span><span class="token punctuation">)</span>
+        <span class="token keyword">val</span> staticObservedAttributes <span class="token operator">=</span> attributes<span class="token punctuation">.</span><span class="token function">map</span> <span class="token punctuation">{</span> it<span class="token punctuation">.</span>name <span class="token punctuation">}</span><span class="token punctuation">.</span><span class="token function">toTypedArray</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        
+        <span class="token keyword">object</span> Attributes <span class="token punctuation">{</span>
+            <span class="token keyword">val</span> Time <span class="token operator">=</span> <span class="token function">ObservedAttribute</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"time"</span></span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> it<span class="token operator">?</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">?</span><span class="token punctuation">.</span><span class="token function">toIntOrNull</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">?:</span> <span class="token number">0</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token keyword">val</span> observedAttributes <span class="token operator">=</span> <span class="token function">ObservedAttributes</span><span class="token punctuation">(</span><span class="token operator">*</span>TimerWebComponent<span class="token punctuation">.</span>attributes<span class="token punctuation">)</span>
+    
+    <span class="token comment">// ....</span>
+    
+    <span class="token function">renderComposable</span><span class="token punctuation">(</span>root <span class="token keyword">as</span> org<span class="token punctuation">.</span>w3c<span class="token punctuation">.</span>dom<span class="token punctuation">.</span>HTMLElement<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">var</span> currentTime <span class="token keyword">by</span> remember <span class="token punctuation">{</span> <span class="token function">mutableStateOf</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">}</span>
+        <span class="token keyword">val</span> initialTime <span class="token keyword">by</span> remember <span class="token punctuation">{</span> observedAttributes<span class="token punctuation">[</span>Attributes<span class="token punctuation">.</span>Time<span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">.</span><span class="token function">collectAsState</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+        <span class="token function">LaunchedEffect</span><span class="token punctuation">(</span>initialTime<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            currentTime <span class="token operator">=</span> initialTime
+            <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span>
+                currentTime <span class="token operator">-=</span> <span class="token number">1</span>
+                currentTime <span class="token operator">=</span> currentTime<span class="token punctuation">.</span><span class="token function">coerceAtLeast</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+        H1 <span class="token punctuation">{</span> <span class="token function">Text</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"Time: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token expression">currentTime</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span> <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token comment">// ...</span>
+    
+    <span class="token keyword">override</span> <span class="token keyword">fun</span> <span class="token function">attributeChangedCallback</span><span class="token punctuation">(</span>name<span class="token operator">:</span> String<span class="token punctuation">,</span> oldValue<span class="token operator">:</span> JsAny<span class="token operator">?</span><span class="token punctuation">,</span> newValue<span class="token operator">:</span> JsAny<span class="token operator">?</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        observedAttributes<span class="token punctuation">.</span><span class="token function">attributeChangedCallback</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> oldValue<span class="token punctuation">,</span> newValue<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>Now we only need to update the index.html</p>
+<div class="gatsby-highlight" data-language="html"><pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>timer-component</span> <span class="token attr-name">time</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>100<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>timer-component</span><span class="token punctuation">></span></span></code></pre></div>
+<p>And we have a functioning timer counting down! Let's test the reactivity by changing the time attribute:</p>
+<div class="gatsby-highlight" data-language="html"><pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>timer-component</span> <span class="token attr-name">time</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>100<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>timer-component</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+    <span class="token keyword">const</span> timer <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'timer-component'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+        timer<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">"time"</span><span class="token punctuation">,</span> <span class="token number">200</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></code></pre></div>
+<p>it works like a charm!</p>
+<h2 id="sending-out-events">Sending out events</h2>
+<p>Sending out events is actually pretty easy and is part of the normal DOM API, using the <code class="language-text">dispatchEvent</code> method.
+We need to construct a <code class="language-text">CustomEvent</code> with the following properties:</p>
+<ul>
+<li><code class="language-text">bubbles</code>: we want this event to bubble up through the DOM, so <code class="language-text">true</code></li>
+<li><code class="language-text">composed</code>: whether or not we want it to pass through the Shadow DOM boundary. Well... yes, so <code class="language-text">true</code></li>
+<li><code class="language-text">detail</code>: The payload we want to have. This depends on the event of course.</li>
+</ul>
+<p>First, let us define the following events:</p>
+<ul>
+<li><code class="language-text">timerStarted</code> event, with a payload of the <code class="language-text">initialTime</code></li>
+<li><code class="language-text">timerEnded</code> event, with a payload of the <code class="language-text">initialTime</code></li>
+</ul>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token keyword">private</span> <span class="token keyword">fun</span> <span class="token function">dispatchTimerStarted</span><span class="token punctuation">(</span>initialTime<span class="token operator">:</span> Int<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">val</span> event <span class="token operator">=</span> <span class="token function">CustomEvent</span><span class="token punctuation">(</span><span class="token function">EventType</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"timerStarted"</span></span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">CustomEventInit</span><span class="token punctuation">(</span>detail <span class="token operator">=</span> initialTime<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">dispatchEvent</span><span class="token punctuation">(</span>event<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">private</span> <span class="token keyword">fun</span> <span class="token function">dispatchTimerEnded</span><span class="token punctuation">(</span>initialTime<span class="token operator">:</span> Int<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">val</span> event <span class="token operator">=</span> <span class="token function">CustomEvent</span><span class="token punctuation">(</span><span class="token function">EventType</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"timerEnded"</span></span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">CustomEventInit</span><span class="token punctuation">(</span>detail <span class="token operator">=</span> initialTime<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">dispatchEvent</span><span class="token punctuation">(</span>event<span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>And in the <code class="language-text">LaunchedEffect</code>:</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"> <span class="token function">LaunchedEffect</span><span class="token punctuation">(</span>initialTime<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    currentTime <span class="token operator">=</span> initialTime
+
+    <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>currentTime <span class="token operator">==</span> initialTime<span class="token punctuation">)</span> <span class="token function">dispatchTimerStarted</span><span class="token punctuation">(</span>initialTime<span class="token punctuation">)</span>
+        
+        <span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span>
+        
+        currentTime <span class="token operator">-=</span> <span class="token number">1</span>
+        currentTime <span class="token operator">=</span> currentTime<span class="token punctuation">.</span><span class="token function">coerceAtLeast</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>currentTime <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token function">dispatchTimerEnded</span><span class="token punctuation">(</span>initialTime<span class="token punctuation">)</span>
+            <span class="token keyword">break</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>and now we can subscribe using:</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> timer <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'timer-component'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+timer<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'timerStarted'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">evt</span><span class="token punctuation">)</span> <span class="token operator">=></span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Timer started, initial: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span> evt<span class="token punctuation">.</span>detail <span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> seconds</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+timer<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'timerEnded'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">evt</span><span class="token punctuation">)</span> <span class="token operator">=></span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Timer ended, original: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span> evt<span class="token punctuation">.</span>detail <span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> seconds</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<h2 id="improving-the-api-by-abstraction">Improving the API by abstraction</h2>
+<p>Looking closely at the timer component we have a lot of boilerplate. This can easily be captured in an abstract <code class="language-text">WebComponent</code> class:</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token keyword">abstract</span> <span class="token keyword">class</span> <span class="token function">WebComponent</span><span class="token punctuation">(</span>
+    factory<span class="token operator">:</span> Factory<span class="token operator">&lt;</span><span class="token keyword">out</span> WebComponent<span class="token operator">></span><span class="token punctuation">,</span>
+    mode<span class="token operator">:</span> ShadowRootMode <span class="token operator">=</span> ShadowRootMode<span class="token punctuation">.</span>closed<span class="token punctuation">,</span>
+    <span class="token keyword">protected</span> <span class="token keyword">val</span> observedAttributes<span class="token operator">:</span> ObservedAttributes <span class="token operator">=</span> <span class="token function">ObservedAttributes</span><span class="token punctuation">(</span>factory<span class="token punctuation">.</span>attributes<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    rootElementTagName<span class="token operator">:</span> String <span class="token operator">=</span> <span class="token string-literal singleline"><span class="token string">"main"</span></span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token function">HTMLElement</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> CustomElement<span class="token punctuation">.</span>WithCallbacks<span class="token punctuation">,</span> CustomElement<span class="token punctuation">.</span>WithAttributeChangedCallback <span class="token keyword">by</span> observedAttributes <span class="token punctuation">{</span>
+
+    <span class="token keyword">abstract</span> <span class="token keyword">class</span> Factory<span class="token operator">&lt;</span>T <span class="token operator">:</span> WebComponent<span class="token operator">></span><span class="token punctuation">(</span>
+        <span class="token keyword">val</span> tagName<span class="token operator">:</span> String<span class="token punctuation">,</span>
+        <span class="token keyword">val</span> clazz<span class="token operator">:</span> CustomElementConstructor<span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token punctuation">,</span>
+        <span class="token keyword">val</span> attributes<span class="token operator">:</span> List<span class="token operator">&lt;</span>ObservedAttribute<span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">></span><span class="token operator">></span> <span class="token operator">=</span> <span class="token function">emptyList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">fun</span> <span class="token function">register</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            clazz<span class="token punctuation">.</span><span class="token function">asDynamic</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>observedAttributes <span class="token operator">=</span> attributes<span class="token punctuation">.</span><span class="token function">map</span> <span class="token punctuation">{</span> it<span class="token punctuation">.</span>name <span class="token punctuation">}</span><span class="token punctuation">.</span><span class="token function">toTypedArray</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            customElements<span class="token punctuation">.</span><span class="token function">define</span><span class="token punctuation">(</span><span class="token function">HtmlTagName</span><span class="token punctuation">(</span>tagName<span class="token punctuation">)</span><span class="token punctuation">,</span> clazz<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">data</span> <span class="token keyword">class</span> ObservedAttribute<span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token punctuation">(</span>
+        <span class="token keyword">val</span> name<span class="token operator">:</span> String<span class="token punctuation">,</span>
+        <span class="token keyword">val</span> default<span class="token operator">:</span> T<span class="token punctuation">,</span>
+        <span class="token keyword">val</span> cast<span class="token operator">:</span> <span class="token punctuation">(</span>JsAny<span class="token operator">?</span><span class="token punctuation">)</span> <span class="token operator">-></span> T
+    <span class="token punctuation">)</span>
+
+    <span class="token keyword">class</span> <span class="token function">ObservedAttributes</span><span class="token punctuation">(</span>
+        attributes<span class="token operator">:</span> List<span class="token operator">&lt;</span>ObservedAttribute<span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">></span><span class="token operator">></span>
+    <span class="token punctuation">)</span> <span class="token operator">:</span> CustomElement<span class="token punctuation">.</span><span class="token function">WithAttributeChangedCallback</span> <span class="token punctuation">{</span>
+
+        <span class="token keyword">private</span> <span class="token keyword">val</span> names <span class="token operator">=</span> attributes<span class="token punctuation">.</span><span class="token function">associateBy</span> <span class="token punctuation">{</span> it<span class="token punctuation">.</span>name <span class="token punctuation">}</span>
+        <span class="token keyword">private</span> <span class="token keyword">val</span> flows <span class="token operator">=</span> attributes<span class="token punctuation">.</span><span class="token function">associate</span> <span class="token punctuation">{</span> it <span class="token keyword">to</span> <span class="token function">MutableStateFlow</span><span class="token punctuation">(</span>it<span class="token punctuation">.</span>default<span class="token punctuation">)</span> <span class="token punctuation">}</span>
+
+        <span class="token keyword">override</span> <span class="token keyword">fun</span> <span class="token function">attributeChangedCallback</span><span class="token punctuation">(</span>name<span class="token operator">:</span> String<span class="token punctuation">,</span> oldValue<span class="token operator">:</span> JsAny<span class="token operator">?</span><span class="token punctuation">,</span> newValue<span class="token operator">:</span> JsAny<span class="token operator">?</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">val</span> name <span class="token operator">=</span> <span class="token function">requireNotNull</span><span class="token punctuation">(</span>names<span class="token punctuation">[</span>name<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token string-literal singleline"><span class="token string">"Unknown attribute: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$</span><span class="token expression">name</span></span><span class="token string">"</span></span> <span class="token punctuation">}</span>
+            <span class="token keyword">val</span> flow <span class="token operator">=</span> <span class="token function">requireNotNull</span><span class="token punctuation">(</span>flows<span class="token punctuation">[</span>name<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token string-literal singleline"><span class="token string">"Unknown attribute: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$</span><span class="token expression">name</span></span><span class="token string">"</span></span> <span class="token punctuation">}</span>
+            flow<span class="token punctuation">.</span><span class="token function">update</span> <span class="token punctuation">{</span> name<span class="token punctuation">.</span><span class="token function">cast</span><span class="token punctuation">(</span>newValue<span class="token punctuation">)</span> <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token annotation builtin">@Suppress</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"UNCHECKED_CAST"</span></span><span class="token punctuation">)</span>
+        <span class="token keyword">fun</span> <span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token function">getOrNull</span><span class="token punctuation">(</span>attr<span class="token operator">:</span> ObservedAttribute<span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token punctuation">)</span><span class="token operator">:</span> StateFlow<span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token operator">?</span> <span class="token operator">=</span> flows<span class="token punctuation">[</span>attr<span class="token punctuation">]</span> <span class="token keyword">as</span><span class="token operator">?</span> StateFlow<span class="token operator">&lt;</span>T<span class="token operator">></span>
+
+        <span class="token keyword">operator</span> <span class="token keyword">fun</span> <span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token keyword">get</span><span class="token punctuation">(</span>attr<span class="token operator">:</span> ObservedAttribute<span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token punctuation">)</span><span class="token operator">:</span> StateFlow<span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token operator">=</span> <span class="token function">requireNotNull</span><span class="token punctuation">(</span><span class="token function">getOrNull</span><span class="token punctuation">(</span>attr<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token string-literal singleline"><span class="token string">"Unknown attribute: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$</span><span class="token expression">attr</span></span><span class="token string">"</span></span> <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">data</span> <span class="token keyword">class</span> EventDescriptor<span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token punctuation">(</span><span class="token keyword">val</span> name<span class="token operator">:</span> String<span class="token punctuation">,</span> <span class="token keyword">val</span> bubbles<span class="token operator">:</span> Boolean <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token keyword">val</span> cancellable<span class="token operator">:</span> Boolean<span class="token operator">?</span> <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token keyword">val</span> composed<span class="token operator">:</span> Boolean <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">val</span> shadow<span class="token operator">:</span> ShadowRoot <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">attachShadow</span><span class="token punctuation">(</span><span class="token function">ShadowRootInit</span><span class="token punctuation">(</span>mode <span class="token operator">=</span> mode<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">val</span> root <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span>rootElementTagName<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">apply</span> <span class="token punctuation">{</span>
+        shadow<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">fun</span> <span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token function">dispatchEvent</span><span class="token punctuation">(</span>descriptor<span class="token operator">:</span> EventDescriptor<span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token punctuation">,</span> payload<span class="token operator">:</span> T<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">dispatchEvent</span><span class="token punctuation">(</span>
+        <span class="token function">CustomEvent</span><span class="token punctuation">(</span>
+            type <span class="token operator">=</span> <span class="token function">EventType</span><span class="token punctuation">(</span>descriptor<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token keyword">init</span> <span class="token operator">=</span> <span class="token function">CustomEventInit</span><span class="token punctuation">(</span>
+                bubbles <span class="token operator">=</span> descriptor<span class="token punctuation">.</span>bubbles<span class="token punctuation">,</span>
+                cancelable <span class="token operator">=</span> descriptor<span class="token punctuation">.</span>cancellable<span class="token punctuation">,</span>
+                composed <span class="token operator">=</span> descriptor<span class="token punctuation">.</span>composed<span class="token punctuation">,</span>
+                detail <span class="token operator">=</span> payload<span class="token punctuation">,</span>
+            <span class="token punctuation">)</span>
+        <span class="token punctuation">)</span>
+    <span class="token punctuation">)</span>
+
+    <span class="token keyword">override</span> <span class="token keyword">fun</span> <span class="token function">disconnectedCallback</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+    <span class="token keyword">override</span> <span class="token keyword">fun</span> <span class="token function">adoptedCallback</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>We are using a factory pattern here in order encapsulate the statics and improve the wiring of the observed attributes.
+Besides that we've introduced some helpers for events.</p>
+<p>Please note that we have to do some funky stuff with an <code class="language-text">asDynamic</code> on the class in order to register the observedAttributes.
+This is because the @JsStatic can not be used on the abstract class.</p>
+<p>Now we can gradually build upon that and add a ComposedWebComponent:</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token annotation builtin">@OptIn</span><span class="token punctuation">(</span>ExperimentalJsExport<span class="token operator">::</span><span class="token keyword">class</span><span class="token punctuation">)</span>
+<span class="token annotation builtin">@JsExport</span>
+<span class="token annotation builtin">@JsName</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"TimerWebComponent"</span></span><span class="token punctuation">)</span>
+<span class="token keyword">class</span> TimerWebComponent <span class="token operator">:</span> <span class="token function">ComposedWebComponent</span><span class="token punctuation">(</span>factory <span class="token operator">=</span> Factory<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">object</span> Factory <span class="token operator">:</span> WebComponent<span class="token punctuation">.</span>Factory<span class="token operator">&lt;</span>TimerWebComponent<span class="token operator">></span><span class="token punctuation">(</span>
+        tagName <span class="token operator">=</span> <span class="token string-literal singleline"><span class="token string">"timer-component"</span></span><span class="token punctuation">,</span>
+        clazz <span class="token operator">=</span> TimerWebComponent<span class="token operator">::</span><span class="token keyword">class</span><span class="token punctuation">.</span>js<span class="token punctuation">,</span>
+        attributes <span class="token operator">=</span> <span class="token function">listOf</span><span class="token punctuation">(</span>Attributes<span class="token punctuation">.</span>Time<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span>
+
+    <span class="token keyword">object</span> Attributes <span class="token punctuation">{</span>
+        <span class="token keyword">val</span> Time <span class="token operator">=</span> <span class="token function">ObservedAttribute</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"time"</span></span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> it<span class="token operator">?</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">?</span><span class="token punctuation">.</span><span class="token function">toIntOrNull</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">?:</span> <span class="token number">0</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">object</span> Events <span class="token punctuation">{</span>
+        <span class="token keyword">val</span> TimerStarted <span class="token operator">=</span> EventDescriptor<span class="token operator">&lt;</span>Int<span class="token operator">></span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"timerStarted"</span></span><span class="token punctuation">)</span>
+        <span class="token keyword">val</span> TimerEnded <span class="token operator">=</span> EventDescriptor<span class="token operator">&lt;</span>Int<span class="token operator">></span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"timerEnded"</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation builtin">@Composable</span> <span class="token keyword">override</span> <span class="token keyword">fun</span> <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">var</span> currentTime <span class="token keyword">by</span> remember <span class="token punctuation">{</span> <span class="token function">mutableStateOf</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">}</span>
+        <span class="token keyword">val</span> initialTime <span class="token keyword">by</span> remember <span class="token punctuation">{</span> observedAttributes<span class="token punctuation">[</span>Attributes<span class="token punctuation">.</span>Time<span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">.</span><span class="token function">collectAsState</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+        <span class="token function">LaunchedEffect</span><span class="token punctuation">(</span>initialTime<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            currentTime <span class="token operator">=</span> initialTime
+
+            <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>currentTime <span class="token operator">==</span> initialTime<span class="token punctuation">)</span> <span class="token function">dispatchEvent</span><span class="token punctuation">(</span>TimerStarted<span class="token punctuation">,</span> initialTime<span class="token punctuation">)</span>
+
+                <span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span>
+
+                currentTime <span class="token operator">-=</span> <span class="token number">1</span>
+                currentTime <span class="token operator">=</span> currentTime<span class="token punctuation">.</span><span class="token function">coerceAtLeast</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>currentTime <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token function">dispatchEvent</span><span class="token punctuation">(</span>TimerEnded<span class="token punctuation">,</span> initialTime<span class="token punctuation">)</span>
+                    <span class="token keyword">break</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+        H1 <span class="token punctuation">{</span> <span class="token function">Text</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"Time: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token expression">currentTime</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span> <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>The main function slightly changes to:</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    TimerWebComponent<span class="token punctuation">.</span>Factory<span class="token punctuation">.</span><span class="token function">register</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre></div>
+<h2 id="finalizing-the-functionality">Finalizing the functionality</h2>
+<p>We are still missing the interactivity, so let's add it:</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token annotation builtin">@Composable</span> <span class="token keyword">override</span> <span class="token keyword">fun</span> <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> isStarted <span class="token keyword">by</span> remember <span class="token punctuation">{</span> <span class="token function">mutableStateOf</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span> <span class="token punctuation">}</span>
+    <span class="token keyword">var</span> currentTime <span class="token keyword">by</span> remember <span class="token punctuation">{</span> <span class="token function">mutableStateOf</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">}</span>
+    <span class="token keyword">val</span> initialTime <span class="token keyword">by</span> remember <span class="token punctuation">{</span> observedAttributes<span class="token punctuation">[</span>Attributes<span class="token punctuation">.</span>Time<span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">.</span><span class="token function">collectAsState</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token function">LaunchedEffect</span><span class="token punctuation">(</span>isStarted<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>isStarted<span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token label symbol">@LaunchedEffect</span>
+
+        <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>currentTime <span class="token operator">==</span> initialTime<span class="token punctuation">)</span> <span class="token function">dispatchEvent</span><span class="token punctuation">(</span>TimerStarted<span class="token punctuation">,</span> initialTime<span class="token punctuation">)</span>
+
+            <span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span>
+
+            currentTime <span class="token operator">-=</span> <span class="token number">1</span>
+            currentTime <span class="token operator">=</span> currentTime<span class="token punctuation">.</span><span class="token function">coerceAtLeast</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>currentTime <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token function">dispatchEvent</span><span class="token punctuation">(</span>TimerEnded<span class="token punctuation">,</span> initialTime<span class="token punctuation">)</span>
+                <span class="token keyword">break</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token function">LaunchedEffect</span><span class="token punctuation">(</span>initialTime<span class="token punctuation">)</span> <span class="token punctuation">{</span> currentTime <span class="token operator">=</span> initialTime <span class="token punctuation">}</span>
+
+    H1 <span class="token punctuation">{</span> <span class="token function">Text</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"Time: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token expression">currentTime</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span> <span class="token punctuation">}</span>
+    <span class="token function">Button</span><span class="token punctuation">(</span>
+        attrs <span class="token operator">=</span> <span class="token punctuation">{</span>
+            onClick <span class="token punctuation">{</span> isStarted <span class="token operator">=</span> <span class="token boolean">true</span> <span class="token punctuation">}</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>isStarted<span class="token punctuation">)</span> <span class="token function">disabled</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">Text</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"Start"</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">Button</span> <span class="token punctuation">(</span>
+        attrs <span class="token operator">=</span> <span class="token punctuation">{</span>
+            onClick <span class="token punctuation">{</span> currentTime <span class="token operator">=</span> initialTime <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token function">Text</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"Reset"</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">Button</span><span class="token punctuation">(</span>
+        attrs <span class="token operator">=</span> <span class="token punctuation">{</span>
+            onClick <span class="token punctuation">{</span> isStarted <span class="token operator">=</span> <span class="token boolean">false</span> <span class="token punctuation">}</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>isStarted<span class="token punctuation">)</span> <span class="token function">disabled</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">Text</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"Stop"</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<h2 id="adding-styles-and-finishing-up">Adding styles and finishing up</h2>
+<p>Adding styles can just be done by using the Compose HTML Stylesheet builders, although I prefer to keep the style tag at the top of the shadow DOM instead of
+in the root composable node. I modified the Factory a bit for that to include it. This can be seen in the final code on Github.</p>
+<p>Now, we can easily compile it and include it in this very page. Lo and behold.</p>
+<p><timer-component time="10"></timer-component></p>
+<p>And even multiple are possible now with different timings:</p>
+<p><timer-component time="600"></timer-component></p>
+<p><timer-component time="60"></timer-component></p>
+<p><timer-component time="30"></timer-component></p>
+<p>The bundle size is pretty big (~400kB), but this can be properly cached. Besides, it contains:</p>
+<ul>
+<li>Compose Runtime</li>
+<li>Compose HTML</li>
+<li>Coroutines</li>
+</ul>
+<p>So, there is a small cost to pay but you are able to use the ergonomics of Kotlin and the excellent Compose Runtime.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>This was a pretty fun thing to do! And in my opinion embedding Compose HTML inside a Web Component feels very natural!
+I know it should be equally simple to include Compose Web in Web Components, but I myself are more interested in the production-ready HTML variant.</p>
+<p>The final code can be found here:</p>
+<p><a href="https://github.com/helico-tech/kotlin-experiments/tree/403dbc6e7db6afe5eacb45031834e498bd9d85cd">https://github.com/helico-tech/kotlin-experiments/tree/403dbc6e7db6afe5eacb45031834e498bd9d85cd</a></p></div></main><footer class="container"><p>Build <!-- -->565bf29<!-- --> - <!-- -->2025-05-10T12:38:42.000Z</p></footer></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-YZ9NCTW594"></script><script>
+      
+      
+      if(true) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){window.dataLayer && window.dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-YZ9NCTW594', {"send_page_view":false});
+      }
+      </script><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/web-components-in-kotlin";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-ec707b41bccf15b2b27f.js"],"app":["/app-4e8c86bd5f82e31157fb.js"],"component---src-pages-404-js":["/component---src-pages-404-js-aa0ffeb8181716267d64.js"],"component---src-pages-index-js":["/component---src-pages-index-js-f2b90683571a7299fa82.js"],"component---src-templates-post-js":["/component---src-templates-post-js-f4ba9efc66bcb0af9218.js"]};/*]]>*/</script><script src="/polyfill-ec707b41bccf15b2b27f.js" nomodule=""></script><script src="/component---src-templates-post-js-f4ba9efc66bcb0af9218.js" async=""></script><script src="/291a736a4998dc6bb1e7dae6dfd245355445eafd-ef6357f687c91485d3ff.js" async=""></script><script src="/app-4e8c86bd5f82e31157fb.js" async=""></script><script src="/framework-a24df75546761fdaa7be.js" async=""></script><script src="/webpack-runtime-f31b4437165dabf76ed3.js" async=""></script></body></html>
