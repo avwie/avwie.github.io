@@ -11,7 +11,6 @@ export default function HTML(props) {
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
-        <meta name="description" content="This is my programming blog where I write articles about experiments that I've done. Some are successful, some are not, but we learn from all." />
         <title>avwie's programming blog</title>
         {props.headComponents}
       </head>
