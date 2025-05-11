@@ -176,11 +176,6 @@ class PingPongComponent : HtmlDslWebComponent(factory = Factory) {
 
     private var pingOrPong = "ping"
 
-    private fun clear() {
-        root.innerHTML = ""
-        connectedCallback()
-    }
-
     override fun TagConsumer<HTMLElement>.render() {
         h1 {
             +pingOrPong
@@ -191,7 +186,7 @@ class PingPongComponent : HtmlDslWebComponent(factory = Factory) {
 
             onClickFunction = {
                 pingOrPong = if (pingOrPong == "ping") "pong" else "ping"
-                clear()
+                redraw()
             }
         }
     }
