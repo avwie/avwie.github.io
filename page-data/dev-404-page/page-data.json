@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---cache-dev-404-page-js",
+    "path": "/dev-404-page/",
+    "result": {"data":{"allSiteFunction":{"nodes":[]},"allSitePage":{"nodes":[{"path":"/web-components-in-kotlin-addendum"},{"path":"/web-components-in-kotlin"},{"path":"/ktor-guards"},{"path":"/gradle-setup-with-convention-plugins"},{"path":"/mandelbrot-in-compose-multiplatform"},{"path":"/creating-multiplatform-crdts"},{"path":"/mvi-architecture-in-compose-multiplatform"},{"path":"/multithreaded-web-applications-in-kotlin-with-web-workers"},{"path":"/virtual-dom-in-kotlin"},{"path":"/dom-dsl-in-kotlin"},{"path":"/building-an-ecs-in-kotlin-mpp"},{"path":"/compositional-patterns-in-kotlin-part-2-component-model"},{"path":"/compositional-patterns-in-kotlin-part-1-delegation"},{"path":"/404.html"},{"path":"/404/"},{"path":"/"}]}},"pageContext":{}},
+    "staticQueryHashes": []}
