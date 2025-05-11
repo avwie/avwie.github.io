@@ -151,6 +151,7 @@ abstract class HtmlDslWebComponent(
     }
 
     fun redraw() {
+        root.innerHTML = ""
         (root as HTMLElement).append {
             render()
         }
@@ -197,7 +198,7 @@ class PingPongComponent : HtmlDslWebComponent(factory = Factory) {
 }
 ```
 
-And by including the `<ping-pong>` tag we have it working as well:
+And by including the `ping-pong` tag we have it working as well:
 
 <ping-pong></ping-pong>
 
