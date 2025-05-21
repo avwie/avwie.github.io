@@ -22,6 +22,7 @@ export default function HTML(props) {
           dangerouslySetInnerHTML={{ __html: props.body }}
         />
         {props.postBodyComponents}
+        <script data-goatcounter="https://avwie.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
       </body>
     </html>
   )

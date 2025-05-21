@@ -8,14 +8,6 @@ module.exports = {
   plugins: [
     'gatsby-plugin-dark-mode',
     {
-      resolve: `gatsby-plugin-google-gtag`,
-      options: {
-        trackingIds: [
-          "G-YZ9NCTW594"
-        ]
-      },
-    },
-    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
