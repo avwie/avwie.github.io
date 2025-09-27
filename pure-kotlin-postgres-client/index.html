@@ -1,0 +1,510 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><title>avwie&#x27;s programming blog</title><style data-href="/styles.e5d39825b48065011f83.css" data-identity="gatsby-global-css">@import url(https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap);:root{--primary-color:#3a6ea5;--primary-light:#c6d8eb;--primary-dark:#004e98;--secondary-color:#ff6b6b;--text-color:#222;--text-light:#555;--background-color:#f9f9f9;--card-background:#fff;--border-color:#e0e0e0;--shadow-color:rgba(0,0,0,.05);--code-background:#f5f7f9;--transition-speed:0.3s;--container-width:800px;--spacing-xs:0.25rem;--spacing-sm:0.5rem;--spacing-md:1rem;--spacing-lg:2rem;--spacing-xl:3rem;--border-radius:8px}*{box-sizing:border-box}body{background-color:var(--background-color);color:var(--text-color);font-family:Open Sans,sans-serif;font-size:16px;font-weight:300;line-height:1.8;margin:0;transition:background-color var(--transition-speed),color var(--transition-speed)}body code[class*=language-],body pre[class*=language-]{word-wrap:normal;background:none;color:#111b27;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none;line-height:1.5;-o-tab-size:4;tab-size:4;text-align:left;white-space:pre;word-break:normal;word-spacing:normal}body code[class*=language-] ::selection,body code[class*=language-]::selection,body pre[class*=language-] ::selection,body pre[class*=language-]::selection{background:#8da1b9}body pre[class*=language-]{margin:.5em 0;overflow:auto;padding:1em}body :not(pre)>code[class*=language-],body pre[class*=language-]{background:#e3eaf2}body :not(pre)>code[class*=language-]{border-radius:.3em;padding:.1em .3em;white-space:normal}body .token.cdata,body .token.comment,body .token.doctype,body .token.prolog{color:#3c526d}body .token.punctuation{color:#111b27}body .token.delimiter.important,body .token.selector .parent,body .token.tag,body .token.tag .token.punctuation{color:#006d6d}body .token.attr-name,body .token.boolean,body .token.boolean.important,body .token.constant,body .token.number,body .token.selector .token.attribute{color:#755f00}body .token.class-name,body .token.key,body .token.parameter,body .token.property,body .token.property-access,body .token.variable{color:#005a8e}body .token.attr-value,body .token.color,body .token.inserted,body .token.selector .token.value,body .token.string,body .token.string .token.url-link{color:#116b00}body .token.builtin,body .token.keyword-array,body .token.package,body .token.regex{color:#af00af}body .token.function,body .token.selector .token.class,body .token.selector .token.id{color:#7c00aa}body .token.atrule .token.rule,body .token.combinator,body .token.keyword,body .token.operator,body .token.pseudo-class,body .token.pseudo-element,body .token.selector,body .token.unit{color:#a04900}body .token.deleted,body .token.important{color:#c22f2e}body .token.keyword-this,body .token.this{color:#005a8e}body .token.bold,body .token.important,body .token.keyword-this,body .token.this{font-weight:700}body .token.delimiter.important{font-weight:inherit}body .token.italic{font-style:italic}body .token.entity{cursor:help}body .language-markdown .token.title,body .language-markdown .token.title .token.punctuation{color:#005a8e;font-weight:700}body .language-markdown .token.blockquote.punctuation{color:#af00af}body .language-markdown .token.code{color:#006d6d}body .language-markdown .token.hr.punctuation{color:#005a8e}body .language-markdown .token.url>.token.content{color:#116b00}body .language-markdown .token.url-link{color:#755f00}body .language-markdown .token.list.punctuation{color:#af00af}body .language-json .token.operator,body .language-markdown .token.table-header{color:#111b27}body .language-scss .token.variable{color:#006d6d}body .token.cr:before,body .token.lf:before,body .token.space:before,body .token.tab:not(:empty):before{color:#3c526d}body div.code-toolbar>.toolbar a,body div.code-toolbar>.toolbar button{background:#005a8e;color:#e3eaf2}body div.code-toolbar>.toolbar a:focus,body div.code-toolbar>.toolbar a:hover,body div.code-toolbar>.toolbar button:focus,body div.code-toolbar>.toolbar button:hover{background:rgba(0,90,142,.855);color:#e3eaf2;text-decoration:none}body div.code-toolbar>.toolbar span,body div.code-toolbar>.toolbar span:focus,body div.code-toolbar>.toolbar span:hover{background:#3c526d;color:#e3eaf2}body .line-highlight{background:rgba(141,161,185,.184);background:linear-gradient(90deg,rgba(141,161,185,.184) 70%,rgba(141,161,185,.145))}body .line-highlight:before,body .line-highlight[data-end]:after{background-color:#3c526d;box-shadow:0 1px #8da1b9;color:#e3eaf2}body pre[id].linkable-line-numbers span.line-numbers-rows>span:hover:before{background-color:rgba(60,82,109,.122)}body .line-numbers .line-numbers-rows{background:rgba(208,218,231,.478);border-right:1px solid rgba(141,161,185,.478)}body .line-numbers-rows>span:before{color:rgba(60,82,109,.855)}body .rainbow-braces .token.punctuation.brace-level-1,body .rainbow-braces .token.punctuation.brace-level-5,body .rainbow-braces .token.punctuation.brace-level-9{color:#755f00}body .rainbow-braces .token.punctuation.brace-level-10,body .rainbow-braces .token.punctuation.brace-level-2,body .rainbow-braces .token.punctuation.brace-level-6{color:#af00af}body .rainbow-braces .token.punctuation.brace-level-11,body .rainbow-braces .token.punctuation.brace-level-3,body .rainbow-braces .token.punctuation.brace-level-7{color:#005a8e}body .rainbow-braces .token.punctuation.brace-level-12,body .rainbow-braces .token.punctuation.brace-level-4,body .rainbow-braces .token.punctuation.brace-level-8{color:#7c00aa}body pre.diff-highlight>code .token.deleted:not(.prefix),body pre>code.diff-highlight .token.deleted:not(.prefix){background-color:rgba(194,47,46,.122)}body pre.diff-highlight>code .token.inserted:not(.prefix),body pre>code.diff-highlight .token.inserted:not(.prefix){background-color:rgba(17,107,0,.122)}body .command-line-prompt{border-right:1px solid rgba(141,161,185,.478)}body .command-line-prompt>span:before{color:rgba(60,82,109,.855)}body h1,body h2,body h3,body h4,body h5,body h6{color:var(--primary-dark);font-family:Lora,serif;font-weight:500;line-height:1.3;margin-bottom:var(--spacing-md);margin-top:var(--spacing-lg)}body h1{font-size:2.5rem;margin-top:var(--spacing-xl)}body h2{font-size:2rem}body h3{font-size:1.5rem}body p{margin-bottom:var(--spacing-md)}body a{color:var(--primary-color);text-decoration:none;transition:color var(--transition-speed)}body a:hover{color:var(--primary-dark);text-decoration:underline}body blockquote{background-color:var(--primary-light);border-left:4px solid var(--primary-color);border-radius:0 var(--border-radius) var(--border-radius) 0;color:var(--text-color);font-style:italic;margin:var(--spacing-lg) 0;padding:var(--spacing-md) var(--spacing-lg)}body blockquote p{margin:0}body nav{background-color:var(--primary-dark);box-shadow:0 2px 4px var(--shadow-color);padding:var(--spacing-md) 0;position:-webkit-sticky;position:sticky;top:0;width:100%;z-index:1000}body nav *{color:#fff}body nav>.container{align-items:center;display:flex;flex-direction:row;justify-content:space-between}body nav a{font-size:1.2rem;font-weight:600}body nav a:hover{opacity:.9;text-decoration:none}body nav .social{display:flex;flex-direction:row;gap:var(--spacing-md)}body nav .social a{align-items:center;display:flex;justify-content:center;transition:-webkit-transform var(--transition-speed);transition:transform var(--transition-speed);transition:transform var(--transition-speed),-webkit-transform var(--transition-speed)}body nav .social a:hover{-webkit-transform:scale(1.1);transform:scale(1.1)}body nav .social a.dark-mode{cursor:pointer}body nav .social img{height:24px;width:24px}body .container{margin:0 auto;max-width:var(--container-width);padding:0 var(--spacing-md);width:100%}body main.container{min-height:calc(100vh - 200px);padding-bottom:var(--spacing-xl);padding-top:var(--spacing-lg)}body .index>div{margin-bottom:var(--spacing-xl)}body .posts{display:grid;gap:var(--spacing-lg);grid-template-columns:1fr}@media(min-width:768px){body .posts{grid-template-columns:repeat(2,1fr)}}body .posts .post{background-color:var(--card-background);border-radius:var(--border-radius);box-shadow:0 4px 6px var(--shadow-color);display:flex;flex-direction:column;height:100%;padding:var(--spacing-lg);transition:box-shadow var(--transition-speed),-webkit-transform var(--transition-speed);transition:transform var(--transition-speed),box-shadow var(--transition-speed);transition:transform var(--transition-speed),box-shadow var(--transition-speed),-webkit-transform var(--transition-speed)}body .posts .post:hover{box-shadow:0 10px 15px var(--shadow-color);-webkit-transform:translateY(-5px);transform:translateY(-5px)}body .posts .post h2{font-size:1.5rem;margin-bottom:var(--spacing-sm);margin-top:0}body .posts .post p{margin:var(--spacing-xs) 0}body .posts .post .date,body .posts .post .reading-time{color:var(--text-light);font-size:.9rem;margin-bottom:var(--spacing-sm)}body .posts .post .excerpt{flex-grow:1;margin-bottom:var(--spacing-md)}body .posts .post a.read-more{display:inline-block;font-weight:600;padding:var(--spacing-xs) 0;position:relative}body .posts .post a.read-more:after{content:"→";margin-left:var(--spacing-xs);transition:-webkit-transform var(--transition-speed);transition:transform var(--transition-speed);transition:transform var(--transition-speed),-webkit-transform var(--transition-speed)}body .posts .post a.read-more:hover:after{-webkit-transform:translateX(4px);transform:translateX(4px)}body footer{border-top:1px solid var(--border-color);color:var(--text-light);font-size:.9rem;padding:var(--spacing-lg) 0;text-align:center}code[class*=language-],pre[class*=language-]{border-radius:var(--border-radius);font-family:Source Code Pro,monospace!important;font-size:.9rem!important;font-style:normal!important;font-weight:400!important;margin:var(--spacing-lg) 0}pre[class*=language-]{box-shadow:0 2px 4px var(--shadow-color);padding:var(--spacing-md)!important}body.dark{@import"https://fonts.googleapis.com/css2?family=Fira+Code&display=swap";--primary-color:#64b5f6;--primary-light:#2c3e50;--primary-dark:#1e88e5;--secondary-color:#ff7043;--text-color:#fff;--text-light:#ccc;--background-color:#121212;--card-background:#1e1e1e;--border-color:#333;--shadow-color:rgba(0,0,0,.2);--code-background:#2d2d2d}body.dark code[class*=language-],body.dark pre[class*=language-]{color:#a9b7c6;direction:ltr;font-family:Fira Code,monospace;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none;line-height:1.5;-o-tab-size:4;tab-size:4;text-align:left;white-space:pre;word-break:normal;word-spacing:normal}body.dark code[class*=language-] ::selection,body.dark code[class*=language-]::selection,body.dark pre[class*=language-] ::selection,body.dark pre[class*=language-]::selection{background:rgba(33,66,131,.85);color:inherit}body.dark pre[class*=language-]{margin:.5em 0;overflow:auto;padding:1em}body.dark :not(pre)>code[class*=language-],body.dark pre[class*=language-]{background:#2b2b2b}body.dark :not(pre)>code[class*=language-]{border-radius:.3em;padding:.1em}body.dark .token.cdata,body.dark .token.comment,body.dark .token.prolog{color:gray}body.dark .token.atrule,body.dark .token.boolean,body.dark .token.delimiter,body.dark .token.important,body.dark .token.keyword,body.dark .token.selector{color:#cc7832}body.dark .token.attr-name,body.dark .token.operator,body.dark .token.punctuation{color:#a9b7c6}body.dark .token.builtin,body.dark .token.doctype,body.dark .token.tag,body.dark .token.tag .punctuation{color:#e8bf6a}body.dark .token.entity,body.dark .token.number,body.dark .token.symbol{color:#6897bb}body.dark .token.constant,body.dark .token.property,body.dark .token.variable{color:#9876aa}body.dark .token.char,body.dark .token.string{color:#6a8759}body.dark .token.attr-value,body.dark .token.attr-value .punctuation{color:#a5c261}body.dark .token.attr-value .punctuation:first-child{color:#a9b7c6}body.dark .token.url{color:#287bde;text-decoration:underline}body.dark .token.function{color:#ffc66d}body.dark .token.regex{background:#364135}body.dark .token.bold{font-weight:700}body.dark .token.italic{font-style:italic}body.dark .token.inserted{background:#294436}body.dark .token.deleted{background:#484a4a}body.dark code.language-css .token.property,body.dark code.language-css .token.property+.token.punctuation{color:#a9b7c6}body.dark code.language-css .token.id,body.dark code.language-css .token.selector>.token.attribute,body.dark code.language-css .token.selector>.token.class,body.dark code.language-css .token.selector>.token.pseudo-class,body.dark code.language-css .token.selector>.token.pseudo-element{color:#ffc66d}body.dark blockquote{background-color:var(--primary-light);color:var(--text-color)}body.dark a{color:var(--primary-color)}body.dark a:hover{color:var(--primary-light)}body.dark .post{background-color:var(--card-background)}</style><meta name="generator" content="Gatsby 3.14.6"/><style>.gatsby-image-wrapper{position:relative;overflow:hidden}.gatsby-image-wrapper picture.object-fit-polyfill{position:static!important}.gatsby-image-wrapper img{bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover}.gatsby-image-wrapper [data-main-image]{opacity:0;transform:translateZ(0);transition:opacity .25s linear;will-change:opacity}.gatsby-image-wrapper-constrained{display:inline-block;vertical-align:top}</style><noscript><style>.gatsby-image-wrapper noscript [data-main-image]{opacity:1!important}.gatsby-image-wrapper [data-placeholder-image]{opacity:0!important}</style></noscript><script type="module">const e="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;e&&document.body.addEventListener("load",(function(e){if(void 0===e.target.dataset.mainImage)return;if(void 0===e.target.dataset.gatsbyImageSsr)return;const t=e.target;let a=null,n=t;for(;null===a&&n;)void 0!==n.parentNode.dataset.gatsbyImageWrapper&&(a=n.parentNode),n=n.parentNode;const o=a.querySelector("[data-placeholder-image]"),r=new Image;r.src=t.currentSrc,r.decode().catch((()=>{})).then((()=>{t.style.opacity=1,o&&(o.style.opacity=0,o.style.transition="opacity 500ms linear")}))}),!0);</script><link rel="sitemap" type="application/xml" href="/sitemap.xml"/><script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var hash = window.decodeURI(location.hash.replace('#', ''))
+      if (hash !== '') {
+        var element = document.getElementById(hash)
+        if (element) {
+          var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+          var clientTop = document.documentElement.clientTop || document.body.clientTop || 0
+          var offset = element.getBoundingClientRect().top + scrollTop - clientTop
+          // Wait for the browser to finish rendering before scrolling.
+          setTimeout((function() {
+            window.scrollTo(0, offset - 0)
+          }), 0)
+        }
+      }
+    })
+  </script><link rel="alternate" type="application/rss+xml" title="avwie&#x27;s programming blog" href="/rss.xml"/><link as="script" rel="preload" href="/webpack-runtime-b6d1bec96c52ba5be7bf.js"/><link as="script" rel="preload" href="/framework-a24df75546761fdaa7be.js"/><link as="script" rel="preload" href="/app-aa24829beabd43055df8.js"/><link as="script" rel="preload" href="/291a736a4998dc6bb1e7dae6dfd245355445eafd-ef6357f687c91485d3ff.js"/><link as="script" rel="preload" href="/component---src-templates-post-js-650a5f25cc8126c645de.js"/><link as="fetch" rel="preload" href="/page-data/pure-kotlin-postgres-client/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/3406609010.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><script>
+void function() {
+  window.__onThemeChange = function() {}
+
+  var preferredTheme
+  try {
+    preferredTheme = localStorage.getItem('theme')
+  } catch (err) { }
+
+  function setTheme(newTheme) {
+    if (preferredTheme && document.body.classList.contains(preferredTheme)) {
+      document.body.classList.replace(preferredTheme, newTheme)
+    } else {
+      document.body.classList.add(newTheme)
+    }
+
+    window.__theme = newTheme
+    preferredTheme = newTheme
+    window.__onThemeChange(newTheme)
+  }
+
+  window.__setPreferredTheme = function(newTheme) {
+    setTheme(newTheme)
+    try {
+      localStorage.setItem('theme', newTheme)
+    } catch (err) {}
+  }
+
+  var darkQuery = window.matchMedia('(prefers-color-scheme: dark)')
+  darkQuery.addListener(function(e) {
+    window.__setPreferredTheme(e.matches ? 'dark' : 'light')
+  })
+
+  setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'))
+}()
+    </script><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><nav><div class="container"><a href="/">@avwie&#x27;s programming blog</a><div class="social"><a title="Github" href="https://github.com/avwie" target="_blank" rel="noreferrer"><img alt="Github" width="24" height="24" src="/layout/github-48.png"/></a><a title="Mail" href="mailto:info@avwie.nl" target="_blank" rel="noreferrer"><img alt="Mail" width="24" height="24" src="/layout/mail-48.png"/></a><a title="Twitter" href="https://twitter.com/avwie" target="_blank" rel="noreferrer"><img alt="Twitter" width="24" height="24" src="/layout/twitter-48.png"/></a><a class="dark-mode"><img alt="dark-mode" width="24" height="24" src="/layout/dark-mode-48.png"/></a></div></div></nav><main class="container"><h1>Building a PostgreSQL client in pure Kotlin (with coroutines)</h1><h4>27 Sep, 2025</h4><div><p>I’ve always loved those projects that force you to peel back abstractions and
+work with the raw metal. This one started as a weekend curiosity: could I speak
+the PostgreSQL wire protocol directly from Kotlin, without JDBC, without libpq,
+and make it work across JVM, JS, Wasm, and Native? Just sockets, bytes, and
+coroutines.</p>
+<p>The result is a tiny, composable client that implements the
+startup/authenticator, the simple query flow, a slice of the extended query
+protocol (Parse/Bind/Execute), and LISTEN/NOTIFY. This post is a
+behind‑the‑scenes walkthrough of how it’s built, how the protocol is framed, and
+how coroutines glue it all together.</p>
+<h2 id="table-of-contents">Table of contents</h2>
+<ul>
+<li><a href="#why-build-this">Why build this?</a></li>
+<li><a href="#the-public-api">The public API</a></li>
+<li><a href="#framing-messages-bytes-on-the-wire">Framing messages: bytes on the wire</a></li>
+<li><a href="#the-registry-mapping-types-to-serializersdeserializers">The registry: mapping types to serializers/deserializers</a></li>
+<li><a href="#startup-and-authentication">Startup and authentication</a></li>
+<li><a href="#simple-queries-vs-extended-protocol">Simple queries vs. extended protocol</a></li>
+<li><a href="#running-a-query-with-coroutines">Running a query with coroutines</a></li>
+<li><a href="#error-handling">Error handling</a></li>
+<li><a href="#multiplatform-notes">Multiplatform notes</a></li>
+<li><a href="#using-the-client">Using the client</a></li>
+<li><a href="#gotchas-and-lessons">Gotchas and lessons</a></li>
+<li><a href="#whats-next">What’s next</a></li>
+<li><a href="#closing-thoughts">Closing thoughts</a></li>
+</ul>
+<h2 id="why-build-this">Why build this?</h2>
+<ul>
+<li>Control: Build only what I need, understand every message on the wire.</li>
+<li>Multiplatform: Kotlin MPP + Ktor sockets gets me JVM, JS, Wasm, and Native.</li>
+<li>Learning: Authentication (MD5/SASL), framing, backpressure, and state machines
+are fun problems.</li>
+</ul>
+<h2 id="the-public-api">The public API</h2>
+<p>I wanted an API that felt small and async‑friendly:</p>
+<ul>
+<li>connect / disconnect</li>
+<li>query("…") — the simple query protocol</li>
+<li>prepare("…") + execute(values) — extended protocol</li>
+<li>listen(channel) and notify(channel, payload)</li>
+</ul>
+<p>From the code:</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token keyword">interface</span> Client <span class="token punctuation">{</span>
+    <span class="token keyword">val</span> isConnected<span class="token operator">:</span> Boolean
+
+    <span class="token keyword">suspend</span> <span class="token keyword">fun</span> <span class="token function">connect</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">suspend</span> <span class="token keyword">fun</span> <span class="token function">disconnect</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">suspend</span> <span class="token keyword">fun</span> <span class="token function">query</span><span class="token punctuation">(</span>queryString<span class="token operator">:</span> String<span class="token punctuation">)</span><span class="token operator">:</span> QueryResult
+
+    <span class="token keyword">suspend</span> <span class="token keyword">fun</span> <span class="token function">prepare</span><span class="token punctuation">(</span>queryString<span class="token operator">:</span> String<span class="token punctuation">)</span><span class="token operator">:</span> PreparedStatement
+
+    <span class="token keyword">suspend</span> <span class="token keyword">fun</span> <span class="token function">execute</span><span class="token punctuation">(</span>
+        preparedStatement<span class="token operator">:</span> PreparedStatement<span class="token punctuation">,</span>
+        values<span class="token operator">:</span> List<span class="token operator">&lt;</span>String<span class="token operator">?</span><span class="token operator">></span> <span class="token operator">=</span> <span class="token function">emptyList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token operator">:</span> QueryResult
+
+    <span class="token keyword">suspend</span> <span class="token keyword">fun</span> <span class="token function">listen</span><span class="token punctuation">(</span>channel<span class="token operator">:</span> String<span class="token punctuation">)</span><span class="token operator">:</span> Flow<span class="token operator">&lt;</span>NotificationResponse<span class="token operator">></span>
+
+    <span class="token keyword">suspend</span> <span class="token keyword">fun</span> <span class="token function">notify</span><span class="token punctuation">(</span>
+        channel<span class="token operator">:</span> String<span class="token punctuation">,</span>
+        payload<span class="token operator">:</span> String<span class="token punctuation">,</span>
+    <span class="token punctuation">)</span>
+
+    <span class="token keyword">companion</span> <span class="token keyword">object</span> <span class="token punctuation">{</span>
+        <span class="token keyword">operator</span> <span class="token keyword">fun</span> <span class="token function">invoke</span><span class="token punctuation">(</span>connectionParameters<span class="token operator">:</span> ConnectionParameters<span class="token punctuation">)</span><span class="token operator">:</span> Client <span class="token operator">=</span> <span class="token function">DefaultClient</span><span class="token punctuation">(</span>connectionParameters<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>That’s it. Everything else is protocol plumbing.</p>
+<h2 id="framing-messages-bytes-on-the-wire">Framing messages: bytes on the wire</h2>
+<p>PostgreSQL’s protocol is a stream of framed messages. Most backend messages
+start with a one‑byte type tag (e.g., 'R' for Authentication, 'E' for Error, 'A'
+for Notification), followed by a 4‑byte length that includes the length field
+itself, followed by the payload. Some frontend messages omit the type byte
+(notably the initial StartupMessage).</p>
+<p>To make that ergonomic I keep a tiny set of helpers around a Buffer that can
+write null‑terminated strings and auto‑size frames:</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token keyword">fun</span> Sink<span class="token punctuation">.</span><span class="token function">writeNullByte</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">writeByte</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">fun</span> Sink<span class="token punctuation">.</span><span class="token function">writeCString</span><span class="token punctuation">(</span>text<span class="token operator">:</span> String<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">writeString</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span>
+    <span class="token function">writeNullByte</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">fun</span> Source<span class="token punctuation">.</span><span class="token function">readCString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> String <span class="token punctuation">{</span>
+    <span class="token keyword">val</span> buffer <span class="token operator">=</span> <span class="token function">Buffer</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">var</span> byte <span class="token operator">=</span> <span class="token function">readByte</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>byte <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">.</span><span class="token function">toByte</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        buffer<span class="token punctuation">.</span><span class="token function">writeByte</span><span class="token punctuation">(</span>byte<span class="token punctuation">)</span>
+        byte <span class="token operator">=</span> <span class="token function">readByte</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> buffer<span class="token punctuation">.</span><span class="token function">readString</span><span class="token punctuation">(</span>buffer<span class="token punctuation">.</span>size<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">fun</span> Buffer<span class="token punctuation">.</span><span class="token function">writeSized</span><span class="token punctuation">(</span>
+    type<span class="token operator">:</span> Char<span class="token operator">?</span> <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+    body<span class="token operator">:</span> Buffer<span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-></span> Unit<span class="token punctuation">,</span>
+<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">val</span> packet <span class="token operator">=</span> <span class="token function">buffered</span><span class="token punctuation">(</span>body<span class="token punctuation">)</span>
+    <span class="token keyword">val</span> size <span class="token operator">=</span> packet<span class="token punctuation">.</span>size<span class="token punctuation">.</span><span class="token function">toInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> Int<span class="token punctuation">.</span>SIZE_BYTES
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>type <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token function">writeByte</span><span class="token punctuation">(</span>type<span class="token punctuation">.</span>code<span class="token punctuation">.</span><span class="token function">toByte</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    <span class="token function">writeInt</span><span class="token punctuation">(</span>size<span class="token punctuation">)</span>
+    <span class="token function">writePacket</span><span class="token punctuation">(</span>packet<span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>With that, serializing a frontend frame is just <code class="language-text">writeSized('X') { … }</code>.</p>
+<h2 id="the-registry-mapping-types-to-serializersdeserializers">The registry: mapping types to serializers/deserializers</h2>
+<p>I didn’t want a big switch statement sprinkled throughout the code. Instead, the
+message layer is built around a registry that maps Kotlin types to serializers,
+and backend type chars to deserializers:</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token keyword">class</span> <span class="token function">MessageRegistry</span><span class="token punctuation">(</span>
+    <span class="token keyword">val</span> serializers<span class="token operator">:</span> Serializers<span class="token punctuation">,</span>
+    <span class="token keyword">val</span> deserializers<span class="token operator">:</span> Deserializers<span class="token punctuation">,</span>
+<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">fun</span> <span class="token function">deserialize</span><span class="token punctuation">(</span>
+        type<span class="token operator">:</span> Char<span class="token punctuation">,</span>
+        buffer<span class="token operator">:</span> Buffer<span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token operator">:</span> BackendMessage <span class="token operator">=</span> deserializers<span class="token punctuation">[</span>type<span class="token punctuation">]</span><span class="token operator">?</span><span class="token punctuation">.</span><span class="token function">deserialize</span><span class="token punctuation">(</span>type<span class="token punctuation">,</span> buffer<span class="token punctuation">)</span> <span class="token operator">?:</span> Deserializer<span class="token punctuation">.</span>Unhandled<span class="token punctuation">.</span><span class="token function">deserialize</span><span class="token punctuation">(</span>type<span class="token punctuation">,</span> buffer<span class="token punctuation">)</span>
+
+    <span class="token annotation builtin">@Suppress</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"UNCHECKED_CAST"</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">fun</span> <span class="token operator">&lt;</span>T <span class="token operator">:</span> FrontendMessage<span class="token operator">></span> <span class="token function">serialize</span><span class="token punctuation">(</span>message<span class="token operator">:</span> T<span class="token punctuation">)</span><span class="token operator">:</span> Buffer <span class="token operator">=</span>
+        <span class="token punctuation">(</span>serializers<span class="token punctuation">[</span>message<span class="token operator">::</span><span class="token keyword">class</span><span class="token punctuation">]</span> <span class="token keyword">as</span><span class="token operator">?</span> Serializer<span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token punctuation">)</span><span class="token operator">?</span><span class="token punctuation">.</span><span class="token function">serialize</span><span class="token punctuation">(</span>message<span class="token punctuation">)</span>
+            <span class="token operator">?:</span> <span class="token keyword">throw</span> <span class="token function">NoSuchElementException</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"No serializer for message type '</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token expression">message<span class="token operator">::</span><span class="token keyword">class</span></span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">'."</span></span><span class="token punctuation">)</span>
+
+    <span class="token keyword">companion</span> <span class="token keyword">object</span> <span class="token punctuation">{</span>
+        <span class="token keyword">operator</span> <span class="token keyword">fun</span> <span class="token function">invoke</span><span class="token punctuation">(</span>body<span class="token operator">:</span> Builder<span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-></span> Unit<span class="token punctuation">)</span><span class="token operator">:</span> MessageRegistry <span class="token operator">=</span> <span class="token function">Builder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>body<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">class</span> Builder <span class="token punctuation">{</span>
+        <span class="token keyword">private</span> <span class="token keyword">val</span> serializers <span class="token operator">=</span> mutableMapOf<span class="token operator">&lt;</span>KClass<span class="token operator">&lt;</span><span class="token keyword">out</span> FrontendMessage<span class="token operator">></span><span class="token punctuation">,</span> Serializer<span class="token operator">&lt;</span>FrontendMessage<span class="token operator">></span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">private</span> <span class="token keyword">val</span> deserializers <span class="token operator">=</span> mutableMapOf<span class="token operator">&lt;</span>Char<span class="token punctuation">,</span> Deserializer<span class="token operator">&lt;</span><span class="token keyword">out</span> BackendMessage<span class="token operator">></span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+        <span class="token keyword">fun</span> <span class="token function">backend</span><span class="token punctuation">(</span>
+            type<span class="token operator">:</span> Char<span class="token punctuation">,</span>
+            deserializer<span class="token operator">:</span> Deserializer<span class="token operator">&lt;</span><span class="token keyword">out</span> BackendMessage<span class="token operator">></span><span class="token punctuation">,</span>
+        <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            deserializers<span class="token punctuation">[</span>type<span class="token punctuation">]</span> <span class="token operator">=</span> deserializer
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">inline</span> <span class="token keyword">fun</span> <span class="token operator">&lt;</span><span class="token keyword">reified</span> T <span class="token operator">:</span> BackendMessage<span class="token operator">></span> <span class="token function">backend</span><span class="token punctuation">(</span>
+            type<span class="token operator">:</span> Char<span class="token punctuation">,</span>
+            <span class="token keyword">crossinline</span> body<span class="token operator">:</span> Buffer<span class="token punctuation">.</span><span class="token punctuation">(</span>Char<span class="token punctuation">)</span> <span class="token operator">-></span> T<span class="token punctuation">,</span>
+        <span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token function">backend</span><span class="token punctuation">(</span>
+            type<span class="token punctuation">,</span>
+            Deserializer <span class="token punctuation">{</span> type<span class="token punctuation">,</span> buffer <span class="token operator">-></span>
+                <span class="token function">body</span><span class="token punctuation">(</span>buffer<span class="token punctuation">,</span> type<span class="token punctuation">)</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">)</span>
+
+        <span class="token keyword">inline</span> <span class="token keyword">fun</span> <span class="token operator">&lt;</span><span class="token keyword">reified</span> T <span class="token operator">:</span> FrontendMessage<span class="token operator">></span> <span class="token function">frontend</span><span class="token punctuation">(</span><span class="token keyword">crossinline</span> body<span class="token operator">:</span> Buffer<span class="token punctuation">.</span><span class="token punctuation">(</span>T<span class="token punctuation">)</span> <span class="token operator">-></span> Unit<span class="token punctuation">)</span> <span class="token operator">=</span>
+            <span class="token function">frontend</span><span class="token punctuation">(</span>
+                T<span class="token operator">::</span><span class="token keyword">class</span><span class="token punctuation">,</span>
+                Serializer <span class="token punctuation">{</span> message <span class="token operator">-></span> <span class="token function">Buffer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">apply</span> <span class="token punctuation">{</span> <span class="token function">body</span><span class="token punctuation">(</span>message <span class="token keyword">as</span> T<span class="token punctuation">)</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">)</span>
+
+        <span class="token keyword">fun</span> <span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> MessageRegistry <span class="token operator">=</span> <span class="token function">MessageRegistry</span><span class="token punctuation">(</span>serializers<span class="token punctuation">,</span> deserializers<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>At startup I register a small set of message families:</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token keyword">val</span> DefaultMessageRegistry <span class="token operator">=</span>
+    MessageRegistry <span class="token punctuation">{</span>
+        <span class="token function">commonResponses</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token function">parameterStatus</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token function">backendKeyData</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+        <span class="token function">startupMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token function">authentication</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token function">query</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token function">terminate</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span></code></pre></div>
+<h2 id="startup-and-authentication">Startup and authentication</h2>
+<p>The first frame the client sends is a StartupMessage with protocol version and
+parameters (like user, database). It’s one of the few frontend messages with no
+leading type byte:</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token keyword">data</span> <span class="token keyword">class</span> <span class="token function">StartupMessage</span><span class="token punctuation">(</span>
+    <span class="token keyword">val</span> protocolMajorVersion<span class="token operator">:</span> Int <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">,</span>
+    <span class="token keyword">val</span> protocolMinorVersion<span class="token operator">:</span> Int <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span>
+    <span class="token keyword">val</span> parameters<span class="token operator">:</span> Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> String<span class="token operator">></span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span> <span class="token operator">:</span> FrontendMessage
+
+<span class="token keyword">fun</span> MessageRegistry<span class="token punctuation">.</span>Builder<span class="token punctuation">.</span><span class="token function">startupMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    frontend<span class="token operator">&lt;</span>StartupMessage<span class="token operator">></span> <span class="token punctuation">{</span> message <span class="token operator">-></span>
+        writeSized <span class="token punctuation">{</span>
+            <span class="token function">writeInt</span><span class="token punctuation">(</span>message<span class="token punctuation">.</span>protocolMajorVersion <span class="token operator">shl</span> Short<span class="token punctuation">.</span>SIZE_BITS <span class="token operator">or</span> message<span class="token punctuation">.</span>protocolMinorVersion<span class="token punctuation">)</span>
+            message<span class="token punctuation">.</span>parameters<span class="token punctuation">.</span><span class="token function">forEach</span> <span class="token punctuation">{</span> <span class="token punctuation">(</span>key<span class="token punctuation">,</span> value<span class="token punctuation">)</span> <span class="token operator">-></span>
+                <span class="token function">writeCString</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span>
+                <span class="token function">writeCString</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+            <span class="token function">writeNullByte</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>The server then replies with an authentication request. The client supports:</p>
+<ul>
+<li>AuthenticationMD5 — the classic two‑step MD5 over password+username and salt.</li>
+<li>SASL (SCRAM) — mechanism negotiation, initial response, challenge/response,
+final verification. The repo includes the message plumbing for SASL and a tiny
+session surface; the SCRAM helper itself lives in messages/Scram.kt.</li>
+</ul>
+<p>MD5 ends up being a neat bite‑sized example of “do exactly what the protocol
+specifies”:</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token keyword">data</span> <span class="token keyword">class</span> <span class="token function">PasswordMessage</span><span class="token punctuation">(</span>
+    <span class="token keyword">val</span> password<span class="token operator">:</span> String<span class="token punctuation">,</span>
+<span class="token punctuation">)</span> <span class="token operator">:</span> FrontendMessage <span class="token punctuation">{</span>
+    <span class="token keyword">companion</span> <span class="token keyword">object</span> <span class="token punctuation">{</span>
+        <span class="token keyword">suspend</span> <span class="token keyword">fun</span> <span class="token function">md5</span><span class="token punctuation">(</span>
+            username<span class="token operator">:</span> String<span class="token punctuation">,</span>
+            password<span class="token operator">:</span> String<span class="token punctuation">,</span>
+            salt<span class="token operator">:</span> ByteArray<span class="token punctuation">,</span>
+        <span class="token punctuation">)</span><span class="token operator">:</span> PasswordMessage <span class="token punctuation">{</span>
+            <span class="token comment">// First MD5: md5(password + username) - convert to hex string</span>
+            <span class="token keyword">val</span> firstHash <span class="token operator">=</span>
+                <span class="token function">Digest</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"MD5"</span></span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">let</span> <span class="token punctuation">{</span> digest <span class="token operator">-></span>
+                    digest <span class="token operator">+=</span> password<span class="token punctuation">.</span><span class="token function">toByteArray</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                    digest <span class="token operator">+=</span> username<span class="token punctuation">.</span><span class="token function">toByteArray</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                    digest<span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toHexString</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token punctuation">}</span>
+
+            <span class="token comment">// Second MD5: md5(firstHashHex + salt) - convert to hex string</span>
+            <span class="token keyword">val</span> secondHash <span class="token operator">=</span>
+                <span class="token function">Digest</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"MD5"</span></span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">let</span> <span class="token punctuation">{</span> digest <span class="token operator">-></span>
+                    digest <span class="token operator">+=</span> firstHash<span class="token punctuation">.</span><span class="token function">toByteArray</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                    digest <span class="token operator">+=</span> salt
+                    digest<span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toHexString</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token punctuation">}</span>
+
+            <span class="token keyword">return</span> <span class="token function">PasswordMessage</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"md5</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$</span><span class="token expression">secondHash</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>On the receiving side, a single deserializer handles the whole Authentication
+family from the backend:</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token function">backend</span><span class="token punctuation">(</span><span class="token char">'R'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> type <span class="token operator">-></span>
+    <span class="token keyword">when</span> <span class="token punctuation">(</span><span class="token function">readInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token number">0</span> <span class="token operator">-></span> AuthenticationOk
+        <span class="token number">5</span> <span class="token operator">-></span> <span class="token function">AuthenticationMD5</span><span class="token punctuation">(</span><span class="token function">readByteArray</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token number">10</span> <span class="token operator">-></span> <span class="token punctuation">{</span>
+            <span class="token keyword">val</span> mechs <span class="token operator">=</span> mutableListOf<span class="token operator">&lt;</span>String<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">val</span> mech <span class="token operator">=</span> <span class="token function">readCString</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>mech<span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">break</span>
+                mechs<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>mech<span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+            <span class="token function">AuthenticationSASL</span><span class="token punctuation">(</span>mechs<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+        <span class="token number">11</span> <span class="token operator">-></span> <span class="token function">AuthenticationSASLContinue</span><span class="token punctuation">(</span><span class="token function">readString</span><span class="token punctuation">(</span>size<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token number">12</span> <span class="token operator">-></span> <span class="token function">AuthenticationSASLFinal</span><span class="token punctuation">(</span><span class="token function">readString</span><span class="token punctuation">(</span>size<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">else</span> <span class="token operator">-></span> BackendMessage<span class="token punctuation">.</span><span class="token function">Unhandled</span><span class="token punctuation">(</span>type<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<h2 id="simple-queries-vs-extended-protocol">Simple queries vs. extended protocol</h2>
+<p>Postgres has two main flows:</p>
+<ol>
+<li>Simple query protocol: A single 'Q' message with the SQL string. Rows stream
+back as RowDescription + DataRow… + CommandComplete + ReadyForQuery.</li>
+<li>Extended query protocol: Parse a statement, Bind parameters, Execute a
+portal, optionally Describe/Close. This gives you prepared statements and
+typed parameters.</li>
+</ol>
+<p>I mapped these to message types like Query, Parse, Bind, Execute,
+RowDescription, DataRow, CommandComplete, ReadyForQuery, with compact
+serializers/deserializers. For example, DataRow is just a list of nullable byte
+buffers (each field can be null or a payload):</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token keyword">class</span> <span class="token function">DataRow</span><span class="token punctuation">(</span><span class="token keyword">val</span> fields<span class="token operator">:</span> List<span class="token operator">&lt;</span>Buffer<span class="token operator">?</span><span class="token operator">></span><span class="token punctuation">)</span> <span class="token operator">:</span> BackendMessage</code></pre></div>
+<p>The Builder for the query family wires up all the frames and their shapes in one
+place (shortened here for readability):</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token keyword">fun</span> MessageRegistry<span class="token punctuation">.</span>Builder<span class="token punctuation">.</span><span class="token function">query</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Backend</span>
+    backend<span class="token operator">&lt;</span>ReadyForQuery<span class="token operator">></span><span class="token punctuation">(</span><span class="token char">'Z'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> _ <span class="token operator">-></span> <span class="token function">ReadyForQuery</span><span class="token punctuation">(</span><span class="token function">readByte</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toChar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">}</span>
+    backend<span class="token operator">&lt;</span>RowDescription<span class="token operator">></span><span class="token punctuation">(</span><span class="token char">'T'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> _ <span class="token operator">-></span>
+        <span class="token keyword">val</span> fields <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">0</span> until <span class="token function">readShort</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">map</span> <span class="token punctuation">{</span>
+            RowDescription<span class="token punctuation">.</span><span class="token function">Field</span><span class="token punctuation">(</span>
+                field <span class="token operator">=</span> <span class="token function">readCString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                tableOid <span class="token operator">=</span> <span class="token function">readInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                columnAttributeNumber <span class="token operator">=</span> <span class="token function">readShort</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                fieldOid <span class="token operator">=</span> <span class="token function">readInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                dataTypeSize <span class="token operator">=</span> <span class="token function">readShort</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                typeModifier <span class="token operator">=</span> <span class="token function">readInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                formatCode <span class="token operator">=</span> <span class="token function">readShort</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+        <span class="token function">RowDescription</span><span class="token punctuation">(</span>fields<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    backend<span class="token operator">&lt;</span>ParameterDescription<span class="token operator">></span><span class="token punctuation">(</span><span class="token char">'t'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> _ <span class="token operator">-></span>
+        <span class="token keyword">val</span> params <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">0</span> until <span class="token function">readShort</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">map</span> <span class="token punctuation">{</span> <span class="token function">readInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">}</span>
+        <span class="token function">ParameterDescription</span><span class="token punctuation">(</span>params<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    backend<span class="token operator">&lt;</span>DataRow<span class="token operator">></span><span class="token punctuation">(</span><span class="token char">'D'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> _ <span class="token operator">-></span>
+        <span class="token keyword">val</span> columns <span class="token operator">=</span> <span class="token function">readShort</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">val</span> values <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">0</span> until columns<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">map</span> <span class="token punctuation">{</span>
+            <span class="token keyword">val</span> size <span class="token operator">=</span> <span class="token function">readInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>size <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token keyword">null</span> <span class="token keyword">else</span> <span class="token function">Buffer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">also</span> <span class="token punctuation">{</span> buf <span class="token operator">-></span> buf<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token function">readByteArray</span><span class="token punctuation">(</span>size<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token function">DataRow</span><span class="token punctuation">(</span>values<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    backend<span class="token operator">&lt;</span>CommandComplete<span class="token operator">></span><span class="token punctuation">(</span><span class="token char">'C'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> _ <span class="token operator">-></span> <span class="token function">CommandComplete</span><span class="token punctuation">(</span><span class="token function">readCString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">}</span>
+
+    <span class="token comment">// Frontend</span>
+    frontend<span class="token operator">&lt;</span>Query<span class="token operator">></span> <span class="token punctuation">{</span> message <span class="token operator">-></span> <span class="token function">writeSized</span><span class="token punctuation">(</span><span class="token char">'Q'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token function">writeCString</span><span class="token punctuation">(</span>message<span class="token punctuation">.</span>query<span class="token punctuation">)</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span>
+    frontend<span class="token operator">&lt;</span>Parse<span class="token operator">></span> <span class="token punctuation">{</span> <span class="token punctuation">(</span>name<span class="token punctuation">,</span> sql<span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token function">writeSized</span><span class="token punctuation">(</span><span class="token char">'P'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">writeCString</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span>
+        <span class="token function">writeCString</span><span class="token punctuation">(</span>sql<span class="token punctuation">)</span>
+        <span class="token function">writeShort</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token comment">// no explicit type hints</span>
+    <span class="token punctuation">}</span> <span class="token punctuation">}</span>
+    frontend<span class="token operator">&lt;</span>Describe<span class="token operator">></span> <span class="token punctuation">{</span> <span class="token punctuation">(</span>type<span class="token punctuation">,</span> name<span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token function">writeSized</span><span class="token punctuation">(</span><span class="token char">'D'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token function">writeByte</span><span class="token punctuation">(</span>type<span class="token punctuation">.</span>code<span class="token punctuation">.</span><span class="token function">toByte</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token function">writeCString</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span>
+    frontend<span class="token operator">&lt;</span>Bind<span class="token operator">></span> <span class="token punctuation">{</span> <span class="token punctuation">(</span>portal<span class="token punctuation">,</span> statement<span class="token punctuation">,</span> values<span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token function">writeSized</span><span class="token punctuation">(</span><span class="token char">'B'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">writeCString</span><span class="token punctuation">(</span>portal<span class="token punctuation">)</span>
+        <span class="token function">writeCString</span><span class="token punctuation">(</span>statement<span class="token punctuation">)</span>
+        <span class="token function">writeShort</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token comment">// no format codes</span>
+        <span class="token function">writeShort</span><span class="token punctuation">(</span>values<span class="token punctuation">.</span>size<span class="token punctuation">)</span>
+        values<span class="token punctuation">.</span><span class="token function">forEach</span> <span class="token punctuation">{</span> v <span class="token operator">-></span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>v <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token function">writeInt</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                <span class="token keyword">val</span> bytes <span class="token operator">=</span> v<span class="token punctuation">.</span><span class="token function">toByteArray</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token function">writeInt</span><span class="token punctuation">(</span>bytes<span class="token punctuation">.</span>size<span class="token punctuation">)</span>
+                <span class="token function">write</span><span class="token punctuation">(</span>bytes<span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token function">writeShort</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token comment">// result format codes</span>
+    <span class="token punctuation">}</span> <span class="token punctuation">}</span>
+    frontend<span class="token operator">&lt;</span>Execute<span class="token operator">></span> <span class="token punctuation">{</span> <span class="token punctuation">(</span>portal<span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token function">writeSized</span><span class="token punctuation">(</span><span class="token char">'E'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token function">writeCString</span><span class="token punctuation">(</span>portal<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token function">writeInt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span>
+    frontend<span class="token operator">&lt;</span>Close<span class="token operator">></span> <span class="token punctuation">{</span> <span class="token punctuation">(</span>type<span class="token punctuation">,</span> name<span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token function">writeSized</span><span class="token punctuation">(</span><span class="token char">'X'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token function">writeByte</span><span class="token punctuation">(</span>type<span class="token punctuation">.</span>code<span class="token punctuation">.</span><span class="token function">toByte</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token function">writeCString</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<h2 id="running-a-query-with-coroutines">Running a query with coroutines</h2>
+<p>The high‑level DefaultClient is a small coroutine‑driven state machine. It’s
+responsible for:</p>
+<ul>
+<li>Owning the socket and read/write channels (via Ktor’s low‑level sockets on
+each platform).</li>
+<li>Serializing frontend messages with the MessageRegistry.</li>
+<li>Parsing backend frames as they stream in.</li>
+<li>Coordinating “who is waiting for what” using channels and a sealed State.</li>
+</ul>
+<p>A simplified sketch of the control flow:</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token keyword">class</span> <span class="token function">DefaultClient</span><span class="token punctuation">(</span>
+    <span class="token keyword">val</span> connectionParameters<span class="token operator">:</span> ConnectionParameters<span class="token punctuation">,</span>
+    <span class="token keyword">private</span> <span class="token keyword">val</span> scope<span class="token operator">:</span> CoroutineScope <span class="token operator">=</span> <span class="token function">CoroutineScope</span><span class="token punctuation">(</span>Dispatchers<span class="token punctuation">.</span>Default <span class="token operator">+</span> <span class="token function">CoroutineName</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"PostgresClient"</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token keyword">private</span> <span class="token keyword">val</span> messageRegistry<span class="token operator">:</span> MessageRegistry <span class="token operator">=</span> DefaultMessageRegistry<span class="token punctuation">,</span>
+<span class="token punctuation">)</span> <span class="token operator">:</span> Client <span class="token punctuation">{</span>
+    <span class="token comment">// …</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">suspend</span> <span class="token keyword">fun</span> <span class="token function">send</span><span class="token punctuation">(</span>message<span class="token operator">:</span> FrontendMessage<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">val</span> buffer <span class="token operator">=</span> messageRegistry<span class="token punctuation">.</span><span class="token function">serialize</span><span class="token punctuation">(</span>message<span class="token punctuation">)</span>
+        socketOutput<span class="token punctuation">.</span><span class="token function">writeFully</span><span class="token punctuation">(</span>buffer<span class="token punctuation">.</span><span class="token function">readByteArray</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        socketOutput<span class="token punctuation">.</span><span class="token function">flush</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">suspend</span> <span class="token keyword">fun</span> <span class="token function">receive</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> BackendMessage <span class="token punctuation">{</span>
+        <span class="token keyword">val</span> type <span class="token operator">=</span> input<span class="token punctuation">.</span><span class="token function">readByte</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toChar</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// 'R', 'T', 'D', …</span>
+        <span class="token keyword">val</span> size <span class="token operator">=</span> input<span class="token punctuation">.</span><span class="token function">readInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> Int<span class="token punctuation">.</span>SIZE_BYTES
+        <span class="token keyword">val</span> payload <span class="token operator">=</span> <span class="token function">Buffer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">also</span> <span class="token punctuation">{</span> it<span class="token punctuation">.</span><span class="token function">writeFully</span><span class="token punctuation">(</span>input<span class="token punctuation">.</span><span class="token function">readByteArray</span><span class="token punctuation">(</span>size<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> messageRegistry<span class="token punctuation">.</span><span class="token function">deserialize</span><span class="token punctuation">(</span>type<span class="token punctuation">,</span> payload<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">fun</span> <span class="token function">transition</span><span class="token punctuation">(</span>newState<span class="token operator">:</span> State<span class="token punctuation">)</span> <span class="token punctuation">{</span> state <span class="token operator">=</span> newState <span class="token punctuation">}</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">sealed</span> <span class="token keyword">interface</span> State <span class="token punctuation">{</span>
+        <span class="token keyword">data</span> <span class="token keyword">class</span> <span class="token function">Collecting</span><span class="token punctuation">(</span><span class="token keyword">val</span> resultChannel<span class="token operator">:</span> Channel<span class="token operator">&lt;</span>DataRow<span class="token operator">></span><span class="token punctuation">)</span> <span class="token operator">:</span> State
+        <span class="token keyword">data</span> <span class="token keyword">class</span> <span class="token function">Listening</span><span class="token punctuation">(</span><span class="token keyword">val</span> resultChannel<span class="token operator">:</span> Channel<span class="token operator">&lt;</span>NotificationResponse<span class="token operator">></span><span class="token punctuation">)</span> <span class="token operator">:</span> State
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>When you call <code class="language-text">query("select 42")</code>, the client sends a Query message, then flips
+into a Collecting state. As DataRow messages arrive, it pushes them into a
+Channel. When CommandComplete and ReadyForQuery arrive, it closes the channel
+and returns a QueryResult built from the streamed rows.</p>
+<p>LISTEN/NOTIFY is the same pattern with a different state: emit
+NotificationResponse values into a Flow.</p>
+<h2 id="error-handling">Error handling</h2>
+<p>Errors come as ErrorResponse frames ('E'). I deserialize them into a list of
+fields (type code + value) and surface them as exceptions at the right time.
+Because everything rides on channels, it’s easy to propagate failure to the
+caller awaiting a result without killing the long‑lived connection.</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token keyword">fun</span> MessageRegistry<span class="token punctuation">.</span>Builder<span class="token punctuation">.</span><span class="token function">commonResponses</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">backend</span><span class="token punctuation">(</span><span class="token char">'A'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">NotificationResponse</span><span class="token punctuation">(</span><span class="token function">readInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">readCString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">readCString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token function">backend</span><span class="token punctuation">(</span><span class="token char">'E'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">var</span> fields <span class="token operator">=</span> mutableListOf<span class="token operator">&lt;</span>ErrorResponse<span class="token punctuation">.</span>Field<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token function">peek</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">readByte</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">.</span><span class="token function">toByte</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            fields<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>ErrorResponse<span class="token punctuation">.</span><span class="token function">Field</span><span class="token punctuation">(</span><span class="token function">readByte</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toChar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">readCString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+        <span class="token function">ErrorResponse</span><span class="token punctuation">(</span>fields<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    frontend<span class="token operator">&lt;</span>Sync<span class="token operator">></span> <span class="token punctuation">{</span>
+        <span class="token function">writeSized</span><span class="token punctuation">(</span><span class="token char">'C'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<h2 id="multiplatform-notes">Multiplatform notes</h2>
+<ul>
+<li>Sockets: Ktor’s low‑level sockets are used where available; the higher layers
+(messages, state) are pure Kotlin.</li>
+<li>Concurrency: kotlinx.coroutines is the common concurrency story across
+targets. The client spins reader/writer loops in coroutines and coordinates
+via Channel and Flow.</li>
+<li>Types: For row values I intentionally keep fields as Buffer? at the protocol
+edge. Turning them into Kotlin types is a separate concern and keeps the wire
+layer minimal.</li>
+</ul>
+<h2 id="using-the-client">Using the client</h2>
+<p>A few end‑to‑end uses:</p>
+<h3 id="simple-query">Simple query</h3>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token keyword">val</span> client <span class="token operator">=</span> <span class="token function">Client</span><span class="token punctuation">(</span>
+    <span class="token function">ConnectionParameters</span><span class="token punctuation">(</span>host <span class="token operator">=</span> <span class="token string-literal singleline"><span class="token string">"localhost"</span></span><span class="token punctuation">,</span> port <span class="token operator">=</span> <span class="token number">5432</span><span class="token punctuation">,</span> database <span class="token operator">=</span> <span class="token string-literal singleline"><span class="token string">"postgres"</span></span><span class="token punctuation">,</span> user <span class="token operator">=</span> <span class="token string-literal singleline"><span class="token string">"postgres"</span></span><span class="token punctuation">,</span> password <span class="token operator">=</span> <span class="token string-literal singleline"><span class="token string">"postgres"</span></span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span>
+
+runBlocking <span class="token punctuation">{</span>
+    client<span class="token punctuation">.</span><span class="token function">connect</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">val</span> <span class="token punctuation">(</span>metadata<span class="token punctuation">,</span> <span class="token keyword">data</span><span class="token punctuation">)</span> <span class="token operator">=</span> client<span class="token punctuation">.</span><span class="token function">query</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"select 1 as one, 'hello' as msg"</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">data</span><span class="token punctuation">.</span><span class="token function">collect</span> <span class="token punctuation">{</span> row <span class="token operator">-></span> <span class="token function">println</span><span class="token punctuation">(</span>row<span class="token punctuation">)</span> <span class="token punctuation">}</span> <span class="token comment">// collects as flow</span>
+    client<span class="token punctuation">.</span><span class="token function">disconnect</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre></div>
+<h3 id="prepared-statement">Prepared statement</h3>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin">runBlocking <span class="token punctuation">{</span>
+    client<span class="token punctuation">.</span><span class="token function">connect</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">val</span> stmt <span class="token operator">=</span> client<span class="token punctuation">.</span><span class="token function">prepare</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"select $1::int + $2::int"</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">val</span> <span class="token punctuation">(</span>metadata<span class="token punctuation">,</span> <span class="token keyword">data</span><span class="token punctuation">)</span> <span class="token operator">=</span> client<span class="token punctuation">.</span><span class="token function">execute</span><span class="token punctuation">(</span>stmt<span class="token punctuation">,</span> <span class="token function">listOf</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"2"</span></span><span class="token punctuation">,</span> <span class="token string-literal singleline"><span class="token string">"40"</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">data</span><span class="token punctuation">.</span><span class="token function">collect</span> <span class="token punctuation">{</span> row <span class="token operator">-></span> <span class="token function">println</span><span class="token punctuation">(</span>row<span class="token punctuation">)</span> <span class="token punctuation">}</span> <span class="token comment">// collects as flow</span>
+    client<span class="token punctuation">.</span><span class="token function">disconnect</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre></div>
+<h3 id="listennotify">LISTEN/NOTIFY</h3>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin">runBlocking <span class="token punctuation">{</span>
+    client<span class="token punctuation">.</span><span class="token function">connect</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">val</span> flow <span class="token operator">=</span> client<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"news"</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">val</span> job <span class="token operator">=</span> launch <span class="token punctuation">{</span>
+        flow<span class="token punctuation">.</span><span class="token function">collect</span> <span class="token punctuation">{</span> <span class="token function">println</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"notify from </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token expression">it<span class="token punctuation">.</span>backendPID</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> on </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token expression">it<span class="token punctuation">.</span>channel</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token expression">it<span class="token punctuation">.</span>payload</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span> <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    client<span class="token punctuation">.</span><span class="token function">notify</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"news"</span></span><span class="token punctuation">,</span> <span class="token string-literal singleline"><span class="token string">"hi there"</span></span><span class="token punctuation">)</span>
+    <span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span>
+    job<span class="token punctuation">.</span><span class="token function">cancel</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    client<span class="token punctuation">.</span><span class="token function">disconnect</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre></div>
+<h2 id="gotchas-and-lessons">Gotchas and lessons</h2>
+<ul>
+<li>Length fields include themselves: When framing, the 4‑byte size includes the
+size field; the helpers above account for that.</li>
+<li>Startup has no type byte: Don’t accidentally write it for the first message.</li>
+<li>MD5 hashes are hex strings, then prefixed with "md5": It’s easy to get the
+order wrong; tests against a real server help.</li>
+<li>Backpressure is natural with Channel: Streaming rows into a Channel lets your
+consumer control pace.</li>
+<li>Keep the wire layer dumb: Resist the urge to parse every field into domain
+types at this layer. It keeps the client tiny and portable.</li>
+</ul>
+<h2 id="closing-thoughts">Closing thoughts</h2>
+<p>There’s something deeply satisfying about seeing ReadyForQuery roll in after you
+negotiate auth and push a few frames. Kotlin MPP and coroutines make it
+practical to build the whole thing once and ship to multiple runtimes. If you’ve
+been curious about wire protocols, PostgreSQL’s is a great place to learn: well
+documented, forgiving to experiment with, and immediately rewarding.</p>
+<p>If you want to explore further, the code is split cleanly into messages
+(serializers/deserializers), the client state machine, and tiny data models for
+rows and statements. Happy hacking!</p>
+<p>You can find the finished project here:
+<a href="https://github.com/helico-tech/postgreskt">https://github.com/helico-tech/postgreskt</a></p></div></main><footer class="container"><p>Build <!-- -->9b748ff<!-- --> - <!-- -->2025-05-21T07:00:47.000Z</p></footer></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/pure-kotlin-postgres-client";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-ec707b41bccf15b2b27f.js"],"app":["/app-aa24829beabd43055df8.js"],"component---src-pages-404-js":["/component---src-pages-404-js-aa0ffeb8181716267d64.js"],"component---src-pages-index-js":["/component---src-pages-index-js-f2b90683571a7299fa82.js"],"component---src-templates-post-js":["/component---src-templates-post-js-650a5f25cc8126c645de.js"]};/*]]>*/</script><script src="/polyfill-ec707b41bccf15b2b27f.js" nomodule=""></script><script src="/component---src-templates-post-js-650a5f25cc8126c645de.js" async=""></script><script src="/291a736a4998dc6bb1e7dae6dfd245355445eafd-ef6357f687c91485d3ff.js" async=""></script><script src="/app-aa24829beabd43055df8.js" async=""></script><script src="/framework-a24df75546761fdaa7be.js" async=""></script><script src="/webpack-runtime-b6d1bec96c52ba5be7bf.js" async=""></script><script data-goatcounter="https://avwie.goatcounter.com/count" async="" src="//gc.zgo.at/count.js"></script></body></html>
