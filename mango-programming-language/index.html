@@ -1,0 +1,523 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><title>avwie&#x27;s programming blog</title><style data-href="/styles.e5d39825b48065011f83.css" data-identity="gatsby-global-css">@import url(https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap);:root{--primary-color:#3a6ea5;--primary-light:#c6d8eb;--primary-dark:#004e98;--secondary-color:#ff6b6b;--text-color:#222;--text-light:#555;--background-color:#f9f9f9;--card-background:#fff;--border-color:#e0e0e0;--shadow-color:rgba(0,0,0,.05);--code-background:#f5f7f9;--transition-speed:0.3s;--container-width:800px;--spacing-xs:0.25rem;--spacing-sm:0.5rem;--spacing-md:1rem;--spacing-lg:2rem;--spacing-xl:3rem;--border-radius:8px}*{box-sizing:border-box}body{background-color:var(--background-color);color:var(--text-color);font-family:Open Sans,sans-serif;font-size:16px;font-weight:300;line-height:1.8;margin:0;transition:background-color var(--transition-speed),color var(--transition-speed)}body code[class*=language-],body pre[class*=language-]{word-wrap:normal;background:none;color:#111b27;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none;line-height:1.5;-o-tab-size:4;tab-size:4;text-align:left;white-space:pre;word-break:normal;word-spacing:normal}body code[class*=language-] ::selection,body code[class*=language-]::selection,body pre[class*=language-] ::selection,body pre[class*=language-]::selection{background:#8da1b9}body pre[class*=language-]{margin:.5em 0;overflow:auto;padding:1em}body :not(pre)>code[class*=language-],body pre[class*=language-]{background:#e3eaf2}body :not(pre)>code[class*=language-]{border-radius:.3em;padding:.1em .3em;white-space:normal}body .token.cdata,body .token.comment,body .token.doctype,body .token.prolog{color:#3c526d}body .token.punctuation{color:#111b27}body .token.delimiter.important,body .token.selector .parent,body .token.tag,body .token.tag .token.punctuation{color:#006d6d}body .token.attr-name,body .token.boolean,body .token.boolean.important,body .token.constant,body .token.number,body .token.selector .token.attribute{color:#755f00}body .token.class-name,body .token.key,body .token.parameter,body .token.property,body .token.property-access,body .token.variable{color:#005a8e}body .token.attr-value,body .token.color,body .token.inserted,body .token.selector .token.value,body .token.string,body .token.string .token.url-link{color:#116b00}body .token.builtin,body .token.keyword-array,body .token.package,body .token.regex{color:#af00af}body .token.function,body .token.selector .token.class,body .token.selector .token.id{color:#7c00aa}body .token.atrule .token.rule,body .token.combinator,body .token.keyword,body .token.operator,body .token.pseudo-class,body .token.pseudo-element,body .token.selector,body .token.unit{color:#a04900}body .token.deleted,body .token.important{color:#c22f2e}body .token.keyword-this,body .token.this{color:#005a8e}body .token.bold,body .token.important,body .token.keyword-this,body .token.this{font-weight:700}body .token.delimiter.important{font-weight:inherit}body .token.italic{font-style:italic}body .token.entity{cursor:help}body .language-markdown .token.title,body .language-markdown .token.title .token.punctuation{color:#005a8e;font-weight:700}body .language-markdown .token.blockquote.punctuation{color:#af00af}body .language-markdown .token.code{color:#006d6d}body .language-markdown .token.hr.punctuation{color:#005a8e}body .language-markdown .token.url>.token.content{color:#116b00}body .language-markdown .token.url-link{color:#755f00}body .language-markdown .token.list.punctuation{color:#af00af}body .language-json .token.operator,body .language-markdown .token.table-header{color:#111b27}body .language-scss .token.variable{color:#006d6d}body .token.cr:before,body .token.lf:before,body .token.space:before,body .token.tab:not(:empty):before{color:#3c526d}body div.code-toolbar>.toolbar a,body div.code-toolbar>.toolbar button{background:#005a8e;color:#e3eaf2}body div.code-toolbar>.toolbar a:focus,body div.code-toolbar>.toolbar a:hover,body div.code-toolbar>.toolbar button:focus,body div.code-toolbar>.toolbar button:hover{background:rgba(0,90,142,.855);color:#e3eaf2;text-decoration:none}body div.code-toolbar>.toolbar span,body div.code-toolbar>.toolbar span:focus,body div.code-toolbar>.toolbar span:hover{background:#3c526d;color:#e3eaf2}body .line-highlight{background:rgba(141,161,185,.184);background:linear-gradient(90deg,rgba(141,161,185,.184) 70%,rgba(141,161,185,.145))}body .line-highlight:before,body .line-highlight[data-end]:after{background-color:#3c526d;box-shadow:0 1px #8da1b9;color:#e3eaf2}body pre[id].linkable-line-numbers span.line-numbers-rows>span:hover:before{background-color:rgba(60,82,109,.122)}body .line-numbers .line-numbers-rows{background:rgba(208,218,231,.478);border-right:1px solid rgba(141,161,185,.478)}body .line-numbers-rows>span:before{color:rgba(60,82,109,.855)}body .rainbow-braces .token.punctuation.brace-level-1,body .rainbow-braces .token.punctuation.brace-level-5,body .rainbow-braces .token.punctuation.brace-level-9{color:#755f00}body .rainbow-braces .token.punctuation.brace-level-10,body .rainbow-braces .token.punctuation.brace-level-2,body .rainbow-braces .token.punctuation.brace-level-6{color:#af00af}body .rainbow-braces .token.punctuation.brace-level-11,body .rainbow-braces .token.punctuation.brace-level-3,body .rainbow-braces .token.punctuation.brace-level-7{color:#005a8e}body .rainbow-braces .token.punctuation.brace-level-12,body .rainbow-braces .token.punctuation.brace-level-4,body .rainbow-braces .token.punctuation.brace-level-8{color:#7c00aa}body pre.diff-highlight>code .token.deleted:not(.prefix),body pre>code.diff-highlight .token.deleted:not(.prefix){background-color:rgba(194,47,46,.122)}body pre.diff-highlight>code .token.inserted:not(.prefix),body pre>code.diff-highlight .token.inserted:not(.prefix){background-color:rgba(17,107,0,.122)}body .command-line-prompt{border-right:1px solid rgba(141,161,185,.478)}body .command-line-prompt>span:before{color:rgba(60,82,109,.855)}body h1,body h2,body h3,body h4,body h5,body h6{color:var(--primary-dark);font-family:Lora,serif;font-weight:500;line-height:1.3;margin-bottom:var(--spacing-md);margin-top:var(--spacing-lg)}body h1{font-size:2.5rem;margin-top:var(--spacing-xl)}body h2{font-size:2rem}body h3{font-size:1.5rem}body p{margin-bottom:var(--spacing-md)}body a{color:var(--primary-color);text-decoration:none;transition:color var(--transition-speed)}body a:hover{color:var(--primary-dark);text-decoration:underline}body blockquote{background-color:var(--primary-light);border-left:4px solid var(--primary-color);border-radius:0 var(--border-radius) var(--border-radius) 0;color:var(--text-color);font-style:italic;margin:var(--spacing-lg) 0;padding:var(--spacing-md) var(--spacing-lg)}body blockquote p{margin:0}body nav{background-color:var(--primary-dark);box-shadow:0 2px 4px var(--shadow-color);padding:var(--spacing-md) 0;position:-webkit-sticky;position:sticky;top:0;width:100%;z-index:1000}body nav *{color:#fff}body nav>.container{align-items:center;display:flex;flex-direction:row;justify-content:space-between}body nav a{font-size:1.2rem;font-weight:600}body nav a:hover{opacity:.9;text-decoration:none}body nav .social{display:flex;flex-direction:row;gap:var(--spacing-md)}body nav .social a{align-items:center;display:flex;justify-content:center;transition:-webkit-transform var(--transition-speed);transition:transform var(--transition-speed);transition:transform var(--transition-speed),-webkit-transform var(--transition-speed)}body nav .social a:hover{-webkit-transform:scale(1.1);transform:scale(1.1)}body nav .social a.dark-mode{cursor:pointer}body nav .social img{height:24px;width:24px}body .container{margin:0 auto;max-width:var(--container-width);padding:0 var(--spacing-md);width:100%}body main.container{min-height:calc(100vh - 200px);padding-bottom:var(--spacing-xl);padding-top:var(--spacing-lg)}body .index>div{margin-bottom:var(--spacing-xl)}body .posts{display:grid;gap:var(--spacing-lg);grid-template-columns:1fr}@media(min-width:768px){body .posts{grid-template-columns:repeat(2,1fr)}}body .posts .post{background-color:var(--card-background);border-radius:var(--border-radius);box-shadow:0 4px 6px var(--shadow-color);display:flex;flex-direction:column;height:100%;padding:var(--spacing-lg);transition:box-shadow var(--transition-speed),-webkit-transform var(--transition-speed);transition:transform var(--transition-speed),box-shadow var(--transition-speed);transition:transform var(--transition-speed),box-shadow var(--transition-speed),-webkit-transform var(--transition-speed)}body .posts .post:hover{box-shadow:0 10px 15px var(--shadow-color);-webkit-transform:translateY(-5px);transform:translateY(-5px)}body .posts .post h2{font-size:1.5rem;margin-bottom:var(--spacing-sm);margin-top:0}body .posts .post p{margin:var(--spacing-xs) 0}body .posts .post .date,body .posts .post .reading-time{color:var(--text-light);font-size:.9rem;margin-bottom:var(--spacing-sm)}body .posts .post .excerpt{flex-grow:1;margin-bottom:var(--spacing-md)}body .posts .post a.read-more{display:inline-block;font-weight:600;padding:var(--spacing-xs) 0;position:relative}body .posts .post a.read-more:after{content:"→";margin-left:var(--spacing-xs);transition:-webkit-transform var(--transition-speed);transition:transform var(--transition-speed);transition:transform var(--transition-speed),-webkit-transform var(--transition-speed)}body .posts .post a.read-more:hover:after{-webkit-transform:translateX(4px);transform:translateX(4px)}body footer{border-top:1px solid var(--border-color);color:var(--text-light);font-size:.9rem;padding:var(--spacing-lg) 0;text-align:center}code[class*=language-],pre[class*=language-]{border-radius:var(--border-radius);font-family:Source Code Pro,monospace!important;font-size:.9rem!important;font-style:normal!important;font-weight:400!important;margin:var(--spacing-lg) 0}pre[class*=language-]{box-shadow:0 2px 4px var(--shadow-color);padding:var(--spacing-md)!important}body.dark{@import"https://fonts.googleapis.com/css2?family=Fira+Code&display=swap";--primary-color:#64b5f6;--primary-light:#2c3e50;--primary-dark:#1e88e5;--secondary-color:#ff7043;--text-color:#fff;--text-light:#ccc;--background-color:#121212;--card-background:#1e1e1e;--border-color:#333;--shadow-color:rgba(0,0,0,.2);--code-background:#2d2d2d}body.dark code[class*=language-],body.dark pre[class*=language-]{color:#a9b7c6;direction:ltr;font-family:Fira Code,monospace;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none;line-height:1.5;-o-tab-size:4;tab-size:4;text-align:left;white-space:pre;word-break:normal;word-spacing:normal}body.dark code[class*=language-] ::selection,body.dark code[class*=language-]::selection,body.dark pre[class*=language-] ::selection,body.dark pre[class*=language-]::selection{background:rgba(33,66,131,.85);color:inherit}body.dark pre[class*=language-]{margin:.5em 0;overflow:auto;padding:1em}body.dark :not(pre)>code[class*=language-],body.dark pre[class*=language-]{background:#2b2b2b}body.dark :not(pre)>code[class*=language-]{border-radius:.3em;padding:.1em}body.dark .token.cdata,body.dark .token.comment,body.dark .token.prolog{color:gray}body.dark .token.atrule,body.dark .token.boolean,body.dark .token.delimiter,body.dark .token.important,body.dark .token.keyword,body.dark .token.selector{color:#cc7832}body.dark .token.attr-name,body.dark .token.operator,body.dark .token.punctuation{color:#a9b7c6}body.dark .token.builtin,body.dark .token.doctype,body.dark .token.tag,body.dark .token.tag .punctuation{color:#e8bf6a}body.dark .token.entity,body.dark .token.number,body.dark .token.symbol{color:#6897bb}body.dark .token.constant,body.dark .token.property,body.dark .token.variable{color:#9876aa}body.dark .token.char,body.dark .token.string{color:#6a8759}body.dark .token.attr-value,body.dark .token.attr-value .punctuation{color:#a5c261}body.dark .token.attr-value .punctuation:first-child{color:#a9b7c6}body.dark .token.url{color:#287bde;text-decoration:underline}body.dark .token.function{color:#ffc66d}body.dark .token.regex{background:#364135}body.dark .token.bold{font-weight:700}body.dark .token.italic{font-style:italic}body.dark .token.inserted{background:#294436}body.dark .token.deleted{background:#484a4a}body.dark code.language-css .token.property,body.dark code.language-css .token.property+.token.punctuation{color:#a9b7c6}body.dark code.language-css .token.id,body.dark code.language-css .token.selector>.token.attribute,body.dark code.language-css .token.selector>.token.class,body.dark code.language-css .token.selector>.token.pseudo-class,body.dark code.language-css .token.selector>.token.pseudo-element{color:#ffc66d}body.dark blockquote{background-color:var(--primary-light);color:var(--text-color)}body.dark a{color:var(--primary-color)}body.dark a:hover{color:var(--primary-light)}body.dark .post{background-color:var(--card-background)}</style><meta name="generator" content="Gatsby 3.14.6"/><style>.gatsby-image-wrapper{position:relative;overflow:hidden}.gatsby-image-wrapper picture.object-fit-polyfill{position:static!important}.gatsby-image-wrapper img{bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover}.gatsby-image-wrapper [data-main-image]{opacity:0;transform:translateZ(0);transition:opacity .25s linear;will-change:opacity}.gatsby-image-wrapper-constrained{display:inline-block;vertical-align:top}</style><noscript><style>.gatsby-image-wrapper noscript [data-main-image]{opacity:1!important}.gatsby-image-wrapper [data-placeholder-image]{opacity:0!important}</style></noscript><script type="module">const e="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;e&&document.body.addEventListener("load",(function(e){if(void 0===e.target.dataset.mainImage)return;if(void 0===e.target.dataset.gatsbyImageSsr)return;const t=e.target;let a=null,n=t;for(;null===a&&n;)void 0!==n.parentNode.dataset.gatsbyImageWrapper&&(a=n.parentNode),n=n.parentNode;const o=a.querySelector("[data-placeholder-image]"),r=new Image;r.src=t.currentSrc,r.decode().catch((()=>{})).then((()=>{t.style.opacity=1,o&&(o.style.opacity=0,o.style.transition="opacity 500ms linear")}))}),!0);</script><link rel="sitemap" type="application/xml" href="/sitemap.xml"/><script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var hash = window.decodeURI(location.hash.replace('#', ''))
+      if (hash !== '') {
+        var element = document.getElementById(hash)
+        if (element) {
+          var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+          var clientTop = document.documentElement.clientTop || document.body.clientTop || 0
+          var offset = element.getBoundingClientRect().top + scrollTop - clientTop
+          // Wait for the browser to finish rendering before scrolling.
+          setTimeout((function() {
+            window.scrollTo(0, offset - 0)
+          }), 0)
+        }
+      }
+    })
+  </script><link rel="alternate" type="application/rss+xml" title="avwie&#x27;s programming blog" href="/rss.xml"/><link as="script" rel="preload" href="/webpack-runtime-b6d1bec96c52ba5be7bf.js"/><link as="script" rel="preload" href="/framework-a24df75546761fdaa7be.js"/><link as="script" rel="preload" href="/app-aa24829beabd43055df8.js"/><link as="script" rel="preload" href="/291a736a4998dc6bb1e7dae6dfd245355445eafd-ef6357f687c91485d3ff.js"/><link as="script" rel="preload" href="/component---src-templates-post-js-650a5f25cc8126c645de.js"/><link as="fetch" rel="preload" href="/page-data/mango-programming-language/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/3406609010.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><script>
+void function() {
+  window.__onThemeChange = function() {}
+
+  var preferredTheme
+  try {
+    preferredTheme = localStorage.getItem('theme')
+  } catch (err) { }
+
+  function setTheme(newTheme) {
+    if (preferredTheme && document.body.classList.contains(preferredTheme)) {
+      document.body.classList.replace(preferredTheme, newTheme)
+    } else {
+      document.body.classList.add(newTheme)
+    }
+
+    window.__theme = newTheme
+    preferredTheme = newTheme
+    window.__onThemeChange(newTheme)
+  }
+
+  window.__setPreferredTheme = function(newTheme) {
+    setTheme(newTheme)
+    try {
+      localStorage.setItem('theme', newTheme)
+    } catch (err) {}
+  }
+
+  var darkQuery = window.matchMedia('(prefers-color-scheme: dark)')
+  darkQuery.addListener(function(e) {
+    window.__setPreferredTheme(e.matches ? 'dark' : 'light')
+  })
+
+  setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'))
+}()
+    </script><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><nav><div class="container"><a href="/">@avwie&#x27;s programming blog</a><div class="social"><a title="Github" href="https://github.com/avwie" target="_blank" rel="noreferrer"><img alt="Github" width="24" height="24" src="/layout/github-48.png"/></a><a title="Mail" href="mailto:info@avwie.nl" target="_blank" rel="noreferrer"><img alt="Mail" width="24" height="24" src="/layout/mail-48.png"/></a><a title="Twitter" href="https://twitter.com/avwie" target="_blank" rel="noreferrer"><img alt="Twitter" width="24" height="24" src="/layout/twitter-48.png"/></a><a class="dark-mode"><img alt="dark-mode" width="24" height="24" src="/layout/dark-mode-48.png"/></a></div></div></nav><main class="container"><h1>Building Mango: From Grammar to Interpreter, AOT Compiler, and VMs</h1><h4>20 Sep, 2025</h4><div><p>Mango is a small, experimental programming language I built to explore the full
+journey of language implementation: syntax design, parsing into an AST, a
+tree‑walking interpreter for fast iteration, followed by an ahead-of-time (AOT)
+compiler that emits a compact bytecode format which can be executed by portable
+virtual machines (implemented in Kotlin and Rust).</p>
+<p>This post walks through the major steps, with code excerpts from the repository
+and runnable examples.</p>
+<ul>
+<li>Language and AST design</li>
+<li>Parsing with a concise grammar</li>
+<li>Tree-walking interpreter (for validation and fast iteration)</li>
+<li>AOT compiler that emits bytecode (not a bytecode interpreter!)</li>
+<li>Linking and encoding</li>
+<li>Virtual Machines: Kotlin and Rust</li>
+<li>Running Mango code (interpreted and compiled)</li>
+</ul>
+<p>Repository structure highlights:</p>
+<ul>
+<li>core: AST, parser, interpreter, compiler, and VMs</li>
+<li>compiler: CLI that compiles Mango source to bytecode (.mc)</li>
+<li>runtime: CLI that runs Mango either interpreted (.m) or as bytecode (.mc)</li>
+<li>examples: Example Mango programs (.m) and compiled outputs (.mc)</li>
+</ul>
+<h2 id="1-language-and-ast-design">1) Language and AST design</h2>
+<p>Mango intentionally keeps the core small: integers, variables, function
+definitions and calls, control flow (when/while/return), and
+arithmetic/relational operators. The AST centers on a Program of top-level
+functions.</p>
+<p>Code: core/src/main/kotlin/lang/mango/parser/AST.kt</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token keyword">sealed</span> <span class="token keyword">interface</span> AST <span class="token punctuation">{</span>
+    <span class="token keyword">data</span> <span class="token keyword">class</span> <span class="token function">Program</span><span class="token punctuation">(</span><span class="token keyword">val</span> functions<span class="token operator">:</span> List<span class="token operator">&lt;</span>Declaration<span class="token punctuation">.</span>Function<span class="token operator">></span><span class="token punctuation">)</span><span class="token operator">:</span> AST
+
+    <span class="token keyword">sealed</span> <span class="token keyword">interface</span> Statement <span class="token operator">:</span> AST
+
+    <span class="token keyword">sealed</span> <span class="token keyword">interface</span> Declaration <span class="token operator">:</span> Statement <span class="token punctuation">{</span>
+        <span class="token keyword">data</span> <span class="token keyword">class</span> <span class="token function">Variable</span><span class="token punctuation">(</span><span class="token keyword">val</span> identifier<span class="token operator">:</span> Identifier<span class="token punctuation">,</span> <span class="token keyword">val</span> expression<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> Declaration
+        <span class="token keyword">data</span> <span class="token keyword">class</span> <span class="token function">Function</span><span class="token punctuation">(</span><span class="token keyword">val</span> identifier<span class="token operator">:</span> Identifier<span class="token punctuation">,</span> <span class="token keyword">val</span> arguments<span class="token operator">:</span> List<span class="token operator">&lt;</span>Identifier<span class="token operator">></span><span class="token punctuation">,</span> <span class="token keyword">val</span> body<span class="token operator">:</span> Block<span class="token punctuation">)</span><span class="token operator">:</span> Declaration
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">sealed</span> <span class="token keyword">interface</span> Control <span class="token operator">:</span> Statement <span class="token punctuation">{</span>
+        <span class="token keyword">data</span> <span class="token keyword">class</span> <span class="token function">When</span><span class="token punctuation">(</span><span class="token keyword">val</span> expression<span class="token operator">:</span> Expression<span class="token punctuation">,</span> <span class="token keyword">val</span> body<span class="token operator">:</span> Block<span class="token punctuation">)</span> <span class="token operator">:</span> Control
+        <span class="token keyword">data</span> <span class="token keyword">class</span> <span class="token function">While</span><span class="token punctuation">(</span><span class="token keyword">val</span> condition<span class="token operator">:</span> Expression<span class="token punctuation">,</span> <span class="token keyword">val</span> body<span class="token operator">:</span> Block<span class="token punctuation">)</span> <span class="token operator">:</span> Control
+        <span class="token keyword">data</span> <span class="token keyword">class</span> <span class="token function">Return</span><span class="token punctuation">(</span><span class="token keyword">val</span> expression<span class="token operator">:</span> Expression<span class="token punctuation">)</span> <span class="token operator">:</span> Control
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">data</span> <span class="token keyword">class</span> <span class="token function">Block</span><span class="token punctuation">(</span><span class="token keyword">val</span> statements<span class="token operator">:</span> List<span class="token operator">&lt;</span>Statement<span class="token operator">></span><span class="token punctuation">)</span><span class="token operator">:</span> Statement
+
+    <span class="token keyword">data</span> <span class="token keyword">class</span> <span class="token function">Assignment</span><span class="token punctuation">(</span><span class="token keyword">val</span> identifier<span class="token operator">:</span> Identifier<span class="token punctuation">,</span> <span class="token keyword">val</span> expression<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> Statement
+
+    <span class="token keyword">sealed</span> <span class="token keyword">interface</span> Expression <span class="token operator">:</span> Statement
+
+    <span class="token keyword">sealed</span> <span class="token keyword">interface</span> Literal <span class="token operator">:</span> Expression <span class="token punctuation">{</span>
+        <span class="token keyword">data</span> <span class="token keyword">class</span> <span class="token function">Integer</span><span class="token punctuation">(</span><span class="token keyword">val</span> value<span class="token operator">:</span> Int<span class="token punctuation">)</span><span class="token operator">:</span> Literal
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">data</span> <span class="token keyword">class</span> <span class="token function">UnaryOperation</span><span class="token punctuation">(</span><span class="token keyword">val</span> <span class="token keyword">operator</span><span class="token operator">:</span> String<span class="token punctuation">,</span> <span class="token keyword">val</span> expression<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> Expression
+    <span class="token keyword">data</span> <span class="token keyword">class</span> <span class="token function">BinaryOperation</span><span class="token punctuation">(</span><span class="token keyword">val</span> left<span class="token operator">:</span> Expression<span class="token punctuation">,</span> <span class="token keyword">val</span> <span class="token keyword">operator</span><span class="token operator">:</span> String<span class="token punctuation">,</span> <span class="token keyword">val</span> right<span class="token operator">:</span> Expression<span class="token punctuation">)</span><span class="token operator">:</span> Expression
+    <span class="token keyword">data</span> <span class="token keyword">class</span> <span class="token function">FunctionCall</span><span class="token punctuation">(</span><span class="token keyword">val</span> identifier<span class="token operator">:</span> Identifier<span class="token punctuation">,</span> <span class="token keyword">val</span> arguments<span class="token operator">:</span> List<span class="token operator">&lt;</span>Expression<span class="token operator">></span><span class="token punctuation">)</span><span class="token operator">:</span> Expression
+    <span class="token keyword">data</span> <span class="token keyword">class</span> <span class="token function">Identifier</span><span class="token punctuation">(</span><span class="token keyword">val</span> name<span class="token operator">:</span> String<span class="token punctuation">)</span> <span class="token operator">:</span> Expression
+<span class="token punctuation">}</span></code></pre></div>
+<p>The AST keeps semantics straightforward, and each node maps naturally either to
+interpreter behavior or emitted bytecode.</p>
+<h2 id="2-parsing-with-a-concise-grammar">2) Parsing with a concise grammar</h2>
+<p>The grammar is expressed using better-parse combinators. It defines integer
+literals, identifiers, function calls, arithmetic with precedence, control
+statements, and function declarations.</p>
+<p>Code: core/src/main/kotlin/lang/mango/parser/Grammar.kt</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token keyword">object</span> Grammar <span class="token operator">:</span> Grammar<span class="token operator">&lt;</span>AST<span class="token punctuation">.</span>Program<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">val</span> int <span class="token keyword">by</span> Tokens<span class="token punctuation">.</span>number<span class="token punctuation">.</span><span class="token function">use</span> <span class="token punctuation">{</span> AST<span class="token punctuation">.</span>Literal<span class="token punctuation">.</span><span class="token function">Integer</span><span class="token punctuation">(</span>text<span class="token punctuation">.</span><span class="token function">toInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">}</span>
+    <span class="token keyword">val</span> identifier <span class="token operator">:</span> Parser<span class="token operator">&lt;</span>AST<span class="token punctuation">.</span>Identifier<span class="token operator">></span> <span class="token keyword">by</span> Tokens<span class="token punctuation">.</span>identifier<span class="token punctuation">.</span><span class="token function">use</span> <span class="token punctuation">{</span> AST<span class="token punctuation">.</span><span class="token function">Identifier</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span> <span class="token punctuation">}</span>
+
+    <span class="token comment">// function calls</span>
+    <span class="token keyword">val</span> argumentsList<span class="token operator">:</span> Parser<span class="token operator">&lt;</span>List<span class="token operator">&lt;</span>AST<span class="token punctuation">.</span>Expression<span class="token operator">></span><span class="token operator">></span> <span class="token operator">=</span> <span class="token punctuation">(</span>
+        parser <span class="token punctuation">{</span> expression <span class="token punctuation">}</span> <span class="token operator">and</span> <span class="token function">zeroOrMore</span><span class="token punctuation">(</span>Tokens<span class="token punctuation">.</span>comma <span class="token operator">and</span> parser <span class="token punctuation">{</span> expression <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">map</span> <span class="token punctuation">{</span> <span class="token punctuation">(</span>first<span class="token punctuation">,</span> rest<span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token function">listOf</span><span class="token punctuation">(</span>first<span class="token punctuation">)</span> <span class="token operator">+</span> rest<span class="token punctuation">.</span><span class="token function">map</span> <span class="token punctuation">{</span> <span class="token punctuation">(</span>_<span class="token punctuation">,</span> e<span class="token punctuation">)</span> <span class="token operator">-></span> e <span class="token punctuation">}</span> <span class="token punctuation">}</span>
+
+    <span class="token keyword">val</span> functionCall<span class="token operator">:</span> Parser<span class="token operator">&lt;</span>AST<span class="token punctuation">.</span>Expression<span class="token operator">></span> <span class="token operator">=</span> <span class="token punctuation">(</span>
+        identifier <span class="token operator">and</span> <span class="token function">skip</span><span class="token punctuation">(</span>Tokens<span class="token punctuation">.</span>leftParenthesis<span class="token punctuation">)</span> <span class="token operator">and</span> <span class="token function">optional</span><span class="token punctuation">(</span>argumentsList<span class="token punctuation">)</span> <span class="token operator">and</span> <span class="token function">skip</span><span class="token punctuation">(</span>Tokens<span class="token punctuation">.</span>rightParenthesis<span class="token punctuation">)</span>
+    <span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">map</span> <span class="token punctuation">{</span> <span class="token punctuation">(</span>id<span class="token punctuation">,</span> args<span class="token punctuation">)</span> <span class="token operator">-></span> AST<span class="token punctuation">.</span><span class="token function">FunctionCall</span><span class="token punctuation">(</span>id<span class="token punctuation">,</span> args <span class="token operator">?:</span> <span class="token function">emptyList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">}</span>
+
+    <span class="token comment">// precedence: term → mul/div/mod → add/sub → comparison</span>
+    <span class="token keyword">val</span> primary<span class="token operator">:</span> Parser<span class="token operator">&lt;</span>AST<span class="token punctuation">.</span>Expression<span class="token operator">></span> <span class="token operator">=</span> <span class="token punctuation">(</span>
+        <span class="token function">skip</span><span class="token punctuation">(</span>Tokens<span class="token punctuation">.</span>leftParenthesis<span class="token punctuation">)</span> <span class="token operator">and</span> parser <span class="token punctuation">{</span> expression <span class="token punctuation">}</span> <span class="token operator">and</span> <span class="token function">skip</span><span class="token punctuation">(</span>Tokens<span class="token punctuation">.</span>rightParenthesis<span class="token punctuation">)</span>
+    <span class="token punctuation">)</span> <span class="token operator">or</span> functionCall <span class="token operator">or</span> int <span class="token operator">or</span> identifier
+
+    <span class="token keyword">val</span> multiplyDivide<span class="token operator">:</span> Parser<span class="token operator">&lt;</span>AST<span class="token punctuation">.</span>Expression<span class="token operator">></span> <span class="token operator">=</span> <span class="token function">leftAssociative</span><span class="token punctuation">(</span>primary<span class="token punctuation">,</span> Tokens<span class="token punctuation">.</span>multiply <span class="token operator">or</span> Tokens<span class="token punctuation">.</span>divide <span class="token operator">or</span> Tokens<span class="token punctuation">.</span>modulo<span class="token punctuation">)</span> <span class="token punctuation">{</span> l<span class="token punctuation">,</span> op<span class="token punctuation">,</span> r <span class="token operator">-></span>
+        AST<span class="token punctuation">.</span><span class="token function">BinaryOperation</span><span class="token punctuation">(</span>l<span class="token punctuation">,</span> op<span class="token punctuation">.</span>type<span class="token punctuation">.</span>name<span class="token operator">!!</span><span class="token punctuation">,</span> r<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">val</span> plusMinus<span class="token operator">:</span> Parser<span class="token operator">&lt;</span>AST<span class="token punctuation">.</span>Expression<span class="token operator">></span> <span class="token operator">=</span> <span class="token function">leftAssociative</span><span class="token punctuation">(</span>multiplyDivide<span class="token punctuation">,</span> Tokens<span class="token punctuation">.</span>plus <span class="token operator">or</span> Tokens<span class="token punctuation">.</span>minus<span class="token punctuation">)</span> <span class="token punctuation">{</span> l<span class="token punctuation">,</span> op<span class="token punctuation">,</span> r <span class="token operator">-></span>
+        AST<span class="token punctuation">.</span><span class="token function">BinaryOperation</span><span class="token punctuation">(</span>l<span class="token punctuation">,</span> op<span class="token punctuation">.</span>type<span class="token punctuation">.</span>name<span class="token operator">!!</span><span class="token punctuation">,</span> r<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">val</span> comparison<span class="token operator">:</span> Parser<span class="token operator">&lt;</span>AST<span class="token punctuation">.</span>Expression<span class="token operator">></span> <span class="token operator">=</span> <span class="token function">leftAssociative</span><span class="token punctuation">(</span>plusMinus<span class="token punctuation">,</span> Tokens<span class="token punctuation">.</span>notEqual <span class="token operator">or</span> Tokens<span class="token punctuation">.</span>doubleEqual <span class="token operator">or</span> Tokens<span class="token punctuation">.</span>lessThan <span class="token operator">or</span> Tokens<span class="token punctuation">.</span>lessThanOrEqual <span class="token operator">or</span> Tokens<span class="token punctuation">.</span>greaterThan <span class="token operator">or</span> Tokens<span class="token punctuation">.</span>greaterThanOrEqual<span class="token punctuation">)</span> <span class="token punctuation">{</span> l<span class="token punctuation">,</span> op<span class="token punctuation">,</span> r <span class="token operator">-></span>
+        AST<span class="token punctuation">.</span><span class="token function">BinaryOperation</span><span class="token punctuation">(</span>l<span class="token punctuation">,</span> op<span class="token punctuation">.</span>type<span class="token punctuation">.</span>name<span class="token operator">!!</span><span class="token punctuation">,</span> r<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">val</span> expression<span class="token operator">:</span> Parser<span class="token operator">&lt;</span>AST<span class="token punctuation">.</span>Expression<span class="token operator">></span> <span class="token operator">=</span> comparison
+
+    <span class="token comment">// statements</span>
+    <span class="token keyword">val</span> assignment<span class="token operator">:</span> Parser<span class="token operator">&lt;</span>AST<span class="token punctuation">.</span>Assignment<span class="token operator">></span> <span class="token operator">=</span> <span class="token punctuation">(</span>
+        identifier <span class="token operator">and</span> <span class="token function">skip</span><span class="token punctuation">(</span>Tokens<span class="token punctuation">.</span>equal<span class="token punctuation">)</span> <span class="token operator">and</span> parser <span class="token punctuation">{</span> expression <span class="token punctuation">}</span>
+    <span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">map</span> <span class="token punctuation">{</span> <span class="token punctuation">(</span>id<span class="token punctuation">,</span> e<span class="token punctuation">)</span> <span class="token operator">-></span> AST<span class="token punctuation">.</span><span class="token function">Assignment</span><span class="token punctuation">(</span>id<span class="token punctuation">,</span> e<span class="token punctuation">)</span> <span class="token punctuation">}</span>
+
+    <span class="token keyword">val</span> variableDeclaration<span class="token operator">:</span> Parser<span class="token operator">&lt;</span>AST<span class="token punctuation">.</span>Declaration<span class="token operator">></span> <span class="token operator">=</span> <span class="token punctuation">(</span>
+        Tokens<span class="token punctuation">.</span>let <span class="token operator">and</span> assignment
+    <span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">map</span> <span class="token punctuation">{</span> <span class="token punctuation">(</span>_<span class="token punctuation">,</span> a<span class="token punctuation">)</span> <span class="token operator">-></span> AST<span class="token punctuation">.</span>Declaration<span class="token punctuation">.</span><span class="token function">Variable</span><span class="token punctuation">(</span>a<span class="token punctuation">.</span>identifier<span class="token punctuation">,</span> a<span class="token punctuation">.</span>expression<span class="token punctuation">)</span> <span class="token punctuation">}</span>
+
+    <span class="token keyword">val</span> whenStatement<span class="token operator">:</span> Parser<span class="token operator">&lt;</span>AST<span class="token punctuation">.</span>Control<span class="token punctuation">.</span>When<span class="token operator">></span> <span class="token operator">=</span> <span class="token punctuation">(</span>
+        <span class="token function">skip</span><span class="token punctuation">(</span>Tokens<span class="token punctuation">.</span>whenToken<span class="token punctuation">)</span> <span class="token operator">and</span> <span class="token function">skip</span><span class="token punctuation">(</span>Tokens<span class="token punctuation">.</span>leftParenthesis<span class="token punctuation">)</span> <span class="token operator">and</span> expression <span class="token operator">and</span> <span class="token function">skip</span><span class="token punctuation">(</span>Tokens<span class="token punctuation">.</span>rightParenthesis<span class="token punctuation">)</span> <span class="token operator">and</span> parser <span class="token punctuation">{</span> <span class="token punctuation">(</span>block <span class="token operator">or</span> statement<span class="token punctuation">)</span> <span class="token punctuation">}</span>
+    <span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">map</span> <span class="token punctuation">{</span> <span class="token punctuation">(</span>e<span class="token punctuation">,</span> blkOrStmt<span class="token punctuation">)</span> <span class="token operator">-></span> AST<span class="token punctuation">.</span>Control<span class="token punctuation">.</span><span class="token function">When</span><span class="token punctuation">(</span>e<span class="token punctuation">,</span> blkOrStmt <span class="token keyword">as</span><span class="token operator">?</span> AST<span class="token punctuation">.</span>Block <span class="token operator">?:</span> AST<span class="token punctuation">.</span><span class="token function">Block</span><span class="token punctuation">(</span><span class="token function">listOf</span><span class="token punctuation">(</span>blkOrStmt<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">}</span>
+
+    <span class="token keyword">val</span> functionDeclaration<span class="token operator">:</span> Parser<span class="token operator">&lt;</span>AST<span class="token punctuation">.</span>Declaration<span class="token punctuation">.</span>Function<span class="token operator">></span> <span class="token operator">=</span> <span class="token punctuation">(</span>
+        <span class="token function">skip</span><span class="token punctuation">(</span>Tokens<span class="token punctuation">.</span>fn<span class="token punctuation">)</span> <span class="token operator">and</span> identifier <span class="token operator">and</span> <span class="token function">skip</span><span class="token punctuation">(</span>Tokens<span class="token punctuation">.</span>leftParenthesis<span class="token punctuation">)</span> <span class="token operator">and</span> <span class="token function">optional</span><span class="token punctuation">(</span>parameterList<span class="token punctuation">)</span> <span class="token operator">and</span> <span class="token function">skip</span><span class="token punctuation">(</span>Tokens<span class="token punctuation">.</span>rightParenthesis<span class="token punctuation">)</span> <span class="token operator">and</span> <span class="token function">skip</span><span class="token punctuation">(</span><span class="token function">zeroOrMore</span><span class="token punctuation">(</span>Tokens<span class="token punctuation">.</span>whitespace<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">and</span> parser <span class="token punctuation">{</span> block <span class="token punctuation">}</span>
+    <span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">map</span> <span class="token punctuation">{</span> <span class="token punctuation">(</span>id<span class="token punctuation">,</span> params<span class="token punctuation">,</span> blk<span class="token punctuation">)</span> <span class="token operator">-></span>
+        AST<span class="token punctuation">.</span>Declaration<span class="token punctuation">.</span><span class="token function">Function</span><span class="token punctuation">(</span>id<span class="token punctuation">,</span> params <span class="token operator">?:</span> <span class="token function">emptyList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> blk<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">let</span> <span class="token punctuation">{</span> f <span class="token operator">-></span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>f<span class="token punctuation">.</span>body<span class="token punctuation">.</span>statements<span class="token punctuation">.</span><span class="token function">lastOrNull</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">!</span><span class="token keyword">is</span> AST<span class="token punctuation">.</span>Control<span class="token punctuation">.</span>Return<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                f<span class="token punctuation">.</span><span class="token function">copy</span><span class="token punctuation">(</span>body <span class="token operator">=</span> AST<span class="token punctuation">.</span><span class="token function">Block</span><span class="token punctuation">(</span>f<span class="token punctuation">.</span>body<span class="token punctuation">.</span>statements <span class="token operator">+</span> AST<span class="token punctuation">.</span>Control<span class="token punctuation">.</span><span class="token function">Return</span><span class="token punctuation">(</span>AST<span class="token punctuation">.</span>Literal<span class="token punctuation">.</span><span class="token function">Integer</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token punctuation">}</span> <span class="token keyword">else</span> f
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">val</span> program <span class="token operator">=</span> <span class="token function">zeroOrMore</span><span class="token punctuation">(</span>functionDeclaration<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">map</span> <span class="token punctuation">{</span> decls <span class="token operator">-></span> AST<span class="token punctuation">.</span><span class="token function">Program</span><span class="token punctuation">(</span>decls<span class="token punctuation">)</span> <span class="token punctuation">}</span>
+    <span class="token keyword">override</span> <span class="token keyword">val</span> rootParser<span class="token operator">:</span> Parser<span class="token operator">&lt;</span>AST<span class="token punctuation">.</span>Program<span class="token operator">></span> <span class="token operator">=</span> program
+<span class="token punctuation">}</span></code></pre></div>
+<p>Parsing is wrapped in <code class="language-text">MangoParser.parse</code>, which also validates against nested
+function declarations:</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token keyword">object</span> MangoParser <span class="token punctuation">{</span>
+    <span class="token keyword">fun</span> <span class="token function">parse</span><span class="token punctuation">(</span>input<span class="token operator">:</span> String<span class="token punctuation">)</span><span class="token operator">:</span> AST<span class="token punctuation">.</span><span class="token function">Program</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token function">validate</span><span class="token punctuation">(</span>Grammar<span class="token punctuation">.</span><span class="token function">parseToEnd</span><span class="token punctuation">(</span>input<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">fun</span> <span class="token function">validate</span><span class="token punctuation">(</span>program<span class="token operator">:</span> AST<span class="token punctuation">.</span>Program<span class="token punctuation">)</span><span class="token operator">:</span> AST<span class="token punctuation">.</span><span class="token function">Program</span> <span class="token punctuation">{</span>
+        <span class="token keyword">val</span> visitor <span class="token operator">=</span> <span class="token function">NestedFunctionValidatorVisitor</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        visitor<span class="token punctuation">.</span><span class="token function">visit</span><span class="token punctuation">(</span>program<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> program
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<h2 id="3-treewalking-interpreter">3) Tree‑walking interpreter</h2>
+<p>Before committing to a bytecode format, I built a simple interpreter to validate
+semantics and iterate faster on language features. The interpreter executes the
+AST directly.</p>
+<p>Code: core/src/main/kotlin/lang/mango/interpreter/MangoInterpreter.kt</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token keyword">class</span> <span class="token function">MangoInterpreter</span><span class="token punctuation">(</span>
+    <span class="token keyword">private</span> <span class="token keyword">val</span> runtimeEnvironment<span class="token operator">:</span> RuntimeEnvironment <span class="token operator">=</span> <span class="token function">RuntimeEnvironment</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">fun</span> <span class="token function">interpret</span><span class="token punctuation">(</span>program<span class="token operator">:</span> AST<span class="token punctuation">.</span>Program<span class="token punctuation">)</span><span class="token operator">:</span> Int <span class="token punctuation">{</span>
+        <span class="token function">program</span><span class="token punctuation">(</span>program<span class="token punctuation">)</span>
+        <span class="token keyword">val</span> mainCall <span class="token operator">=</span> AST<span class="token punctuation">.</span><span class="token function">FunctionCall</span><span class="token punctuation">(</span>AST<span class="token punctuation">.</span><span class="token function">Identifier</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"main"</span></span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">emptyList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token function">functionCall</span><span class="token punctuation">(</span>mainCall<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">fun</span> <span class="token function">functionCall</span><span class="token punctuation">(</span>functionCall<span class="token operator">:</span> AST<span class="token punctuation">.</span>FunctionCall<span class="token punctuation">)</span><span class="token operator">:</span> Int <span class="token punctuation">{</span>
+        <span class="token keyword">val</span> function <span class="token operator">=</span> runtimeEnvironment<span class="token punctuation">.</span><span class="token function">getFunction</span><span class="token punctuation">(</span>functionCall<span class="token punctuation">.</span>identifier<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+        <span class="token keyword">val</span> variables <span class="token operator">=</span> function<span class="token punctuation">.</span>arguments<span class="token punctuation">.</span><span class="token function">mapIndexed</span> <span class="token punctuation">{</span> index<span class="token punctuation">,</span> parameter <span class="token operator">-></span>
+            parameter<span class="token punctuation">.</span>name <span class="token keyword">to</span> <span class="token function">expression</span><span class="token punctuation">(</span>functionCall<span class="token punctuation">.</span>arguments<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">.</span><span class="token function">toMap</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+        runtimeEnvironment<span class="token punctuation">.</span><span class="token function">pushFrame</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        variables<span class="token punctuation">.</span><span class="token function">forEach</span> <span class="token punctuation">{</span> <span class="token punctuation">(</span>name<span class="token punctuation">,</span> value<span class="token punctuation">)</span> <span class="token operator">-></span> runtimeEnvironment<span class="token punctuation">.</span><span class="token function">setVariable</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> value<span class="token punctuation">)</span> <span class="token punctuation">}</span>
+        <span class="token keyword">try</span> <span class="token punctuation">{</span> <span class="token function">block</span><span class="token punctuation">(</span>function<span class="token punctuation">.</span>body<span class="token punctuation">)</span> <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>e<span class="token operator">:</span> ReturnException<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            runtimeEnvironment<span class="token punctuation">.</span><span class="token function">popFrame</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token keyword">return</span> e<span class="token punctuation">.</span>value
+        <span class="token punctuation">}</span>
+        runtimeEnvironment<span class="token punctuation">.</span><span class="token function">popFrame</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token keyword">return</span> <span class="token number">0</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// expressions and operations...</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>This made it easy to write small Mango programs and verify behavior without a
+compilation step.</p>
+<h2 id="4-aot-compiler-not-a-bytecode-interpreter">4) AOT compiler (not a bytecode interpreter)</h2>
+<p>Once the language behaved as expected under the interpreter, I wrote an AOT
+compiler that lowers AST to a simple assembly-like IR (ASM), then links and
+encodes to a dense bytecode. The key difference from a bytecode interpreter is:
+we do not interpret opcodes directly from source; we compile ahead of time into
+a binary format that can be shipped and executed by compatible VMs.</p>
+<p>The compiler produces per-function chunks of annotated ASM instructions. Labels
+are resolved by a linker before encoding to bytes.</p>
+<p>Code: core/src/main/kotlin/lang/mango/compiler/ASM.kt</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token keyword">sealed</span> <span class="token keyword">interface</span> ASM <span class="token punctuation">{</span>
+    <span class="token keyword">sealed</span> <span class="token keyword">interface</span> Load <span class="token operator">:</span> ASM <span class="token punctuation">{</span>
+        <span class="token keyword">data</span> <span class="token keyword">class</span> <span class="token function">Constant</span><span class="token punctuation">(</span><span class="token keyword">val</span> value<span class="token operator">:</span> Int<span class="token punctuation">)</span> <span class="token operator">:</span> Load
+        <span class="token keyword">data</span> <span class="token keyword">class</span> <span class="token function">Relative</span><span class="token punctuation">(</span><span class="token keyword">val</span> offset<span class="token operator">:</span> Int<span class="token punctuation">)</span> <span class="token operator">:</span> Load
+        <span class="token keyword">data</span> <span class="token keyword">class</span> <span class="token function">Label</span><span class="token punctuation">(</span><span class="token keyword">val</span> label<span class="token operator">:</span> String<span class="token punctuation">)</span> <span class="token operator">:</span> Load
+    <span class="token punctuation">}</span>
+    <span class="token keyword">data</span> <span class="token keyword">class</span> <span class="token function">Store</span><span class="token punctuation">(</span><span class="token keyword">val</span> offset<span class="token operator">:</span> Int<span class="token punctuation">)</span> <span class="token operator">:</span> ASM
+    <span class="token keyword">data</span> <span class="token keyword">class</span> <span class="token function">Pop</span><span class="token punctuation">(</span><span class="token keyword">val</span> count<span class="token operator">:</span> Int<span class="token punctuation">)</span> <span class="token operator">:</span> ASM
+    <span class="token keyword">data</span> <span class="token keyword">object</span> Jump <span class="token operator">:</span> ASM
+    <span class="token keyword">data</span> <span class="token keyword">object</span> JumpWhenZero <span class="token operator">:</span> ASM
+    <span class="token keyword">data</span> <span class="token keyword">object</span> Exit <span class="token operator">:</span> ASM
+
+    <span class="token keyword">sealed</span> <span class="token keyword">interface</span> Op <span class="token operator">:</span> ASM <span class="token punctuation">{</span> <span class="token comment">/* Add, Sub, Mul, Div, Mod, comparisons... */</span> <span class="token punctuation">}</span>
+    <span class="token keyword">data</span> <span class="token keyword">class</span> <span class="token function">Annotated</span><span class="token punctuation">(</span><span class="token keyword">val</span> instruction<span class="token operator">:</span> ASM<span class="token punctuation">,</span> <span class="token keyword">val</span> labels<span class="token operator">:</span> List<span class="token operator">&lt;</span>String<span class="token operator">></span> <span class="token operator">=</span> <span class="token function">emptyList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token keyword">val</span> comment<span class="token operator">:</span> String<span class="token operator">?</span> <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">)</span>
+    <span class="token keyword">sealed</span> <span class="token keyword">interface</span> Chunk <span class="token punctuation">{</span>
+        <span class="token keyword">val</span> instructions<span class="token operator">:</span> List<span class="token operator">&lt;</span>Annotated<span class="token operator">></span>
+        <span class="token keyword">val</span> name<span class="token operator">:</span> String
+        <span class="token keyword">data</span> <span class="token keyword">class</span> <span class="token function">Function</span><span class="token punctuation">(</span><span class="token keyword">val</span> function<span class="token operator">:</span> AST<span class="token punctuation">.</span>Declaration<span class="token punctuation">.</span>Function<span class="token punctuation">,</span> <span class="token keyword">override</span> <span class="token keyword">val</span> instructions<span class="token operator">:</span> List<span class="token operator">&lt;</span>Annotated<span class="token operator">></span><span class="token punctuation">)</span> <span class="token operator">:</span> Chunk <span class="token punctuation">{</span>
+            <span class="token keyword">override</span> <span class="token keyword">val</span> name <span class="token operator">=</span> function<span class="token punctuation">.</span>identifier<span class="token punctuation">.</span>name
+        <span class="token punctuation">}</span>
+        <span class="token keyword">data</span> <span class="token keyword">class</span> <span class="token function">Raw</span><span class="token punctuation">(</span><span class="token keyword">override</span> <span class="token keyword">val</span> name<span class="token operator">:</span> String<span class="token punctuation">,</span> <span class="token keyword">override</span> <span class="token keyword">val</span> instructions<span class="token operator">:</span> List<span class="token operator">&lt;</span>Annotated<span class="token operator">></span><span class="token punctuation">)</span> <span class="token operator">:</span> Chunk
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>Code: core/src/main/kotlin/lang/mango/compiler/MangoCompiler.kt</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token keyword">object</span> MangoCompiler <span class="token punctuation">{</span>
+    <span class="token keyword">fun</span> <span class="token function">compile</span><span class="token punctuation">(</span>program<span class="token operator">:</span> AST<span class="token punctuation">.</span>Program<span class="token punctuation">,</span> bootstrap<span class="token operator">:</span> Boolean <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token operator">:</span> List<span class="token operator">&lt;</span>ASM<span class="token punctuation">.</span>Chunk<span class="token operator">></span> <span class="token punctuation">{</span>
+        <span class="token comment">// Produces a bootstrap chunk (entry) + function chunks</span>
+        <span class="token comment">// Each function compiles blocks/statements/expressions into ASM</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>The actual file implements expression lowering, call setup/teardown, and return
+conventions via labels and stack operations.</p>
+<h3 id="41-core-of-the-aot-compiler-bootstrap-function-compiler-and-stackframedescriptor">4.1 Core of the AOT compiler: Bootstrap, Function compiler, and StackFrameDescriptor</h3>
+<p>The AOT compiler in Mango is intentionally small and explicit. It is centered
+around three pieces that work together with a stack-based calling convention:</p>
+<ul>
+<li>
+<p>BootstrapCompiler: Emits the program entry. It synthesizes a call to main()
+and sets a synthetic return label that leads to an Exit instruction.</p>
+<ul>
+<li>It does not lower arbitrary expressions; it only builds the initial
+call-and-exit sequence.</li>
+</ul>
+</li>
+<li>
+<p>FunctionCompiler: Lowers blocks, statements, and expressions inside a function
+to ASM, following a strict stack discipline.</p>
+<ul>
+<li>Return: evaluates the return expression, stores it to the return-value slot,
+then unwinds locals and jumps to the caller via the return address on the
+stack.</li>
+<li>Variable declarations: evaluates the initializer and stores it into the
+function-local slot computed by the descriptor.</li>
+<li>Control (When): evaluates the condition, pushes a return label, then emits
+JumpWhenZero; the VM consumes the label and the condition from the stack.</li>
+</ul>
+</li>
+<li>
+<p>StackFrameDescriptor: Describes how a function’s stack frame is laid out and
+helps compute relative offsets for loads/stores during lowering.</p>
+<ul>
+<li>The descriptor models these logical slots: ReturnAddress, ReturnValue,
+Local(name) for parameters and local variables, and transient RuntimeValue
+entries used while evaluating expressions.</li>
+</ul>
+</li>
+</ul>
+<p>Calling convention and frame layout</p>
+<ul>
+<li>The VM is stack-based; all data and control flow operate via pushing and
+popping stack values.</li>
+<li>
+<p>When emitting a call from the caller (AbstractCompiler.functionCall):</p>
+<ol>
+<li>Push an initial 0 for the callee’s ReturnValue slot.</li>
+<li>Push the callee’s return address label (resolved to an absolute address by
+the linker).</li>
+<li>Push each argument value. While arguments are being evaluated, an offset is
+passed into expression lowering so that any reads of caller locals
+(Load.Relative) account for the extra values already pushed on the stack.</li>
+<li>Push zero-initialized slots for any additional block-scoped locals required
+by the callee (computed from StackFrameDescriptor.localsSize).</li>
+<li>Push the callee function’s entry label, then Jump. The Jump pops the
+address and transfers control, leaving the whole new frame on top of the
+stack for the callee.</li>
+</ol>
+</li>
+<li>
+<p>Inside the callee:</p>
+<ul>
+<li>Identifiers compile to Load.Relative(offset) where offset is provided by the
+StackFrameDescriptor for this function. The descriptor is constructed as:
+[ReturnValue, ReturnAddress, parameters, local variables], with RuntimeValue
+slots temporarily pushed/popped during expression evaluation.</li>
+<li>Binary operations evaluate right, then left, pushing transient RuntimeValue
+slots in between; the arithmetic/compare op pops both operands and pushes
+the result.</li>
+</ul>
+</li>
+<li>
+<p>Returning from the callee:</p>
+<ol>
+<li>The return expression is evaluated; the result is stored to the ReturnValue
+slot (Store(offsetOf(ReturnValue))).</li>
+<li>Pop(localsSize) unwinds only the function’s locals (parameters + block
+locals), leaving ReturnAddress and ReturnValue at the top.</li>
+<li>Jump then pops ReturnAddress and transfers control back to the caller. The
+caller now finds the callee’s ReturnValue at the top of the stack for
+further use.</li>
+</ol>
+</li>
+</ul>
+<p>This explicit, minimal convention makes it easy to link and run on any compliant
+stack VM.</p>
+<h2 id="5-linking-and-encoding">5) Linking and encoding</h2>
+<p>Label resolution is handled by the linker, which computes instruction addresses
+given encoder sizes (so it can replace label loads with absolute offsets). Then
+the encoder turns ASM into raw bytes.</p>
+<p>Code: core/src/main/kotlin/lang/mango/compiler/MangoLinker.kt</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token keyword">class</span> <span class="token function">MangoLinker</span><span class="token punctuation">(</span>
+    <span class="token keyword">val</span> encoder<span class="token operator">:</span> Encoder
+<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">fun</span> <span class="token function">link</span><span class="token punctuation">(</span>chunks<span class="token operator">:</span> List<span class="token operator">&lt;</span>ASM<span class="token punctuation">.</span>Chunk<span class="token operator">></span><span class="token punctuation">)</span><span class="token operator">:</span> List<span class="token operator">&lt;</span>ASM<span class="token operator">></span> <span class="token punctuation">{</span>
+        <span class="token keyword">val</span> instructions <span class="token operator">=</span> chunks<span class="token punctuation">.</span><span class="token function">flatMap</span> <span class="token punctuation">{</span> chunk <span class="token operator">-></span>
+            chunk<span class="token punctuation">.</span>instructions<span class="token punctuation">.</span><span class="token function">mapIndexed</span> <span class="token punctuation">{</span> index<span class="token punctuation">,</span> annotated <span class="token operator">-></span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>index <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> annotated<span class="token punctuation">.</span><span class="token function">copy</span><span class="token punctuation">(</span>labels <span class="token operator">=</span> <span class="token function">listOf</span><span class="token punctuation">(</span>chunk<span class="token punctuation">.</span>name<span class="token punctuation">)</span> <span class="token operator">+</span> annotated<span class="token punctuation">.</span>labels<span class="token punctuation">)</span> <span class="token keyword">else</span> annotated
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">val</span> labelMap <span class="token operator">=</span> mutableMapOf<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> Int<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">var</span> ip <span class="token operator">=</span> <span class="token number">0</span>
+        instructions<span class="token punctuation">.</span><span class="token function">forEach</span> <span class="token punctuation">{</span> annotated <span class="token operator">-></span>
+            annotated<span class="token punctuation">.</span>labels<span class="token punctuation">.</span><span class="token function">forEach</span> <span class="token punctuation">{</span> label <span class="token operator">-></span> labelMap<span class="token punctuation">[</span>label<span class="token punctuation">]</span> <span class="token operator">=</span> ip <span class="token punctuation">}</span>
+            ip <span class="token operator">+=</span> encoder<span class="token punctuation">.</span><span class="token function">sizeOf</span><span class="token punctuation">(</span>annotated<span class="token punctuation">.</span>instruction<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> instructions<span class="token punctuation">.</span><span class="token function">map</span> <span class="token punctuation">{</span> annotated <span class="token operator">-></span>
+            <span class="token keyword">when</span> <span class="token punctuation">(</span><span class="token keyword">val</span> instruction <span class="token operator">=</span> annotated<span class="token punctuation">.</span>instruction<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">is</span> ASM<span class="token punctuation">.</span>Load<span class="token punctuation">.</span>Label <span class="token operator">-></span> ASM<span class="token punctuation">.</span>Load<span class="token punctuation">.</span><span class="token function">Constant</span><span class="token punctuation">(</span>labelMap<span class="token punctuation">[</span>instruction<span class="token punctuation">.</span>label<span class="token punctuation">]</span><span class="token operator">!!</span><span class="token punctuation">)</span>
+                <span class="token keyword">else</span> <span class="token operator">-></span> instruction
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>Code: core/src/main/kotlin/lang/mango/compiler/Encoder.kt</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token keyword">object</span> ByteEncoder <span class="token operator">:</span> Encoder <span class="token punctuation">{</span>
+    <span class="token keyword">override</span> <span class="token keyword">fun</span> <span class="token function">sizeOf</span><span class="token punctuation">(</span>asm<span class="token operator">:</span> ASM<span class="token punctuation">)</span><span class="token operator">:</span> Int <span class="token operator">=</span> <span class="token keyword">when</span> <span class="token punctuation">(</span>asm<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">is</span> ASM<span class="token punctuation">.</span>Load<span class="token punctuation">,</span> <span class="token keyword">is</span> ASM<span class="token punctuation">.</span>Store<span class="token punctuation">,</span> <span class="token keyword">is</span> ASM<span class="token punctuation">.</span>Pop <span class="token operator">-></span> <span class="token number">5</span>
+        <span class="token keyword">else</span> <span class="token operator">-></span> <span class="token number">1</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">fun</span> <span class="token function">encode</span><span class="token punctuation">(</span>instructions<span class="token operator">:</span> List<span class="token operator">&lt;</span>ASM<span class="token operator">></span><span class="token punctuation">)</span><span class="token operator">:</span> ByteBuffer <span class="token punctuation">{</span>
+        <span class="token keyword">val</span> buffer <span class="token operator">=</span> ByteBuffer<span class="token punctuation">.</span><span class="token function">allocate</span><span class="token punctuation">(</span>instructions<span class="token punctuation">.</span><span class="token function">sumOf</span> <span class="token punctuation">{</span> <span class="token function">sizeOf</span><span class="token punctuation">(</span>it<span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        instructions<span class="token punctuation">.</span><span class="token function">forEach</span> <span class="token punctuation">{</span> instruction <span class="token operator">-></span> <span class="token function">encode</span><span class="token punctuation">(</span>instruction<span class="token punctuation">,</span> buffer<span class="token punctuation">)</span> <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> buffer
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">fun</span> <span class="token function">encode</span><span class="token punctuation">(</span>instruction<span class="token operator">:</span> ASM<span class="token punctuation">,</span> buffer<span class="token operator">:</span> ByteBuffer<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">when</span> <span class="token punctuation">(</span>instruction<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">is</span> ASM<span class="token punctuation">.</span>Exit <span class="token operator">-></span> buffer<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token number">0x00</span><span class="token punctuation">)</span>
+            <span class="token keyword">is</span> ASM<span class="token punctuation">.</span>Jump <span class="token operator">-></span> buffer<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token number">0x01</span><span class="token punctuation">)</span>
+            <span class="token keyword">is</span> ASM<span class="token punctuation">.</span>JumpWhenZero <span class="token operator">-></span> buffer<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token number">0x02</span><span class="token punctuation">)</span>
+            <span class="token keyword">is</span> ASM<span class="token punctuation">.</span>Load<span class="token punctuation">.</span>Constant <span class="token operator">-></span> buffer<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token number">0x10</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">putInt</span><span class="token punctuation">(</span>instruction<span class="token punctuation">.</span>value<span class="token punctuation">)</span>
+            <span class="token keyword">is</span> ASM<span class="token punctuation">.</span>Load<span class="token punctuation">.</span>Relative <span class="token operator">-></span> buffer<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token number">0x11</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">putInt</span><span class="token punctuation">(</span>instruction<span class="token punctuation">.</span>offset<span class="token punctuation">)</span>
+            <span class="token keyword">is</span> ASM<span class="token punctuation">.</span>Store <span class="token operator">-></span> buffer<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token number">0x20</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">putInt</span><span class="token punctuation">(</span>instruction<span class="token punctuation">.</span>offset<span class="token punctuation">)</span>
+            <span class="token keyword">is</span> ASM<span class="token punctuation">.</span>Pop <span class="token operator">-></span> buffer<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token number">0x21</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">putInt</span><span class="token punctuation">(</span>instruction<span class="token punctuation">.</span>count<span class="token punctuation">)</span>
+            <span class="token keyword">is</span> ASM<span class="token punctuation">.</span>Op<span class="token punctuation">.</span>Add <span class="token operator">-></span> buffer<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token number">0x30</span><span class="token punctuation">)</span>
+            <span class="token comment">/* … other ops … */</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<h2 id="6-virtual-machines-kotlin-and-rust">6) Virtual Machines: Kotlin and Rust</h2>
+<p>I wrote two VMs that execute the compiled bytecode: one in Kotlin, one in Rust.
+They implement the same instruction semantics as the ASM/encoder mapping.</p>
+<p>Kotlin VM: core/src/main/kotlin/lang/mango/vm/ByteCodeVirtualMachine.kt</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token keyword">class</span> <span class="token function">ByteCodeVirtualMachine</span><span class="token punctuation">(</span>
+    <span class="token keyword">val</span> buffer<span class="token operator">:</span> ByteArray
+<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">val</span> stack <span class="token operator">=</span> ArrayDeque<span class="token operator">&lt;</span>Int<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">var</span> ip <span class="token operator">=</span> <span class="token number">0</span>
+
+    <span class="token keyword">fun</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>ip <span class="token operator">&lt;</span> buffer<span class="token punctuation">.</span>size<span class="token punctuation">)</span> <span class="token function">step</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">fun</span> <span class="token function">step</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>ip <span class="token operator">>=</span> buffer<span class="token punctuation">.</span>size<span class="token punctuation">)</span> <span class="token keyword">return</span>
+        <span class="token function">handle</span><span class="token punctuation">(</span>buffer<span class="token punctuation">[</span>ip<span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">fun</span> <span class="token function">handle</span><span class="token punctuation">(</span>byte<span class="token operator">:</span> Byte<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        ip<span class="token operator">++</span>
+        <span class="token keyword">when</span> <span class="token punctuation">(</span>byte<span class="token punctuation">.</span><span class="token function">toInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token number">0x00</span> <span class="token operator">-></span> ip <span class="token operator">=</span> buffer<span class="token punctuation">.</span>size                  <span class="token comment">// Exit</span>
+            <span class="token number">0x01</span> <span class="token operator">-></span> ip <span class="token operator">=</span> <span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span>                        <span class="token comment">// Jump</span>
+            <span class="token number">0x02</span> <span class="token operator">-></span> <span class="token punctuation">{</span> <span class="token keyword">val</span> a <span class="token operator">=</span> <span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> ip <span class="token operator">=</span> a <span class="token punctuation">}</span> <span class="token comment">// JumpWhenZero</span>
+            <span class="token number">0x10</span> <span class="token operator">-></span> <span class="token punctuation">{</span> stack<span class="token punctuation">.</span><span class="token function">addFirst</span><span class="token punctuation">(</span>ByteBuffer<span class="token punctuation">.</span><span class="token function">wrap</span><span class="token punctuation">(</span>buffer<span class="token punctuation">,</span> ip<span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">.</span>int<span class="token punctuation">)</span><span class="token punctuation">;</span> ip <span class="token operator">+=</span> <span class="token number">4</span> <span class="token punctuation">}</span> <span class="token comment">// Load.Const</span>
+            <span class="token number">0x11</span> <span class="token operator">-></span> <span class="token punctuation">{</span> <span class="token keyword">val</span> o <span class="token operator">=</span> ByteBuffer<span class="token punctuation">.</span><span class="token function">wrap</span><span class="token punctuation">(</span>buffer<span class="token punctuation">,</span> ip<span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">.</span>int<span class="token punctuation">;</span> stack<span class="token punctuation">.</span><span class="token function">addFirst</span><span class="token punctuation">(</span>stack<span class="token punctuation">[</span>o<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> ip <span class="token operator">+=</span> <span class="token number">4</span> <span class="token punctuation">}</span> <span class="token comment">// Load.Relative</span>
+            <span class="token number">0x20</span> <span class="token operator">-></span> <span class="token punctuation">{</span> <span class="token keyword">val</span> o <span class="token operator">=</span> ByteBuffer<span class="token punctuation">.</span><span class="token function">wrap</span><span class="token punctuation">(</span>buffer<span class="token punctuation">,</span> ip<span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">.</span>int<span class="token punctuation">;</span> <span class="token keyword">val</span> v <span class="token operator">=</span> <span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> stack<span class="token punctuation">[</span>o<span class="token punctuation">]</span> <span class="token operator">=</span> v<span class="token punctuation">;</span> ip <span class="token operator">+=</span> <span class="token number">4</span> <span class="token punctuation">}</span> <span class="token comment">// Store</span>
+            <span class="token number">0x21</span> <span class="token operator">-></span> <span class="token punctuation">{</span> <span class="token function">repeat</span><span class="token punctuation">(</span>ByteBuffer<span class="token punctuation">.</span><span class="token function">wrap</span><span class="token punctuation">(</span>buffer<span class="token punctuation">,</span> ip<span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">.</span>int<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">;</span> ip <span class="token operator">+=</span> <span class="token number">4</span> <span class="token punctuation">}</span> <span class="token comment">// Pop</span>
+            <span class="token keyword">in</span> <span class="token number">0x30</span><span class="token operator">..</span><span class="token number">0x34</span> <span class="token operator">-></span> <span class="token punctuation">{</span> <span class="token comment">/* arithmetic ops */</span> <span class="token punctuation">}</span>
+            <span class="token keyword">in</span> <span class="token number">0x40</span><span class="token operator">..</span><span class="token number">0x44</span> <span class="token operator">-></span> <span class="token punctuation">{</span> <span class="token comment">/* comparison ops */</span> <span class="token punctuation">}</span>
+            <span class="token keyword">else</span> <span class="token operator">-></span> <span class="token function">error</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"Unknown operation: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$</span><span class="token expression">byte</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">fun</span> <span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span> stack<span class="token punctuation">.</span><span class="token function">removeFirst</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>Rust VM: rust-vm/src/vm.rs (excerpt)</p>
+<div class="gatsby-highlight" data-language="rust"><pre class="language-rust"><code class="language-rust"><span class="token keyword">pub</span> <span class="token keyword">struct</span> <span class="token type-definition class-name">VM</span> <span class="token punctuation">{</span>
+    <span class="token keyword">pub</span> stack<span class="token punctuation">:</span> <span class="token class-name">Vec</span><span class="token operator">&lt;</span><span class="token keyword">i32</span><span class="token operator">></span><span class="token punctuation">,</span>
+    <span class="token keyword">pub</span> ip<span class="token punctuation">:</span> <span class="token keyword">usize</span><span class="token punctuation">,</span>
+    <span class="token keyword">pub</span> buffer<span class="token punctuation">:</span> <span class="token class-name">Vec</span><span class="token operator">&lt;</span><span class="token keyword">u8</span><span class="token operator">></span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">impl</span> <span class="token constant">VM</span> <span class="token punctuation">{</span>
+    <span class="token keyword">pub</span> <span class="token keyword">fn</span> <span class="token function-definition function">run</span><span class="token punctuation">(</span><span class="token operator">&amp;</span><span class="token keyword">mut</span> <span class="token keyword">self</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">while</span> <span class="token keyword">self</span><span class="token punctuation">.</span>ip <span class="token operator">&lt;</span> <span class="token keyword">self</span><span class="token punctuation">.</span>buffer<span class="token punctuation">.</span><span class="token function">len</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">self</span><span class="token punctuation">.</span><span class="token function">step</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">pub</span> <span class="token keyword">fn</span> <span class="token function-definition function">step</span><span class="token punctuation">(</span><span class="token operator">&amp;</span><span class="token keyword">mut</span> <span class="token keyword">self</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// decode and execute opcodes similarly to Kotlin VM</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>Additionally, there is an ASM-level VM that runs the IR directly (useful for
+debugging before encoding):
+core/src/main/kotlin/lang/mango/vm/ASMVirtualMachine.kt.</p>
+<h2 id="7-running-mango-code">7) Running Mango code</h2>
+<p>You can either interpret source code directly (great for quick iteration) or
+compile it to bytecode and run it on a VM, which mirrors real-world distribution
+of precompiled artifacts.</p>
+<p>Example program: examples/fibonacci.m</p>
+<div class="gatsby-highlight" data-language="mango"><pre class="language-mango"><code class="language-mango">fn fib(n) {
+    when (n == 0) return 0
+    when (n == 1) return 1
+    return fib(n - 1) + fib(n - 2)
+}
+
+fn main() {
+    return fib(30)
+}</code></pre></div>
+<ul>
+<li>Interpret the source (runtime module detects .m):</li>
+</ul>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">./gradlew :runtime:installDist
+./runtime/build/install/runtime/bin/runtime examples/fibonacci.m</code></pre></div>
+<ul>
+<li>Compile AOT to bytecode (.mc):</li>
+</ul>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">./gradlew :compiler:installDist
+./compiler/build/install/compiler/bin/compiler examples/fibonacci.m examples/fibonacci.mc</code></pre></div>
+<ul>
+<li>Run the compiled bytecode with the Kotlin VM (runtime also detects .mc):</li>
+</ul>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">./runtime/build/install/runtime/bin/runtime examples/fibonacci.mc</code></pre></div>
+<p>Under the hood, the runtime decides based on file extension:</p>
+<p>Code: runtime/src/main/kotlin/lang/mango/Runtime.kt</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">main</span><span class="token punctuation">(</span>args<span class="token operator">:</span> Array<span class="token operator">&lt;</span>String<span class="token operator">></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">require</span><span class="token punctuation">(</span>args<span class="token punctuation">.</span>size <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token string-literal singleline"><span class="token string">"Usage: mango &lt;compiled file or interpreted file>"</span></span> <span class="token punctuation">}</span>
+    <span class="token keyword">val</span> sourceFile <span class="token operator">=</span> <span class="token function">File</span><span class="token punctuation">(</span>args<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>sourceFile<span class="token punctuation">.</span>extension <span class="token operator">==</span> <span class="token string-literal singleline"><span class="token string">"mc"</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">val</span> vm <span class="token operator">=</span> <span class="token function">ByteCodeVirtualMachine</span><span class="token punctuation">(</span>sourceFile<span class="token punctuation">.</span><span class="token function">readBytes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        vm<span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token function">println</span><span class="token punctuation">(</span>vm<span class="token punctuation">.</span>stack<span class="token punctuation">.</span><span class="token function">first</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token keyword">val</span> ast <span class="token operator">=</span> MangoParser<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>sourceFile<span class="token punctuation">.</span><span class="token function">readText</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">val</span> result <span class="token operator">=</span> <span class="token function">MangoInterpreter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">interpret</span><span class="token punctuation">(</span>ast<span class="token punctuation">)</span>
+        <span class="token function">println</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<h2 id="why-aot-instead-of-a-bytecode-interpreter">Why AOT instead of a bytecode interpreter?</h2>
+<ul>
+<li>Tree-walking interpreter: executes AST nodes directly. Simple, great for
+development, but slower.</li>
+<li>Bytecode interpreter (classic): interprets a fixed instruction set emitted by
+a just-in-time or immediate compiler; still interprets at runtime but requires
+runtime translation.</li>
+<li>AOT compiler (Mango’s approach): emits a final portable bytecode ahead of
+time; the program can be shared and executed on any compatible VM without the
+source or parser. This separation enables multiple independent VM
+implementations (e.g., Kotlin and Rust in this repo) while guaranteeing
+consistent semantics.</li>
+</ul>
+<h2 id="closing-thoughts">Closing thoughts</h2>
+<p>Mango is intentionally minimal yet end-to-end: grammar → AST → interpreter → ASM
+→ linker/encoder → bytecode → VMs. This pipeline made it easy to validate the
+language quickly and then lock down a portable format others can run in their
+own VM implementations.</p>
+<p>Have ideas or questions? Try the examples, extend the grammar, or implement a
+new VM for the bytecode in your favorite language!</p>
+<p>You can find the code here: <a href="https://github.com/helico-tech/mango">https://github.com/helico-tech/mango</a></p></div></main><footer class="container"><p>Build <!-- -->185ee6e<!-- --> - <!-- -->2025-09-27T14:59:37.000Z</p></footer></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/mango-programming-language";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-ec707b41bccf15b2b27f.js"],"app":["/app-aa24829beabd43055df8.js"],"component---src-pages-404-js":["/component---src-pages-404-js-aa0ffeb8181716267d64.js"],"component---src-pages-index-js":["/component---src-pages-index-js-f2b90683571a7299fa82.js"],"component---src-templates-post-js":["/component---src-templates-post-js-650a5f25cc8126c645de.js"]};/*]]>*/</script><script src="/polyfill-ec707b41bccf15b2b27f.js" nomodule=""></script><script src="/component---src-templates-post-js-650a5f25cc8126c645de.js" async=""></script><script src="/291a736a4998dc6bb1e7dae6dfd245355445eafd-ef6357f687c91485d3ff.js" async=""></script><script src="/app-aa24829beabd43055df8.js" async=""></script><script src="/framework-a24df75546761fdaa7be.js" async=""></script><script src="/webpack-runtime-b6d1bec96c52ba5be7bf.js" async=""></script><script data-goatcounter="https://avwie.goatcounter.com/count" async="" src="//gc.zgo.at/count.js"></script></body></html>
